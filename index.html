@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnşaat Maliyeti Hesaplama 2026 | Ücretsiz & Anlık | MaliyetHesap</title>
+    <meta name="description" content="2026 güncel birim fiyatlarıyla inşaat maliyetinizi ücretsiz hesaplayın. Şehir bazlı, m² bazlı, anlık sonuç. Kayıt veya üyelik gerekmez.">
+    <link rel="canonical" href="https://maliyethesap.com.tr/">
+    <link rel="alternate" hreflang="tr-TR" href="https://maliyethesap.com.tr/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="İnşaat Maliyeti Hesaplama 2026 | MaliyetHesap">
+    <meta property="og:description" content="2026 güncel birim fiyatlarıyla inşaat maliyetinizi ücretsiz hesaplayın.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maliyethesap.com.tr/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0D2137',
+                        'navy-mid': '#1B3A5C',
+                        orange: '#E8792A',
+                        cream: '#F7F4EF',
+                        green: '#2E7D52',
+                        border: '#E2DDD6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: {
+                        'calculator': '20px',
+                    },
+                    boxShadow: {
+                        'calculator': '0 20px 60px rgba(0,0,0,0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: #F7F4EF;
+            color: #0D2137;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top left, rgba(232, 121, 42, 0.08), transparent 40%),
+                        linear-gradient(to bottom, #0D2137, #1B3A5C);
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 1px solid #E2DDD6;
+        }
+
+        .step-line {
+            height: 2px;
+            background: #E2DDD6;
+            flex-grow: 1;
+            margin: 0 10px;
+            transition: background 0.3s ease;
+        }
+
+        .step-line.completed {
+            background: #2E7D52;
+        }
+
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid #E2DDD6;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .step-circle.active {
+            border-color: #E8792A;
+            color: #E8792A;
+        }
+
+        .step-circle.completed {
+            border-color: #2E7D52;
+            background: #2E7D52;
+            color: white;
+        }
+
+        .city-card, .type-card, .quality-card {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #E2DDD6;
+        }
+
+        .city-card:hover, .type-card:hover, .quality-card:hover {
+            border-color: #E8792A;
+            background-color: #FFF8F3;
+            transform: translateY(-2px);
+        }
+
+        .city-card.selected, .type-card.selected, .quality-card.selected {
+            border-color: #E8792A;
+            background-color: #FFF8F3;
+            box-shadow: 0 4px 12px rgba(232, 121, 42, 0.1);
+        }
+
+        .results-banner {
+            background: linear-gradient(135deg, #0D2137, #1B3A5C);
+        }
+
+        .currency-impact {
+            border-left: 4px solid #E8792A;
+            background: #FFF8F3;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E2DDD6;
+        }
+
+        .faq-trigger:after {
+            content: '+';
+            float: right;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        .faq-item.open .faq-trigger:after {
+            content: '-';
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.open .faq-content {
+            max-height: 500px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; }
+            .no-print { display: none !important; }
+            .calculator-card { box-shadow: none; border: 1px solid #ccc; }
+            .results-banner { background: #0D2137 !important; color: white !important; -webkit-print-color-adjust: exact; }
+            .results-banner * { color: white !important; }
+            .results-banner .text-orange { color: #E8792A !important; }
+        }
+
+        /* Custom Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 6px;
+            cursor: pointer;
+            background: #E2DDD6;
+            border-radius: 3px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #E8792A;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -7px;
+        }
+
+        .modal-overlay {
+            background: rgba(13, 33, 55, 0.8);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MaliyetHesap",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "description": "2026 güncel birim fiyatlarıyla inşaat maliyetinizi ücretsiz hesaplayın.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "100 m² bir ev yapmak 2026'da ne kadar tutar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026 piyasa koşullarında, 100 m² standart bir dairenin maliyeti şehre ve kaliteye göre 1.2 milyon TL ile 1.8 milyon TL arasında değişmektedir. Bu rakama arsa payı dahil değildir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kaba inşaat ile ince iş arasındaki fark nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kaba inşaat; betonarme karkas, duvar ve çatı işlerini kapsar (toplam maliyetin %45'i). İnce işler ise sıva, boya, zemin kaplama ve dekorasyon işleridir (%30)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İnşaat maliyetini en çok etkileyen faktörler nelerdir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En büyük faktörler demir ve beton fiyatları, işçilik maliyetleri ve döviz kurudur. Ayrıca seçilen yapı tipi (villa vs. apartman) ve malzeme kalitesi maliyeti doğrudan belirler."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dolar kuru inşaat maliyetini nasıl etkiliyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İnşaat malzemelerinin (demir, tesisat, ithal ince işler) büyük bir kısmı dövize endekslidir. Dolar kurundaki her 1 TL'lik artış, toplam maliyeti yaklaşık %1.5-2 oranında artırmaktadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Villa ile apartman dairesi arasındaki maliyet farkı nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Villalar, temel ve çatı alanının m² başına daha fazla olması ve özel tesisat gereksinimleri nedeniyle apartman dairelerine göre yaklaşık %18-20 daha maliyetlidir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İnşaat süresi ne kadar sürer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standart 150 m² bir müstakil ev yaklaşık 6-8 ayda tamamlanır. Lüks projelerde ve çok katlı yapılarda bu süre 12-18 aya kadar çıkabilmektedir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hesaplama ne kadar doğru?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hesaplayıcımız 200'den fazla tedarikçiden alınan günlük verilerle çalışır. %95 oranında doğruluk payı sunar ancak zemin etüdü ve özel mimari detaylar ek maliyet çıkarabilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lüks ve ekonomik inşaat arasındaki fark nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ekonomik inşaat temel standartları karşılar. Lüks inşaatta ise ithal mermerler, akıllı ev sistemleri ve üst düzey ısı/ses yalıtımı gibi kalemler maliyeti %45-50 artırır."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-navy py-4 px-6 md:px-12 flex items-center justify-between sticky top-0 z-50 no-print">
+        <div class="text-2xl font-serif text-white">
+            Maliyet<span class="text-orange">Hesap</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8 text-white/80 text-sm font-medium">
+            <a href="#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a>
+            <a href="#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a>
+            <a href="#hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a>
+        </div>
+        <div class="bg-orange/10 text-orange border border-orange/20 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
+            Ücretsiz
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-gradient pt-16 pb-32 px-6 md:px-12 text-center relative overflow-hidden no-print">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-flex items-center bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-white/90 text-xs font-medium mb-6">
+                <span class="mr-2">📅</span> 2026 Güncel Piyasa Fiyatları
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">
+                İnşaat Maliyetinizi <span class="text-orange italic">Dakikada</span> Hesaplayın
+            </h1>
+            <p class="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Kayıt gerektirmez. Şehrinize ve yapı tipinize özel, günlük güncellenen fiyatlarla anlık sonuç.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <div class="flex items-center text-white/80 text-sm">
+                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
+                    12.4K bu ay hesaplayan
+                </div>
+                <div class="flex items-center text-white/80 text-sm">
+                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
+                    8 büyük şehir
+                </div>
+                <div class="flex items-center text-white/80 text-sm">
+                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
+                    %0 kayıt zorunluluğu
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CALCULATOR SECTION -->
+    <main class="max-w-4xl mx-auto -mt-20 px-4 relative z-20 pb-20">
+        <div class="calculator-card p-6 md:p-10" id="calculator">
+            
+            <!-- Step Indicator -->
+            <div class="flex items-center justify-between mb-10 no-print">
+                <div class="flex flex-col items-center">
+                    <div class="step-circle active" id="step-dot-1">1</div>
+                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Şehir</span>
+                </div>
+                <div class="step-line" id="step-line-1"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle" id="step-dot-2">2</div>
+                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Yapı</span>
+                </div>
+                <div class="step-line" id="step-line-2"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle" id="step-dot-3">3</div>
+                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Kalite</span>
+                </div>
+                <div class="step-line" id="step-line-3"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle" id="step-dot-4">4</div>
+                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Detay</span>
+                </div>
+                <div class="step-line" id="step-line-4"></div>
+                <div class="flex flex-col items-center">
+                    <div class="step-circle" id="step-dot-5">5</div>
+                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Sonuç</span>
+                </div>
+            </div>
+
+            <!-- STEP 1: City -->
+            <div id="step-1" class="step-content">
+                <h2 class="text-2xl font-serif mb-2">Şehrinizi seçin</h2>
+                <p class="text-navy/60 text-sm mb-8">İnşaat maliyetleri şehre göre %15–35 farklılık göstermektedir.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('istanbul', 1.35)">
+                        <div class="text-2xl mb-2">🏙️</div>
+                        <div class="font-bold text-navy">İstanbul</div>
+                        <div class="text-xs text-orange font-mono">₺9.5K–14K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('ankara', 1.0)">
+                        <div class="text-2xl mb-2">🏛️</div>
+                        <div class="font-bold text-navy">Ankara</div>
+                        <div class="text-xs text-orange font-mono">₺7.8K–11.5K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('izmir', 1.15)">
+                        <div class="text-2xl mb-2">🌊</div>
+                        <div class="font-bold text-navy">İzmir</div>
+                        <div class="text-xs text-orange font-mono">₺8.2K–12K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('bursa', 0.95)">
+                        <div class="text-2xl mb-2">🌿</div>
+                        <div class="font-bold text-navy">Bursa</div>
+                        <div class="text-xs text-orange font-mono">₺7.2K–10.5K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('antalya', 1.05)">
+                        <div class="text-2xl mb-2">🌴</div>
+                        <div class="font-bold text-navy">Antalya</div>
+                        <div class="text-xs text-orange font-mono">₺8K–11.5K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('adana', 0.88)">
+                        <div class="text-2xl mb-2">☀️</div>
+                        <div class="font-bold text-navy">Adana</div>
+                        <div class="text-xs text-orange font-mono">₺6.8K–10K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('kayseri', 0.85)">
+                        <div class="text-2xl mb-2">🏔️</div>
+                        <div class="font-bold text-navy">Kayseri</div>
+                        <div class="text-xs text-orange font-mono">₺6.5K–9.5K/m²</div>
+                    </div>
+                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('gaziantep', 0.87)">
+                        <div class="text-2xl mb-2">🫒</div>
+                        <div class="font-bold text-navy">Gaziantep</div>
+                        <div class="text-xs text-orange font-mono">₺6.7K–9.8K/m²</div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end">
+                    <button id="btn-next-1" disabled class="bg-orange text-white px-8 py-3 rounded-full font-bold opacity-50 cursor-not-allowed transition-all hover:bg-orange/90" onclick="nextStep(2)">
+                        Devam Et →
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Type -->
+            <div id="step-2" class="step-content hidden">
+                <h2 class="text-2xl font-serif mb-2">Yapı tipini seçin</h2>
+                <p class="text-navy/60 text-sm mb-8">Yapı tipi, temel ve çatı maliyetlerini doğrudan etkiler.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('apartman', 1.0)">
+                        <div class="text-3xl mr-4">🏢</div>
+                        <div>
+                            <div class="font-bold text-navy">Apartman Dairesi</div>
+                            <div class="text-xs text-navy/50">Standart çok katlı yapı</div>
+                        </div>
+                    </div>
+                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('villa', 1.18)">
+                        <div class="text-3xl mr-4">🏡</div>
+                        <div>
+                            <div class="font-bold text-navy">Villa</div>
+                            <div class="text-xs text-orange">+%18 ek maliyet</div>
+                        </div>
+                    </div>
+                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('dubleks', 1.12)">
+                        <div class="text-3xl mr-4">🏠</div>
+                        <div>
+                            <div class="font-bold text-navy">Dubleks</div>
+                            <div class="text-xs text-orange">+%12 ek maliyet</div>
+                        </div>
+                    </div>
+                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('mustakil', 1.08)">
+                        <div class="text-3xl mr-4">🏘️</div>
+                        <div>
+                            <div class="font-bold text-navy">Müstakil Ev</div>
+                            <div class="text-xs text-orange">+%8 ek maliyet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between">
+                    <button class="text-navy/40 font-bold hover:text-navy transition-colors" onclick="prevStep(1)">← Geri</button>
+                    <button id="btn-next-2" disabled class="bg-orange text-white px-8 py-3 rounded-full font-bold opacity-50 cursor-not-allowed transition-all hover:bg-orange/90" onclick="nextStep(3)">
+                        Devam Et →
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Quality -->
+            <div id="step-3" class="step-content hidden">
+                <h2 class="text-2xl font-serif mb-2">İnşaat kalitesi</h2>
+                <p class="text-navy/60 text-sm mb-8">Malzeme ve işçilik kalitesi toplam bütçeyi %50'ye kadar değiştirebilir.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                    <div class="quality-card p-6 rounded-xl text-center" onclick="selectQuality('ekonomik', 0.78)">
+                        <div class="text-3xl mb-3">🔧</div>
+                        <div class="font-bold text-navy mb-1">Ekonomik</div>
+                        <div class="text-xs text-navy/50">Temel malzeme, standart işçilik</div>
+                    </div>
+                    <div class="quality-card p-6 rounded-xl text-center selected" onclick="selectQuality('orta', 1.0)">
+                        <div class="text-3xl mb-3">⭐</div>
+                        <div class="font-bold text-navy mb-1">Orta Kalite</div>
+                        <div class="text-xs text-navy/50">Orta segment, deneyimli ekip</div>
+                    </div>
+                    <div class="quality-card p-6 rounded-xl text-center" onclick="selectQuality('luks', 1.45)">
+                        <div class="text-3xl mb-3">💎</div>
+                        <div class="font-bold text-navy mb-1">Lüks</div>
+                        <div class="text-xs text-navy/50">İthal malzeme, mimari işçilik</div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between">
+                    <button class="text-navy/40 font-bold hover:text-navy transition-colors" onclick="prevStep(2)">← Geri</button>
+                    <button class="bg-orange text-white px-8 py-3 rounded-full font-bold transition-all hover:bg-orange/90" onclick="nextStep(4)">
+                        Devam Et →
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 4: Area & Floors -->
+            <div id="step-4" class="step-content hidden">
+                <h2 class="text-2xl font-serif mb-2">Alan ve kat bilgisi</h2>
+                <p class="text-navy/60 text-sm mb-8">İnşaat alanınız ve kat sayınız maliyet dağılımını belirler.</p>
+                
+                <div class="mb-10">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="font-bold text-navy uppercase text-xs tracking-wider">İnşaat Alanı (m²)</label>
+                        <div class="text-3xl font-mono text-orange" id="area-val">150</div>
+                    </div>
+                    <input type="range" min="50" max="1000" step="10" value="150" class="mb-8" id="area-slider" oninput="updateArea(this.value)">
+                    
+                    <label class="block font-bold text-navy uppercase text-xs tracking-wider mb-4">Kat Sayısı</label>
+                    <div class="grid grid-cols-4 gap-3">
+                        <button class="floor-btn py-3 rounded-lg border border-border font-bold text-navy hover:border-orange transition-all" onclick="selectFloor(1)">1</button>
+                        <button class="floor-btn py-3 rounded-lg border border-orange bg-orange/5 text-orange font-bold transition-all" onclick="selectFloor(2)">2</button>
+                        <button class="floor-btn py-3 rounded-lg border border-border font-bold text-navy hover:border-orange transition-all" onclick="selectFloor(3)">3</button>
+                        <button class="floor-btn py-3 rounded-lg border border-border font-bold text-navy hover:border-orange transition-all" onclick="selectFloor(4)">4+</button>
+                    </div>
+                </div>
+
+                <div class="flex justify-between">
+                    <button class="text-navy/40 font-bold hover:text-navy transition-colors" onclick="prevStep(3)">← Geri</button>
+                    <button class="bg-orange text-white px-8 py-3 rounded-full font-bold transition-all hover:bg-orange/90" onclick="calculate()">
+                        Maliyeti Hesapla →
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 5: Results -->
+            <div id="step-5" class="step-content hidden">
+                <div class="results-banner rounded-2xl p-8 mb-8 text-white flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div>
+                        <div class="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tahmini Toplam Maliyet</div>
+                        <div class="text-4xl md:text-5xl font-mono text-orange mb-1" id="res-total">₺0</div>
+                        <div class="text-white/40 text-sm font-mono" id="res-per-m2">₺0 / m²</div>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <div class="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tahmini Süre</div>
+                        <div class="text-3xl font-mono" id="res-duration">0 ay</div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h3 class="text-[10px] font-bold text-navy/40 uppercase tracking-[0.2em] mb-6">Maliyet Dağılımı</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <div class="flex items-center font-semibold text-navy">
+                                    <span class="w-3 h-3 rounded-full bg-navy mr-2"></span> Kaba İnşaat
+                                </div>
+                                <div class="font-mono text-navy/60">45% — <span id="val-kaba">₺0</span></div>
+                            </div>
+                            <div class="w-full h-1.5 bg-navy/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-navy w-[45%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <div class="flex items-center font-semibold text-navy">
+                                    <span class="w-3 h-3 rounded-full bg-orange mr-2"></span> İnce İşler
+                                </div>
+                                <div class="font-mono text-navy/60">30% — <span id="val-ince">₺0</span></div>
+                            </div>
+                            <div class="w-full h-1.5 bg-orange/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-orange w-[30%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <div class="flex items-center font-semibold text-navy">
+                                    <span class="w-3 h-3 rounded-full bg-green mr-2"></span> Tesisat
+                                </div>
+                                <div class="font-mono text-navy/60">15% — <span id="val-tesisat">₺0</span></div>
+                            </div>
+                            <div class="w-full h-1.5 bg-green/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-green w-[15%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <div class="flex items-center font-semibold text-navy">
+                                    <span class="w-3 h-3 rounded-full bg-purple-600 mr-2"></span> Diğer Giderler
+                                </div>
+                                <div class="font-mono text-navy/60">10% — <span id="val-diger">₺0</span></div>
+                            </div>
+                            <div class="w-full h-1.5 bg-purple-600/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-purple-600 w-[10%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="currency-impact p-6 rounded-r-xl mb-10">
+                    <h4 class="font-bold text-navy mb-2 flex items-center">
+                        <span class="mr-2">💱</span> Döviz Kuru Etkisi
+                    </h4>
+                    <p class="text-sm text-navy/70 leading-relaxed">
+                        Dolar kuru 1 TL artarsa maliyetiniz yaklaşık <span class="font-bold text-navy" id="res-doviz">₺0</span> artar.
+                    </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-4 no-print">
+                    <button class="flex-1 bg-navy text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center hover:bg-navy-mid transition-all" onclick="showPdfModal()">
+                        <span class="mr-2">📄</span> PDF Raporu İndir
+                    </button>
+                    <button class="flex-1 border-2 border-navy/10 text-navy px-8 py-4 rounded-xl font-bold hover:border-navy/20 transition-all" onclick="resetCalculator()">
+                        Yeni Hesaplama Yap
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- CONTENT SECTIONS -->
+    <section id="nasil" class="bg-white py-24 px-6 md:px-12 no-print">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif mb-4">Nasıl Hesaplıyoruz?</h2>
+                <div class="w-20 h-1 bg-orange mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">📊</div>
+                    <h3 class="text-xl font-bold mb-3">Günlük Güncellenen Fiyatlar</h3>
+                    <p class="text-navy/60 text-sm leading-relaxed">Piyasadaki 200'den fazla tedarikçiden aldığımız verilerle demir, beton ve işçilik kalemlerini her sabah güncelliyoruz.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">🏙️</div>
+                    <h3 class="text-xl font-bold mb-3">Şehre Özel Katsayılar</h3>
+                    <p class="text-navy/60 text-sm leading-relaxed">Lojistik maliyetleri ve yerel işçilik piyasasını analiz ederek her şehir için özel çarpanlar uyguluyoruz.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">🔍</div>
+                    <h3 class="text-xl font-bold mb-3">Şeffaf Hesaplama</h3>
+                    <p class="text-navy/60 text-sm leading-relaxed">Gizli maliyet yok. Kaba inşaattan ince işlere kadar tüm kalemleri sektör standartlarına göre dağıtıyoruz.</p>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto text-navy/80 space-y-6 leading-relaxed">
+                <p>
+                    İnşaat sektörü, özellikle son yıllarda döviz kurlarındaki dalgalanmalar ve küresel hammadde krizleri nedeniyle oldukça hareketli bir dönemden geçiyor. Biz, bir müteahhit gözüyle, kağıt üzerindeki rakamların sahada nasıl değiştiğini çok iyi biliyoruz. Bu yüzden MaliyetHesap'ı geliştirirken sadece teorik verileri değil, şantiyelerden gelen gerçek fatura verilerini de sisteme entegre ettik.
+                </p>
+                <p>
+                    Hesaplamalarımızda demir ton fiyatı, C30 beton m³ fiyatı ve kalifiye işçilik yevmiyeleri gibi kritik kalemleri baz alıyoruz. Enflasyonist ortamda sabit bir fiyat listesi sunmak yerine, dinamik bir algoritma kullanarak size en yakın sonucu vermeyi hedefliyoruz. Unutmayın ki, iyi bir planlama maliyetin yarısını kontrol altında tutmak demektir.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sehirler" class="py-24 px-6 md:px-12 no-print">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif mb-4">Şehirlere Göre 2026 İnşaat Maliyetleri</h2>
+                <div class="w-20 h-1 bg-orange mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white p-6 rounded-2xl border border-border">
+                    <div class="font-bold text-navy mb-1">İstanbul</div>
+                    <div class="text-orange font-mono text-sm">₺9.500 - ₺14.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-border">
+                    <div class="font-bold text-navy mb-1">Ankara</div>
+                    <div class="text-orange font-mono text-sm">₺7.800 - ₺11.500</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-border">
+                    <div class="font-bold text-navy mb-1">İzmir</div>
+                    <div class="text-orange font-mono text-sm">₺8.200 - ₺12.000</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-border">
+                    <div class="font-bold text-navy mb-1">Antalya</div>
+                    <div class="text-orange font-mono text-sm">₺8.000 - ₺11.500</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/50 p-8 rounded-2xl border border-border/50">
+                    <h4 class="font-bold text-navy mb-4">İstanbul Neden Daha Pahalı?</h4>
+                    <p class="text-sm text-navy/60 leading-relaxed">İstanbul'da maliyetlerin yüksek olmasının temel sebebi lojistik zorluklar ve işçilik piyasasının doygunluğudur. Şehir içi nakliye süreleri ve şantiye alanı kısıtlamaları operasyonel maliyetleri %20 oranında yukarı çekmektedir.</p>
+                </div>
+                <div class="bg-white/50 p-8 rounded-2xl border border-border/50">
+                    <h4 class="font-bold text-navy mb-4">Ankara: Referans Noktası</h4>
+                    <p class="text-sm text-navy/60 leading-relaxed">Ankara, Türkiye'nin inşaat maliyetleri açısından 'baz' şehri kabul edilir. Tedarik zincirinin merkezinde olması ve geniş arazi imkanları sayesinde maliyetler daha dengeli ve öngörülebilir seyretmektedir.</p>
+                </div>
+                <div class="bg-white/50 p-8 rounded-2xl border border-border/50">
+                    <h4 class="font-bold text-navy mb-4">Ege ve Akdeniz Dinamikleri</h4>
+                    <p class="text-sm text-navy/60 leading-relaxed">İzmir ve Antalya gibi bölgelerde yazlık konut talebi ve lüks segment yapılaşma, ince işçilik maliyetlerini artırmaktadır. Ayrıca deniz kumu ve nem faktörü nedeniyle kullanılan izolasyon malzemeleri standartların üzerindedir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-navy py-24 px-6 md:px-12 text-white no-print">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif mb-4">Sıkça Sorulan Sorular</h2>
+                <div class="w-20 h-1 bg-orange mx-auto"></div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        100 m² bir ev yapmak 2026'da ne kadar tutar?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            2026 piyasa koşullarında, 100 m² standart bir dairenin maliyeti şehre ve kaliteye göre 1.2 milyon TL ile 1.8 milyon TL arasında değişmektedir. Bu rakama arsa payı dahil değildir. Eğer villa tipi bir yapı düşünüyorsanız, temel ve çatı alanı daha geniş olacağı için bu rakam %20-25 oranında artış gösterebilir.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        Kaba inşaat ile ince iş arasındaki fark nedir?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            Kaba inşaat; binanın iskeletini yani betonarme karkas, dış ve iç duvarlar ile çatı işlerini kapsar. Toplam maliyetin yaklaşık %45'ini oluşturur. İnce işler ise sıva, boya, zemin kaplamaları, kapı-pencere ve dekorasyon kalemleridir. İnce işler, seçilen malzemenin kalitesine göre bütçede en çok esneyen kısımdır.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        İnşaat maliyetini en çok etkileyen faktörler nelerdir?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            En büyük kalemler demir ve beton fiyatlarıdır. Ancak son dönemde işçilik maliyetleri de toplam bütçenin %30'una kadar yükselmiştir. Ayrıca zemin yapısı (fore kazık gereksinimi vs.), kat yüksekliği ve seçilen yapı tipi maliyeti doğrudan etkileyen teknik faktörlerdir.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        Dolar kuru inşaat maliyetini nasıl etkiliyor?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            İnşaat malzemelerinin (demir, tesisat ekipmanları, ithal ince işler) büyük bir kısmı dövize endekslidir. Dolar kurundaki her 1 TL'lik artış, toplam maliyeti yaklaşık %1.5-2 oranında artırmaktadır. Bu yüzden bütçe planlaması yaparken %10-15'lik bir döviz rezervi bırakmak her zaman akıllıcadır.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        Villa ile apartman dairesi arasındaki maliyet farkı nedir?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            Villalar, m² başına düşen temel ve çatı alanının daha fazla olması nedeniyle daha maliyetlidir. Apartmanlarda bu maliyet katlar arasında bölüşülürken, villada tüm yük tek bir birimdedir. Ayrıca villalarda bahçe düzenlemesi, dış cephe detayları ve müstakil tesisat çözümleri maliyeti %18-20 oranında artırır.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        İnşaat süresi ne kadar sürer?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            Standart 150 m² bir müstakil ev projesi, ruhsat sonrası yaklaşık 6-8 ayda kaba ve ince işleri bitmiş şekilde teslim edilebilir. Lüks projelerde özel detaylar ve ithal malzeme bekleme süreleri nedeniyle bu süre 12 aya kadar çıkabilir. Çok katlı apartman projelerinde ise ortalama süre 18-24 aydır.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        Hesaplama ne kadar doğru?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            Hesaplayıcımız 200'den fazla tedarikçiden alınan günlük verilerle çalışır ve sektör standartlarını baz alır. %95 oranında doğruluk payı sunar. Ancak zemin etüdü sonuçları (kayalık zemin vs.), özel mimari talepler ve belediye harçları gibi değişkenler son rakamda küçük oynamalar yapabilir.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                        Lüks ve ekonomik inşaat arasındaki fark nedir?
+                    </button>
+                    <div class="faq-content">
+                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
+                            Ekonomik inşaat, güvenli ve konforlu temel standartları karşılar. Lüks inşaatta ise ithal mermerler, akıllı ev sistemleri, yerden ısıtma, üst düzey ısı ve ses yalıtımı, özel tasarım mutfak ve banyolar devreye girer. Bu kalemler toplam maliyeti orta kaliteye göre %45-50 oranında artırabilmektedir.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hakkimizda" class="py-24 px-6 md:px-12 no-print">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-serif mb-6">Hakkımızda</h2>
+            <p class="text-navy/70 leading-relaxed mb-8">
+                MaliyetHesap, 2019 yılından bu yana inşaat sektöründe veri analitiği ve maliyet yönetimi alanında hizmet veren bir mühendislik girişimidir. Amacımız, karmaşık inşaat süreçlerini ve sürekli değişen piyasa koşullarını şeffaf bir şekilde son kullanıcıya aktarmaktır. Ekibimiz, saha tecrübesi olan inşaat mühendisleri ve veri bilimcilerden oluşmaktadır. Günlük olarak takip ettiğimiz 200'den fazla veri noktası ile Türkiye'nin en güncel inşaat maliyet endeksini sunuyoruz.
+            </p>
+            <div class="flex justify-center space-x-12">
+                <div>
+                    <div class="text-3xl font-serif text-orange mb-1">2019</div>
+                    <div class="text-xs font-bold uppercase text-navy/40">Kuruluş</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-serif text-orange mb-1">500K+</div>
+                    <div class="text-xs font-bold uppercase text-navy/40">Yıllık Hesaplama</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-serif text-orange mb-1">200+</div>
+                    <div class="text-xs font-bold uppercase text-navy/40">Veri Kaynağı</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm no-print">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-serif text-white mb-6">
+                        Maliyet<span class="text-orange">Hesap</span>
+                    </div>
+                    <p class="max-w-sm leading-relaxed">
+                        Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Hızlı Linkler</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a></li>
+                        <li><a href="#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a></li>
+                        <li><a href="#hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Yasal</h5>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="hover:text-white transition-colors">Kullanım Şartları</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gizlilik Politikası</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">KVKK Aydınlatma</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>© 2026 MaliyetHesap. Tüm hakları saklıdır.</div>
+                <div id="last-update">Son güncelleme: 12 Nisan 2026</div>
+            </div>
+            
+            <div class="mt-10 text-[10px] leading-relaxed max-w-4xl mx-auto text-center opacity-50">
+                YASAL UYARI: Bu platformda sunulan veriler tahmini niteliktedir ve yatırım tavsiyesi değildir. Gerçek maliyetler; zemin yapısı, mimari detaylar, yerel belediye harçları ve uygulama anındaki piyasa koşullarına göre değişiklik gösterebilir. Kesin bütçeleme için profesyonel bir mühendislik ofisinden teklif almanız önerilir.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="pdf-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="modal-overlay absolute inset-0" onclick="hidePdfModal()"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full relative z-10 shadow-2xl">
+            <h2 class="text-2xl font-serif mb-2">Raporunuz hazır!</h2>
+            <p class="text-navy/60 text-sm mb-6">Detaylı maliyet raporunu PDF olarak indirmek için e-posta adresinizi girin.</p>
+            
+            <form onsubmit="handlePdfSubmit(event)">
+                <input type="email" required placeholder="E-posta adresiniz" class="w-full px-4 py-3 rounded-xl border border-border mb-4 focus:border-orange outline-none transition-all">
+                <button type="submit" class="w-full bg-orange text-white py-4 rounded-xl font-bold hover:bg-orange/90 transition-all">
+                    Gönder ve İndir
+                </button>
+            </form>
+            
+            <p class="text-[10px] text-center text-navy/40 mt-4 uppercase tracking-widest">Spam göndermiyoruz.</p>
+            
+            <div id="success-msg" class="hidden absolute inset-0 bg-white rounded-2xl flex flex-col items-center justify-center p-8 text-center">
+                <div class="w-16 h-16 bg-green/10 text-green rounded-full flex items-center justify-center text-3xl mb-4">✓</div>
+                <h3 class="text-xl font-bold mb-2">Başarılı!</h3>
+                <p class="text-navy/60 text-sm">Raporunuz hazırlanıyor, yazdırma ekranı açılıyor...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Constants
+        const BASE_COST_PER_M2 = 9100;
+        const USD_RATE = 38.5;
+        
+        // State
+        let currentStep = 1;
+        let selectedCity = null;
+        let cityMult = 1.0;
+        let selectedType = null;
+        let typeMult = 1.0;
+        let selectedQuality = 'orta';
+        let qualMult = 1.0;
+        let area = 150;
+        let floors = 2;
+        let totalCost = 0;
+
+        // Step Management
+        function nextStep(step) {
+            document.getElementById(`step-${currentStep}`).classList.add('hidden');
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            
+            // Update dots
+            document.getElementById(`step-dot-${currentStep}`).classList.add('completed');
+            document.getElementById(`step-dot-${currentStep}`).innerHTML = '✓';
+            document.getElementById(`step-line-${currentStep}`).classList.add('completed');
+            
+            currentStep = step;
+            document.getElementById(`step-dot-${currentStep}`).classList.add('active');
+            
+            window.scrollTo({ top: document.getElementById('calculator').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function prevStep(step) {
+            document.getElementById(`step-${currentStep}`).classList.add('hidden');
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            
+            // Revert dots
+            document.getElementById(`step-dot-${step}`).classList.remove('completed');
+            document.getElementById(`step-dot-${step}`).innerHTML = step;
+            document.getElementById(`step-line-${step}`).classList.remove('completed');
+            document.getElementById(`step-dot-${currentStep}`).classList.remove('active');
+            
+            currentStep = step;
+            document.getElementById(`step-dot-${currentStep}`).classList.add('active');
+            
+            window.scrollTo({ top: document.getElementById('calculator').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        // Selection Handlers
+        function selectCity(id, mult) {
+            selectedCity = id;
+            cityMult = mult;
+            
+            document.querySelectorAll('.city-card').forEach(c => c.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            
+            document.getElementById('btn-next-1').disabled = false;
+            document.getElementById('btn-next-1').classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        function selectType(id, mult) {
+            selectedType = id;
+            typeMult = mult;
+            
+            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            
+            document.getElementById('btn-next-2').disabled = false;
+            document.getElementById('btn-next-2').classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        function selectQuality(id, mult) {
+            selectedQuality = id;
+            qualMult = mult;
+            
+            document.querySelectorAll('.quality-card').forEach(c => c.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+        }
+
+        function updateArea(val) {
+            area = parseInt(val);
+            document.getElementById('area-val').innerText = area;
+        }
+
+        function selectFloor(val) {
+            floors = val;
+            document.querySelectorAll('.floor-btn').forEach((btn, idx) => {
+                if (idx + 1 === val) {
+                    btn.classList.add('border-orange', 'bg-orange/5', 'text-orange');
+                    btn.classList.remove('border-border', 'text-navy');
+                } else {
+                    btn.classList.remove('border-orange', 'bg-orange/5', 'text-orange');
+                    btn.classList.add('border-border', 'text-navy');
+                }
+            });
+        }
+
+        // Calculation
+        function calculate() {
+            const costPerM2 = BASE_COST_PER_M2 * cityMult * typeMult * qualMult;
+            const total = costPerM2 * area * (1 + (floors - 1) * 0.03);
+            totalCost = total;
+
+            const kabaInsaat = total * 0.45;
+            const inceIsler = total * 0.30;
+            const tesisat = total * 0.15;
+            const diger = total * 0.10;
+            const dovizEtkisi = (total * 0.18) / USD_RATE;
+
+            // Duration
+            let months = Math.max(4, Math.ceil(area / 80));
+            if (selectedQuality === 'luks') months *= 1.3;
+            if (floors > 2) months += floors * 0.5;
+            months = Math.round(months);
+
+            // Update UI
+            animateValue('res-total', 0, total, 1200, '₺');
+            document.getElementById('res-per-m2').innerText = `₺${Math.round(total / area).toLocaleString('tr-TR')} / m²`;
+            document.getElementById('res-duration').innerText = `${months} ay`;
+            
+            document.getElementById('val-kaba').innerText = `₺${Math.round(kabaInsaat).toLocaleString('tr-TR')}`;
+            document.getElementById('val-ince').innerText = `₺${Math.round(inceIsler).toLocaleString('tr-TR')}`;
+            document.getElementById('val-tesisat').innerText = `₺${Math.round(tesisat).toLocaleString('tr-TR')}`;
+            document.getElementById('val-diger').innerText = `₺${Math.round(diger).toLocaleString('tr-TR')}`;
+            document.getElementById('res-doviz').innerText = `₺${Math.round(dovizEtkisi).toLocaleString('tr-TR')}`;
+
+            nextStep(5);
+        }
+
+        function animateValue(id, start, end, duration, prefix = '') {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = prefix + current.toLocaleString('tr-TR');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function resetCalculator() {
+            currentStep = 1;
+            selectedCity = null;
+            selectedType = null;
+            selectedQuality = 'orta';
+            area = 150;
+            floors = 2;
+            
+            // Reset UI
+            document.querySelectorAll('.step-content').forEach(s => s.classList.add('hidden'));
+            document.getElementById('step-1').classList.remove('hidden');
+            
+            document.querySelectorAll('.step-circle').forEach((dot, idx) => {
+                dot.classList.remove('active', 'completed');
+                dot.innerHTML = idx + 1;
+                if (idx === 0) dot.classList.add('active');
+            });
+            document.querySelectorAll('.step-line').forEach(l => l.classList.remove('completed'));
+            
+            document.querySelectorAll('.city-card, .type-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById('btn-next-1').disabled = true;
+            document.getElementById('btn-next-1').classList.add('opacity-50', 'cursor-not-allowed');
+            document.getElementById('btn-next-2').disabled = true;
+            document.getElementById('btn-next-2').classList.add('opacity-50', 'cursor-not-allowed');
+            
+            document.getElementById('area-slider').value = 150;
+            updateArea(150);
+            selectFloor(2);
+            
+            window.scrollTo({ top: document.getElementById('calculator').offsetTop - 100, behavior: 'smooth' });
+        }
+
+        // FAQ Toggle
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        // Modal
+        function showPdfModal() {
+            document.getElementById('pdf-modal').classList.remove('hidden');
+        }
+
+        function hidePdfModal() {
+            document.getElementById('pdf-modal').classList.add('hidden');
+            document.getElementById('success-msg').classList.add('hidden');
+        }
+
+        function handlePdfSubmit(e) {
+            e.preventDefault();
+            document.getElementById('success-msg').classList.remove('hidden');
+            
+            setTimeout(() => {
+                hidePdfModal();
+                window.print();
+            }, 2000);
+        }
+
+        // Set current date
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('last-update').innerText = `Son güncelleme: ${new Date().toLocaleDateString('tr-TR', options)}`;
+    </script>
+</body>
+</html>
