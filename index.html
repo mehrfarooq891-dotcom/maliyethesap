@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İnşaat Maliyeti Hesaplama 2026 | Ücretsiz & Anlık | MaliyetHesap</title>
-    <meta name="description" content="2026 güncel birim fiyatlarıyla inşaat maliyetinizi ücretsiz hesaplayın. Şehir bazlı, m² bazlı, anlık sonuç. Kayıt veya üyelik gerekmez.">
+    <meta name="description" content="2026 güncel birim fiyatlarıyla inşaat maliyetinizi ücretsiz hesaplayın. 8 şehir, şehir bazlı katsayı, anlık sonuç. Kayıt veya üyelik gerekmez.">
     <link rel="canonical" href="https://maliyethesap.com.tr/">
     <link rel="alternate" hreflang="tr-TR" href="https://maliyethesap.com.tr/">
 
@@ -17,7 +17,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,23 +26,20 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#0D2137',
-                        'navy-mid': '#1B3A5C',
+                        navy: '#0A1628',
+                        navy2: '#112240',
                         orange: '#E8792A',
-                        cream: '#F7F4EF',
-                        green: '#2E7D52',
-                        border: '#E2DDD6',
+                        orange2: '#FF8C3B',
+                        cream: '#FAF7F2',
+                        gold: '#C9A84C',
+                        border: '#E8E2D9',
+                        green: '#1A6B45',
+                        muted: '#8A8278',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['DM Sans', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                         mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    borderRadius: {
-                        'calculator': '20px',
-                    },
-                    boxShadow: {
-                        'calculator': '0 20px 60px rgba(0,0,0,0.15)',
                     }
                 }
             }
@@ -50,155 +47,376 @@
     </script>
 
     <style type="text/css">
-        body {
-            background-color: #F7F4EF;
-            color: #0D2137;
-            font-family: 'Inter', sans-serif;
+        :root {
+            --navy: #0A1628;
+            --navy2: #112240;
+            --orange: #E8792A;
+            --orange2: #FF8C3B;
+            --cream: #FAF7F2;
+            --gold: #C9A84C;
+            --white: #FFFFFF;
+            --border: #E8E2D9;
+            --green: #1A6B45;
+            --muted: #8A8278;
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at top left, rgba(232, 121, 42, 0.08), transparent 40%),
-                        linear-gradient(to bottom, #0D2137, #1B3A5C);
+        body {
+            background-color: var(--cream);
+            color: var(--navy);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-section {
+            background-color: var(--navy);
+            min-height: 480px;
+            position: relative;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--orange);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(232, 121, 42, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(232, 121, 42, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(232, 121, 42, 0); }
+        }
+
+        .hero-diagonal {
+            height: 80px;
+            background: linear-gradient(to bottom right, var(--navy) 50%, var(--cream) 50%);
         }
 
         .calculator-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            border: 1px solid #E2DDD6;
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: 0 24px 80px rgba(10, 22, 40, 0.14), 0 4px 16px rgba(10, 22, 40, 0.06);
+            border: 1px solid rgba(232, 121, 42, 0.08);
+            transform: translateY(-40px);
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .step-line {
-            height: 2px;
-            background: #E2DDD6;
-            flex-grow: 1;
-            margin: 0 10px;
-            transition: background 0.3s ease;
-        }
-
-        .step-line.completed {
-            background: #2E7D52;
+        .progress-header {
+            background: var(--navy);
+            border-radius: 24px 24px 0 0;
+            padding: 24px;
         }
 
         .step-circle {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
-            border: 2px solid #E2DDD6;
-            background: white;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.4);
             transition: all 0.3s ease;
         }
 
-        .step-circle.active {
-            border-color: #E8792A;
-            color: #E8792A;
+        .step-circle.on {
+            border-color: var(--orange);
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 0 16px rgba(232, 121, 42, 0.5);
         }
 
-        .step-circle.completed {
-            border-color: #2E7D52;
-            background: #2E7D52;
+        .step-circle.done {
+            background: var(--green);
+            border-color: var(--green);
             color: white;
         }
 
-        .city-card, .type-card, .quality-card {
+        .step-line {
+            height: 1.5px;
+            background: rgba(255, 255, 255, 0.1);
+            flex-grow: 1;
+            margin: 0 12px;
+        }
+
+        .step-line.done {
+            background: var(--green);
+        }
+
+        .city-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
             cursor: pointer;
             transition: all 0.2s ease;
-            border: 1px solid #E2DDD6;
+            position: relative;
         }
 
-        .city-card:hover, .type-card:hover, .quality-card:hover {
-            border-color: #E8792A;
-            background-color: #FFF8F3;
+        .city-card:hover {
+            border-color: var(--orange);
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 121, 42, 0.12);
         }
 
-        .city-card.selected, .type-card.selected, .quality-card.selected {
-            border-color: #E8792A;
-            background-color: #FFF8F3;
-            box-shadow: 0 4px 12px rgba(232, 121, 42, 0.1);
+        .city-card.sel {
+            border-color: var(--orange);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(232, 121, 42, 0.12);
+        }
+
+        .city-icon-box {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #f0e6d8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .type-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .type-card:hover {
+            border-color: var(--orange);
+            background-color: white;
+        }
+
+        .type-card.sel {
+            border-color: var(--orange);
+            background-color: white;
+        }
+
+        .type-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: #f0e6d8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+
+        .cost-badge {
+            background: #FFF0E6;
+            color: var(--orange);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 100px;
+        }
+
+        .quality-card {
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .quality-card.featured {
+            border: 1.5px solid var(--gold);
+            background: white;
+        }
+
+        .gold-badge {
+            background: var(--gold);
+            color: white;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .slider-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .floor-btn {
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .floor-btn.sel {
+            border-color: var(--orange);
+            background-color: white;
+            color: var(--orange);
+        }
+
+        .calculate-btn {
+            background: var(--orange);
+            box-shadow: 0 8px 24px rgba(232, 121, 42, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .calculate-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(232, 121, 42, 0.4);
         }
 
         .results-banner {
-            background: linear-gradient(135deg, #0D2137, #1B3A5C);
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 32px;
         }
 
-        .currency-impact {
-            border-left: 4px solid #E8792A;
-            background: #FFF8F3;
+        .currency-box {
+            background: #FFF8F0;
+            border: 1px solid rgba(232, 121, 42, 0.2);
+            border-left: 4px solid var(--orange);
+            border-radius: 0 12px 12px 0;
+            padding: 20px;
+        }
+
+        .section-badge {
+            background: rgba(232, 121, 42, 0.1);
+            color: var(--orange);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        .orange-underline {
+            width: 60px;
+            height: 3px;
+            background-color: var(--orange);
+            border-radius: 2px;
+            margin-top: 12px;
+        }
+
+        .how-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .how-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 42px;
+            font-weight: 600;
+            color: rgba(232, 121, 42, 0.12);
+            line-height: 1;
+            margin-bottom: 16px;
         }
 
         .faq-item {
-            border-bottom: 1px solid #E2DDD6;
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
         }
 
-        .faq-trigger:after {
-            content: '+';
-            float: right;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+        .faq-item.open {
+            border-color: var(--orange);
         }
 
-        .faq-item.open .faq-trigger:after {
-            content: '-';
+        .faq-plus {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
-        .faq-content {
+        .faq-item.open .faq-plus {
+            background: var(--orange);
+            color: white;
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
 
-        .faq-item.open .faq-content {
+        .faq-item.open .faq-answer {
             max-height: 500px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .navy-card {
+            background: var(--navy);
+            border-radius: 24px;
+            padding: 32px;
+        }
+
+        .navy-row {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .trust-strip {
+            background: var(--navy);
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .trust-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--green);
+            border-radius: 50%;
         }
 
         /* Print Styles */
         @media print {
-            body { background: white; }
             .no-print { display: none !important; }
-            .calculator-card { box-shadow: none; border: 1px solid #ccc; }
-            .results-banner { background: #0D2137 !important; color: white !important; -webkit-print-color-adjust: exact; }
-            .results-banner * { color: white !important; }
-            .results-banner .text-orange { color: #E8792A !important; }
-        }
-
-        /* Custom Slider */
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 100%;
-            background: transparent;
-        }
-
-        input[type=range]:focus {
-            outline: none;
-        }
-
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 6px;
-            cursor: pointer;
-            background: #E2DDD6;
-            border-radius: 3px;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: #E8792A;
-            cursor: pointer;
-            -webkit-appearance: none;
-            margin-top: -7px;
-        }
-
-        .modal-overlay {
-            background: rgba(13, 33, 55, 0.8);
-            backdrop-filter: blur(4px);
+            .calculator-card { transform: none; box-shadow: none; border: 1px solid #ccc; }
+            .results-banner { background: #0A1628 !important; color: white !important; -webkit-print-color-adjust: exact; }
         }
     </style>
 
@@ -294,324 +512,355 @@
 <body class="antialiased">
 
     <!-- NAVBAR -->
-    <nav class="bg-navy py-4 px-6 md:px-12 flex items-center justify-between sticky top-0 z-50 no-print">
-        <div class="text-2xl font-serif text-white">
-            Maliyet<span class="text-orange">Hesap</span>
-        </div>
-        <div class="hidden md:flex items-center space-x-8 text-white/80 text-sm font-medium">
-            <a href="#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a>
-            <a href="#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a>
-            <a href="#hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a>
-        </div>
-        <div class="bg-orange/10 text-orange border border-orange/20 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
-            Ücretsiz
+    <nav class="sticky top-0 z-[100] bg-navy h-[64px] flex items-center px-6 md:px-12 border-b border-white/5 no-print">
+        <div class="max-w-7xl w-full mx-auto flex justify-between items-center">
+            <div class="text-2xl font-serif font-black text-white tracking-tight">
+                Maliyet<span class="text-orange">Hesap</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-12 text-sm font-medium text-white/70">
+                <a href="#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a>
+                <a href="#sehirler" class="hover:text-white transition-colors">Şehirler</a>
+                <a href="#faq" class="hover:text-white transition-colors">S.S.S</a>
+                <a href="#hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a>
+            </div>
+
+            <div class="flex items-center">
+                <div class="bg-orange text-white text-xs font-bold uppercase tracking-widest px-[14px] py-[5px] rounded-[100px]">
+                    Ücretsiz
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <header class="hero-gradient pt-16 pb-32 px-6 md:px-12 text-center relative overflow-hidden no-print">
-        <div class="max-w-4xl mx-auto relative z-10">
-            <div class="inline-flex items-center bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-white/90 text-xs font-medium mb-6">
-                <span class="mr-2">📅</span> 2026 Güncel Piyasa Fiyatları
+    <header class="hero-section pt-20 pb-12 px-6 md:px-12 no-print">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+                <span class="pulse-dot"></span>
+                <span class="text-white/80 text-xs font-bold uppercase tracking-widest">2026 Güncel Piyasa Fiyatları</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">
-                İnşaat Maliyetinizi <span class="text-orange italic">Dakikada</span> Hesaplayın
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-black leading-[1.1] mb-6">
+                İnşaat Maliyetini <br>
+                <span style="color:#E8792A">Dakikada</span>
+                Hesaplayın
             </h1>
-            <p class="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            
+            <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
                 Kayıt gerektirmez. Şehrinize ve yapı tipinize özel, günlük güncellenen fiyatlarla anlık sonuç.
             </p>
-            
-            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                <div class="flex items-center text-white/80 text-sm">
-                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
-                    12.4K bu ay hesaplayan
+
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <div class="text-center">
+                    <div class="text-orange text-2xl font-mono font-bold mb-1">12.4K</div>
+                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest">bu ay hesaplayan</div>
                 </div>
-                <div class="flex items-center text-white/80 text-sm">
-                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
-                    8 büyük şehir
+                <div class="text-center">
+                    <div class="text-orange text-2xl font-mono font-bold mb-1">8</div>
+                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest">büyük şehir</div>
                 </div>
-                <div class="flex items-center text-white/80 text-sm">
-                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
-                    %0 kayıt zorunluluğu
+                <div class="text-center">
+                    <div class="text-orange text-2xl font-mono font-bold mb-1">%0</div>
+                    <div class="text-white/40 text-[10px] uppercase font-bold tracking-widest">kayıt zorunluluğu</div>
                 </div>
             </div>
         </div>
     </header>
 
+    <div class="hero-diagonal no-print"></div>
+
     <!-- CALCULATOR SECTION -->
-    <main class="max-w-4xl mx-auto -mt-20 px-4 relative z-20 pb-20">
-        <div class="calculator-card p-6 md:p-10" id="calculator">
+    <main class="max-w-7xl mx-auto px-6 md:px-12 relative z-20 pb-32">
+        <div class="calculator-card overflow-hidden" id="calculator">
             
-            <!-- Step Indicator -->
-            <div class="flex items-center justify-between mb-10 no-print">
-                <div class="flex flex-col items-center">
-                    <div class="step-circle active" id="step-dot-1">1</div>
-                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Şehir</span>
-                </div>
-                <div class="step-line" id="step-line-1"></div>
-                <div class="flex flex-col items-center">
+            <!-- Progress Header -->
+            <div class="progress-header flex items-center justify-between no-print">
+                <div class="flex items-center flex-1">
+                    <div class="step-circle on" id="step-dot-1">1</div>
+                    <div class="step-line" id="step-line-1"></div>
                     <div class="step-circle" id="step-dot-2">2</div>
-                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Yapı</span>
-                </div>
-                <div class="step-line" id="step-line-2"></div>
-                <div class="flex flex-col items-center">
+                    <div class="step-line" id="step-line-2"></div>
                     <div class="step-circle" id="step-dot-3">3</div>
-                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Kalite</span>
-                </div>
-                <div class="step-line" id="step-line-3"></div>
-                <div class="flex flex-col items-center">
+                    <div class="step-line" id="step-line-3"></div>
                     <div class="step-circle" id="step-dot-4">4</div>
-                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Detay</span>
-                </div>
-                <div class="step-line" id="step-line-4"></div>
-                <div class="flex flex-col items-center">
+                    <div class="step-line" id="step-line-4"></div>
                     <div class="step-circle" id="step-dot-5">5</div>
-                    <span class="text-[10px] mt-2 font-bold uppercase text-navy/40">Sonuç</span>
                 </div>
             </div>
 
-            <!-- STEP 1: City -->
-            <div id="step-1" class="step-content">
-                <h2 class="text-2xl font-serif mb-2">Şehrinizi seçin</h2>
-                <p class="text-navy/60 text-sm mb-8">İnşaat maliyetleri şehre göre %15–35 farklılık göstermektedir.</p>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('istanbul', 1.35)">
-                        <div class="text-2xl mb-2">🏙️</div>
-                        <div class="font-bold text-navy">İstanbul</div>
-                        <div class="text-xs text-orange font-mono">₺9.5K–14K/m²</div>
+            <div class="p-8 md:p-12">
+                <!-- STEP 1: City -->
+                <div id="step-1" class="step-content">
+                    <div class="mb-10">
+                        <h2 class="text-3xl font-serif font-bold mb-3">Hangi şehirde inşaat yapacaksınız?</h2>
+                        <p class="text-muted leading-relaxed">Şehir bazlı katsayılar, nakliye ve yerel işçilik maliyetlerini %35'e kadar etkiler.</p>
                     </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('ankara', 1.0)">
-                        <div class="text-2xl mb-2">🏛️</div>
-                        <div class="font-bold text-navy">Ankara</div>
-                        <div class="text-xs text-orange font-mono">₺7.8K–11.5K/m²</div>
-                    </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('izmir', 1.15)">
-                        <div class="text-2xl mb-2">🌊</div>
-                        <div class="font-bold text-navy">İzmir</div>
-                        <div class="text-xs text-orange font-mono">₺8.2K–12K/m²</div>
-                    </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('bursa', 0.95)">
-                        <div class="text-2xl mb-2">🌿</div>
-                        <div class="font-bold text-navy">Bursa</div>
-                        <div class="text-xs text-orange font-mono">₺7.2K–10.5K/m²</div>
-                    </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('antalya', 1.05)">
-                        <div class="text-2xl mb-2">🌴</div>
-                        <div class="font-bold text-navy">Antalya</div>
-                        <div class="text-xs text-orange font-mono">₺8K–11.5K/m²</div>
-                    </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('adana', 0.88)">
-                        <div class="text-2xl mb-2">☀️</div>
-                        <div class="font-bold text-navy">Adana</div>
-                        <div class="text-xs text-orange font-mono">₺6.8K–10K/m²</div>
-                    </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('kayseri', 0.85)">
-                        <div class="text-2xl mb-2">🏔️</div>
-                        <div class="font-bold text-navy">Kayseri</div>
-                        <div class="text-xs text-orange font-mono">₺6.5K–9.5K/m²</div>
-                    </div>
-                    <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('gaziantep', 0.87)">
-                        <div class="text-2xl mb-2">🫒</div>
-                        <div class="font-bold text-navy">Gaziantep</div>
-                        <div class="text-xs text-orange font-mono">₺6.7K–9.8K/m²</div>
-                    </div>
-                </div>
-
-                <div class="flex justify-end">
-                    <button id="btn-next-1" disabled class="bg-orange text-white px-8 py-3 rounded-full font-bold opacity-50 cursor-not-allowed transition-all hover:bg-orange/90" onclick="nextStep(2)">
-                        Devam Et →
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 2: Type -->
-            <div id="step-2" class="step-content hidden">
-                <h2 class="text-2xl font-serif mb-2">Yapı tipini seçin</h2>
-                <p class="text-navy/60 text-sm mb-8">Yapı tipi, temel ve çatı maliyetlerini doğrudan etkiler.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('apartman', 1.0)">
-                        <div class="text-3xl mr-4">🏢</div>
-                        <div>
-                            <div class="font-bold text-navy">Apartman Dairesi</div>
-                            <div class="text-xs text-navy/50">Standart çok katlı yapı</div>
-                        </div>
-                    </div>
-                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('villa', 1.18)">
-                        <div class="text-3xl mr-4">🏡</div>
-                        <div>
-                            <div class="font-bold text-navy">Villa</div>
-                            <div class="text-xs text-orange">+%18 ek maliyet</div>
-                        </div>
-                    </div>
-                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('dubleks', 1.12)">
-                        <div class="text-3xl mr-4">🏠</div>
-                        <div>
-                            <div class="font-bold text-navy">Dubleks</div>
-                            <div class="text-xs text-orange">+%12 ek maliyet</div>
-                        </div>
-                    </div>
-                    <div class="type-card p-6 rounded-xl flex items-center" onclick="selectType('mustakil', 1.08)">
-                        <div class="text-3xl mr-4">🏘️</div>
-                        <div>
-                            <div class="font-bold text-navy">Müstakil Ev</div>
-                            <div class="text-xs text-orange">+%8 ek maliyet</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-between">
-                    <button class="text-navy/40 font-bold hover:text-navy transition-colors" onclick="prevStep(1)">← Geri</button>
-                    <button id="btn-next-2" disabled class="bg-orange text-white px-8 py-3 rounded-full font-bold opacity-50 cursor-not-allowed transition-all hover:bg-orange/90" onclick="nextStep(3)">
-                        Devam Et →
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 3: Quality -->
-            <div id="step-3" class="step-content hidden">
-                <h2 class="text-2xl font-serif mb-2">İnşaat kalitesi</h2>
-                <p class="text-navy/60 text-sm mb-8">Malzeme ve işçilik kalitesi toplam bütçeyi %50'ye kadar değiştirebilir.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                    <div class="quality-card p-6 rounded-xl text-center" onclick="selectQuality('ekonomik', 0.78)">
-                        <div class="text-3xl mb-3">🔧</div>
-                        <div class="font-bold text-navy mb-1">Ekonomik</div>
-                        <div class="text-xs text-navy/50">Temel malzeme, standart işçilik</div>
-                    </div>
-                    <div class="quality-card p-6 rounded-xl text-center selected" onclick="selectQuality('orta', 1.0)">
-                        <div class="text-3xl mb-3">⭐</div>
-                        <div class="font-bold text-navy mb-1">Orta Kalite</div>
-                        <div class="text-xs text-navy/50">Orta segment, deneyimli ekip</div>
-                    </div>
-                    <div class="quality-card p-6 rounded-xl text-center" onclick="selectQuality('luks', 1.45)">
-                        <div class="text-3xl mb-3">💎</div>
-                        <div class="font-bold text-navy mb-1">Lüks</div>
-                        <div class="text-xs text-navy/50">İthal malzeme, mimari işçilik</div>
-                    </div>
-                </div>
-
-                <div class="flex justify-between">
-                    <button class="text-navy/40 font-bold hover:text-navy transition-colors" onclick="prevStep(2)">← Geri</button>
-                    <button class="bg-orange text-white px-8 py-3 rounded-full font-bold transition-all hover:bg-orange/90" onclick="nextStep(4)">
-                        Devam Et →
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 4: Area & Floors -->
-            <div id="step-4" class="step-content hidden">
-                <h2 class="text-2xl font-serif mb-2">Alan ve kat bilgisi</h2>
-                <p class="text-navy/60 text-sm mb-8">İnşaat alanınız ve kat sayınız maliyet dağılımını belirler.</p>
-                
-                <div class="mb-10">
-                    <div class="flex justify-between items-end mb-4">
-                        <label class="font-bold text-navy uppercase text-xs tracking-wider">İnşaat Alanı (m²)</label>
-                        <div class="text-3xl font-mono text-orange" id="area-val">150</div>
-                    </div>
-                    <input type="range" min="50" max="1000" step="10" value="150" class="mb-8" id="area-slider" oninput="updateArea(this.value)">
                     
-                    <label class="block font-bold text-navy uppercase text-xs tracking-wider mb-4">Kat Sayısı</label>
-                    <div class="grid grid-cols-4 gap-3">
-                        <button class="floor-btn py-3 rounded-lg border border-border font-bold text-navy hover:border-orange transition-all" onclick="selectFloor(1)">1</button>
-                        <button class="floor-btn py-3 rounded-lg border border-orange bg-orange/5 text-orange font-bold transition-all" onclick="selectFloor(2)">2</button>
-                        <button class="floor-btn py-3 rounded-lg border border-border font-bold text-navy hover:border-orange transition-all" onclick="selectFloor(3)">3</button>
-                        <button class="floor-btn py-3 rounded-lg border border-border font-bold text-navy hover:border-orange transition-all" onclick="selectFloor(4)">4+</button>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                        <div class="city-card" onclick="selectCity('istanbul', 1.35)">
+                            <div class="city-icon-box">🏙️</div>
+                            <div class="font-bold text-sm mb-1">İstanbul</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Metropol</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('ankara', 1.0)">
+                            <div class="city-icon-box">🏛️</div>
+                            <div class="font-bold text-sm mb-1">Ankara</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Başkent</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('izmir', 1.15)">
+                            <div class="city-icon-box">🌊</div>
+                            <div class="font-bold text-sm mb-1">İzmir</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Ege</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('bursa', 0.95)">
+                            <div class="city-icon-box">🌿</div>
+                            <div class="font-bold text-sm mb-1">Bursa</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Sanayi</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('antalya', 1.05)">
+                            <div class="city-icon-box">🌴</div>
+                            <div class="font-bold text-sm mb-1">Antalya</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Turizm</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('adana', 0.88)">
+                            <div class="city-icon-box">☀️</div>
+                            <div class="font-bold text-sm mb-1">Adana</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Güney</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('kayseri', 0.85)">
+                            <div class="city-icon-box">🏔️</div>
+                            <div class="font-bold text-sm mb-1">Kayseri</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">İç Anadolu</div>
+                        </div>
+                        <div class="city-card" onclick="selectCity('gaziantep', 0.87)">
+                            <div class="city-icon-box">🫒</div>
+                            <div class="font-bold text-sm mb-1">Gaziantep</div>
+                            <div class="text-[10px] text-muted uppercase font-bold tracking-widest">Güneydoğu</div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button id="btn-next-1" disabled class="calculate-btn text-white px-10 py-4 rounded-xl font-bold opacity-50 cursor-not-allowed" onclick="nextStep(2)">
+                            Sonraki Adım →
+                        </button>
                     </div>
                 </div>
 
-                <div class="flex justify-between">
-                    <button class="text-navy/40 font-bold hover:text-navy transition-colors" onclick="prevStep(3)">← Geri</button>
-                    <button class="bg-orange text-white px-8 py-3 rounded-full font-bold transition-all hover:bg-orange/90" onclick="calculate()">
-                        Maliyeti Hesapla →
-                    </button>
-                </div>
-            </div>
-
-            <!-- STEP 5: Results -->
-            <div id="step-5" class="step-content hidden">
-                <div class="results-banner rounded-2xl p-8 mb-8 text-white flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div>
-                        <div class="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tahmini Toplam Maliyet</div>
-                        <div class="text-4xl md:text-5xl font-mono text-orange mb-1" id="res-total">₺0</div>
-                        <div class="text-white/40 text-sm font-mono" id="res-per-m2">₺0 / m²</div>
+                <!-- STEP 2: Type -->
+                <div id="step-2" class="step-content hidden">
+                    <div class="mb-10">
+                        <h2 class="text-3xl font-serif font-bold mb-3">Yapı tipini belirleyin</h2>
+                        <p class="text-muted leading-relaxed">Villa ve müstakil yapılar, apartman dairelerine göre temel ve çatı alanı nedeniyle daha maliyetlidir.</p>
                     </div>
-                    <div class="text-center md:text-right">
-                        <div class="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Tahmini Süre</div>
-                        <div class="text-3xl font-mono" id="res-duration">0 ay</div>
-                    </div>
-                </div>
-
-                <div class="mb-10">
-                    <h3 class="text-[10px] font-bold text-navy/40 uppercase tracking-[0.2em] mb-6">Maliyet Dağılımı</h3>
                     
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between text-sm mb-2">
-                                <div class="flex items-center font-semibold text-navy">
-                                    <span class="w-3 h-3 rounded-full bg-navy mr-2"></span> Kaba İnşaat
-                                </div>
-                                <div class="font-mono text-navy/60">45% — <span id="val-kaba">₺0</span></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+                        <div class="type-card" onclick="selectType('apartman', 1.0)">
+                            <div class="type-icon-box">🏢</div>
+                            <div class="flex-1">
+                                <div class="font-bold text-navy mb-1">Apartman Dairesi</div>
+                                <div class="text-xs text-muted">Standart çok katlı betonarme yapı</div>
                             </div>
-                            <div class="w-full h-1.5 bg-navy/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-navy w-[45%]"></div>
-                            </div>
+                            <div class="cost-badge">BAZ</div>
                         </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-2">
-                                <div class="flex items-center font-semibold text-navy">
-                                    <span class="w-3 h-3 rounded-full bg-orange mr-2"></span> İnce İşler
-                                </div>
-                                <div class="font-mono text-navy/60">30% — <span id="val-ince">₺0</span></div>
+                        <div class="type-card" onclick="selectType('villa', 1.18)">
+                            <div class="type-icon-box">🏡</div>
+                            <div class="flex-1">
+                                <div class="font-bold text-navy mb-1">Lüks Villa</div>
+                                <div class="text-xs text-muted">Müstakil, bahçeli özel yapı</div>
                             </div>
-                            <div class="w-full h-1.5 bg-orange/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-orange w-[30%]"></div>
-                            </div>
+                            <div class="cost-badge">+18%</div>
                         </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-2">
-                                <div class="flex items-center font-semibold text-navy">
-                                    <span class="w-3 h-3 rounded-full bg-green mr-2"></span> Tesisat
-                                </div>
-                                <div class="font-mono text-navy/60">15% — <span id="val-tesisat">₺0</span></div>
+                        <div class="type-card" onclick="selectType('dubleks', 1.12)">
+                            <div class="type-icon-box">🏠</div>
+                            <div class="flex-1">
+                                <div class="font-bold text-navy mb-1">Dubleks Konut</div>
+                                <div class="text-xs text-muted">İki katlı içten merdivenli yapı</div>
                             </div>
-                            <div class="w-full h-1.5 bg-green/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-green w-[15%]"></div>
-                            </div>
+                            <div class="cost-badge">+12%</div>
                         </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-2">
-                                <div class="flex items-center font-semibold text-navy">
-                                    <span class="w-3 h-3 rounded-full bg-purple-600 mr-2"></span> Diğer Giderler
-                                </div>
-                                <div class="font-mono text-navy/60">10% — <span id="val-diger">₺0</span></div>
+                        <div class="type-card" onclick="selectType('mustakil', 1.08)">
+                            <div class="type-icon-box">🏘️</div>
+                            <div class="flex-1">
+                                <div class="font-bold text-navy mb-1">Müstakil Ev</div>
+                                <div class="text-xs text-muted">Tek katlı bağımsız konut</div>
                             </div>
-                            <div class="w-full h-1.5 bg-purple-600/5 rounded-full overflow-hidden">
-                                <div class="h-full bg-purple-600 w-[10%]"></div>
-                            </div>
+                            <div class="cost-badge">+8%</div>
                         </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <button class="text-muted font-bold hover:text-navy transition-colors" onclick="prevStep(1)">← Geri Dön</button>
+                        <button id="btn-next-2" disabled class="calculate-btn text-white px-10 py-4 rounded-xl font-bold opacity-50 cursor-not-allowed" onclick="nextStep(3)">
+                            Sonraki Adım →
+                        </button>
                     </div>
                 </div>
 
-                <div class="currency-impact p-6 rounded-r-xl mb-10">
-                    <h4 class="font-bold text-navy mb-2 flex items-center">
-                        <span class="mr-2">💱</span> Döviz Kuru Etkisi
-                    </h4>
-                    <p class="text-sm text-navy/70 leading-relaxed">
-                        Dolar kuru 1 TL artarsa maliyetiniz yaklaşık <span class="font-bold text-navy" id="res-doviz">₺0</span> artar.
-                    </p>
+                <!-- STEP 3: Quality -->
+                <div id="step-3" class="step-content hidden">
+                    <div class="mb-10">
+                        <h2 class="text-3xl font-serif font-bold mb-3">Malzeme ve işçilik kalitesi</h2>
+                        <p class="text-muted leading-relaxed">Seçtiğiniz kalite segmenti, özellikle "İnce İşler" kaleminde bütçeyi doğrudan belirler.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                        <div class="quality-card" onclick="selectQuality('ekonomik', 0.82)">
+                            <div class="text-3xl mb-4">🔧</div>
+                            <div class="font-bold text-navy mb-2">Ekonomik</div>
+                            <div class="text-xs text-muted leading-relaxed">Standart yerli malzemeler, temel işçilik seviyesi.</div>
+                        </div>
+                        <div class="quality-card featured sel" onclick="selectQuality('orta', 1.0)">
+                            <div class="gold-badge">EN ÇOK TERCİH EDİLEN</div>
+                            <div class="text-3xl mb-4">⭐</div>
+                            <div class="font-bold text-navy mb-2">Orta (A Plus)</div>
+                            <div class="text-xs text-muted leading-relaxed">1. sınıf yerli malzemeler, yüksek uygulama kalitesi.</div>
+                        </div>
+                        <div class="quality-card" onclick="selectQuality('luks', 1.45)">
+                            <div class="text-3xl mb-4">💎</div>
+                            <div class="font-bold text-navy mb-2">Premium Lüks</div>
+                            <div class="text-xs text-muted leading-relaxed">İthal malzemeler, özel tasarım ve mimari detaylar.</div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <button class="text-muted font-bold hover:text-navy transition-colors" onclick="prevStep(2)">← Geri Dön</button>
+                        <button class="calculate-btn text-white px-10 py-4 rounded-xl font-bold" onclick="nextStep(4)">
+                            Sonraki Adım →
+                        </button>
+                    </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-4 no-print">
-                    <button class="flex-1 bg-navy text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center hover:bg-navy-mid transition-all" onclick="showPdfModal()">
-                        <span class="mr-2">📄</span> PDF Raporu İndir
-                    </button>
-                    <button class="flex-1 border-2 border-navy/10 text-navy px-8 py-4 rounded-xl font-bold hover:border-navy/20 transition-all" onclick="resetCalculator()">
-                        Yeni Hesaplama Yap
-                    </button>
+                <!-- STEP 4: Details -->
+                <div id="step-4" class="step-content hidden">
+                    <div class="mb-10">
+                        <h2 class="text-3xl font-serif font-bold mb-3">Alan ve kat detayları</h2>
+                        <p class="text-muted leading-relaxed">İnşaat alanınız arttıkça m² birim maliyeti ölçek ekonomisiyle bir miktar düşer.</p>
+                    </div>
+                    
+                    <div class="slider-box mb-12">
+                        <div class="flex justify-between items-end mb-6">
+                            <div>
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-1">Toplam İnşaat Alanı</label>
+                                <div class="text-4xl font-mono font-bold text-navy"><span id="area-val">150</span> <span class="text-lg text-muted">m²</span></div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-[10px] font-bold uppercase tracking-widest text-orange mb-1">Hata Payı</div>
+                                <div class="text-sm font-bold text-navy">± %5.0</div>
+                            </div>
+                        </div>
+                        <input type="range" min="50" max="1200" step="10" value="150" class="w-full h-2 bg-border rounded-lg appearance-none cursor-pointer accent-orange" id="area-slider" oninput="updateArea(this.value)">
+                        
+                        <div class="mt-12">
+                            <label class="block text-[10px] font-bold uppercase tracking-widest text-muted mb-4">Kat Sayısı (Zemin Dahil)</label>
+                            <div class="grid grid-cols-4 gap-4">
+                                <button class="floor-btn" onclick="selectFloor(1)">1 Kat</button>
+                                <button class="floor-btn sel" onclick="selectFloor(2)">2 Kat</button>
+                                <button class="floor-btn" onclick="selectFloor(3)">3 Kat</button>
+                                <button class="floor-btn" onclick="selectFloor(4)">4+ Kat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <button class="text-muted font-bold hover:text-navy transition-colors" onclick="prevStep(3)">← Geri Dön</button>
+                        <button class="calculate-btn text-white px-12 py-5 rounded-xl font-bold text-lg" onclick="calculate()">
+                            Maliyeti Hesapla
+                        </button>
+                    </div>
                 </div>
-            </div>
+
+                <!-- STEP 5: Results -->
+                <div id="step-5" class="step-content hidden">
+                    <div class="results-banner mb-10">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                            <div class="text-center md:text-left">
+                                <div class="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-2">Tahmini Toplam İnşaat Maliyeti</div>
+                                <div class="text-5xl md:text-6xl font-mono font-bold text-orange tracking-tighter" id="res-total">₺0</div>
+                                <div class="mt-4 flex items-center justify-center md:justify-start gap-4">
+                                    <div class="bg-white/10 px-3 py-1 rounded text-[10px] text-white/80 font-bold uppercase" id="res-per-m2">₺0 / m²</div>
+                                    <div class="bg-white/10 px-3 py-1 rounded text-[10px] text-white/80 font-bold uppercase" id="res-duration">0 Ay</div>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-auto">
+                                <button onclick="showPdfModal()" class="w-full md:w-auto bg-white text-navy px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-white/90 transition-all">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                    PDF Raporu İndir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-muted mb-6">Maliyet Dağılımı</h4>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold">Kaba İnşaat (%45)</span>
+                                        <span class="font-mono text-navy" id="val-kaba">₺0</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-border rounded-full overflow-hidden">
+                                        <div class="h-full bg-navy w-[45%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold">İnce İşler (%30)</span>
+                                        <span class="font-mono text-navy" id="val-ince">₺0</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-border rounded-full overflow-hidden">
+                                        <div class="h-full bg-orange w-[30%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold">Tesisat & Elektrik (%15)</span>
+                                        <span class="font-mono text-navy" id="val-tesisat">₺0</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-border rounded-full overflow-hidden">
+                                        <div class="h-full bg-navy2 w-[15%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold">Diğer Giderler (%10)</span>
+                                        <span class="font-mono text-navy" id="val-diger">₺0</span>
+                                    </div>
+                                    <div class="w-full h-1.5 bg-border rounded-full overflow-hidden">
+                                        <div class="h-full bg-muted w-[10%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-muted mb-6">Piyasa Analizi</h4>
+                            <div class="currency-box mb-6">
+                                <div class="text-[10px] font-bold text-orange uppercase tracking-widest mb-1">Döviz Hassasiyeti</div>
+                                <div class="text-sm leading-relaxed text-navy/80">
+                                    İnşaatınızdaki ithal kalemlerin (demir, tesisat, armatür) toplam döviz karşılığı yaklaşık <span class="font-bold text-navy" id="res-doviz">$0</span> seviyesindedir.
+                                </div>
+                            </div>
+                            <div class="bg-cream rounded-xl p-6 border border-border">
+                                <div class="flex items-start gap-4">
+                                    <div class="text-2xl">💡</div>
+                                    <div class="text-xs leading-relaxed text-muted">
+                                        <span class="font-bold text-navy block mb-1">Tasarruf İpucu:</span>
+                                        Kaba inşaat malzemelerini (demir, beton) toplu ve peşin alarak toplam maliyette %4 ile %7 arasında avantaj sağlayabilirsiniz.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-border flex justify-center">
+                        <button onclick="resetCalculator()" class="text-orange font-bold flex items-center gap-2 hover:underline">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            Yeni Hesaplama Yap
+                        </button>
+                    </div>
+                </div>
 
         </div>
     </main>
@@ -653,7 +902,7 @@
         </div>
     </section>
 
-    <section id="sehirler" class="py-24 px-6 md:px-12 no-print">
+    <section id="sehirler" class="bg-cream py-24 px-6 md:px-12 no-print">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-serif mb-4">Şehirlere Göre 2026 İnşaat Maliyetleri</h2>
@@ -788,7 +1037,7 @@
         </div>
     </section>
 
-    <section id="hakkimizda" class="py-24 px-6 md:px-12 no-print">
+    <section id="hakkimizda" class="bg-white py-24 px-6 md:px-12 no-print">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl font-serif mb-6">Hakkımızda</h2>
             <p class="text-navy/70 leading-relaxed mb-8">
@@ -901,12 +1150,17 @@
             document.getElementById(`step-${step}`).classList.remove('hidden');
             
             // Update dots
-            document.getElementById(`step-dot-${currentStep}`).classList.add('completed');
-            document.getElementById(`step-dot-${currentStep}`).innerHTML = '✓';
-            document.getElementById(`step-line-${currentStep}`).classList.add('completed');
+            const prevDot = document.getElementById(`step-dot-${currentStep}`);
+            prevDot.classList.remove('on');
+            prevDot.classList.add('done');
+            prevDot.innerHTML = '✓';
+            
+            const line = document.getElementById(`step-line-${currentStep}`);
+            if (line) line.classList.add('done');
             
             currentStep = step;
-            document.getElementById(`step-dot-${currentStep}`).classList.add('active');
+            const currentDot = document.getElementById(`step-dot-${currentStep}`);
+            if (currentDot) currentDot.classList.add('on');
             
             window.scrollTo({ top: document.getElementById('calculator').offsetTop - 100, behavior: 'smooth' });
         }
@@ -916,14 +1170,18 @@
             document.getElementById(`step-${step}`).classList.remove('hidden');
             
             // Revert dots
-            document.getElementById(`step-dot-${step}`).classList.remove('completed');
-            document.getElementById(`step-dot-${step}`).innerHTML = step;
-            document.getElementById(`step-line-${step}`).classList.remove('completed');
-            document.getElementById(`step-dot-${currentStep}`).classList.remove('active');
+            const currentDot = document.getElementById(`step-dot-${currentStep}`);
+            if (currentDot) currentDot.classList.remove('on', 'done');
+            
+            const prevDot = document.getElementById(`step-dot-${step}`);
+            prevDot.classList.remove('done');
+            prevDot.classList.add('on');
+            prevDot.innerHTML = step;
+            
+            const line = document.getElementById(`step-line-${step}`);
+            if (line) line.classList.remove('done');
             
             currentStep = step;
-            document.getElementById(`step-dot-${currentStep}`).classList.add('active');
-            
             window.scrollTo({ top: document.getElementById('calculator').offsetTop - 100, behavior: 'smooth' });
         }
 
@@ -932,30 +1190,32 @@
             selectedCity = id;
             cityMult = mult;
             
-            document.querySelectorAll('.city-card').forEach(c => c.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
+            document.querySelectorAll('.city-card').forEach(c => c.classList.remove('sel'));
+            event.currentTarget.classList.add('sel');
             
-            document.getElementById('btn-next-1').disabled = false;
-            document.getElementById('btn-next-1').classList.remove('opacity-50', 'cursor-not-allowed');
+            const btn = document.getElementById('btn-next-1');
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
         }
 
         function selectType(id, mult) {
             selectedType = id;
             typeMult = mult;
             
-            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
+            document.querySelectorAll('.type-card').forEach(c => c.classList.remove('sel'));
+            event.currentTarget.classList.add('sel');
             
-            document.getElementById('btn-next-2').disabled = false;
-            document.getElementById('btn-next-2').classList.remove('opacity-50', 'cursor-not-allowed');
+            const btn = document.getElementById('btn-next-2');
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
         }
 
         function selectQuality(id, mult) {
             selectedQuality = id;
             qualMult = mult;
             
-            document.querySelectorAll('.quality-card').forEach(c => c.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
+            document.querySelectorAll('.quality-card').forEach(c => c.classList.remove('sel'));
+            event.currentTarget.classList.add('sel');
         }
 
         function updateArea(val) {
@@ -966,12 +1226,10 @@
         function selectFloor(val) {
             floors = val;
             document.querySelectorAll('.floor-btn').forEach((btn, idx) => {
-                if (idx + 1 === val) {
-                    btn.classList.add('border-orange', 'bg-orange/5', 'text-orange');
-                    btn.classList.remove('border-border', 'text-navy');
+                if (idx + 1 === val || (idx === 3 && val >= 4)) {
+                    btn.classList.add('sel');
                 } else {
-                    btn.classList.remove('border-orange', 'bg-orange/5', 'text-orange');
-                    btn.classList.add('border-border', 'text-navy');
+                    btn.classList.remove('sel');
                 }
             });
         }
@@ -986,7 +1244,7 @@
             const inceIsler = total * 0.30;
             const tesisat = total * 0.15;
             const diger = total * 0.10;
-            const dovizEtkisi = (total * 0.18) / USD_RATE;
+            const usdTotal = total / USD_RATE;
 
             // Duration
             let months = Math.max(4, Math.ceil(area / 80));
@@ -997,13 +1255,13 @@
             // Update UI
             animateValue('res-total', 0, total, 1200, '₺');
             document.getElementById('res-per-m2').innerText = `₺${Math.round(total / area).toLocaleString('tr-TR')} / m²`;
-            document.getElementById('res-duration').innerText = `${months} ay`;
+            document.getElementById('res-duration').innerText = `${months} Ay`;
             
             document.getElementById('val-kaba').innerText = `₺${Math.round(kabaInsaat).toLocaleString('tr-TR')}`;
             document.getElementById('val-ince').innerText = `₺${Math.round(inceIsler).toLocaleString('tr-TR')}`;
             document.getElementById('val-tesisat').innerText = `₺${Math.round(tesisat).toLocaleString('tr-TR')}`;
             document.getElementById('val-diger').innerText = `₺${Math.round(diger).toLocaleString('tr-TR')}`;
-            document.getElementById('res-doviz').innerText = `₺${Math.round(dovizEtkisi).toLocaleString('tr-TR')}`;
+            document.getElementById('res-doviz').innerText = `$${Math.round(usdTotal).toLocaleString('en-US')}`;
 
             nextStep(5);
         }
@@ -1036,13 +1294,17 @@
             document.getElementById('step-1').classList.remove('hidden');
             
             document.querySelectorAll('.step-circle').forEach((dot, idx) => {
-                dot.classList.remove('active', 'completed');
+                dot.classList.remove('on', 'done');
                 dot.innerHTML = idx + 1;
-                if (idx === 0) dot.classList.add('active');
+                if (idx === 0) dot.classList.add('on');
             });
-            document.querySelectorAll('.step-line').forEach(l => l.classList.remove('completed'));
+            document.querySelectorAll('.step-line').forEach(l => l.classList.remove('done'));
             
-            document.querySelectorAll('.city-card, .type-card').forEach(c => c.classList.remove('selected'));
+            document.querySelectorAll('.city-card, .type-card, .quality-card, .floor-btn').forEach(c => c.classList.remove('sel'));
+            
+            // Set default quality
+            document.querySelectorAll('.quality-card')[1].classList.add('sel');
+            
             document.getElementById('btn-next-1').disabled = true;
             document.getElementById('btn-next-1').classList.add('opacity-50', 'cursor-not-allowed');
             document.getElementById('btn-next-2').disabled = true;
