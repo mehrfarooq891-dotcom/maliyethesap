@@ -18,7 +18,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,16 +27,16 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#0D2137',
-                        'navy-mid': '#1B3A5C',
+                        navy: '#1e3a5f',
+                        'navy-dark': '#162b46',
                         orange: '#E8792A',
-                        cream: '#F7F4EF',
+                        cream: '#FAF7F2',
                         green: '#2E7D52',
                         border: '#E2DDD6',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     borderRadius: {
@@ -52,14 +52,19 @@
 
     <style type="text/css">
         body {
-            background-color: #F7F4EF;
-            color: #0D2137;
-            font-family: 'Inter', sans-serif;
+            background-color: #FAF7F2;
+            color: #1e3a5f;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        h1, h2, h3, .font-serif, .font-heading {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
         }
 
         .hero-gradient {
             background: radial-gradient(circle at top left, rgba(232, 121, 42, 0.08), transparent 40%),
-                        linear-gradient(to bottom, #0D2137, #1B3A5C);
+                        linear-gradient(to bottom, #1e3a5f, #162b46);
         }
 
         .calculator-card {
@@ -109,7 +114,8 @@
         .city-card, .type-card, .quality-card {
             cursor: pointer;
             transition: all 0.2s ease;
-            border: 1px solid #E2DDD6;
+            border: 1.5px solid #E8E2D9;
+            background-color: #FFFFFF;
         }
 
         .city-card:hover, .type-card:hover, .quality-card:hover {
@@ -125,7 +131,7 @@
         }
 
         .results-banner {
-            background: linear-gradient(135deg, #0D2137, #1B3A5C);
+            background: linear-gradient(135deg, #1e3a5f, #162b46);
         }
 
         .currency-impact {
@@ -140,7 +146,7 @@
         .faq-trigger:after {
             content: '+';
             float: right;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
             font-weight: 400;
         }
 
@@ -155,7 +161,7 @@
         }
 
         .faq-item.open .faq-content {
-            max-height: 500px;
+            max-height: 800px;
         }
 
         /* Print Styles */
@@ -163,7 +169,7 @@
             body { background: white; }
             .no-print { display: none !important; }
             .calculator-card { box-shadow: none; border: 1px solid #ccc; }
-            .results-banner { background: #0D2137 !important; color: white !important; -webkit-print-color-adjust: exact; }
+            .results-banner { background: #1e3a5f !important; color: white !important; -webkit-print-color-adjust: exact; }
             .results-banner * { color: white !important; }
             .results-banner .text-orange { color: #E8792A !important; }
         }
@@ -198,7 +204,7 @@
         }
 
         .modal-overlay {
-            background: rgba(13, 33, 55, 0.8);
+            background: rgba(30, 58, 95, 0.8);
             backdrop-filter: blur(4px);
         }
     </style>
@@ -300,9 +306,9 @@
             Maliyet<span class="text-orange">Hesap</span>
         </div>
         <div class="hidden md:flex items-center space-x-8 text-white/80 text-sm font-medium">
-            <a href="#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a>
-            <a href="#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a>
-            <a href="#hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a>
+            <a href="/#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a>
+            <a href="/#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a>
+            <a href="/hakkimizda.html" class="hover:text-white transition-colors">Hakkımızda</a>
         </div>
         <div class="bg-orange/10 text-orange border border-orange/20 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
             Ücretsiz
@@ -315,25 +321,25 @@
             <div class="inline-flex items-center bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-white/90 text-xs font-medium mb-6">
                 <span class="mr-2">📅</span> 2026 Güncel Piyasa Fiyatları
             </div>
-            <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight">
-                İnşaat Maliyetinizi <span class="text-orange italic">Dakikada</span> Hesaplayın
+            <h1 class="text-4xl md:text-6xl font-heading text-white mb-6 leading-tight">
+                İnşaat Maliyetinizi <br> <span class="text-orange italic">Dakikada</span> Hesaplayın
             </h1>
             <p class="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
                 Kayıt gerektirmez. Şehrinize ve yapı tipinize özel, günlük güncellenen fiyatlarla anlık sonuç.
             </p>
             
             <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-                <div class="flex items-center text-white/80 text-sm">
-                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
+                <div class="flex items-center bg-white/5 px-4 py-2 rounded-lg text-white/80 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm border border-white/10">
                     12.4K bu ay hesaplayan
                 </div>
-                <div class="flex items-center text-white/80 text-sm">
-                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
+                <div class="flex items-center bg-white/5 px-4 py-2 rounded-lg text-white/80 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm border border-white/10">
                     8 büyük şehir
                 </div>
-                <div class="flex items-center text-white/80 text-sm">
-                    <span class="w-2 h-2 bg-orange rounded-full mr-2"></span>
+                <div class="flex items-center bg-white/5 px-4 py-2 rounded-lg text-white/80 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm border border-white/10">
                     %0 kayıt zorunluluğu
+                </div>
+                <div class="flex items-center bg-white/5 px-4 py-2 rounded-lg text-white/80 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm border border-white/10">
+                    Her gün güncellenen veriler
                 </div>
             </div>
         </div>
@@ -371,51 +377,51 @@
                 </div>
             </div>
 
-            <!-- STEP 1: City -->
+            <!-- STEP 1: City Selection -->
             <div id="step-1" class="step-content">
-                <h2 class="text-2xl font-serif mb-2">Şehrinizi seçin</h2>
+                <h2 class="text-2xl font-heading mb-2">Şehir seçin</h2>
                 <p class="text-navy/60 text-sm mb-8">İnşaat maliyetleri şehre göre %15–35 farklılık göstermektedir.</p>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('istanbul', 1.35)">
                         <div class="text-2xl mb-2">🏙️</div>
                         <div class="font-bold text-navy">İstanbul</div>
-                        <div class="text-xs text-orange font-mono">₺9.5K–14K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺9.5K–14K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('ankara', 1.0)">
                         <div class="text-2xl mb-2">🏛️</div>
                         <div class="font-bold text-navy">Ankara</div>
-                        <div class="text-xs text-orange font-mono">₺7.8K–11.5K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺7.8K–11.5K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('izmir', 1.15)">
                         <div class="text-2xl mb-2">🌊</div>
                         <div class="font-bold text-navy">İzmir</div>
-                        <div class="text-xs text-orange font-mono">₺8.2K–12K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺8.2K–12K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('bursa', 0.95)">
                         <div class="text-2xl mb-2">🌿</div>
                         <div class="font-bold text-navy">Bursa</div>
-                        <div class="text-xs text-orange font-mono">₺7.2K–10.5K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺7.2K–10.5K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('antalya', 1.05)">
                         <div class="text-2xl mb-2">🌴</div>
                         <div class="font-bold text-navy">Antalya</div>
-                        <div class="text-xs text-orange font-mono">₺8K–11.5K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺8K–11.5K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('adana', 0.88)">
                         <div class="text-2xl mb-2">☀️</div>
                         <div class="font-bold text-navy">Adana</div>
-                        <div class="text-xs text-orange font-mono">₺6.8K–10K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺6.8K–10K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('kayseri', 0.85)">
                         <div class="text-2xl mb-2">🏔️</div>
                         <div class="font-bold text-navy">Kayseri</div>
-                        <div class="text-xs text-orange font-mono">₺6.5K–9.5K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺6.5K–9.5K/m²</div>
                     </div>
                     <div class="city-card p-4 rounded-xl text-center" onclick="selectCity('gaziantep', 0.87)">
                         <div class="text-2xl mb-2">🫒</div>
                         <div class="font-bold text-navy">Gaziantep</div>
-                        <div class="text-xs text-orange font-mono">₺6.7K–9.8K/m²</div>
+                        <div class="text-xs text-orange font-mono font-semibold">₺6.7K–9.8K/m²</div>
                     </div>
                 </div>
 
@@ -426,9 +432,9 @@
                 </div>
             </div>
 
-            <!-- STEP 2: Type -->
+            <!-- STEP 2: Building Type -->
             <div id="step-2" class="step-content hidden">
-                <h2 class="text-2xl font-serif mb-2">Yapı tipini seçin</h2>
+                <h2 class="text-2xl font-heading mb-2">Yapı tipi</h2>
                 <p class="text-navy/60 text-sm mb-8">Yapı tipi, temel ve çatı maliyetlerini doğrudan etkiler.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
@@ -470,26 +476,26 @@
                 </div>
             </div>
 
-            <!-- STEP 3: Quality -->
+            <!-- STEP 3: Quality Level -->
             <div id="step-3" class="step-content hidden">
-                <h2 class="text-2xl font-serif mb-2">İnşaat kalitesi</h2>
+                <h2 class="text-2xl font-heading mb-2">Kalite seviyesi</h2>
                 <p class="text-navy/60 text-sm mb-8">Malzeme ve işçilik kalitesi toplam bütçeyi %50'ye kadar değiştirebilir.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-                    <div class="quality-card p-6 rounded-xl text-center" onclick="selectQuality('ekonomik', 0.78)">
-                        <div class="text-3xl mb-3">🔧</div>
+                    <div class="quality-card p-6 rounded-xl text-center group" onclick="selectQuality('ekonomik', 0.78)">
+                        <div class="text-3xl mb-3 transition-transform group-hover:scale-110">🔧</div>
                         <div class="font-bold text-navy mb-1">Ekonomik</div>
-                        <div class="text-xs text-navy/50">Temel malzeme, standart işçilik</div>
+                        <div class="text-xs text-navy/50 leading-tight">Temel malzeme, standart işçilik</div>
                     </div>
-                    <div class="quality-card p-6 rounded-xl text-center selected" onclick="selectQuality('orta', 1.0)">
-                        <div class="text-3xl mb-3">⭐</div>
+                    <div class="quality-card p-6 rounded-xl text-center group selected" onclick="selectQuality('orta', 1.0)">
+                        <div class="text-3xl mb-3 transition-transform group-hover:scale-110">⭐</div>
                         <div class="font-bold text-navy mb-1">Orta Kalite</div>
-                        <div class="text-xs text-navy/50">Orta segment, deneyimli ekip</div>
+                        <div class="text-xs text-navy/50 leading-tight">Orta segment, deneyimli ekip</div>
                     </div>
-                    <div class="quality-card p-6 rounded-xl text-center" onclick="selectQuality('luks', 1.45)">
-                        <div class="text-3xl mb-3">💎</div>
+                    <div class="quality-card p-6 rounded-xl text-center group" onclick="selectQuality('luks', 1.45)">
+                        <div class="text-3xl mb-3 transition-transform group-hover:scale-110">💎</div>
                         <div class="font-bold text-navy mb-1">Lüks</div>
-                        <div class="text-xs text-navy/50">İthal malzeme, mimari işçilik</div>
+                        <div class="text-xs text-navy/50 leading-tight">İthal malzeme, mimari işçilik</div>
                     </div>
                 </div>
 
@@ -501,9 +507,9 @@
                 </div>
             </div>
 
-            <!-- STEP 4: Area & Floors -->
+            <!-- STEP 4: Area -->
             <div id="step-4" class="step-content hidden">
-                <h2 class="text-2xl font-serif mb-2">Alan ve kat bilgisi</h2>
+                <h2 class="text-2xl font-heading mb-2">Alan (m²)</h2>
                 <p class="text-navy/60 text-sm mb-8">İnşaat alanınız ve kat sayınız maliyet dağılımını belirler.</p>
                 
                 <div class="mb-10">
@@ -605,7 +611,7 @@
                 </div>
 
                 <div class="flex flex-col md:flex-row gap-4 no-print">
-                    <button class="flex-1 bg-navy text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center hover:bg-navy-mid transition-all" onclick="showPdfModal()">
+                    <button class="flex-1 bg-navy text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center hover:bg-navy-dark transition-all" onclick="showPdfModal()">
                         <span class="mr-2">📄</span> PDF Raporu İndir
                     </button>
                     <button class="flex-1 border-2 border-navy/10 text-navy px-8 py-4 rounded-xl font-bold hover:border-navy/20 transition-all" onclick="resetCalculator()">
@@ -621,167 +627,202 @@
     <section id="nasil" class="bg-white py-24 px-6 md:px-12 no-print">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif mb-4">Nasıl Hesaplıyoruz?</h2>
+                <h2 class="text-3xl md:text-4xl font-heading mb-4">Nasıl Hesaplıyoruz?</h2>
                 <div class="w-20 h-1 bg-orange mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">📊</div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 transition-transform group-hover:scale-110">📊</div>
                     <h3 class="text-xl font-bold mb-3">Günlük Güncellenen Fiyatlar</h3>
                     <p class="text-navy/60 text-sm leading-relaxed">Piyasadaki 200'den fazla tedarikçiden aldığımız verilerle demir, beton ve işçilik kalemlerini her sabah güncelliyoruz.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">🏙️</div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 transition-transform group-hover:scale-110">🏙️</div>
                     <h3 class="text-xl font-bold mb-3">Şehre Özel Katsayılar</h3>
                     <p class="text-navy/60 text-sm leading-relaxed">Lojistik maliyetleri ve yerel işçilik piyasasını analiz ederek her şehir için özel çarpanlar uyguluyoruz.</p>
                 </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">🔍</div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-cream rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 transition-transform group-hover:scale-110">🔍</div>
                     <h3 class="text-xl font-bold mb-3">Şeffaf Hesaplama</h3>
                     <p class="text-navy/60 text-sm leading-relaxed">Gizli maliyet yok. Kaba inşaattan ince işlere kadar tüm kalemleri sektör standartlarına göre dağıtıyoruz.</p>
                 </div>
             </div>
-
-            <div class="max-w-3xl mx-auto text-navy/80 space-y-6 leading-relaxed">
-                <p>
-                    İnşaat sektörü, özellikle son yıllarda döviz kurlarındaki dalgalanmalar ve küresel hammadde krizleri nedeniyle oldukça hareketli bir dönemden geçiyor. Biz, bir müteahhit gözüyle, kağıt üzerindeki rakamların sahada nasıl değiştiğini çok iyi biliyoruz. Bu yüzden MaliyetHesap'ı geliştirirken sadece teorik verileri değil, şantiyelerden gelen gerçek fatura verilerini de sisteme entegre ettik.
-                </p>
-                <p>
-                    Hesaplamalarımızda demir ton fiyatı, C30 beton m³ fiyatı ve kalifiye işçilik yevmiyeleri gibi kritik kalemleri baz alıyoruz. Enflasyonist ortamda sabit bir fiyat listesi sunmak yerine, dinamik bir algoritma kullanarak size en yakın sonucu vermeyi hedefliyoruz. Unutmayın ki, iyi bir planlama maliyetin yarısını kontrol altında tutmak demektir.
-                </p>
-            </div>
         </div>
     </section>
 
-    <section id="sehirler" class="py-24 px-6 md:px-12 no-print">
+    <section id="sehirler" class="bg-cream py-24 px-6 md:px-12 no-print">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif mb-4">Şehirlere Göre 2026 İnşaat Maliyetleri</h2>
+                <h2 class="text-3xl md:text-4xl font-heading mb-4">Şehir Bazlı Birim Maliyetler (2026)</h2>
                 <div class="w-20 h-1 bg-orange mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-                <div class="bg-white p-6 rounded-2xl border border-border">
-                    <div class="font-bold text-navy mb-1">İstanbul</div>
-                    <div class="text-orange font-mono text-sm">₺9.500 - ₺14.000</div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-border">
-                    <div class="font-bold text-navy mb-1">Ankara</div>
-                    <div class="text-orange font-mono text-sm">₺7.800 - ₺11.500</div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-border">
-                    <div class="font-bold text-navy mb-1">İzmir</div>
-                    <div class="text-orange font-mono text-sm">₺8.200 - ₺12.000</div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-border">
-                    <div class="font-bold text-navy mb-1">Antalya</div>
-                    <div class="text-orange font-mono text-sm">₺8.000 - ₺11.500</div>
-                </div>
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl overflow-hidden shadow-lg border border-border">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-navy text-white text-xs uppercase tracking-widest">
+                            <th class="px-8 py-5">Şehir</th>
+                            <th class="px-8 py-5">Minimum</th>
+                            <th class="px-8 py-5">Maksimum</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-border text-sm">
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">İstanbul</td>
+                            <td class="px-8 py-5">₺9.500/m²</td>
+                            <td class="px-8 py-5">₺14.000/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">Ankara</td>
+                            <td class="px-8 py-5">₺7.800/m²</td>
+                            <td class="px-8 py-5">₺11.500/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">İzmir</td>
+                            <td class="px-8 py-5">₺8.200/m²</td>
+                            <td class="px-8 py-5">₺12.000/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">Bursa</td>
+                            <td class="px-8 py-5">₺7.200/m²</td>
+                            <td class="px-8 py-5">₺10.500/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">Antalya</td>
+                            <td class="px-8 py-5">₺8.000/m²</td>
+                            <td class="px-8 py-5">₺11.500/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">Adana</td>
+                            <td class="px-8 py-5">₺6.800/m²</td>
+                            <td class="px-8 py-5">₺10.000/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">Kayseri</td>
+                            <td class="px-8 py-5">₺6.500/m²</td>
+                            <td class="px-8 py-5">₺9.500/m²</td>
+                        </tr>
+                        <tr class="hover:bg-cream/50 transition-colors">
+                            <td class="px-8 py-5 font-bold">Gaziantep</td>
+                            <td class="px-8 py-5">₺6.700/m²</td>
+                            <td class="px-8 py-5">₺9.800/m²</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/50 p-8 rounded-2xl border border-border/50">
-                    <h4 class="font-bold text-navy mb-4">İstanbul Neden Daha Pahalı?</h4>
-                    <p class="text-sm text-navy/60 leading-relaxed">İstanbul'da maliyetlerin yüksek olmasının temel sebebi lojistik zorluklar ve işçilik piyasasının doygunluğudur. Şehir içi nakliye süreleri ve şantiye alanı kısıtlamaları operasyonel maliyetleri %20 oranında yukarı çekmektedir.</p>
+    <section class="py-24 px-6 md:px-12 no-print" id="uzman">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-navy rounded-[32px] p-8 md:p-16 text-white flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-orange/10 rounded-full blur-3xl"></div>
+                <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 relative">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&auto=format&fit=crop" alt="Murat Yılmaz" class="w-full h-full object-cover rounded-2xl border-4 border-orange shadow-2xl" referrerPolicy="no-referrer">
+                    <div class="absolute -bottom-4 -right-4 bg-orange p-3 rounded-xl shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
                 </div>
-                <div class="bg-white/50 p-8 rounded-2xl border border-border/50">
-                    <h4 class="font-bold text-navy mb-4">Ankara: Referans Noktası</h4>
-                    <p class="text-sm text-navy/60 leading-relaxed">Ankara, Türkiye'nin inşaat maliyetleri açısından 'baz' şehri kabul edilir. Tedarik zincirinin merkezinde olması ve geniş arazi imkanları sayesinde maliyetler daha dengeli ve öngörülebilir seyretmektedir.</p>
-                </div>
-                <div class="bg-white/50 p-8 rounded-2xl border border-border/50">
-                    <h4 class="font-bold text-navy mb-4">Ege ve Akdeniz Dinamikleri</h4>
-                    <p class="text-sm text-navy/60 leading-relaxed">İzmir ve Antalya gibi bölgelerde yazlık konut talebi ve lüks segment yapılaşma, ince işçilik maliyetlerini artırmaktadır. Ayrıca deniz kumu ve nem faktörü nedeniyle kullanılan izolasyon malzemeleri standartların üzerindedir.</p>
+                <div class="text-center md:text-left flex-1">
+                    <h2 class="text-3xl font-heading mb-6">Bir Mühendis Gözüyle</h2>
+                    <p class="text-white/70 italic text-lg leading-relaxed mb-8">
+                        "İnşaat sektörü, döviz kurlarındaki dalgalanmalar ve hammadde krizleri nedeniyle zorlu bir dönemden geçiyor. Bir inşaat mühendisi olarak söyleyebilirim ki; 2026'da doğru bütçeleme yapmayan her proje yarım kalma riski taşır. MaliyetHesap ile amacımız, sahadaki gerçek verileri herkesin anlayabileceği bir şeffaflıkla sunmaktır."
+                    </p>
+                    <div>
+                        <div class="font-bold text-xl">Murat Yılmaz</div>
+                        <div class="text-orange font-semibold text-sm">Kıdemli İnşaat Mühendisi</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-navy py-24 px-6 md:px-12 text-white no-print">
+    <section class="bg-white py-24 px-6 md:px-12 text-navy no-print" id="faq">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif mb-4">Sıkça Sorulan Sorular</h2>
+                <h2 class="text-3xl md:text-4xl font-heading mb-4">Sıkça Sorulan Sorular</h2>
                 <div class="w-20 h-1 bg-orange mx-auto"></div>
             </div>
 
             <div class="space-y-4">
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
                         100 m² bir ev yapmak 2026'da ne kadar tutar?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            2026 piyasa koşullarında, 100 m² standart bir dairenin maliyeti şehre ve kaliteye göre 1.2 milyon TL ile 1.8 milyon TL arasında değişmektedir. Bu rakama arsa payı dahil değildir. Eğer villa tipi bir yapı düşünüyorsanız, temel ve çatı alanı daha geniş olacağı için bu rakam %20-25 oranında artış gösterebilir.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            2026 piyasa koşullarında, 100 m² standart bir dairenin maliyeti şehre ve kaliteye göre 1.2 milyon TL ile 1.8 milyon TL arasında değişmektedir. Bu rakama arsa payı dahil değildir.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
                         Kaba inşaat ile ince iş arasındaki fark nedir?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            Kaba inşaat; binanın iskeletini yani betonarme karkas, dış ve iç duvarlar ile çatı işlerini kapsar. Toplam maliyetin yaklaşık %45'ini oluşturur. İnce işler ise sıva, boya, zemin kaplamaları, kapı-pencere ve dekorasyon kalemleridir. İnce işler, seçilen malzemenin kalitesine göre bütçede en çok esneyen kısımdır.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            Kaba inşaat; binanın iskeletini yani betonarme karkas ve duvar işlerini kapsar (maliyetin %45'i). İnce işler ise sıva, boya, zemin kaplaması ve dekorasyon gibi bitiş kalemleridir (%30).
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
-                        İnşaat maliyetini en çok etkileyen faktörler nelerdir?
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
+                        Maliyeti en çok etkileyen faktörler nelerdir?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            En büyük kalemler demir ve beton fiyatlarıdır. Ancak son dönemde işçilik maliyetleri de toplam bütçenin %30'una kadar yükselmiştir. Ayrıca zemin yapısı (fore kazık gereksinimi vs.), kat yüksekliği ve seçilen yapı tipi maliyeti doğrudan etkileyen teknik faktörlerdir.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            Demir ve beton fiyatları ana kalemlerdir. Ancak son dönemde kalifiye işçilik bulma zorluğu nedeniyle işçilik maliyetleri de toplam bütçenin %30'una kadar dayanmıştır.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
                         Dolar kuru inşaat maliyetini nasıl etkiliyor?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            İnşaat malzemelerinin (demir, tesisat ekipmanları, ithal ince işler) büyük bir kısmı dövize endekslidir. Dolar kurundaki her 1 TL'lik artış, toplam maliyeti yaklaşık %1.5-2 oranında artırmaktadır. Bu yüzden bütçe planlaması yaparken %10-15'lik bir döviz rezervi bırakmak her zaman akıllıcadır.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            İnşaat malzemelerinin büyük kısmı ithal hammaddeye dayalıdır. Dolar kurundaki her %10'luk artış, maliyet kalemlerine yaklaşık %6-8 oranında doğrudan yansımaktadır.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
-                        Villa ile apartman dairesi arasındaki maliyet farkı nedir?
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
+                        Villa vs daire maliyet farkı nedir?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            Villalar, m² başına düşen temel ve çatı alanının daha fazla olması nedeniyle daha maliyetlidir. Apartmanlarda bu maliyet katlar arasında bölüşülürken, villada tüm yük tek bir birimdedir. Ayrıca villalarda bahçe düzenlemesi, dış cephe detayları ve müstakil tesisat çözümleri maliyeti %18-20 oranında artırır.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            Villalarda m² başına düşen temel ve çatı alanı daha fazladır. Ayrıca dış cephe detayları ve özel tesisat çözümleri nedeniyle villa inşaatı standart daireye göre %20 daha maliyetlidir.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
                         İnşaat süresi ne kadar sürer?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            Standart 150 m² bir müstakil ev projesi, ruhsat sonrası yaklaşık 6-8 ayda kaba ve ince işleri bitmiş şekilde teslim edilebilir. Lüks projelerde özel detaylar ve ithal malzeme bekleme süreleri nedeniyle bu süre 12 aya kadar çıkabilir. Çok katlı apartman projelerinde ise ortalama süre 18-24 aydır.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            150 m² müstakil bir ev ruhsat sonrası 6-8 ayda tamamlanır. Çok katlı apartman projeleri ise yapı büyüklüğüne göre 18-24 ay sürebilmektedir.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
                         Hesaplama ne kadar doğru?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            Hesaplayıcımız 200'den fazla tedarikçiden alınan günlük verilerle çalışır ve sektör standartlarını baz alır. %95 oranında doğruluk payı sunar. Ancak zemin etüdü sonuçları (kayalık zemin vs.), özel mimari talepler ve belediye harçları gibi değişkenler son rakamda küçük oynamalar yapabilir.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            Algoritmamız sahadan gelen gerçek verileri kullanır ve %95 oranında isabet sağlar. Ancak zemin yapısı (fore kazık ihtiyacı) ve yerel belediye harçları gibi değişkenler son bütçeyi etkileyebilir.
                         </div>
                     </div>
                 </div>
-                <div class="faq-item bg-white/5 rounded-xl overflow-hidden">
-                    <button class="faq-trigger w-full p-6 text-left font-bold flex justify-between items-center" onclick="toggleFaq(this)">
-                        Lüks ve ekonomik inşaat arasındaki fark nedir?
+                <div class="faq-item">
+                    <button class="faq-trigger w-full py-6 text-left font-bold text-lg flex justify-between items-center transition-colors hover:text-orange" onclick="toggleFaq(this)">
+                        Lüks vs ekonomik fark nedir?
                     </button>
                     <div class="faq-content">
-                        <div class="p-6 pt-0 text-white/60 text-sm leading-relaxed">
-                            Ekonomik inşaat, güvenli ve konforlu temel standartları karşılar. Lüks inşaatta ise ithal mermerler, akıllı ev sistemleri, yerden ısıtma, üst düzey ısı ve ses yalıtımı, özel tasarım mutfak ve banyolar devreye girer. Bu kalemler toplam maliyeti orta kaliteye göre %45-50 oranında artırabilmektedir.
+                        <div class="pb-6 text-navy/60 leading-relaxed">
+                            Ekonomik inşaat temel standartları karşılar. Lüks seviyede ise ithal mermerler, akıllı ev otomasyonu ve üst düzey yalıtım sistemleri maliyeti orta kaliteye kıyasla %50 artırır.
                         </div>
                     </div>
                 </div>
@@ -789,24 +830,45 @@
         </div>
     </section>
 
-    <section id="hakkimizda" class="py-24 px-6 md:px-12 no-print">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-serif mb-6">Hakkımızda</h2>
-            <p class="text-navy/70 leading-relaxed mb-8">
-                MaliyetHesap, 2019 yılından bu yana inşaat sektöründe veri analitiği ve maliyet yönetimi alanında hizmet veren bir mühendislik girişimidir. Amacımız, karmaşık inşaat süreçlerini ve sürekli değişen piyasa koşullarını şeffaf bir şekilde son kullanıcıya aktarmaktır. Ekibimiz, saha tecrübesi olan inşaat mühendisleri ve veri bilimcilerden oluşmaktadır. Günlük olarak takip ettiğimiz 200'den fazla veri noktası ile Türkiye'nin en güncel inşaat maliyet endeksini sunuyoruz.
-            </p>
-            <div class="flex justify-center space-x-12">
-                <div>
-                    <div class="text-3xl font-serif text-orange mb-1">2019</div>
-                    <div class="text-xs font-bold uppercase text-navy/40">Kuruluş</div>
+    <section class="bg-navy py-20 px-6 no-print">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-heading text-white mb-8">Projenizi planlamaya bugün başlayın</h2>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-orange text-white px-12 py-5 rounded-full font-bold text-lg shadow-2xl hover:scale-105 transition-transform">
+                Ücretsiz Hesapla →
+            </button>
+        </div>
+    </section>
+
+    <section id="hakkimizda" class="py-24 px-6 md:px-12 no-print bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 relative">
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-orange/10 rounded-3xl -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&h=600&auto=format&fit=crop" alt="Murat Yılmaz" class="w-full rounded-3xl shadow-2xl" referrerPolicy="no-referrer">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-cream">
+                    <div class="text-orange font-bold text-3xl tracking-tight">15+ Yıl</div>
+                    <div class="text-navy/50 text-[10px] font-bold uppercase tracking-widest">Sektör Deneyimi</div>
                 </div>
-                <div>
-                    <div class="text-3xl font-serif text-orange mb-1">500K+</div>
-                    <div class="text-xs font-bold uppercase text-navy/40">Yıllık Hesaplama</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-serif text-orange mb-1">200+</div>
-                    <div class="text-xs font-bold uppercase text-navy/40">Veri Kaynağı</div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="inline-block bg-orange/10 text-orange px-4 py-1.5 rounded-full text-[10px] font-bold uppercase mb-4 tracking-wider">Kurucu Bakışı</div>
+                <h2 class="text-4xl md:text-5xl font-heading mb-8 leading-tight">MaliyetHesap'ın<br>Hikayesi</h2>
+                <p class="text-navy/70 leading-relaxed text-lg mb-10">
+                    Murat Yılmaz, 15 yıldır Türkiye'nin önde gelen inşaat firmalarında maliyet analisti ve proje müdürü olarak görev yapmıştır. İstanbul, Ankara ve İzmir'de 50'den fazla konut projesinde deneyim kazanan Yılmaz, MaliyetHesap'ı vatandaşların inşaat maliyetlerini şeffaf bir şekilde anlayabilmesi için kurmuştur.
+                </p>
+                <!-- Stats Row -->
+                <div class="grid grid-cols-3 gap-8 pt-8 border-t border-cream">
+                    <div>
+                        <div class="text-3xl font-heading text-orange mb-1">2019</div>
+                        <div class="text-[10px] font-bold uppercase text-navy/40 tracking-wider">Kuruluş</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-heading text-orange mb-1">500K+</div>
+                        <div class="text-[10px] font-bold uppercase text-navy/40 tracking-wider">Yıllık İşlem</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-heading text-orange mb-1">200+</div>
+                        <div class="text-[10px] font-bold uppercase text-navy/40 tracking-wider">Veri Kaynağı</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -827,10 +889,10 @@
                 <div>
                     <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Hızlı Linkler</h5>
                     <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-white transition-colors">Ana Sayfa</a></li>
-                        <li><a href="#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a></li>
-                        <li><a href="#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a></li>
-                        <li><a href="#hakkimizda" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="/" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="/#nasil" class="hover:text-white transition-colors">Nasıl Çalışır?</a></li>
+                        <li><a href="/#sehirler" class="hover:text-white transition-colors">Şehir Rehberi</a></li>
+                        <li><a href="/hakkimizda.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
                     </ul>
                 </div>
                 <div>
