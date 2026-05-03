@@ -16,6 +16,7 @@ export default defineConfig(({mode}) => {
           main: path.resolve(__dirname, 'index.html'),
           about: path.resolve(__dirname, 'about.html'),
           contact: path.resolve(__dirname, 'contact.html'),
+          blog_istanbul: path.resolve(__dirname, 'blog-istanbul-2026.html'),
         },
       },
     },
