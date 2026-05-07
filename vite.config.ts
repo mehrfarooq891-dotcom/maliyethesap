@@ -19,6 +19,7 @@ export default defineConfig(({mode}) => {
           blog_istanbul: path.resolve(__dirname, 'blog-istanbul-2026.html'),
           blog_kaba_ince: path.resolve(__dirname, 'blog-kaba-ince-fark.html'),
           blog_100m2: path.resolve(__dirname, 'blog-100m2-maliyet-2026.html'),
+          blog_dolar_kuru: path.resolve(__dirname, 'blog-dolar-kuru-etkisi.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },

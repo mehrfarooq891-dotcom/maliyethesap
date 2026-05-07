@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolar Kuru İnşaat Maliyetini Nasıl Etkiliyor? | MaliyetHesap</title>
+    <meta name="description" content="Dolar kuru inşaat maliyeti üzerindeki etkilerini derinlemesine inceliyoruz. Demir, çimento ve ithal malzeme fiyatlarının kur değişiminden nasıl etkilendiğini öğrenin.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e3a5f',
+                        'navy-dark': '#162b46',
+                        orange: '#E8792A',
+                        cream: '#FAF7F2',
+                        border: '#E2DDD6',
+                    },
+                    fontFamily: {
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body { background-color: #FAF7F2; color: #1e3a5f; font-family: 'Source Sans Pro', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #162b46); }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #4a5568; }
+        .prose h2 { font-size: 1.875rem; color: #1e3a5f; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .prose h3 { font-size: 1.5rem; color: #1e3a5f; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #4a5568; }
+        .prose li { margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-heading font-extrabold text-white">
+                Maliyet<span class="text-orange">Hesap</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-white/90 text-sm font-semibold tracking-wide">
+                <a href="index.html" class="hover:text-orange transition-colors">Ana Sayfa</a>
+                <a href="index.html#nasil" class="hover:text-orange transition-colors">Hizmetler</a>
+                <a href="about.html" class="hover:text-orange transition-colors">Hakkımızda</a>
+                <a href="blog.html" class="text-orange">Blog</a>
+                <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center border-t border-white/10 pt-4">
+            <a href="index.html" class="block text-white hover:text-orange py-2">Ana Sayfa</a>
+            <a href="index.html#nasil" class="block text-white hover:text-orange py-2">Hizmetler</a>
+            <a href="about.html" class="block text-white hover:text-orange py-2">Hakkımızda</a>
+            <a href="blog.html" class="block text-orange py-2">Blog</a>
+            <a href="contact.html" class="block text-white hover:text-orange py-2">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- ARTICLE HEADER -->
+    <header class="bg-white py-16 px-6 border-b border-border">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="text-orange text-xs font-bold uppercase tracking-widest mb-4">Piyasa Analizi</div>
+            <h1 class="text-3xl md:text-5xl font-heading text-navy mb-6 leading-tight">Dolar Kuru İnşaat Maliyetini Nasıl Etkiliyor?</h1>
+            <div class="flex items-center justify-center gap-4 text-navy/40 text-sm font-bold uppercase tracking-tighter">
+                <span>12 Mayıs 2026</span>
+                <span class="w-1 h-1 bg-orange rounded-full"></span>
+                <span>10 Dakika Okuma</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="flex-grow max-w-4xl mx-auto py-12 px-6 md:px-12 w-full">
+        <article class="prose max-w-none">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" alt="İnşaat ve Finans" class="w-full h-[400px] object-cover rounded-[32px] mb-12 shadow-xl" referrerpolicy="no-referrer">
+
+            <p><strong>Dolar kuru inşaat maliyeti</strong> üzerindeki etkisi, Türkiye ekonomisinin en dinamik ve takip edilmesi gereken konularından biridir. İnşaat sektörü, kullanılan malzemelerin büyük bir kısmının doğrudan veya dolaylı olarak dövize endeksli olması nedeniyle, döviz kurlarındaki en ufak hareketlilikten bile doğrudan etkilenir. Bu yazımızda, kur değişiminin inşaat bütçelerine yansımasını, ana kalemler üzerinden profesyonel bir bakış açısıyla detaylı bir şekilde inceleyeceğiz.</p>
+
+            <h2>Kur Değişiminin Fiyatlara Etkisi: Neden Bu Kadar Hassas?</h2>
+            <p>Türkiye'de inşaat sektörü, "yerli üretim" gibi görünse de aslında küresel tedarik zincirlerinin tam ortasında yer alır. Bir binanın karkasından en küçük elektrik kablosuna kadar hemen her parça, dünya borsalarındaki emtia fiyatlarından ve dolayısıyla dolar kurundan etkilenir. Kur değişimi sadece ithal edilen malzemenin fiyatını artırmakla kalmaz, aynı zamanda yerli malzemelerin üretim maliyetlerini de (enerji ve lojistik üzerinden) yukarı çeker.</p>
+            <p>Özellikle inşaat sektöründe kullanılan malzemelerin yaklaşık %60-%70 oranında döviz bazlı maliyetlerden oluştuğu bilinmektedir. Bu, TL üzerindeki değer kaybının doğrudan konut fiyatlarına, kentsel dönüşüm maliyetlerine ve kamu yatırımlarına yansıması anlamına gelir. Yatırımcıların ve müteahhitlerin en büyük kabusu olan "maliyet öngörülemezliği", aslında bu döviz bağımlılığının bir sonucudur.</p>
+
+            <h2>Hayati Malzeme: Demir-Çelik ve Dolar İlişkisi</h2>
+            <p>İnşaat maliyetinin en büyük kalemlerinden biri olan <strong>demir</strong>, tam anlamıyla küresel bir emtiadır. Türkiye dünyanın önde gelen çelik üreticilerinden biri olsa da, üretimde kullanılan hurda demir ve kömürün büyük bir bölümü ithal edilmektedir. Bu durum, demir fiyatlarını doğrudan dolar kuruna bağımlı hale getirir.</p>
+            <h3>Demir Fiyatlarını Belirleyen Alt Faktörler:</h3>
+            <ul>
+                <li><strong>Hammadde Bağımlılığı:</strong> Cevher ve hurda ithalatı dolarla yapılır. Türkiye'deki tesislerin çoğu hurdayı yurt dışından dolarla alır.</li>
+                <li><strong>Enerji Maliyeti:</strong> Ark ocaklı tesislerin kullandığı elektrik ve gaz fiyatları dolaylı olarak kurdan etkilenir. Enerji maliyetleri toplam üretim bütçesinin %30'una kadar çıkabilir.</li>
+                <li><strong>Lojistik:</strong> Nakliye süreçlerinde kullanılan yakıt fiyatları dünya piyasalarındaki petrol fiyatları ve dolar kuruyla doğrudan ilişkilidir.</li>
+            </ul>
+
+            <h2>Çimento Maliyetlerinde Görünmez Dolar Etkisi</h2>
+            <p><strong>Çimento</strong> genellikle yerli kaynaktan üretiliyor gibi algılansa da, üretim sürecindeki en büyük gider kalemi enerjidir. Çimento fırınlarının yakıtı olarak kullanılan kömür ve petrokök, tamamen dövizle ithal edilen malzemelerdir.</p>
+            <p>Buna ek olarak, çimento fabrikalarının kullandığı yedek parçalar, makine parkurları ve teknolojik altyapının çoğu yurt dışı kaynaklıdır. Dolar kurundaki her artış, fabrika kapısı çıkış fiyatına bir maliyet yükü olarak eklenir. Şantiyeye gelen betonun metreküp fiyatı, sadece çimento değil, aynı zamanda nakliye (mazot) ve katkı maddeleri (kimyasallar) nedeniyle kura karşı oldukça duyarlıdır.</p>
+
+            <h2>İthal Malzeme ve İnce İşçilik Detayları</h2>
+            <p>Kaba inşaatı bitirdikten sonra başladığınız ince işler aşamasında, <strong>ithal malzeme</strong> kullanımı daha da yoğunlaşır. Modern bir konut projesinde aşağıdaki kalemler doğrudan dolar bazlıdır:</p>
+            <ul>
+                <li><strong>Teknolojik Sistemler:</strong> Asansörler, motorlar ve akıllı ev otomasyon devreleri.</li>
+                <li><strong>İklimlendirme:</strong> Merkezi klima üniteleri ve VRF sistemleri.</li>
+                <li><strong>Finisaj Malzemeleri:</strong> İthal seramikler, özel bataryalar ve boya üretiminde kullanılan polimer-solvent bazlı kimyasallar.</li>
+                <li><strong>Cam ve Doğrama:</strong> Alüminyum profillerin üretimindeki külçe alüminyum doğrudan dolarla işlem görür.</li>
+            </ul>
+
+            <h2>Kur Artışı ve İşçilik Maliyetleri Arasındaki Dolaylı Bağ</h2>
+            <p>Genellikle işçilik maliyetlerinin yerel olduğu düşünülür. Ancak dolar kurundaki artış genel enflasyonu tetiklediği için, inşaat çalışanlarının yaşam standartlarını korumak adına talep ettikleri ücretler de paralel olarak yükselir. Bu durum, doğrudan bir döviz etkisi olmasa da "dolaylı döviz etkisi" olarak inşaat maliyet tablosuna yansır. Özellikle teknik uzmanlık gerektiren kalıpçılık, demircilik ve tesisatçılık gibi alanlarda yevmiye artışları kaçınılmaz hale gelir.</p>
+
+            <h2>İnşaat Maliyetlerini Kur Riskinden Korumak Mümkün mü?</h2>
+            <p>Dolar kuru inşaat maliyet bütçesini sarsmasın diye uygulanan bazı stratejiler bulunmaktadır:</p>
+            <ul>
+                <li><strong>Stok Yönetimi:</strong> Projeye başlarken demir ve çimento gibi ana kalemlerin bağlantısını erkenden yapmak ve bedelini ödeyerek fiyatı sabitlemektir.</li>
+                <li><strong>Vade ve Forward İşlemler:</strong> Dövizle borçlanmak yerine, döviz gelirleri olanlar için risk yönetimi yapmak veya bankalar kanalıyla kur sabitleme işlemleri (hedging) gerçekleştirmek.</li>
+                <li><strong>Yerli Malzemeye Yönelim:</strong> Mümkün olan alanlarda, ithal muadili yerine yüksek kaliteli yerli üretim malzemeleri tercih ederek doğrudan kur baskısını azaltmak.</li>
+            </ul>
+
+            <h2>2026 Projeksiyonu: Ne Beklenmeli?</h2>
+            <p>Gelecek yıllarda inşaat sektöründe "sürdürülebilirlik" ve "yerlileştirme" hamlelerinin artması beklenmektedir. Ancak küresel piyasalardan kopuk bir inşaat sektörü hayal etmek gerçekçi değildir. Bu nedenle, yatırımcıların projelerini planlarken en az %20-30 oranında bir "kur dalgalanma payı" bırakmaları, finansal sağlığı korumak adına kritik bir adımdır.</p>
+
+            <h2>Sonuç: Stratejik Planlama Şart</h2>
+            <p>Özetle, <strong>kur değişiminin fiyatlara etkisi</strong> inşaat sektörünün kaçınılmaz bir gerçeğidir. Ev sahibi olmak isteyenler veya yatırım planlayanlar için güncel dolar kuru tahminlerini ve sektör analizlerini takip etmek hayati önem taşır. MaliyetHesap olarak sunduğumuz araçlar, bu değişken piyasa koşullarında size en doğru verileri sunmak için sürekli güncellenmektedir.</p>
+
+            <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
+                <h3 class="text-white mt-0 mb-4">Ücretsiz Hesaplama Yapın</h3>
+                <p class="text-white/80 mb-6">Mevcut dolar kuruna göre güncellenmiş inşaat maliyetlerini görmek için hemen hesaplama aracımızı kullanın.</p>
+                <a href="index.html" class="inline-block bg-orange text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-navy transition-all shadow-lg">Hesaplamaya Başla</a>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-serif text-white mb-6">Maliyet<span class="text-orange">Hesap</span></div>
+                    <p class="max-w-sm leading-relaxed">Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="index.html#nasil" class="hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Bloglar</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+                <div>© 2026 MALİYETHESAP. TÜM HAKLARI SAKLIDIR.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
