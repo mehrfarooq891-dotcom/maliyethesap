@@ -51,6 +51,7 @@
             background: linear-gradient(to bottom, #1e3a5f, #162b46);
         }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="antialiased">
 
@@ -236,5 +237,24 @@
         </div>
     </footer>
 
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+img,video,iframe{max-width:100%;height:auto}
+table{display:block;overflow-x:auto;width:100%}
+@media(max-width:768px){
+.container,.wrapper,.main,.content{width:100%!important;padding:0 16px!important;margin:0!important}
+.row,.flex,[class*="row"],[class*="flex"],[class*="grid"]{flex-direction:column!important}
+[class*="col-"],.col,.column,.card{width:100%!important;margin:0!important}
+h1{font-size:1.6rem!important}h2{font-size:1.3rem!important}
+button,input,select,textarea{min-height:44px!important;width:100%!important;font-size:1rem!important}
+nav,header,.navbar{flex-direction:column!important;width:100%!important}
+form,input,select,textarea{width:100%!important}
+section,main{padding:0 12px!important}
+}
+@media(max-width:375px){
+h1{font-size:1.3rem!important}h2{font-size:1.1rem!important}
+}
+</style>
 </body>
 </html>
