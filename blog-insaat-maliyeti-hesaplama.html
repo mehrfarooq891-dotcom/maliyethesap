@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnşaat Maliyeti Hesaplama — Adım Adım Rehber | MaliyetHesap</title>
+    <meta name="description" content="Detaylı inşaat maliyeti hesaplama rehberi. Metrekare hesabı, temel malzeme listesi, işçilik kalemleri ve müteahhit farkı analizleriyle kaba ve ince inşaat bütçenizi sıfır hata ile planlayın.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e3a5f',
+                        'navy-dark': '#162b46',
+                        orange: '#E8792A',
+                        cream: '#FAF7F2',
+                        green: '#2E7D52',
+                        border: '#E2DDD6',
+                    },
+                    fontFamily: {
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body { background-color: #FAF7F2; color: #1e3a5f; font-family: 'Source Sans Pro', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #162b46); }
+        .prose h2 { font-size: 1.875rem; color: #1e3a5f; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8792A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #1e3a5f; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; text-align: justify; }
+        .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #1e3a5f/80; }
+        .prose strong { color: #1e3a5f; font-weight: 700; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 no-print border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-heading font-extrabold text-white">
+                Maliyet<span class="text-orange">Hesap</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-white/90 text-sm font-semibold tracking-wide">
+                <a href="index.html" class="hover:text-orange transition-colors">Ana Sayfa</a>
+                <a href="index.html#nasil" class="hover:text-orange transition-colors">Hizmetler</a>
+                <a href="about.html" class="hover:text-orange transition-colors">Hakkımızda</a>
+                <a href="blog.html" class="hover:text-orange transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center border-t border-white/10 pt-4">
+            <a href="index.html" class="block text-white hover:text-orange py-2">Ana Sayfa</a>
+            <a href="index.html#nasil" class="block text-white hover:text-orange py-2">Hizmetler</a>
+            <a href="about.html" class="block text-white hover:text-orange py-2">Hakkımızda</a>
+            <a href="blog.html" class="block text-white hover:text-orange py-2">Blog</a>
+            <a href="contact.html" class="block text-white hover:text-orange py-2">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- BLOG HEADER -->
+    <header class="hero-gradient py-24 px-6 text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-orange font-bold uppercase tracking-widest text-xs mb-4 italic">Kategori: İnşaat Eğitimi</div>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading mb-6 leading-tight">İnşaat Maliyeti Hesaplama — Adım Adım Rehber</h1>
+            <div class="flex items-center justify-center gap-4 text-white/60 text-sm">
+                <span>12 Mayıs 2026</span>
+                <span>•</span>
+                <span>Okuma Süresi: 15 Dakika</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <article class="max-w-4xl mx-auto py-16 px-6 md:px-12 bg-white rounded-[40px] -mt-12 shadow-2xl relative z-10 border border-border/20">
+        <div class="prose max-w-none">
+            <p>
+                Kendi evini yaptırmak veya bir gayrimenkul projesine başlamak, hayat boyu verilecek en heyecan verici kararlardan biridir. Ancak bu sürecin en kritik virajı, kağıt üstündeki hayallerin gerçekçi bir bütçeyle buluşturulmasıdır. Plansız başlanan inşaatlar, genellikle yarıda kalan projeler, beklenmeyen mali krizler ve kontrol edilemeyen gider dalgalarıyla sonuçlanır. Bu noktada profesyonel bir <strong>inşaat maliyeti hesaplama</strong> çalışması yapmak; projenizin başından sonuna kadar güvenli bir limanda seyretmesini sağlar.
+            </p>
+            <p>
+                Bu kapsamlı rehberimizde, sıfırdan anahtar teslim aşamasına kadar bir yapının bütçelendirilmesini adım adım ele alacağız. <strong>Metrekare hesabı</strong> yaparken dikkat edilmesi gereken detaylardan, zorunlu <strong>malzeme listesi</strong> gereksinimlerine, sürekli değişkenlik gösteren <strong>işçilik</strong> piyasasından, <strong>müteahhit farkı</strong> ve yüklenici marjlarının bütçeye yansımalarına kadar her detayı derinlemesine inceleyebilirsiniz.
+            </p>
+
+            <h2>İnşaat Maliyeti Hesaplama Neden Hayatidir?</h2>
+            <p>
+                İnşaat sektörü, onlarca farklı disiplinin, yüzlerce çeşit malzemenin ve sayılamayacak kadar çok iş kaleminin bir araya geldiği dinamik bir ekosistemdir. Bir şantiyede demirden betona, yalıtımdan peyzaja kadar her kalemin kendine has bir tedarik zinciri ve fiyat dengesi bulunur. <strong>İnşaat maliyeti hesaplama</strong> süreci yalnızca toplam harcayacağınız parayı önceden görmenizi sağlamaz; aynı zamanda:
+            </p>
+            <ul>
+                <li>Malzeme israfını ve gereksiz tedarik siparişlerini engeller.</li>
+                <li>Farklı tedarikçilerden alacağınız teklifleri karşılaştırmak için elinizde sağlam bir referans (metraj) bulundurur.</li>
+                <li>Usta piyasasındaki afaki işçilik fiyatları karşısında hak ettiğiniz bütçeyi korumanızı sağlar.</li>
+                <li>İnşaatın nakit akışını planlayarak projenin finansal kilitlenmeler yüzünden durmasını engeller.</li>
+            </ul>
+
+            <h2>1. Temel Adım: İnşaat Metrekare Hesabı Nasıl Yapılır?</h2>
+            <p>
+                Bir yapının bütçesi çıkarılırken ilk telaffuz edilen ölçü birimi her zaman metrekare birim fiyatıdır. Ancak burada en sık düşülen tuzak, "brüt alan" ile "net alan" arasındaki farkın atlanması, ya da imar parametrelerinin hesaba katılmamasıdır. İnşaat bütçenizde gerçekçi bir <strong>metrekare hesabı</strong> yapabilmek için iki temel parametreyi çok iyi ayırt etmelisiniz:
+            </p>
+            <h3>Brüt Alan ve Net Alan Arasındaki Fark</h3>
+            <p>
+                <strong>Net Alan:</strong> Evin süpürülebilir, duvarların içinde kalan gerçek kullanım alanıdır. Oturma odası, mutfak, banyo ve yatak odalarının toplam metrekaresini ifade eder.<br>
+                <strong>Brüt Alan:</strong> Duvar payları, merdiven boşlukları, balkonlar, asansör şaftları, otopark payları ve teknik hacimler gibi binanın dış sınırlarını kapsayan toplam inşaat alanıdır.<br>
+                Satın alırken veya inşaat yaptırırken malzeme alımları ve usta işçilik anlaşmaları her zaman <strong>brüt alan (toplam yapı alanı)</strong> üzerinden yürütülür. Örneğin, net alanı 85 m² olan müstakil bir evin balkon, merdiven ve duvar kalınlıklarıyla birlikte brüt alanı en az 100-110 m²2 civarındadır. Maliyet hesabını net alan üzerinden yapmak, bütçenizde %25'e varan bir sapmaya neden olur.
+            </p>
+            <h3>İmar Verileri: TAKS ve KAKS Nedir?</h3>
+            <p>
+                Arsanızın üzerinde inşa edebileceğiniz yapının sınırlarını belediyeden alacağınız İmar Durumu Belgesindeki TAKS ve KAKS oranları belirler.
+            </p>
+            <ul>
+                <li><strong>TAKS (Taban Alanı Kat Sayısı):</strong> Binanızın arsa üzerinde oturacağı taban alanının sınırıdır. 1000 m² bir arsa için TAKS oranı 0.20 ise, binanın oturtulabileceği maksimum zemin alanı 200 m²2'dir.</li>
+                <li><strong>KAKS (Kat Alanı Kat Sayısı / Emsal):</strong> Arsa üzerine inşa edilebilecek toplam brüt alan sınırıdır. Emsal değeri 0.80 ise, 1000 m² arsanın tamamında yapılabilecek toplam inşaat alanı (tüm katlar dahil) maksimum 800 m²2'dir.</li>
+            </ul>
+            <p>
+                Belediye harçları, mimari-statik proje çizimleri, zemin etüdü ve şantiye şefliği gibi tüm yasal evrak giderleri de İmar Ruhsatı başvurusundaki toplam emsal inşaat alanı üzerinden hesaplanır. Dolayısıyla, metrekare hesabınız ne kadar net olursa, ruhsat öncesi ödeyeceğiniz yasal giderleri de o kadar net öngörebilirsiniz.
+            </p>
+
+            <h2>2. Kaba İnşaat Malzeme Listesi ve Ortalama Gider Dağılımı</h2>
+            <p>
+                Kaba inşaat, bir binanın temelinden taşıyıcı iskeletine (kolon-kiriş) ve dış duvar kaplamasına kadar olan kısımdır. İnşaatın bu temel iskeletini oluşturmak için kullanılan birincil malzemeler, bütçenin de omurgasını oluşturur. Doğru bir <strong>malzeme listesi</strong> çıkarmak, tedarikte tonaj ve metraj bazlı büyük indirimler yakalamanızı sağlar.
+            </p>
+            <h3>Temel İnşaat Malzemeleri</h3>
+            <ol>
+                <li><strong>Hazır Beton (C30/C35 Sınıfı):</strong> Deprem kuşağında yer alan ülkemizde temellerde ve kat tabliyelerinde en az C30 dayanım sınıfı hazır beton kullanılır. Beton mikserlerinin şantiyeye transferi ve pompa kiralama maliyetleri de bu kaleme dahildir.</li>
+                <li><strong>İnşaat Demiri (Rebar):</strong> Betonun çekme gerilmelerini karşılayan nerfli demirdir. Statik projenizde belirtilen tonaja göre satın alınır. Genellikle 100 metrekarelik tek katlı bir betonarme müstakil ev için zemin durumuna bağlı olarak ortalama 4 ila 6 ton demir gerekmektedir.</li>
+                <li><strong>Çimento ve Kum:</strong> Duvar örme, kaba ve ince sıva işleri için şantiyede harç yapımında kullanılan ana puzolanik malzemedir. Ambalajlı veya mikserli dökme tedarik yöntemleri mevcuttur.</li>
+                <li><strong>Duvar Blokları (Tuğla / Gazbeton / Bims):</strong> Binanın dış ve iç bölme duvarlarının örülmesinde tercih edilir. Gazbeton (Ytong) veya bims bloklar mükemmel ısı yalıtımı özellikleri sayesinde son yıllarda klasik kırmızı tuğlalara göre daha fazla bütçe ayrılan ürünler haline gelmiştir.</li>
+                <li><strong>Kalıp ve İskele Elemanları:</strong> Beton dökümü öncesinde kolon ve döşemelerin kalıbını almak için kullanılan kereste, plywood ve teleskobik demir direklerdir. Çoğu zaman taşeron ekipler tarafından kiralama yöntemiyle şantiyeye getirilir.</li>
+            </ol>
+
+            <h3>Malzeme Giderlerinin Toplam Kaba İnşaat Bütçesindeki Dağılımı</h3>
+            <p>
+                Kaba inşaat fazında harcanan bütçenin malzemeler arasındaki ortalama oransal dağılımı şu şekildedir:
+            </p>
+
+            <div class="overflow-x-auto my-8">
+                <table class="w-full text-left border-collapse bg-navy/5 rounded-2xl overflow-hidden">
+                    <thead>
+                        <tr class="bg-navy text-white">
+                            <th class="p-4">Malzeme Grubu</th>
+                            <th class="p-4">Toplam Kaba İnşaat İçindeki Oranı (%)</th>
+                            <th class="p-4">Bütçe Üzerindeki Etki Düzeyi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-navy/80">
+                        <tr class="border-b border-navy/10">
+                            <td class="p-4 font-bold">Hazır Beton (C30/C35)</td>
+                            <td class="p-4">%30 - %35</td>
+                            <td class="p-4 text-orange font-bold">Çok Yüksek (Çimento fiyatlarına bağlı)</td>
+                        </tr>
+                        <tr class="border-b border-navy/10">
+                            <td class="p-4 font-bold">İnşaat Demiri (Tonajlı)</td>
+                            <td class="p-4">%25 - %30</td>
+                            <td class="p-4 text-orange font-bold">Çok Yüksek (Küresel emtia piyasası)</td>
+                        </tr>
+                        <tr class="border-b border-navy/10">
+                            <td class="p-4 font-bold">Duvar Blokları (Gazbeton/Bims/Tuğla)</td>
+                            <td class="p-4">%10 - %15</td>
+                            <td class="p-4 text-green font-bold">Orta</td>
+                        </tr>
+                        <tr class="border-b border-navy/10">
+                            <td class="p-4 font-bold">Kalıp, Kereste ve Sarf Malzemeleri</td>
+                            <td class="p-4">%8 - %12</td>
+                            <td class="p-4 text-green font-bold">Orta-Düşük</td>
+                        </tr>
+                        <tr class="border-b border-navy/10">
+                            <td class="p-4 font-bold">Çimento, Kum, Kireç ve Sıva Harçları</td>
+                            <td class="p-4">%8 - %10</td>
+                            <td class="p-4 text-green font-bold">Düşük-Orta</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. İşçilik Maliyetleri ve Yönetimi</h2>
+            <p>
+                Gerekli malzemeleri ne kadar uygun fiyata satın alırsanız alın, o malzemeyi yapıya dönüştürecek kalifiye usta ve işçilik kalitesi olmadan şantiye ilerleyemez. Günümüz inşaat sektöründe, artan enflasyonist baskılar ve sektördeki genç nüfusun kalifiye usta rollerine yönelmemesi sebebiyle, <strong>işçilik</strong> giderleri toplam inşaat bütçesinin en az %30 ila %35'ini oluşturmaktadır.
+            </p>
+            <p>
+                Bir şantiyede karşılaşacağınız temel işçilik kategorileri ve bütçelendirme yaparken dikkat etmeniz gereken kritik noktalar şunlardır:
+            </p>
+            <h3>Kazı ve Harfiyat İşçiliği</h3>
+            <p>
+                İnşaatın başlayabilmesi için önce arsa üzerindeki bitkisel toprağın sıyrılması ve temel derinliğine kadar kazılması gerekir. Bu aşamada iş makinelerinin (ekskavatör, kırıcısı ve damperli kamyonlar) günlük veya saatlik kiralama ücretleri ile operatör yevmiyeleri bütçelenir. Zemin kayalık veya çok balçık çıkarsa hafriyat işçilik süresi ve maliyeti iki katına çıkabilir.
+            </p>
+            <h3>Kalıp, Demir ve Beton Ustası İşçiliği</h3>
+            <p>
+                Binanın taşıyıcı sistemini oluşturan ekiptir. Genellikle götürü (anahtar teslim kaba işçilik) veya metrekare birim fiyatı üzerinden anlaşma yapılır. Kalıpların düzgün çakılması, demirlerin projeye uygun bükülüp bağlanması ve beton dökümünde vibratörün doğru kullanılması doğrudan bu ekibin sorumluluğundadır. Bu aşamadaki kötü işçilik, ince aşamada size sıva düzeltme maliyeti olarak çok daha ağır dönecektir.
+            </p>
+            <h3>Tesisat İşçilikleri (Elektrik, Su, Doğalgaz)</h3>
+            <p>
+                Binanın can damarını oluşturan sıhhi ve elektrik tesisatları kaba inşaat sırasında beton dökülmeden önce başlar, ince işler aşamasında armatür montajlarıyla tamamlanır. Hatların sızdırmaz olması, boruların çaplarının doğru seçilmesi gibi teknik konular hayati önem taşır. Tesisat işçilikleri genellikle uzman taahhüt firmalarına veya lisanslı usta ekiplerine teslim edilir.
+            </p>
+            <h3>Sıva, Boya, Seramik ve Alçıpan İşçiliği (İnce İşler)</h3>
+            <p>
+                Göz önündeki estetik kaliteyi belirleyen işçilik kalemidir. Malzeme maliyeti ne kadar lüks olursa olsun, kötü bir seramik döşeme veya dalgalı bir boya işçiliği tüm lüks algısını yerle bir eder. Bu ekipler genellikle metrekare başı veya götürü usulle anlaşırlar.
+            </p>
+
+            <h2>4. Müteahhit Farkı Nedir? Kendin Yap vs. Yüklenici ile Çalışmak</h2>
+            <p>
+                İnşaat aşamasında önünüzde iki temel yol bulunur: Birincisi, her işi kendi başınıza koordine edip "emanet usulü" dediğimiz yöntemle evinizi yaptırmak. İkincisi ise, profesyonel bir inşaat firmasıyla (müteahhit veya yüklenici) anlaşarak anahtar teslim hizmet almak. Bu iki alternatif arasında oluşan bütçe farkına <strong>müteahhit farkı</strong> denir.
+            </p>
+            <p>
+                Bir müteahhitle anlaştığınızda, firmanın toplam malzeme ve işçilik maliyetlerinin üzerine ortalama <strong>%20 ila %30 oranında bir müteahhitlik kâr marjı (yüklenici payı)</strong> eklemesi beklenir. İlk bakışta bu marj ev yaptıranlar için "boşuna ödenen ekstra bütçe" gibi algılanabilir. Ancak madalyonun diğer yüzündeki gerçekler şunlardır:
+            </p>
+            <h3>Müteahhidin Üstlendiği Görevler ve Risk Yönetimi</h3>
+            <ul>
+                <li><strong>Lojistik ve Tedarik Gücü:</strong> Müteahhit firmalar fabrikalardan ve toptan dağıtıcılardan çok ciddi hacimli alım yaptıkları için malzemeleri sizin bireysel olarak hırdavatçıdan alacağınız fiyattan %20-25 daha ucuza tedarik edebilirler. Bu sayede malzeme tedarik indirimleri müteahhit marjının bir kısmını amorti eder.</li>
+                <li><strong>Usta Bulma ve Koordinasyon:</strong> Şantiyede kalıpçının işini bitirdiği gün duvarcının, duvarcının bittiği gün tesisatçının girmesi gerekir. Zamanlama hataları şantiyenin durmasına yol açar. Müteahhit, kendi hazır ekipleriyle bu koordinasyonu hatasız yönetir.</li>
+                <li><strong>Yasal Sorumluluk ve İSG Riskleri:</strong> Şantiyede meydana gelebilecek olası bir iş kazasında yasal olarak yüklenici firma birinci derecede sorumludur. Emanet usulü inşaatta ise işveren sıfatıyla yasal olarak mahkeme karşısında tüm cezai durumlarla siz karşı karşıya kalırsınız.</li>
+                <li><strong>Uygulama Hataları ve Garanti:</strong> Kendi yaptırdığınız evde seramikler bir süre sonra kalkarsa usta hatayı sıvacıya, sıvacı kalıpçıya atar ve muhatap bulamazsınız. Profesyonel bir yüklenici ise yaptığı işe yasal olarak garanti vermek zorundadır ve ortaya çıkacak hatalı uygulamaları ücretsiz düzeltmekle yükümlüdür.</li>
+            </ul>
+            <p>
+                <strong>Sonuç Olarak:</strong> Eğer inşaat yönetimi, yasal prosedürler ve usta piyasası konusunda teknik bilginiz ve haftada en az 4-5 gün şantiyede duracak vaktiniz yoksa; emanet usulü ev yaptırmaya çalışırken yapacağınız koordinasyon ve uygulama hataları, ödemekten kaçtığınız %20'lik müteahhit bütçesinden çok daha fazlasına mal olabilir.
+            </p>
+
+            <h2>5. Adım Adım İnşaat Maliyeti Hesaplama Süreci</h2>
+            <p>
+                Gerçekçi bir bütçe yönetimi için maliyet hesaplamanın mantıklı bir akış şeması olmalıdır. Şantiyenizin başlangıcından teslimine kadar olan süreci şu 5 temel faza bölerek bütçenizi kontrol altına alabilirsiniz:
+            </p>
+            <ol>
+                <li>
+                    <strong>Araştırma ve İmar Aşaması:</strong>
+                    Zemin etüdü, topografik ölçümler, mimari, statik, mekanik ve elektrik projelerinin çizdirilmesi, belediye imar ve ruhsat harçlarının yatırılması, şantiye su-elektrik bağlantılarının açtırılması.
+                </li>
+                <li>
+                    <strong>Altyapı ve Kaba İnşaat (İskelet):</strong>
+                    Hafriyat alımı, drenaj ve temel bohçalama yalıtım işleri, temel demir ve betonunun dökülmesi, kat kolon-kiriş kalıplarının çakılması ve tablaların dökülmesi, dış ve iç duvarların örülmesi.
+                </li>
+                <li>
+                    <strong>Kapatma ve Harici Çevre İşleri:</strong>
+                    Çatı iskeletinin yapılması, çatı örtüsü ve su-ısı yalıtımı detaylarının uygulanması. Dış cephe mantolama, kaba sıva ve dış cephe boya işlerinin tamamlanması. Dış pencereler ve giriş kapısının takılarak binanın dış etkenlere kapatılması.
+                </li>
+                <li>
+                    <strong>Altyapı ve Tesisat Dağılımları:</strong>
+                    Elektrik kablolama borularının çekilmesi, temiz ve pis su tesisat borularının döşenmesi, yerden ısıtma boruları veya radyatör hatlarının çekilmesi, şap dökümü öncesi ses yalıtımı uygulamaları ve şap betonunun atılması.
+                </li>
+                <li>
+                    <strong>İnce İşçilik (Kozmetik ve Detaylar):</strong>
+                    İç sıva ve alçıpan tavan uygulamaları, banyo ve zemin seramiklerinin yapılması, parke döşenmesi, kapı kasaları ve kanatlarının montajı, mutfak tezgahı ve dolaplarının takılması, priz, armatür ve aydınlatma montajları.
+                </li>
+            </ol>
+
+            <h2>Bütçenizi Koruyacak Altın Değerinde Tasarruf Önerileri</h2>
+            <p>
+                İnşaat bütçesini düşürmek demek, binayı dayanıksız malzemelerden yapmak demek değildir. Güvenlikten ödün vermeden tasarruf etmenin yolları doğru planlama tekniklerinde saklıdır:
+            </p>
+            <ul>
+                <li><strong>Mühendislik Optimizasyonu:</strong> Statik projeyi çizen mühendisten, binayı aşırı derecede "gereksiz emniyetli ve hantal" tasarlamak yerine, zemin etüdüne tam uyumlu, deprem yönetmeliğine uygun fakat rasyonel demir-beton oranlarına sahip bir statik analiz yapmasını rica edin.</li>
+                <li><strong>Sade Mimari Tercihi:</strong> Çok girintili çıkıntılı, dairesel kolonlar içeren, karmaşık çatı eğimlerine sahip binaların kalıp işçiliği ve kalıp plywood israfı aşırı yüksek olur. Sade, kare veya dikdörtgen formlu minimalist tasarımlar her zaman işçilik ve malzeme dostudur.</li>
+                <li><strong>Malzemeleri Zamanında Satın Alın:</strong> Demir ve çimento gibi borsa bazlı ekomik emtia malzemelerini fiyattaki dönemsel düşüş anlarında tır bazlı (toplu) satın alıp depolayarak gelecekteki zamlardan kendinizi koruyun.</li>
+                <li><strong>Metrajları Dijital Çıkarın:</strong> İnşaat dökümüne başlamadan önce dijital metraj yazılımları veya platformumuz gibi hesaplayıcılar aracılığıyla malzeme listesini milimetrik olarak çıkarın. Şantiyede ustaların "bu kadar daha kum lazım, şu kadar daha tuğla lazım" diyerek yapacağı afaki siparişlerin önüne geçin.</li>
+            </ul>
+
+            <div class="bg-orange/10 p-8 rounded-3xl border border-orange/20 my-12">
+                <h3 class="mt-0 text-orange">Kendi Projenizin Maliyetini Saniyeler İçinde Hesaplayın!</h3>
+                <p class="mb-0 text-navy/80">
+                    Seçeceğiniz ile, kat adedine, yapı tarzına ve malzeme kalitesine göre güncel demir, hazır beton ve işçilik piyasasını kapsayan inşaat maliyetini hesaplamak artık çok kolay. <strong>MaliyetHesap</strong> algoritması sayesinde yorulmadan gerçek verilerle anında bütçe raporu oluşturabilirsiniz.
+                </p>
+                <a href="index.html" class="inline-block mt-6 bg-orange text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-navy hover:shadow-lg transition-all">Şimdi Ücretsiz Hesapla</a>
+            </div>
+
+            <h2>Sonuç: Hayalinizi Gerçekçi Planlarla İnşa Edin</h2>
+            <p>
+                Başarılı bir yapının temeli sadece kaliteli hazır beton veya esnemez inşaat demiriyle atılmaz; asıl temel doğru bir finansal bütçeyle atılır. Yapacağınız titiz bir <strong>inşaat maliyeti hesaplama</strong> çalışması, sizi şantiye ortasında yaşayabileceğiniz nakit krizlerinden ve kâbusa dönebilecek koordinasyon hatalarından sonsuza kadar uzak tutar.
+            </p>
+            <p>
+                İster profesyonel müteahhitlerin tecrübesine güvenerek anahtar teslim bir sözleşme yapın, ister her adımda şantiyenizin başında durarak usta ekiplerini kendiniz yönetin; elinizde daima güncel piyasa fiyatlarını yansıtan detaylı bir bütçe rehberi taşıyın. Saniyeler içinde projenize özel maliyet simülasyonları tasarlamak ve sağlam adımlarla yola çıkmak için platformumuzun dinamik hesaplayıcılarını hemen şimdi kullanabilirsiniz!
+            </p>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-serif text-white mb-6">Maliyet<span class="text-orange">Hesap</span></div>
+                    <p class="max-w-sm leading-relaxed">Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="index.html#nasil" class="hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Bloglar</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>© 2026 MALİYETHESAP. TÜM HAKLARI SAKLIDIR.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
