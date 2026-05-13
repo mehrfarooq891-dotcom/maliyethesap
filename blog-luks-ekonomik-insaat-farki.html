@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lüks vs Ekonomik İnşaat — Maliyet Farkı Ne Kadar? | MaliyetHesap</title>
+    <meta name="description" content="Lüks vs ekonomik inşaat bütçeleri arandığında fiyat farkı ne kadardır? Malzeme kalitesi, işçilik kalemleri ve detaylı fiyat karşılaştırma tablosu ile bütçenizi yönetin.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e3a5f',
+                        'navy-dark': '#162b46',
+                        orange: '#E8792A',
+                        cream: '#FAF7F2',
+                        green: '#2E7D52',
+                        border: '#E2DDD6',
+                    },
+                    fontFamily: {
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body { background-color: #FAF7F2; color: #1e3a5f; font-family: 'Source Sans Pro', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #162b46); }
+        .prose h2 { font-size: 1.875rem; color: #1e3a5f; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8792A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #1e3a5f; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; text-align: justify; }
+        .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #1e3a5f/80; }
+        .prose strong { color: #1e3a5f; font-weight: 700; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 no-print border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-heading font-extrabold text-white">
+                Maliyet<span class="text-orange">Hesap</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-white/90 text-sm font-semibold tracking-wide">
+                <a href="index.html" class="hover:text-orange transition-colors">Ana Sayfa</a>
+                <a href="index.html#nasil" class="hover:text-orange transition-colors">Hizmetler</a>
+                <a href="about.html" class="hover:text-orange transition-colors">Hakkımızda</a>
+                <a href="blog.html" class="hover:text-orange transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center border-t border-white/10 pt-4">
+            <a href="index.html" class="block text-white hover:text-orange py-2">Ana Sayfa</a>
+            <a href="index.html#nasil" class="block text-white hover:text-orange py-2">Hizmetler</a>
+            <a href="about.html" class="block text-white hover:text-orange py-2">Hakkımızda</a>
+            <a href="blog.html" class="block text-white hover:text-orange py-2">Blog</a>
+            <a href="contact.html" class="block text-white hover:text-orange py-2">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- BLOG HEADER -->
+    <header class="hero-gradient py-24 px-6 text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-orange font-bold uppercase tracking-widest text-xs mb-4 italic">Kategori: İnşaat Bütçesi</div>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading mb-6 leading-tight">Lüks vs Ekonomik İnşaat — Maliyet Farkı Ne Kadar?</h1>
+            <div class="flex items-center justify-center gap-4 text-white/60 text-sm">
+                <span>13 Mayıs 2026</span>
+                <span>•</span>
+                <span>Okuma Süresi: 16 Dakika</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <article class="max-w-4xl mx-auto py-16 px-6 md:px-12 bg-white rounded-[40px] -mt-12 shadow-2xl relative z-10 border border-border/20">
+        <div class="prose max-w-none">
+            <p>
+                Bir arsa edindikten veya eski bir binayı kentsel dönüşüme verdikten sonra herkesin aklını kurcalayan en temel soru şudur: <em>"Buraya yaptıracağım binayı ekonomik standartlarda mı inşa etmeliyim, yoksa bütçeyi zorlayıp lüks bir proje mi oturtmalıyım?"</em> Bu karar zihinde kolayca şekillense de konu bütçe tablosuna geldiğinde durum değişir. Çünkü Türkiye'deki piyasa koşullarında <strong>lüks ekonomik inşaat farkı</strong> yalnızca kaba yapı aşamasında değil, özellikle ince işler, cephe tasarımı, teknolojik donanımlar ve peyzaj alanında dramatik bir şekilde açılmaktadır.
+            </p>
+            <p>
+                İnşaat yaptırmayı planlayanların bütçe israfına düşmesini önlemek amacıyla, bu kapsamlı rehberimizde lüks ve ekonomik yapılar arasındaki finansal uçurumları masaya yatırıyoruz. İki segment arasındaki <strong>malzeme kalitesi farkı</strong>, kalifiye usta <strong>işçilik</strong> giderleri ve 2026 piyasasını yansıtan kapsamlı <strong>fiyat karşılaştırma tablosu</strong> ile hayalinizdeki evi gerçekçi analizlerle şekillendirmenize katkı sunacağız.
+            </p>
+
+            <h2>1. Sınırı Belirlemek: Ekonomik ve Lüks Yapı Sınıfları Ne Anlama Gelir?</h2>
+            <p>
+                Sektörde maliyetleri analiz etmeden önce iki kavramı profesyonel düzeyde konumlandırmamız gerekir. Birçok insan "ekonomik inşaat" dendiğinde dayanıksız, depreme dayanıksız veya kalitesiz malzemelerden yapılmış bir bina hayal eder. Bu tamamen yanlıştır.
+            </p>
+            <ul>
+                <li>
+                    <strong>Ekonomik İnşaat (Standart Paket):</strong> Yasal mevzuatlara, Deprem Yönetmeliği standartlarına ve TSE kalitesine tamamen uygun, ancak estetik ve lüks konfor ögelerinden arındırılmış fonksiyonel yapılardır. Bu sınıfta yerel piyasada yaygın olarak bulunan, tedariği kolay, standart seri üretime tabi yerli markalar ve malzemeler tercih edilir.
+                </li>
+                <li>
+                    <strong>Lüks İnşaat (Premium Sınıf):</strong> Standart güvenlik gereksinimlerinin çok ötesine geçerek; üst düzey estetik, özelleştirilmiş tasarım, akıllı otomasyon sistemleri, yüksek enerji verimliliği sunan ithal veya özel üretim malzemelerin kullanıldığı prestij odaklı yapılardır.
+                </li>
+            </ul>
+            <p>
+                Görüldüğü üzere, aralarındaki temel ayrım yapı güvenliği değil; kullanılan detay çözümleri, teknoloji, malzeme ömrü ve estetik özelleştirmedir. Bu bağlamda <strong>lüks ekonomik inşaat farkı</strong> her kalemde bütçeyi katlayacak detaylara sahiptir.
+            </p>
+
+            <h2>2. Malzeme Kalitesi Farkı: Kaba Yapıdan Estetik Detaylara</h2>
+            <p>
+                Fiyat makasının en çok açıldığı yer şüphesiz yapı malzemelerinin tedarik aşamasıdır. Lüks bir yapı ile ekonomik yapı arasındaki <strong>malzeme kalitesi farkı</strong> incelendiğinde, her adımda gözle görülür lüks farkları ortaya çıkar. Bu farkları kategorize ederek inceleyelim:
+            </p>
+
+            <h3>Kaba İnşaat ve Yalıtım Malzemeleri</h3>
+            <p>
+                Ekonomik inşaatlarda kaba yapıda genellikle standart hazır beton, standart nervürlü demir ve tuğla kullanılır. Dış cephede klasik mantolama ve EPS levhalar üzerine kaliteli standart dış cephe boyası tercih edilir. Çatıda ise standart ahşap karkas üzeri kiremit kaplama yaygındır.
+            </p>
+            <p>
+                Lüks inşaat grubunda ise statik esnemeyi en aza indiren daha yüksek sınıflı betonlar, gazbetonun ötesinde bims veya ses sönümleyici özel kompozit bloklar tercih edilir. Isı ve ses yalıtımında standardın iki katı kalınlıkta taş yünü ve özel akustik membranlar kullanılır. Çatıda titanyum, çinko veya bakır alaşımlı modern kilitli kenet çatı levhaları yer alır. Sadece yalıtım ve kaba yapıdaki bu ileri düzey mühendislik detayları bile bütçeyi kaba inşaatta %20 civarında yukarı taşır.
+            </p>
+
+            <h3>Dış Cephe ve Doğramalar</h3>
+            <p>
+                Ekonomik sınıfta binaların dışı düz sıva ve silikonlu dış cephe boyasıdır. Pencere olarak yerli üreticilerin standart çift camlı PVC profil doğramaları kullanılır.
+            </p>
+            <p>
+                Lüks sınıfta ise dış cephede kesinlikle düz sıva ve boyadan kaçınılır. Bunun yerine kompozit siding, mekanik sistemli doğal taş (mermer, traverten vb.) kaplamalar, lamine ahşap giydirmeler veya geniş temperli cam yüzeyler içeren lüks cephe sistemleri tasarlanır. Pencere olarak ısı yalıtım köprülü lüks alüminyum profiller, ses geçirmez üçlü lamine camlar ve gizli motorlu elektrostatik panjurlar entegre edilir. Bu cephe değişikliği, lüks bütçesini ekonomik pakete kıyasla tek başına 3 ila 4 katına kadar çıkarabilir.
+            </p>
+
+            <h3>Zemin, Duvar Kaplamaları ve Seramikler</h3>
+            <p>
+                Bu bölüm ince inşaat bütçesinin kalbidir. Ekonomik pakette zeminlerde yerli üreticilerin popüler laminat parkeleri veya 60x60 cm ebatlarında standart seramik levhaları yaygındır. Duvarlarda alçı sıva üstü standart su bazlı plastik boya uygulanır.
+            </p>
+            <p>
+                Lüks segmentte ise ithal masif ahşap lamine parkeler, İtalyan mermer levhaları veya devasa boyutlu (120x240 cm) yekpare porselen levhalar kullanılır. Banyo duvarlarında ıslak hacimler için özel mermer detaylandırmalar tercih edilirken, kuru alanlarda İtalyan dekoratif sıva (efekt boya), lüks ithal duvar kağıtları veya özel tasarım ahşap panel kaplamalar hakimdir. Malzemenin tedarik fiyatındaki fark 10 kata kadar çıkabilmektedir.
+            </p>
+
+            <h3>Vitray, Islak Hacimler ve Yapı Kimyasalları</h3>
+            <p>
+                Ekonomik banyoda standart gömme rezervuar, yerli marka armatürler ve standart evyeler mevcuttur. Lüks banyoda ise banyo aksamları tamamen gizlidir. Temassız akıllı klozetler, pirinç gövdeli ithal ankastre bataryalar (Grohe, Hansgrohe vb.), jakuzi sistemleri, cam bölmeli özel sauna veya hamam konseptli mekanlar oluşturulur.
+            </p>
+
+            <h2>3. İşçilik Faktörü: Lüks Malzeme Lüks Ustalık Gerektirir</h2>
+            <p>
+                Harcadığınız bütçenin büyüklüğünü belirleyen fakat çoğu zaman geri plana atılan en kritik unsur <strong>işçilik</strong> seviyesidir. Birçok mal sahibi, lüks malzemelerin satın alma faturasına odaklanıp o malzemeyi uygulayacak ustaların maliyetini hesaba katmaz.
+            </p>
+            <p>
+                Oysa lüks malzeme, doğrudan lüks işçilik yevmiyesi veya metrekare faturası anlamına gelir. Bunun nedeni oldukça basittir:
+            </p>
+            <ul>
+                <li>
+                    <strong>Hata Payının Sıfıra Yakın Olması:</strong> Metrekaresi 800 TL olan standart bir seramikte yapılacak minik bir montaj hatası kırılma durumunda tolere edilebilirken, metrekaresi 8.000 TL olan ithal İtalyan mermerinin kesiminde veya döşenmesinde yapılacak bir santimlik kayıp telafisi imkansız devasa finansal zararlara yol açar. Bu yüzden usta, riski üstlenmek adına işçilik fiyatını 3 katına çıkarır.
+                </li>
+                <li>
+                    <strong>Uygulama Zorluğu ve Ekipman Gereksinimi:</strong> 60x60 cm boyutunda standart bir seramiği tek bir usta kolayca döşeyebilirken, 120x240 cm boyutundaki dev porselen slab levhayı taşımak, vantuzlamak, kesmek ve sıfır derz ile yapıştırmak için en az 3-4 kişilik profesyonel bir ekibin ve özel hidrolik vakum tablalarının bulunması şarttır. Bu durum doğrudan labor maliyetini katlar.
+                </li>
+                <li>
+                    <strong>Mimari Detay Çözümleri:</strong> Lüks projeler, sıradan süpürgeliklerin veya kapı kasalarının ötesine geçer. Duvar içine gizlenmiş sıfır toleranslı süpürgelikler, tavanda gizli ışık havuzları ve shadowline (gölge derzli) tavan detayları inanılmaz hassas bir marangozluk, boyacılık ve alçı ustalığı ister. Bu tür detayların işçilik saatleri klasik imalatlara göre katlarca uzundur.
+                </li>
+            </ul>
+            <p>
+                Kısacası, ince işlerdeki usta yevmiyeleri ve taşeron hakedişleri, <strong>lüks ekonomik inşaat farkı</strong> parametresinde bütçeyi yukarı taşıyan en büyük gizli lokomotiflerden biridir.
+            </p>
+
+            <h2>4. Lüks vs Ekonomik İnşaat Fiyat Karşılaştırma Tablosu (2026)</h2>
+            <p>
+                Faydalı bir analiz sunmak adına, 2026 yılı güncel inşaat piyasası verilerine göre hazırlanmış bir projenin kalemler bazında oransal ve birim maliyet farklarını içeren karşılaştırma tablosunu hazırladık. Bu veriler brüt metrekare üzerinden yapılan ortalama bütçe dağılımlarını yansıtmaktadır:
+            </p>
+
+            <div class="overflow-x-auto my-8 border border-border/80 rounded-2xl overflow-hidden shadow-md">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-navy text-white font-heading">
+                            <th class="p-4">Yapı Kalemi</th>
+                            <th class="p-4">Ekonomik Yapı Seçimleri</th>
+                            <th class="p-4">Lüks Yapı Üst Sınıf Seçimleri</th>
+                            <th class="p-4 text-center">Ortalama Maliyet Çarpanı</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-navy/90 text-sm">
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Kaba İnşaat ve Temel</td>
+                            <td class="p-4">Standart C30 Beton, Tuğla Duvarlar, Klasik Şap</td>
+                            <td class="p-4">C35/C40 Beton, Ses Yalıtımlı Hafif Bloklar, Takviyeli Bohçalama</td>
+                            <td class="p-4 text-center text-orange font-bold">1.2x - 1.4x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Dış Cephe & Isı Yalıtımı</td>
+                            <td class="p-4">5-8 cm EPS Mantolama, Akrilik Dış Cephe Boyası</td>
+                            <td class="p-4">Mekanik Doğal Taş Kaplama, Kompakt Panel, 12 cm Taş Yünü</td>
+                            <td class="p-4 text-center text-orange font-bold">3.5x - 5.0x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Pencereler & Doğramalar</td>
+                            <td class="p-4">Klasik Genişlikte PVC Doğrama, Standart Çift Cam</td>
+                            <td class="p-4">Isı Köpüklü Lüks Alüminyum Profil, Lamine Üçlü Cam, Otomatik Panjur</td>
+                            <td class="p-4 text-center text-orange font-bold">3.0x - 4.5x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Zemin Kaplamaları</td>
+                            <td class="p-4">8 mm Standart Laminat Parke, 60x60 m² Seramik</td>
+                            <td class="p-4">Masif Ahşap Lamine Parke, Geniş Porselen Slablar, İthal Mermerler</td>
+                            <td class="p-4 text-center text-orange font-bold">4.0x - 8.0x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Tavan & Duvar Bitirişleri</td>
+                            <td class="p-4">Alçı Sıva Üstü Plastik Boya, Sade Kartonpiyer</td>
+                            <td class="p-4">İtalyan Efekt Boya, Ahşap Akustik Paneller, Gizli Shadowline Asma Tavan</td>
+                            <td class="p-4 text-center text-orange font-bold">2.5x - 4.0x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold font-bold">Banyo ve Sıhhi Tesisat</td>
+                            <td class="p-4">Standart Rezervuar, Klasik Armatürler, Akrilik Duş Teknesi</td>
+                            <td class="p-4">Akıllı Ankastre Bataryalar, İthal Vitrifiye, Özel Sauna, Mermer Banyo</td>
+                            <td class="p-4 text-center text-orange font-bold">4.0x - 6.5x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Mutfak Çözümleri</td>
+                            <td class="p-4">Sade MDF Lam Dolaplar, Yerli Granit/Çimstone Tezgah</td>
+                            <td class="p-4">İthal Marka Mekanizmalar, Masif Lake Dolaplar, Porselen/Yekpare Tezgahlar</td>
+                            <td class="p-4 text-center text-orange font-bold">3.0x - 5.5x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Elektrik & Sistemler</td>
+                            <td class="p-4">Standart Anahtar Priz Grubu, Temel Sigorta Panosu</td>
+                            <td class="p-4">KNX Akıllı Ev Otomasyonu, Gizli Aydınlatmalar, Yangın, Güvenlik, Ups</td>
+                            <td class="p-4 text-center text-orange font-bold">3.5x - 6.0x</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Isıtma & Klima Tesisatı</td>
+                            <td class="p-4">Klasik Kombi, Duvara Monte Panel Radyatörler</td>
+                            <td class="p-4">Yerden Isıtma, VRF Merkezi İklimlendirme Sistemi, Isı Pompası ve Güneş Enerjisi</td>
+                            <td class="p-4 text-center text-orange font-bold">2.5x - 4.2x</td>
+                        </tr>
+                        <tr class="bg-navy/5">
+                            <td class="p-4 font-extrabold text-navy">TOPLAM YAPI BÜTÇESİ</td>
+                            <td class="p-4 font-extrabold text-green text-sm">Yasal Sınırda Minimum Taban Bütçe</td>
+                            <td class="p-4 font-extrabold text-orange text-sm">Üst Limit Olmayan Premium Bütçe</td>
+                            <td class="p-4 text-center text-navy font-extrabold">Ortalama 2.5x - 3.5x Kat Artış</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-navy/60 italic font-mono">* Yukarıdaki maliyet çarpanları, her bir kalemin toplam malzeme artı uzman işçilik maliyetlerindeki makrografik dalgalanmasını ifade etmektedir.</p>
+
+            <h2>5. Akıllı Hibrit Seçeneği: Cebinizi Yormayacak "Akıllı Lüks" Sırları</h2>
+            <p>
+                Gördüğümüz üzere, lüks yapıda bütçe neredeyse 3 katına kadar katlanmaktadır. Ancak bu durum sizi pes ettirmemeli. Çünkü inşaat bütçenizi optimize ederken her şeyi ya siyah ya beyaz görmek zorunda değilsiniz. Sektördeki deneyimli mimarların uyguladığı "akıllı hibrit" yöntemiyle, bütçenizi ekonomik seviyelere yakın tutarken yapınıza lüks bir hava katabilirsiniz. İşte o altın sırlar:
+            </p>
+            
+            <h3>Mühendisliğe Yatırım Yapın, Kozmetikte Esnek Olun</h3>
+            <p>
+                İnşaat yaparken asla tasarruf etmemeniz gereken yerler binanın iskeleti, tesisatları ve yalıtımıdır. Duvar arkasında kalan su borularını, elektrik kablolarını veya mantolamayı en kaliteli ürünlerden seçin. Çünkü bunları ileride değiştirmek binayı yıkmak demektir. Ancak banyo dolabını, parkeyi veya musluk armatürlerini istediğiniz zaman 10 dakika içinde değiştirebilirsiniz. Bu nedenle başlangıçta bu kalemleri daha standart (ekonomik) seçerek kaba kaliteyi maksimize edin.
+            </p>
+
+            <h3>Doğru Odak Noktaları Seçin (Vurgu Tasarımı)</h3>
+            <p>
+                Evin tüm duvarlarını çok pahalı dekoratif sıvalarla kaplamak yerine sadece tv ünitesinin arkasını veya şömine çevresini bu özel sıvayka kaplatın. Kalan kısımları ise sade, pürüzsüz kaliteli beyaz bir boyayla bitirin. Benzer şekilde, tüm zeminlerde aşırı pahalı porselen plakalar kullanmak yerine sadece misafirleri karşıladığınız antre bölgesine şık bir doğal taş/tasarım seramik deseni ekleyip odaları standart laminat parkelerle tamamlayın. Bu teknik, lüks algısını korurken bütçenizi inanılmaz derecede rahatlatacaktır.
+            </p>
+
+            <h3>Bölgesel Lojistik Fırsatlarını Değerlendirin</h3>
+            <p>
+                Özellikle taş, mermer veya ahşap gibi malzemelerin fiyatları nakliye mesafelerine göre ciddi değişkenlik gösterir. Akara teslim mermer kullanmak yerine şantiyenize en yakın taş ocağının yerel traverten veya doğal taşlarını tercih edin. Bu yerel dokunuş hem mimarinize özgün, yere aidiyet kazandıran bir lüks kimliği kazandıracak hem de lojistik giderlerini sıfıra indirdiği için ekonomik bütçede kalmanızı sağlayacaktır.
+            </p>
+
+            <h2>Sonuç: Gerçekçi Verilerle Sağlam Yol Haritası Sizi Korur</h2>
+            <p>
+                Günün sonunda, yapmayı hedeflediğiniz ev veya gayrimenkul projesindeki lüks seviyesi tamamen sizin yaşam tarzınız, kişisel zevkiniz ve finansal öngörülerinizle alakalıdır. Ancak ister bütçe dostu, tamamen ekonomik ve fonksiyonel bir yapı kurgulayın; ister her detayıyla parmakla gösterilecek ultra lüks bir villa projesine imza atın; her iki senaryoda da başarının anahtarı <strong>lüks ekonomik inşaat farkı</strong> dengesini doğru kavramaktan geçer.
+            </p>
+            <p>
+                Doğru tedarikçiyle anlaşabilmek, usta pazarlıklarında hak ettiğiniz bütçeyi sonuna kadar koruyabilmek ve şantiye esnasında kötü mali sürprizlerle karşılaşmamak için dinamik bütçe hesaplamalarından yararlanın. Projenize özel en güncel kaba inşaat, ince işler, işçilik ve bölgesel malzeme birim maliyetlerini yapay zeka destekli algoritmalarımızla saniyeler içinde hesaplamak için platformumuzu hemen kullanabilirsiniz!
+            </p>
+
+            <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
+                <h3 class="text-white mt-0 mb-4 font-heading">İnşaat Malzemesi ve İşçilik Maliyetinizi Hemen Simüle Edin</h3>
+                <p class="text-white/80 mb-6 font-sans">Sadece birkaçı adımda şantiyenizin bulunduğu ili seçin, metrekare bilginizi girin ve seçtiğiniz lüks-standart sınıflarına göre en rasyonel inşaat maliyeti bütçesini saniyeler içinde cep telefonunuza veya bilgisayarınıza indirin.</p>
+                <a href="index.html" class="inline-block bg-orange text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-navy transition-all shadow-lg font-heading">Sıfır Sapma ile Maliyeti Hesapla</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-serif text-white mb-6">Maliyet<span class="text-orange">Hesap</span></div>
+                    <p class="max-w-sm leading-relaxed">Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="index.html#nasil" class="hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Bloglar</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>© 2026 MALİYETHESAP. TÜM HAKLARI SAKLIDIR.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
