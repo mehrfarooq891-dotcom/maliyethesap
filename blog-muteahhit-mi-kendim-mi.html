@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müteahhit mi Kendim mi Yaptırmalıyım? Maliyet Analizi | MaliyetHesap</title>
+    <meta name="description" content="Kendi evinizi yaptırırken müteahhit mi yoksa kendiniz mi yaptırmalısınız? Müteahhit avantajları, kendi yaptırma riskleri ve 2026 güncel maliyet karşılaştırma tablosu.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e3a5f',
+                        'navy-dark': '#162b46',
+                        orange: '#E8792A',
+                        cream: '#FAF7F2',
+                        green: '#2E7D52',
+                        border: '#E2DDD6',
+                    },
+                    fontFamily: {
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body { background-color: #FAF7F2; color: #1e3a5f; font-family: 'Source Sans Pro', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #162b46); }
+        .prose h2 { font-size: 1.875rem; color: #1e3a5f; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8792A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #1e3a5f; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; text-align: justify; }
+        .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #1e3a5f/80; }
+        .prose strong { color: #1e3a5f; font-weight: 700; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 no-print border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-heading font-extrabold text-white">
+                Maliyet<span class="text-orange">Hesap</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-white/90 text-sm font-semibold tracking-wide">
+                <a href="index.html" class="hover:text-orange transition-colors">Ana Sayfa</a>
+                <a href="index.html#nasil" class="hover:text-orange transition-colors">Hizmetler</a>
+                <a href="about.html" class="hover:text-orange transition-colors">Hakkımızda</a>
+                <a href="blog.html" class="hover:text-orange transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center border-t border-white/10 pt-4">
+            <a href="index.html" class="block text-white hover:text-orange py-2">Ana Sayfa</a>
+            <a href="index.html#nasil" class="block text-white hover:text-orange py-2">Hizmetler</a>
+            <a href="about.html" class="block text-white hover:text-orange py-2">Hakkımızda</a>
+            <a href="blog.html" class="block text-white hover:text-orange py-2">Blog</a>
+            <a href="contact.html" class="block text-white hover:text-orange py-2">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- BLOG HEADER -->
+    <header class="hero-gradient py-24 px-6 text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-orange font-bold uppercase tracking-widest text-xs mb-4 italic">Kategori: İnşaat Stratejisi</div>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading mb-6 leading-tight">Müteahhit mi Kendim mi Yaptırmalıyım? Maliyet Analizi</h1>
+            <div class="flex items-center justify-center gap-4 text-white/60 text-sm">
+                <span>20 Mayıs 2026</span>
+                <span>•</span>
+                <span>Okuma Süresi: 16 Dakika</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <article class="max-w-4xl mx-auto py-16 px-6 md:px-12 bg-white rounded-[40px] -mt-12 shadow-2xl relative z-10 border border-border/20">
+        <div class="prose max-w-none">
+            <p>
+                Kendi arsasına müstakil bir ev veya modern bir villa yaptırmak isteyen herkesin zihnini kurcalayan, projenin gidişatını ve nihai başarısını belirleyen en hayati yol ayrımı şudur: <strong>"İnşaatımı profesyonel bir müteahhite mi teslim etmeliyim, yoksa kollarımı sıvayıp her aşamayı kendim mi yönetmeliyim?"</strong> Birçok insan, müteahhitlik firmasının kazanacağı kâr marjını cebinde tutma düşüncesiyle işe doğrudan kendi başlamayı mantıklı bulur. Ancak Türkiye'deki dinamik piyasa koşullarında, malzeme tedarik zincirleri, kalifiye usta yönetimi ve şantiye bürokrasisi göz önüne alındığında, <strong>müteahhit kendi inşaat</strong> kıyaslaması bir bütçe kalemi olmaktan çıkıp ciddi bir risk yönetimi savaşına dönüşmektedir.
+            </p>
+            <p>
+                Kendi evinizi ya da yatırım amaçlı gayrimenkulünüzü inşa ederken bütçe israfına düşmemeniz ve en mantıklı kararı vermeniz için bu kapsamlı analizimizi hazırladık. Bu yazımızda; profesyonel bir yükleniciyle çalışmanın tüm <strong>müteahhit avantajları</strong>, şantiyeyi bireysel olarak üstlenmenin barındırdığı <strong>kendi yaptırma riskleri</strong> ve 2026 piyasa gerçeklerini yansıtan kalem kalem <strong>maliyet farkı</strong> karşılaştırmalarını tarafsız verilerle masaya yatırıyoruz.
+            </p>
+
+            <h2>Sınırları Anlamak: Müteahhitlik ve Emanet İnşaat (Kendin Yap) Nedir?</h2>
+            <p>
+                Karşılaştırmamıza bütçe detayıyla girmeden önce, her iki yöntemin de kurumsal ve pratik sınırlarını doğru çizmek gerekir:
+            </p>
+            <ul>
+                <li>
+                    <strong>Müteahhitlik Hizmeti (Anahtar Teslim):</strong> Ruhsat aşamasından peyzaj teslimine kadar tüm imalatların, profesyonel bir şirket tarafından sözleşmeye bağlı kalınarak belirli bir bütçe ve takvim dahilinde üstlenilmesidir. Sorumluluk, malzeme tedariği, koordinasyon ve iş güvenliği tamamen yükleniciye aittir.
+                </li>
+                <li>
+                    <strong>Emanet Usulü İnşaat (Kendi Yaptırma):</strong> Arsa sahibinin adeta şantiye şefi rolünü üstlendiği yöntemdir. Malzemelerin (demir, beton, tuğla vb.) bireysel olarak satın alınmasını, kalıpçı, demirci, elektrikçi gibi onlarca farklı taşeron ustanın tek tek bulunmasını ve şantiye yönetiminin bizzat mülk sahibi tarafından koordine edilmesini ifade eder.
+                </li>
+            </ul>
+            <p>
+                Bu iki metodolojiyi derinlemesine kıyaslayarak hayalinizdeki evin inşasındaki <strong>müteahhit kendi inşaat</strong> dengesini birlikte keşfedelim.
+            </p>
+
+            <h2>1. Profesyonel Güvence: İnşaatta Müteahhit Avantajları</h2>
+            <p>
+                İnşaat süreçleri, amatör bir gözle bakıldığında sadece tuğlaların üst üste dizilmesi ve boyanması gibi görünse de, arka planda devasa bir mühendislik, lojistik ve finans orkestrasyonu barındırır. Bu noktada profesyonel bir yükleniciyle çalışmanın getirdiği kritik <strong>müteahhit avantajları</strong> şunlardır:
+            </p>
+
+            <h3>Toptan Malzeme Alım Gücü (Navlun ve İskonto Avantajı)</h3>
+            <p>
+                İnşaat bütçesinin yaklaşık %60'ını malzeme alımları oluşturur. Müteahhitler, yıl boyunca onlarca farklı şantiyede yüksek hacimli malzeme satın aldıkları için çimento, demir, seramik, vitrifiye ve yapı kimyasalları üreticileriyle doğrudan anlaşma yaparlar. Bireysel bir arsa sahibinin perakende olarak bayiden alacağı fiyat ile müteahhit firmanın toptan alım iskontosu arasında en az %20 ila %30 oranında fiyat avantajı bulunur. Bu durum, müteahhitlik kâr marjının önemli bir kısmını daha malzeme alım aşamasında kendi kendine amorti etmesini sağlar.
+            </p>
+
+            <h3>Kalifiye Taşeron (Usta) Havuzu ve İşçilik Garantisi</h3>
+            <p>
+                Yapıda en çok baş ağrıtan konulardan biri "iyi usta" bulabilmektir. Profesyonel müteahhitler, yıllardır birlikte çalıştıkları, sadık ve iş ahlakına güvendikleri kalıpçılar, demirciler ve ince iş ustalarıyla çalışırlar. Ustalar, müteahhitten sürekli iş alacaklarını bildikleri için iş standartlarını yüksek tutar ve bütçeyi riske atmazlar. Ayrıca, teslim sonrasında oluşabilecek herhangi bir tesisat sızıntısı veya cephe probleminde muhatabınız doğrudan kurumsal yüklenici olurken, emanet sistemde usta parayı alıp gittikten sonra muhatap bulmak imkansızdır.
+            </p>
+
+            <h3>Bürokratik Süreçler ve Yasal Mevzuat Deneyimi</h3>
+            <p>
+                Evin yapılacağı belediyenin imar durumundan harç ödemelerine, tapu dairesi yazışmalarından şantiye elektrik-su aboneliklerine kadar düzinelerce yasal engel vardır. İmar yönetmeliklerini bilmeyen birinin yapacağı küçük bir hata, projenin aylarca mühürlenmesine ya da ruhsat iptaline yol açabilir. Müteahhitler bu yasal labirentleri avuçlarının içi gibi bildikleri için bürokratik aşamaları minimum sürede tamamlar.
+            </p>
+
+            <h2>2. Bilinmesi Gereken Gerçekler: Kendi İnşaatını Yaptırmanın Riskleri</h2>
+            <p>
+                Kendiniz inşaat yapmaya karar verdiğinizde, başlangıçta kağıt üzerinde kâr edecek gibi görünebilirsiniz. Ancak şantiye tozu yutulmaya başladıktan sonra karşılaşılan büyük <strong>kendi yaptırma riskleri</strong> bütçenizi ve sağlığınızı tehdit edebilir:
+            </p>
+
+            <h3>Koordinasyon ve Zaman Aşımı (Şantiye Sezonu Kaçırma)</h3>
+            <p>
+                Her inşaat imalatının katı bir sırası vardır. Tesisat boruları döşenmeden şap dökülürse ya da sıva kurumadan boya yapılırsa tüm imalatlar kullanılmaz hale gelir. Ustaların kendilerine verilen takvime uymaması, "bugün geliyorum" deyip gelmemesi şantiyelerde en çok karşılaşılan senaryodur. Tek bir elektrikçinin işi geciktirmesi sıvacıyı, o da boyacıyı kilitler. Türkiye'de kış şartları başlamadan kaba yapıyı kapatıp iç işlere geçebilmek hayati önem taşır. Emanet inşaatlarda koordinasyon eksikliği nedeniyle inşaatın kışa kalması, şantiye bekçisi, konteyner kirası, fuzuli iskele işgalleri gibi gizli maliyetleri katlar.
+            </p>
+
+            <h3>İş Sağlığı ve Güvenliği Sorumluluğu (Hukuki Riskler)</h3>
+            <p>
+                Şantiyelerde meydana gelebilecek olası bir iş kazasında yasal olarak birinci derecede sorumlu arsa sahibidir. Profesyonel bir müteahhit iş güvenliği uzmanlarıyla tüm tedbirleri alıp sigorta süreçlerini yönetirken, kendi yaptığınız inşaatta bir işçinin baret takmaması veya iskeleden düşmesi halinde yaşanacak hukuki süreçlerin ucu hapis cezalarına kadar uzanabilmektedir. Birçok bireysel yapıcı bu inanılmaz hukuki riski maalesef göz ardı etmektedir.
+            </p>
+
+            <h3>İnce İşlerde Hatalı İmalatlar ve Malzeme İsrafı</h3>
+            <p>
+                Metrekaresi çok yüksek olan ithal mermerler ya da özel kaplamalar, işinin ehli olmayan aceleci bir ustanın eline teslim edildiğinde telafisi imkansız malzeme kırımları meydana gelebilir. Fire payları kurgulanırken amatör şantiyelerde israf %15 seviyelerine kadar çıkabilirken, profesyonel yönetimlerde bu israf %2-3'ü geçmez.
+            </p>
+
+            <h2>3. 150 m² Brüt Villa İçin Müteahhit vs Kendi İnşaatım Maliyet Analizi (2026)</h2>
+            <p>
+                Karar verme sürecini somutlaştırmak adına, 2026 yılı güncel inşaat piyasası verilerine göre hazırlanmış, 150 m² brüt alana sahip iki katlı müstakil bir konut (villa) projesinin maliyet senaryolarını karşılaştırıyoruz. Bu tablo, "kendi başıma ucuza yaparım" beklentisi ile "gerçekleşen sürpriz giderler" arasındaki farkı net bir şekilde ortaya koymaktadır.
+            </p>
+
+            <div class="overflow-x-auto my-8 border border-border/80 rounded-2xl overflow-hidden shadow-md">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-navy text-white font-heading">
+                            <th class="p-4">İnşaat Kalemleri</th>
+                            <th class="p-4">Müteahhit Anahtar Teslim</th>
+                            <th class="p-4">Kendi Yaptığım (Kağıt Üstü Tahmini)</th>
+                            <th class="p-4">Kendi Yaptığım (Gerçekleşen Sürprizli)</th>
+                            <th class="p-4 text-center">Farkın Temel Sebebi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-navy/90 text-sm font-sans">
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Ruhsat, Proje, Mimarlık & İmar</td>
+                            <td class="p-4">300.000 TL</td>
+                            <td class="p-4">250.000 TL</td>
+                            <td class="p-4 text-orange font-bold">320.000 TL</td>
+                            <td class="p-4 text-xs italic">Projelerin belediyeden eksiklikler nedeniyle dönmesi ve revizyon ücretleri.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Hafriyat & Altyapı Bağlantıları</td>
+                            <td class="p-4">180.000 TL</td>
+                            <td class="p-4">150.000 TL</td>
+                            <td class="p-4 text-orange font-bold">220.000 TL</td>
+                            <td class="p-4 text-xs italic">Bireysel iş makinesi kiralama yevmiyesinin yüksekliği, hafriyat döküm yeri cezaları.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Kaba İnşaat Malzemesi (Beton, Demir)</td>
+                            <td class="p-4">1.200.000 TL</td>
+                            <td class="p-4">1.350.000 TL</td>
+                            <td class="p-4 text-orange font-bold">1.450.000 TL</td>
+                            <td class="p-4 text-xs italic">Müteahhitlerin iskonto gücüyle ucuza aldığı malzemeyi perakende ve yüksek navlunla almak.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Kaba İnşaat İşçiliği (Kalıp, Demirci)</td>
+                            <td class="p-4">600.000 TL</td>
+                            <td class="p-4">500.000 TL</td>
+                            <td class="p-4 text-orange font-bold">680.000 TL</td>
+                            <td class="p-4 text-xs italic">Usta kalıp hatalarının düzeltilmesi için ekstra mikser beton ve tamir işçiliği giderleri.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Dış Cephe Mantolama, Çatı & PVC</td>
+                            <td class="p-4">800.000 TL</td>
+                            <td class="p-4">700.000 TL</td>
+                            <td class="p-4 text-orange font-bold">950.000 TL</td>
+                            <td class="p-4 text-xs italic">Kalitesiz pencere doğrama montajı yüzünden yağmur sızıntısı ve izolasyonun silbaştan yapılması.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">İç İnce İşçilik & Bitirişler</td>
+                            <td class="p-4">1.400.000 TL</td>
+                            <td class="p-4">1.200.000 TL</td>
+                            <td class="p-4 text-orange font-bold">1.650.000 TL</td>
+                            <td class="p-4 text-xs italic">Seramik firesi israfı, tesisat kaçak kırma tamiratları, boyacı usta hakediş ekstraları.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">Şantiye Giderleri (Elektrik, Su, Güvenlik)</td>
+                            <td class="p-4">100.000 TL</td>
+                            <td class="p-4">80.000 TL</td>
+                            <td class="p-4 text-orange font-bold">190.000 TL</td>
+                            <td class="p-4 text-xs italic">İnşaat süresinin usta gecikmeleriyle 6 ay uzaması sonucu biriken fuzuli sabit ödemeler.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors text-white">
+                            <td class="p-4 font-extrabold text-navy">Doğrudan Yüklenici Kârı (%25 Ortalama)</td>
+                            <td class="p-4 font-extrabold text-navy-dark text-center">1.145.000 TL (Fiyatın içinde)</td>
+                            <td class="p-4 font-extrabold text-navy-dark text-center">0 TL (Kâr Yok)</td>
+                            <td class="p-4 font-extrabold text-navy-dark text-center">0 TL (Kâr Yok)</td>
+                            <td class="p-4 text-xs text-navy italic">Yüklenicinin tüm organizasyon, garanti, risk ve idari yönetim priminin karşılığıdır.</td>
+                        </tr>
+                        <tr class="bg-navy/5 text-base">
+                            <td class="p-4 font-extrabold text-navy">ORTALAMA GERÇEK BÜTÇE</td>
+                            <td class="p-4 font-extrabold text-green">4.380.000 TL</td>
+                            <td class="p-4 font-extrabold text-[#7F8C8D]">4.230.000 TL</td>
+                            <td class="p-4 font-extrabold text-orange">5.460.000 TL</td>
+                            <td class="p-4 text-xs text-navy font-bold">Emanet sistemde sürprizlerle gelen maliyet aşımı %20-30'dur.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-navy/60 italic font-mono">* Yukarıdaki maliyet verileri, 2026 yılı ortalama inşaat piyasası gerçekleri doğrultusunda simüle edilmiş olup, arsa bedeli ve büyük çevre düzenlemeleri dahil edilmemiştir.</p>
+
+            <h2>Hangi Durumda Hangisi Tercih Edilmeli?</h2>
+            <p>
+                Karar verirken aslında sadece cebinizdeki bütçeyi değil, inşaat sürecine ne kadar zaman ayırabileceğinizi de hesap etmelisiniz. Bu doğrultuda kendinizi test edebileceğiniz kriterler şunlardır:
+            </p>
+            <h3>Şu Şartlarda Müteahhit Tercih Edin:</h3>
+            <ul>
+                <li>İnşaat konusunda teknik bilginiz ve tecrübeniz yoksa,</li>
+                <li>Haftanın 6 günü aktif olarak şantiyeyi denetleyebilecek zamanınız bulunmuyorsa,</li>
+                <li>İş güvenliği ve kaza risklerinin doğuracağı yasal/hukuki sorumlulukları üstlenmek istemiyorsanız,</li>
+                <li>Bütçenizin net bir sözleşmeyle sabitlenmesini, sürpriz maliyet artışlarıyla karşılaşmak istemiyorsanız.</li>
+            </ul>
+            <h3>Şu Şartlarda Kendiniz (Emanet Usulü) Yapabilirsiniz:</h3>
+            <ul>
+                <li>Daha önce benzer bir kaba inşaat veya orta ölçekli tadilat şantiyesi yönetmişseniz,</li>
+                <li>Gerekli yapı malzemelerini toptan ve indirimli tedarik edebilecek ikili sanayi kanallarına sahipseniz,</li>
+                <li>Haftalık iş programını ve usta ekiplerini koordine edecek sınırsız serbest zamanınız varsa,</li>
+                <li>İnşaatta yaşanabilecek hataları anında fark edip müdahale edebilecek teknik göz yeteneğine sahipseniz.</li>
+            </ul>
+
+            <h2>Altın Çözüm: Akıllı Hibrit (Yarı Emanet) Sistemi</h2>
+            <p>
+                Eğer her iki sistem arasında sıkışıp kaldıysanız ve bütçenizi en verimli seviyede yönetmek istiyorsanız, inşaat profesyonellerinin sıklıkla önerdiği "Akıllı Hibrit" sistemini uygulayabilirsiniz.
+            </p>
+            <p>
+                Bu yöntemde; yapının iskeletini, betonarme güvenliğini, su-ısı yalıtımını kapsayan <strong>kaba inşaat aşamasını bütünüyle profesyonel bir müteahhite teslim edersiniz.</strong> Böylece statik güvenliği uzman kadrolarla garanti altına alır, kaba yapı şantiye takviminin aksamasını önler ve ağır yasal riskleri yüklenici şirkete devredersiniz. 
+            </p>
+            <p>
+                Kaba yapı kapandıktan ve pencereler takıldıktan sonraki iç ince işçilik aşamasını (mutfak dolapları, seramikler, parkeler, dekoratif duvar boyaları ve armatürler) kendiniz parça parça yönetebilirsiniz. Bu sayede hem en kritik aşamaları kurumsal güvenceye almış olur hem de iç mekandaki estetik detayları kendi zevkinize göre ucuza mal etme fırsatı yakalayabilirsiniz.
+            </p>
+
+            <h2>Sonuç: Mühendislik Hesabı Hayat Kurtarır</h2>
+            <p>
+                Günün sonunda, yapmayı planladığınız ev projesinde <strong>müteahhit kendi inşaat</strong> dengesini seçerken atacağınız en büyük yanlış adım, duygusal ve kağıt üstü yanıltıcı hesaplara güvenmektir. Gerçekçi bir bütçe çıkarmadan, usta yevmiyelerini ve malzeme navlunlarını hesaba katmadan başlanan her şantiye yarım kalma riski taşır.
+            </p>
+            <p>
+                Finansal sürprizlerden korunmak amacıyla, projenize girmeden önce tüm kaba, ince, tesisat ve idari giderlerinizi dinamik olarak bütçeleyin. Şantiyenizin bulunacağı bölgeyi seçerek, metrekare bilginiz ve malzeme kalite sınıfı tercihlerinize göre güncel inşaat maliyeti bütçesini saniyeler içinde simüle etmek ve gerçekçi sapma limitleriyle raporlaştırmak için platformumuzu hemen ziyaret edebilirsiniz!
+            </p>
+
+            <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
+                <h3 class="text-white mt-0 mb-4 font-heading">İnşaat Bütçenizi Aşama Aşama Hemen Çıkarın</h3>
+                <p class="text-white/80 mb-6 font-sans">Kurumsal müteahhit maliyetleri ile kendiniz yaptığınızda karşılaşacağınız kaba ve ince işler usta endekslerini anında kıyaslayan dijital test motorumuzla bütçe planlamanızı sıfır hata ile tamamlayın.</p>
+                <a href="index.html" class="inline-block bg-orange text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-navy transition-all shadow-lg font-heading">Nominal İnşaat Maliyetini Hesapla</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-serif text-white mb-6">Maliyet<span class="text-orange">Hesap</span></div>
+                    <p class="max-w-sm leading-relaxed">Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="index.html#nasil" class="hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Bloglar</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>© 2026 MALİYETHESAP. TÜM HAKLARI SAKLIDIR.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
