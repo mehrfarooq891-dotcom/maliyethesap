@@ -27,6 +27,7 @@ export default defineConfig(({mode}) => {
           blog_ankara: path.resolve(__dirname, 'blog-ankara-2026.html'),
           blog_izmir: path.resolve(__dirname, 'blog-izmir-2026.html'),
           blog_muteahhit: path.resolve(__dirname, 'blog-muteahhit-mi-kendim-mi.html'),
+          blog_ruhsat: path.resolve(__dirname, 'blog-insaat-ruhsati-maliyeti-2026.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
