@@ -32,6 +32,7 @@ export default defineConfig(({mode}) => {
           blog_yalitimi: path.resolve(__dirname, 'blog-isi-yalitimi-maliyeti-2026.html'),
           blog_banyo: path.resolve(__dirname, 'blog-banyo-tadilat-maliyeti-2026.html'),
           blog_mutfak: path.resolve(__dirname, 'blog-mutfak-tadilat-maliyeti-2026.html'),
+          blog_cati: path.resolve(__dirname, 'blog-cati-yapim-maliyeti-2026.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
