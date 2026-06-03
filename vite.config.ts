@@ -35,6 +35,7 @@ export default defineConfig(({mode}) => {
           blog_cati: path.resolve(__dirname, 'blog-cati-yapim-maliyeti-2026.html'),
           blog_bursa: path.resolve(__dirname, 'blog-bursa-insaat-maliyeti-2026.html'),
           blog_antalya: path.resolve(__dirname, 'blog-antalya-ev-maliyeti-2026.html'),
+          blog_prefabrik: path.resolve(__dirname, 'blog-prefabrik-ev-maliyeti-2026.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
