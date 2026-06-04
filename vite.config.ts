@@ -36,6 +36,7 @@ export default defineConfig(({mode}) => {
           blog_bursa: path.resolve(__dirname, 'blog-bursa-insaat-maliyeti-2026.html'),
           blog_antalya: path.resolve(__dirname, 'blog-antalya-ev-maliyeti-2026.html'),
           blog_prefabrik: path.resolve(__dirname, 'blog-prefabrik-ev-maliyeti-2026.html'),
+          blog_insaat_gizli: path.resolve(__dirname, 'blog-insaat-gizli-maliyetler.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
