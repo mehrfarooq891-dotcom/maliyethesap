@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnşaat Hakedişi Nedir? Müteahhit Ödemeleri Rehberi | MaliyetHesap</title>
+    <meta name="description" content="İnşaat hakedişi nedir, nasıl hesaplanır? Müteahhit ödemeleri rehberimizde hakediş sistemi, ödeme takvimi, kritik sözleşme maddeleri ve dikkat edilmesi gereken noktaları inceleyin.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght=400;600;700;800&family=Source+Sans+Pro:wght=400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e3a5f',
+                        'navy-dark': '#162b46',
+                        orange: '#E8792A',
+                        cream: '#FAF7F2',
+                        green: '#2E7D52',
+                        border: '#E2DDD6',
+                    },
+                    fontFamily: {
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                        heading: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body { background-color: #FAF7F2; color: #1e3a5f; font-family: 'Source Sans Pro', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #162b46); }
+        .prose h2 { font-size: 1.875rem; color: #1e3a5f; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8792A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #1e3a5f; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; text-align: justify; }
+        .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #1e3a5f/80; }
+        .prose strong { color: #1e3a5f; font-weight: 700; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 no-print border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-heading font-extrabold text-white">
+                Maliyet<span class="text-orange">Hesap</span>
+            </a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-white/90 text-sm font-semibold tracking-wide">
+                <a href="index.html" class="hover:text-orange transition-colors">Ana Sayfa</a>
+                <a href="index.html#nasil" class="hover:text-orange transition-colors">Hizmetler</a>
+                <a href="about.html" class="hover:text-orange transition-colors">Hakkımızda</a>
+                <a href="blog.html" class="hover:text-orange transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4 text-center border-t border-white/10 pt-4">
+            <a href="index.html" class="block text-white hover:text-orange py-2">Ana Sayfa</a>
+            <a href="index.html#nasil" class="block text-white hover:text-orange py-2">Hizmetler</a>
+            <a href="about.html" class="block text-white hover:text-orange py-2">Hakkımızda</a>
+            <a href="blog.html" class="block text-white hover:text-orange py-2">Blog</a>
+            <a href="contact.html" class="block text-white hover:text-orange py-2">İletişim</a>
+        </div>
+    </nav>
+
+    <!-- BLOG HEADER -->
+    <header class="hero-gradient py-24 px-6 text-center text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-orange font-bold uppercase tracking-widest text-xs mb-4 italic">Kategori: Yatırım & İnşaat Yönetimi</div>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-heading mb-6 leading-tight">İnşaat Hakedişi Nedir? Müteahhit Ödemeleri Rehberi</h1>
+            <div class="flex items-center justify-center gap-4 text-white/60 text-sm">
+                <span>6 Haziran 2026</span>
+                <span>•</span>
+                <span>Okuma Süresi: 15 Dakika</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <article class="max-w-4xl mx-auto py-16 px-6 md:px-12 bg-white rounded-[40px] -mt-12 shadow-2xl relative z-10 border border-border/20">
+        <div class="prose max-w-none">
+            <p>
+                İnşaat sektörü, çok ortaklı yapısı, yüksek sermaye gereksinimleri ve karmaşık lojistik yönetim süreçleriyle hata kabul etmeyen dinamik bir sektördür. Bir arsa sahibi müstakil ev yaptırmak istediğinde veya bir yatırımcı büyük ölçekli bir projeyi hayata geçirmeyi amaçladığında, işin en hassas ayağını finans yönetimi oluşturur. İnşaat şantiyelerinde paranın doğru zamanda, doğru imalat miktarına karşılık olarak ödenmesi projenin can damarıdır. Müteahhide kontrolsüz para aktarmak işin yarım kalmasına; ödemeleri fuzuli geciktirmek ise usta ekiplerinin işi durdurmasına yol açar. Bu hassas dengeyi yasal ve teknik temellere oturtan mekanizmaya hakediş denir. Bütçe hazırlığı yapan ve projelerini güvence altına almak isteyen her mülk sahibinin aklındaki en temel soru ise şudur: <strong>İnşaat hakedişi nedir</strong> ve bu süreç nasıl yönetilmelidir?
+            </p>
+            <p>
+                Bu kapsamlı rehberimizde; inşaat süreçlerinde adaleti ve finansal istikrarı sağlayan <strong>hakediş sistemi</strong> detaylarını, nakit akışını disipline eden şeffaf <strong>ödeme takvimi</strong> ilkelerini, her iki tarafın haklarını koruyan kritik <strong>sözleşme maddeleri</strong> unsurlarını ve şantiyede bütçenizi koruyacak yaşamsal <strong>dikkat noktaları</strong> başlıklarını mercek altına alıyoruz.
+            </p>
+
+            <h2>Hukuk ve Mühendislik Dengesi: İnşaat Hakedişi Nedir?</h2>
+            <p>
+                En temel tanımıyla, <strong>inşaat hakedişi nedir</strong> sorusunun cevabı; yüklenici veya müteahhidin, yapı sözleşmesinde taahhüt ettiği işlerin belirli bir bölümünü veya tamamını teknik şartnamelere uygun şekilde fiziki olarak sahada tamamlaması karşılığında almaya hak kazandığı parasal bedeldir. Hakediş, sadece bir "ödeme belgesi" değil; yapılan işin kalitesinin, miktarının ve yasal standartlara uygunluğunun iş sahibi veya yapı denetim görevlileri tarafından onaylandığını gösteren resmi bir mühendislik ve muhasebe raporudur.
+            </p>
+            <p>
+                İnşaat projeleri tek bir kalemde ödenemeyecek kadar büyük bütçeler barındırdığı için iş aşamalara (fazlara) bölünür. Böylelikle müteahhit işi yaptıkça finansman sağlar, iş veren ise sadece sahada bizzat gözüyle gördüğü ve onayladığı fiziki imalatın parasını ödemiş olur. Bu koruyucu sistem, taraflar arasındaki güven ilişkisinin rasyonel zeminidir.
+            </p>
+
+            <h2>1. Şantiyenin İşleyiş Yapısı: İnşaatta Hakediş Sistemi ve Türleri</h2>
+            <p>
+                Projelerde kullanılan sözleşme tipine göre farklı <strong>hakediş sistemi</strong> modelleri tercih edilmektedir. 2026 yılı yapım pazarında en yaygın kullanılan üç temel hakediş türü şunlardır:
+            </p>
+
+            <h3>Geçici Hakediş (Ara Hakediş)</h3>
+            <p>
+                İnşaat süresince, genellikle aylık periyotlarla veya önceden belirlenmiş belirli imalat dönüm noktalarında (örneğin temel dökümü bitimi, kaba yapı iskeleti tamamlanması vb.) hazırlanan ara ödeme raporlarıdır. Geçici hakedişlerde o döneme kadar yapılan toplam kümülatif imalat hesaplanır, bir önceki hakedişte ödenen tutar düşülür ve kalan net hak ediş bedeli yükleniciye ödenir.
+            </p>
+
+            <h3>Kesin Hakediş</h3>
+            <p>
+                İnşaat tamamen bittikten, geçici kabul işlemleri yapıldıktan ve tüm eksiklikler giderildikten sonra hazırlanan nihai hesaplaşma belgesidir. Kesin hakediş aşamasında projedeki tüm gizli ölçü sapmaları, fazla veya eksik yapılan metrajlar tek tek kontrol edilir, önceki ara ödemeler mahsup edilerek müteahhidin ilişiği kesinleşir.
+            </p>
+
+            <h3>Birim Fiyatlı vs Anahtar Teslim Götürü Bedel Hakediş</h3>
+            <p>
+                Birim fiyatlı sistemlerde müteahhit bizzat sahada döktüğü m³ beton, bağladığı ton demir veya döşediği m² seramik miktarına göre (yerinde ölçülen fiili metraj) hakediş alır. Anahtar teslim götürü bedel sözleşmelerde ise projenin belirli yüzdelik aşamalarına göre (Örn: Kaba yapı %40, İnce sıvama %20 vb.) doğrudan oran bazlı ödeme yapılır.
+            </p>
+
+            <h2>2. Güvenli Nakit Akışı: Doğru Bir Ödeme Takvimi Nasıl Hazırlanır?</h2>
+            <p>
+                Şantiyede mali kavgaların ve gecikmelerin önüne geçmenin en kesin yolu, sözleşmeyle birlikte kurulan şeffaf bir <strong>ödeme takvimi</strong> yapısıdır. Ödeme takvimi kesinlikle hayali tarihlere (örneğin "15 Mart'ta 500.000 TL, 15 Nisan'da 500.000 TL") bağlanmamalıdır. Tarih bazlı ödemeler, müteahhit işi yavaşlatsa dahi sizden para talep etme hakkı doğurur ve iş vereni mağdur eder.
+            </p>
+            <p>
+                Doğru bir inşaat ödeme takvimi tamamen <strong>"Fiziki İmalat Aşama Kilometre Taşlarına (Milestones)"</strong> endekslenmelidir. Aşağıda, ideal bir konut yapım projesinde kullanılması önerilen fiziki hakediş ödeme takvimi dağılımını görebilirsiniz:
+            </p>
+
+            <div class="overflow-x-auto my-8 border border-border/80 rounded-2xl overflow-hidden shadow-md">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-navy text-white font-heading">
+                            <th class="p-4">Hakediş Aşaması</th>
+                            <th class="p-4">Tamamlanması Gereken Fiziki İmalat Hedefi</th>
+                            <th class="p-4 text-center">Tavsiye Edilen Ödeme Oranı (%)</th>
+                            <th class="p-5">Hakediş Onayı İçin Teknik İnceleme Standardı</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-navy/90 text-sm font-sans">
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">1. Avans Ödemesi <br><span class="text-[10px] text-navy/50">(Sözleşme Başlangıcı)</span></td>
+                            <td class="p-4">Mobilizasyon, şantiye ofislerinin kurulması ve ilk demir-çimento siparişlerinin verilmesi.</td>
+                            <td class="p-4 text-center font-bold text-orange">10% - 15%</td>
+                            <td class="p-5 text-xs italic">Avans teminat mektubu veya yasal sözleşme karşılığı yapı malzemesi güvencesi.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">2. Altyapı &amp; Temel Hakedişi</td>
+                            <td class="p-4">Hafriyatın bitmesi, zemin betonunun (subasman) dökülmesi ve temel bohçalama yalıtımının yapılması.</td>
+                            <td class="p-4 text-center font-bold text-green">15%</td>
+                            <td class="p-5 text-xs italic">Beton numunesi kırım test sonuçlarının olumlu gelmesi ve yalıtım testi sızdırmazlığı.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">3. Kaba İskelet Hakedişi</td>
+                            <td class="p-4">Tüm kolon, kiriş ve tabliyelerin beton dökümü, iç ve dış tuğla duvarların örülmesinin bitmesi.</td>
+                            <td class="p-4 text-center font-bold text-green">25%</td>
+                            <td class="p-5 text-xs italic">Yapı denetim onay raporu, kolon gönye kontrolleri ve tavan kotu ölçümleri.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">4. Çatı &amp; Tesisat Hakedişi</td>
+                            <td class="p-4">Çatı kaplama ve su yalıtımının bitmesi, elektrik ve sıhhi tesisat borulama hatlarının çekilmesi.</td>
+                            <td class="p-4 text-center font-bold text-green">15%</td>
+                            <td class="p-5 text-xs italic">Tesisat borularında yüksek basınçlı su sızdırmazlık testi ve çatı akma kontrolü.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">5. İnce İşler &amp; Doğrama Hakedişi</td>
+                            <td class="p-4">İç-dış kaba sıvıların yapılması, pencerelerin takılması, zemin şapı ve fayans kaplamalarının tamamlanması.</td>
+                            <td class="p-4 text-center font-bold text-green">20%</td>
+                            <td class="p-5 text-xs italic">Pencerelerin hava sızdırmazlık contaları, fayans derz dolgu ve eğim kontrolleri.</td>
+                        </tr>
+                        <tr class="border-b border-border/50 hover:bg-navy/5 transition-colors">
+                            <td class="p-4 font-bold">6. Teslim &amp; Kesit Hakedişi <br><span class="text-[10px] text-navy/50">(Kabul Aşaması)</span></td>
+                            <td class="p-4">Boyaların bitmesi, armatür montajları, ince temizlik ve yapının eksiksiz teslime hazır hale gelmesi.</td>
+                            <td class="p-4 text-center font-bold text-green">10% - 15%</td>
+                            <td class="p-5 text-xs italic">Geçici kabul kurulunun eksiksiz raporu, iskan ruhsat izin başvuruları.</td>
+                        </tr>
+                        <tr class="bg-navy/5 text-base font-extrabold text-navy">
+                            <td class="p-4">TOPLAM RESMİ BÜTÇE</td>
+                            <td class="p-4">Fiziki İlerleme Endeksli Kontrollü Akış</td>
+                            <td class="p-4 text-center text-orange font-black">100%</td>
+                            <td class="p-4 text-xs font-bold text-navy">Kademeli finansman modeliyle para koruma altına alınmış olur.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>3. Kendinizi Güvenceye Alın: Kritik Hakediş Sözleşme Maddeleri</h2>
+            <p>
+                İnşaat sözleşmesi imzalamadan önce hukukçular ve mühendisler eşliğinde hakediş maddelerini çok titiz düzenlemelisiniz. Sözleşmeye eklenmesi gereken hayati öneme sahip <strong>sözleşme maddeleri</strong> şunlardır:
+            </p>
+            <ul>
+                <li><strong>Avans Mahsubu Maddesi:</strong> Başlangıçta müteahhide verdiğiniz %10 veya %15'lik can suyu avansının, şantiye süresince yapılacak her ara hakediş ödemesinden aynı oranda (%10-15 kesilerek) geri tahsil edileceği ve kesin kabulde avansın tamamen sıfırlanacağı açıkça yazılmalıdır.</li>
+                <li><strong>Hakediş Teminat Kesintisi (%10 Nakit Blokajı):</strong> Yüklenicinin işi yarıda bırakıp kaçma veya kusurlu iş yapma riskine karşı, her ara hakediş bedelinden mutlaka %5 veya %10 oranında "Hakediş Teminat Kesintisi" yapılmalıdır. Bu biriken para, inşaat sorunsuz tamamlanıp kesin kabul yapıldıktan sonra müteahhide iade edilir.</li>
+                <li><strong>Gecikme Cezaları ve Cezai Şartlar:</strong> İş programındaki kritik kilometre taşlarına gecikilen her takvim günü için müteahhide hakedişinden kesilmek üzere net bir cezai bedel (örn: günlük hakediş tutarının binde biri oranında ceza) konulmalıdır.</li>
+                <li><strong>SGK ve Vergi Borçsuzluk Şartı:</strong> Taşeron veya müteahhit işçilerinin SGK primlerini ödemezse, yasa gereği asıl işveren olarak sorumluluk size kalır. Bu nedenle, "Müteahhit her hakediş ödemesinden önce o aya ait SGK prim borcu olmadığına dair resmi temiz belgesi sunmak zorundadır" maddesi eklenmelidir.</li>
+            </ul>
+
+            <h2>4. Şantiyede Para Kaybetmemek İçin 5 Altın Dikkat Noktası</h2>
+            <p>
+                Bir iş veren veya yatırımcı olarak, müteahhidin sunduğu hakediş faturasını imzalamadan önce sahada şu hususlara azami ölçüde özen göstermelisiniz:
+            </p>
+            <ol>
+                <li>
+                    <strong>"Yapılmayan İşe Para Ödemeyin" (Yerinde Metraj Kontrolü):</strong> Müteahhidin "Malzemeyi şantiyeye indirdim, parasını verin" baskısına boyun eğmeyin. Şantiyeye inen mermerler henüz yere döşenmediyse hakedişe giremez. Hakediş sadece bizzat "yerine monte edilmiş, uygulanmış" imalatı kapsar. Şantiyede bekleyen malzeme çalınabilir, kırılabilir; bu risk yüklenicinindir.
+                </li>
+                <li>
+                    <strong>Tolerans ve Kusurlu İmalatları Düşün:</strong> Duvarda dalgalanma varsa, seramikler yamuk döşendiyse veya dış cephe boyasında akıntılar mevcutsa, ilgili alanların düzeltilmesi (revizyon) yapılana kadar o imalatın bedelini hakedişten kesin ve ödemeyi askıya alın.
+                </li>
+                <li>
+                    <strong>Fiyat Farkı Taleplerini Sınırlandırın:</strong> Enflasyonist dönemlerde müteahhitler sürekli "malzemeye zam geldi, fiyat farkı istiyorum" diyebilir. Sözleşmenizde fiyat farkı verilip verilmeyeceğini, verilecekse hangi resmi endekslere (TÜİK Yİ-ÜFE inşaat endeksi gibi) göre hesaplanacağını baştan netleştirmeli, keyfi zam taleplerini baştan engellemelisiniz.
+                </li>
+                <li>
+                    <strong>Yazılı Onay Olmadan Ekstra (Aşkın) İş Ödemeyin:</strong> Şantiye şefleri veya müteahhitler bazen projede olmayan değişiklikler yapıp "bunu da yaptık, faturası budur" diyerek ek hakediş çıkarabilir. Sözleşmede "Yazılı onaylı mimari değişiklik talimatı olmayan hiçbir ekstra imalatın bedeli ödenmez" kuralını katı bir şekilde uygulayın.
+                </li>
+                <li>
+                    <strong>Yapay Zeka Destekli Hassas Metraj Analizi:</strong> Demir tonajını, dökülen beton metreküpünü veya çatının gerçek m² ölçüsünü dijital platformumuzun algoritmalarıyla sıfır hata ile ölçün. Müteahhidin kağıt üzerinde şişirdiği fazla metraj talepleriyle bütçenizin erimesine asla izin vermeyin.
+                </li>
+            </ol>
+
+            <h2>Sonuç: Mühendislik Disipliniyle Güvenli Bütçe Yönetimi</h2>
+            <p>
+                Günün sonunda, <strong>inşaat hakedişi nedir</strong> bilmek ve bu süreci kusursuz bir mühendislik disipliniyle yönetmek, projenizin zamanında ve ilk hedef bütçeyle bitmesini sağlayan yegane sigortadır. Hakedişlerin şeffaf, denetlenebilir ve iş programına sadık kalınarak ödenmesi şantiye barışını korurken, sizi ciddi yasal ve finansal tehlikelerden ömür boyu korur. Yapı inşa etmek sadece çimento karıştırmak değil; bütçe adaletini rasyonel matematik formülleriyle sahada tesis edebilme sanatıdır.
+            </p>
+            <p>
+                Kendi arsa bilgilerinizi, yapmayı planladığınız evin büyüklüğünü ve malzeme seçimlerinizi girerek; inşaatınızın kaba-ince tüm fiziki aşama hakediş bütçe kırılımlarını ve sözleşmeyle tam uyumlu ödeme takvimini 2026 yılı güncel rayiç verileriyle saniyeler içinde anında simüle edip rapor almak istiyorsanız hesaplama modülümüzü hemen denemelisiniz. Paranızı güvende tutmak ve sağlam binalar üretmek için her zaman yanınızdayız!
+            </p>
+
+            <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
+                <h3 class="text-white mt-0 mb-4 font-heading">İnşaat Hakediş Ödeme Planınızı Şimdi Çıkarın</h3>
+                <p class="text-white/80 mb-6 font-sans">Projenizin brüt kapalı alan değerlerini girerek; teminat kesintileri, avans mahsupları ve imalat bazlı aşamalı ödeme takviminizi 2026 güncel endeksleriyle sıfır hata ile anında projelendirin.</p>
+                <a href="index.html" class="inline-block bg-orange text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-navy transition-all shadow-lg font-heading">Hakediş Ödeme Planı Hesapla</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm mt-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-serif text-white mb-6">Maliyet<span class="text-orange">Hesap</span></div>
+                    <p class="max-w-sm leading-relaxed">Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.</p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="index.html#nasil" class="hover:text-white transition-colors">Hizmetler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Bloglar</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>© 2026 MALİYETHESAP. TÜM HAKLARI SAKLIDIR.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
