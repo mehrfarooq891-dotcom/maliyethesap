@@ -40,6 +40,7 @@ export default defineConfig(({mode}) => {
           blog_aluminyum: path.resolve(__dirname, 'blog-aluminyum-dograma-fiyatlari-2026.html'),
           blog_hakedis: path.resolve(__dirname, 'blog-insaat-hakedisi-nedir.html'),
           blog_elektrik: path.resolve(__dirname, 'blog-elektrik-tesisati-maliyeti-2026.html'),
+          blog_sutesisati: path.resolve(__dirname, 'blog-su-tesisati-maliyeti-2026.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
