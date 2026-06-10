@@ -41,6 +41,7 @@ export default defineConfig(({mode}) => {
           blog_hakedis: path.resolve(__dirname, 'blog-insaat-hakedisi-nedir.html'),
           blog_elektrik: path.resolve(__dirname, 'blog-elektrik-tesisati-maliyeti-2026.html'),
           blog_sutesisati: path.resolve(__dirname, 'blog-su-tesisati-maliyeti-2026.html'),
+          blog_istanbul_ev: path.resolve(__dirname, 'blog-istanbul-ev-yapim-maliyeti-2026.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
