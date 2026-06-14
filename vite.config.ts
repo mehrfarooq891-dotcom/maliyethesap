@@ -44,6 +44,7 @@ export default defineConfig(({mode}) => {
           blog_istanbul_ev: path.resolve(__dirname, 'blog-istanbul-ev-yapim-maliyeti-2026.html'),
           blog_kaba_insaat: path.resolve(__dirname, 'blog-kaba-insaat-ince-is-farki.html'),
           blog_100m2_ev: path.resolve(__dirname, 'blog-100m2-ev-maliyeti-2026.html'),
+          blog_dolar_kuru_insaat: path.resolve(__dirname, 'blog-dolar-kuru-insaat-maliyeti.html'),
           blog: path.resolve(__dirname, 'blog.html'),
         },
       },
