@@ -25,6 +25,7 @@ export default defineConfig(({mode}) => {
           blog_insaat_maliyeti_rehberi: path.resolve(__dirname, 'blog-insaat-maliyeti-hesaplama-rehberi.html'),
           blog_ankara_ev_yapim_maliyeti: path.resolve(__dirname, 'blog-ankara-ev-yapim-maliyeti-2026.html'),
           blog_izmir_insaat_maliyeti: path.resolve(__dirname, 'blog-izmir-insaat-maliyeti-2026.html'),
+          blog_muteahhit_kendi_insaat: path.resolve(__dirname, 'blog-muteahhit-kendi-insaat.html'),
           blog_insaat_maliyeti: path.resolve(__dirname, 'blog-insaat-maliyeti-hesaplama.html'),
           blog_luks_ekonomik: path.resolve(__dirname, 'blog-luks-ekonomik-insaat-farki.html'),
           blog_ankara: path.resolve(__dirname, 'blog-ankara-2026.html'),
