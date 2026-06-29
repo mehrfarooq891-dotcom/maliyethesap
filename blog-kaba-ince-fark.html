@@ -213,5 +213,35 @@
             });
         }
     </script>
+
+    <!-- Dynamic Blog Date Sync Script -->
+    <script id="blog-date-sync">
+        document.addEventListener('DOMContentLoaded', () => {
+            const filename = window.location.pathname.split('/').pop() || 'index.html';
+            const pageDateSpan = document.querySelector('header span, .blog-date-span');
+            if (pageDateSpan) {
+                fetch('blog.html')
+                    .then(res => res.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const cardLink = doc.querySelector(`a[href*="${filename}"]`);
+                        if (cardLink) {
+                            const dateDiv = cardLink.querySelector('.mt-auto');
+                            if (dateDiv) {
+                                pageDateSpan.innerText = dateDiv.innerText.trim();
+                            }
+                        } else {
+                            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                            pageDateSpan.innerText = new Date().toLocaleDateString('tr-TR', options);
+                        }
+                    })
+                    .catch(() => {
+                        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                        pageDateSpan.innerText = new Date().toLocaleDateString('tr-TR', options);
+                    });
+            }
+        });
+    </script>
 </body>
 </html>

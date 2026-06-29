@@ -228,5 +228,13 @@ section,main{padding:0 12px!important}
 h1{font-size:1.3rem!important}h2{font-size:1.1rem!important}
 }
 </style>
+
+    <script>
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const lastUpdateEl = document.getElementById('last-update');
+        if (lastUpdateEl) {
+            lastUpdateEl.innerText = `Son güncelleme: ${new Date().toLocaleDateString('tr-TR', options)}`;
+        }
+    </script>
 </body>
 </html>
