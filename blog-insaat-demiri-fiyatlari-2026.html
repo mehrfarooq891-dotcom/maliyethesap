@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://maliyethesap.com/blog-insaat-demiri-fiyatlari-2026.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght=400;600;700;800&family=Source+Sans+Pro:wght=400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght=400;600;700;800&family=Source+Sans+Pro:wght=400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght=400;600;700;800&family=Source+Sans+Pro:wght=400;600;700&display=swap" rel="stylesheet"></noscript>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -52,7 +52,7 @@
                 <a href="blog.html" class="hover:text-orange transition-colors">Blog</a>
                 <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <button id="mobile-menu-button" aria-label="Menüyü aç" class="md:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
@@ -159,7 +159,7 @@
             </div>
         </div>
     </article>
-    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/40 text-sm mt-12">
+    <footer class="bg-navy pt-20 pb-10 px-6 md:px-12 text-white/70 text-sm mt-12">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-2">
@@ -167,7 +167,7 @@
                     <p class="max-w-sm leading-relaxed">Türkiye'nin en güvenilir inşaat maliyet hesaplama platformu. Güncel verilerle, anlık ve ücretsiz sonuçlar.</p>
                 </div>
                 <div>
-                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h5>
+                    <h3 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-white/100">Hızlı Linkler</h3>
                     <ul class="space-y-4">
                         <li><a href="index.html" class="hover:text-white transition-colors">Ana Sayfa</a></li>
                         <li><a href="about.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
