@@ -245,6 +245,26 @@
                 <li><strong>Kusursuz Milimetrik Çizim ve Metraj:</strong> Doğrama şantiyelerinde yapılan 1 cm'lik ölçü hataları bile montajda boşluklara veya profilin çöpe gitmesine yol açar. Ölçümlerin profesyonel teknik ofisimizce onaylı lazer metrelerle yapılmasını sağlayın.</li>
             </ul>
 
+            <h2>Sıkça Sorulan Sorular (FAQ)</h2>
+            <div class="space-y-6 my-10">
+                <div class="border-b border-border/50 pb-4">
+                    <h3 class="text-lg font-bold text-navy mb-2">Alüminyum doğrama fiyatları 2026 ne kadar?</h3>
+                    <p class="text-sm text-navy/80">Alüminyum doğrama fiyatları 2026 yılında projenin türüne ve profil kalitesine bağlı olarak m² başına ortalama 3.800 TL ile 19.500 TL arasında değişmektedir. Ofis bölmelerinde kullanılan ısı yalıtımsız soğuk profiller 3.800 TL - 5.200 TL/m² iken, konutlarda tercih edilen ısı yalıtımlı standart alüminyum pencereler 7.500 TL - 9.800 TL/m², üst segment kaldır-sür (Hebe-Schiebe) sistemler ise 14.000 TL - 19.500 TL/m² bandındadır.</p>
+                </div>
+                <div class="border-b border-border/50 pb-4">
+                    <h3 class="text-lg font-bold text-navy mb-2">Alüminyum doğrama m² fiyatı nasıl hesaplanır?</h3>
+                    <p class="text-sm text-navy/80">Alüminyum doğrama m² fiyatı; imalatta kullanılan alüminyum profilin toplam kilogram ağırlığı, seçilen aksesuar ve kilit mekanizmasının set fiyatı, camın türü ile metrekare ölçüsünün çarpılmasıyla hesaplanır. Standart PVC pencere hesaplamalarından farklı olarak, alüminyumda işçilik ve profil sarfiyatı daha hassas olduğundan doğrudan metraj, profil ağırlığı ve fire oranları hesaplamaya dahil edilir.</p>
+                </div>
+                <div class="border-b border-border/50 pb-4">
+                    <h3 class="text-lg font-bold text-navy mb-2">En ucuz alüminyum doğrama seçenekleri nelerdir?</h3>
+                    <p class="text-sm text-navy/80">En ucuz alüminyum doğrama seçeneği, ısı yalıtım bariyeri bulunmayan ve ince profil duvar kalınlığına (1.2 mm - 1.4 mm) sahip olan 'soğuk profil' sistemleridir. 2026 yılı piyasasında m² başına ortalama 3.800 TL - 5.200 TL aralığında sunulan bu sistemler, düşük maliyetli olmalarına rağmen yüksek ısı iletkenliği nedeniyle konutların dış pencerelerinde asla kullanılmamalıdır.</p>
+                </div>
+                <div class="border-b border-border/50 pb-4">
+                    <h3 class="text-lg font-bold text-navy mb-2">Alüminyum pencere m² fiyatları nelerdir?</h3>
+                    <p class="text-sm text-navy/80">Alüminyum pencere m² fiyatları, 2026 yılı itibarıyla ısı yalıtımsız iç mekân bölmelerinde 3.800 TL ile 5.200 TL arasında seyrederken, ısı yalıtımlı ev pencerelerinde ortalama 7.500 TL ile 11.500 TL arasında değişir. Premium villa projelerinde lüks kaldır-sür veya gizli kanatlı modern pencereler ise metrekare başına 11.500 TL ile 19.500 TL bandında fiyatlandırılmaktadır.</p>
+                </div>
+            </div>
+
             <h2>Sonuç: Mimari Estetiğin Uzun Vadeli Dönüşü</h2>
             <p>
                 Günün sonunda, <strong>alüminyum doğrama fiyatları</strong> her ne kadar plastik sistemlere kıyasla daha yüksek bir ilk yatırım gerektirse de; sunduğu yarım asırlık sarsılmaz yapısal ömür, mükemmel rüzgar sızdırmazlığı, Hebe-Schiebe sürme konforu ve lüks görünüm ile evinize kalıcı bir değer katar. Doğru mühendislik ve ısı bariyerli profillerle elde edilen <strong>enerji tasarrufu</strong>, modern Akdeniz veya karasal iklim yapınızın her mevsim konforlu kalmasını ve fuzuli harcamalar içermemesini garantileyecektir.
@@ -313,14 +333,10 @@
                             if (dateDiv) {
                                 pageDateSpan.innerText = dateDiv.innerText.trim();
                             }
-                        } else {
-                            const options = { day: 'numeric', month: 'long', year: 'numeric' };
-                            pageDateSpan.innerText = new Date().toLocaleDateString('tr-TR', options);
                         }
                     })
                     .catch(() => {
-                        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-                        pageDateSpan.innerText = new Date().toLocaleDateString('tr-TR', options);
+                        // Keep the hardcoded HTML date on fetch error
                     });
             }
         });
