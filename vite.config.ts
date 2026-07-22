@@ -1,58 +1,50 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import fs from 'fs';
+import {defineConfig, loadEnv, Plugin} from 'vite';
+
+// Plugin to serve .html files when requested without .html extension in dev mode
+const cleanUrlsPlugin = (): Plugin => ({
+  name: 'clean-urls',
+  configureServer(server) {
+    server.middlewares.use((req, res, next) => {
+      if (req.url && !req.url.includes('.') && !req.url.endsWith('/')) {
+        const urlPath = req.url.split('?')[0];
+        const query = req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
+        const htmlPath = path.resolve(__dirname, `${urlPath.slice(1)}.html`);
+        if (fs.existsSync(htmlPath)) {
+          req.url = `${urlPath}.html${query}`;
+        }
+      }
+      next();
+    });
+  },
+});
+
+// Automatically collect all .html files in the root directory for Rollup build
+const getHtmlInputs = () => {
+  const files = fs.readdirSync(__dirname);
+  const inputs: Record<string, string> = {};
+  files.forEach((file) => {
+    if (file.endsWith('.html')) {
+      const key = file.replace('.html', '').replace(/[^a-zA-Z0-9_]/g, '_');
+      inputs[key || 'main'] = path.resolve(__dirname, file);
+    }
+  });
+  return inputs;
+};
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), cleanUrlsPlugin()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
     build: {
       rollupOptions: {
-        input: {
-          main: path.resolve(__dirname, 'index.html'),
-          about: path.resolve(__dirname, 'about.html'),
-          contact: path.resolve(__dirname, 'contact.html'),
-          blog_istanbul: path.resolve(__dirname, 'blog-istanbul-2026.html'),
-          blog_kaba_ince: path.resolve(__dirname, 'blog-kaba-ince-fark.html'),
-          blog_100m2: path.resolve(__dirname, 'blog-100m2-maliyet-2026.html'),
-          blog_dolar_kuru: path.resolve(__dirname, 'blog-dolar-kuru-etkisi.html'),
-          blog_insaat_demiri: path.resolve(__dirname, 'blog-insaat-demiri-fiyatlari-2026.html'),
-          blog_cimento: path.resolve(__dirname, 'blog-cimento-fiyatlari-2026.html'),
-          blog_insaat_maliyeti_rehberi: path.resolve(__dirname, 'blog-insaat-maliyeti-hesaplama-rehberi.html'),
-          blog_ankara_ev_yapim_maliyeti: path.resolve(__dirname, 'blog-ankara-ev-yapim-maliyeti-2026.html'),
-          blog_izmir_insaat_maliyeti: path.resolve(__dirname, 'blog-izmir-insaat-maliyeti-2026.html'),
-          blog_muteahhit_kendi_insaat: path.resolve(__dirname, 'blog-muteahhit-kendi-insaat.html'),
-          blog_insaat_maliyeti: path.resolve(__dirname, 'blog-insaat-maliyeti-hesaplama.html'),
-          blog_luks_ekonomik: path.resolve(__dirname, 'blog-luks-ekonomik-insaat-farki.html'),
-          blog_ankara: path.resolve(__dirname, 'blog-ankara-2026.html'),
-          blog_izmir: path.resolve(__dirname, 'blog-izmir-2026.html'),
-          blog_muteahhit: path.resolve(__dirname, 'blog-muteahhit-mi-kendim-mi.html'),
-          blog_ruhsat: path.resolve(__dirname, 'blog-insaat-ruhsati-maliyeti-2026.html'),
-          blog_zemin: path.resolve(__dirname, 'blog-zemin-etudu-maliyeti.html'),
-          blog_isi_yalitimi: path.resolve(__dirname, 'blog-isi-yalitimi-maliyeti-2026.html'),
-          blog_yalitimi: path.resolve(__dirname, 'blog-isi-yalitimi-maliyeti-2026.html'),
-          blog_banyo: path.resolve(__dirname, 'blog-banyo-tadilat-maliyeti-2026.html'),
-          blog_mutfak: path.resolve(__dirname, 'blog-mutfak-tadilat-maliyeti-2026.html'),
-          blog_cati: path.resolve(__dirname, 'blog-cati-yapim-maliyeti-2026.html'),
-           blog_bursa: path.resolve(__dirname, 'blog-bursa-insaat-maliyeti-2026.html'),
-          blog_konya: path.resolve(__dirname, 'blog-konya-insaat-maliyeti-2026.html'),
-          blog_antalya: path.resolve(__dirname, 'blog-antalya-ev-maliyeti-2026.html'),
-          blog_prefabrik: path.resolve(__dirname, 'blog-prefabrik-ev-maliyeti-2026.html'),
-          blog_insaat_gizli: path.resolve(__dirname, 'blog-insaat-gizli-maliyetler.html'),
-          blog_aluminyum: path.resolve(__dirname, 'blog-aluminyum-dograma-fiyatlari-2026.html'),
-          blog_hakedis: path.resolve(__dirname, 'blog-insaat-hakedisi-nedir.html'),
-          blog_elektrik: path.resolve(__dirname, 'blog-elektrik-tesisati-maliyeti-2026.html'),
-          blog_sutesisati: path.resolve(__dirname, 'blog-su-tesisati-maliyeti-2026.html'),
-          blog_istanbul_ev: path.resolve(__dirname, 'blog-istanbul-ev-yapim-maliyeti-2026.html'),
-          blog_kaba_insaat: path.resolve(__dirname, 'blog-kaba-insaat-ince-is-farki.html'),
-          blog_100m2_ev: path.resolve(__dirname, 'blog-100m2-ev-maliyeti-2026.html'),
-          blog_dolar_kuru_insaat: path.resolve(__dirname, 'blog-dolar-kuru-insaat-maliyeti.html'),
-          blog: path.resolve(__dirname, 'blog.html'),
-        },
+        input: getHtmlInputs(),
       },
     },
     resolve: {
@@ -62,7 +54,7 @@ export default defineConfig(({mode}) => {
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
+      // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };
