@@ -22,24 +22,66 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#8B4513', 'navy-dark': '#3E2723', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
+                    colors: { navy: '#1e3a5f', 'navy-dark': '#0f1d30', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
                     fontFamily: { sans: ['Source Sans Pro', 'sans-serif'], heading: ['Nunito', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #3E2723; font-size: 1.125rem; text-align: justify; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #0f1d30; font-size: 1.125rem; text-align: justify; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #3E2723; }
-        .prose strong { color: #3E2723; font-weight: 700; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #0f1d30; }
+        .prose strong { color: #0f1d30; font-weight: 700; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ankara'da 2026 yılı m² inşaat birim fiyatı nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standart malzeme kalitesinde anahtar teslim müstakil bir ev için Ankara m² yapım maliyeti 22.000 TL ila 28.000 TL arasında değişmektedir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Çayyolu ve Batıkent hatlarında işçilik rayiçleri nasıldır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usta ve kalfa yevmiyeleri Ankara genelinde standart olmakla birlikte nitelikli ince işçilik ekiplerinde hakediş beklentisi %15-20 daha yüksektir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ankara'da kaba inşaat ne kadar sürer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "150 m² müstakil bir evin kaba inşaatı (temel, kolon, döşeme ve duvarlar) ortalama 2.5 ila 3 ay içerisinde tamamlanabilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dış cephe taşyünü mantolama kalınlığı Ankara için kaç cm olmalıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sert karasal iklim koşulları sebebiyle Ankara'da minimum 8 cm yoğun taşyünü mantolama yapılması yakıt tasarrufu için hayatidir."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
     <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 border-b border-white/5">
@@ -151,6 +193,34 @@
             <p>
                 Ankara'nın hangi bölgesinde olursanız olun; arsa metrekaresini, kat adedini ve planladığınız yapım kalitesini girerek kaba inşaattan ince işlere, harçlardan resmi ruhsat giderlerine kadar en gerçekçi ve güncel hakediş tablolarını tek tıkla m² bazında hesaplamak istiyorsanız, platformumuz MaliyetHesap'ın akıllı hesaplama motorlarını hemen şimdi ücretsiz kullanabilirsiniz! Bütçenizi sıfır hata ile planlayın, hayalinizdeki evi rasyonel adımlarla inşa edin!
             </p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Ankara'da 2026 yılı m² inşaat birim fiyatı nedir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Standart malzeme kalitesinde anahtar teslim müstakil bir ev için Ankara m² yapım maliyeti 22.000 TL ila 28.000 TL arasında değişmektedir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Çayyolu ve Batıkent hatlarında işçilik rayiçleri nasıldır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Usta ve kalfa yevmiyeleri Ankara genelinde standart olmakla birlikte nitelikli ince işçilik ekiplerinde hakediş beklentisi %15-20 daha yüksektir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Ankara'da kaba inşaat ne kadar sürer?</h3>
+                    <p class="text-navy-dark text-base mb-0">150 m² müstakil bir evin kaba inşaatı (temel, kolon, döşeme ve duvarlar) ortalama 2.5 ila 3 ay içerisinde tamamlanabilir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Dış cephe taşyünü mantolama kalınlığı Ankara için kaç cm olmalıdır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Sert karasal iklim koşulları sebebiyle Ankara'da minimum 8 cm yoğun taşyünü mantolama yapılması yakıt tasarrufu için hayatidir.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4 font-heading">Ankara'daki Evinizin Yapım Maliyetini Şimdi Detaylıca Hesaplayın</h3>

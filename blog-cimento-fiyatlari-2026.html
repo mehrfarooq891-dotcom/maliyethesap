@@ -22,24 +22,66 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#8B4513', 'navy-dark': '#3E2723', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
+                    colors: { navy: '#1e3a5f', 'navy-dark': '#0f1d30', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
                     fontFamily: { sans: ['Source Sans Pro', 'sans-serif'], heading: ['Nunito', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #3E2723; font-size: 1.125rem; text-align: justify; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #0f1d30; font-size: 1.125rem; text-align: justify; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #3E2723; }
-        .prose strong { color: #3E2723; font-weight: 700; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #0f1d30; }
+        .prose strong { color: #0f1d30; font-weight: 700; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "1 torba çimento (50 kg) 2026 fiyatı ne kadardır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Marka, satın alım miktarı ve nakliye mesafesine göre 50 kg'lık torba çimento 2026 yılında ortalama 180 TL ile 240 TL arasındadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hazır beton m³ fiyatı çimento zamlarından nasıl etkilenir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Çimento hazır beton bileşiminin ana maddesidir; çimentoya gelen artışlar C25 ve C30 m³ beton fiyatına anında yansır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bir ev inşaatında ortalama kaç torba çimento veya m³ beton harcanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "100 m² tek katlı müstakil bir ev için temel, kolon ve kat tablası dahil ortalama 60-70 m³ hazır beton harcanmaktadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dökme çimento mu torba çimento mu almak avantajlıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Şantiye ölçeği büyükse veya hazır beton santralinden alım yapılıyorsa dökme çimento %15 daha ekonomik çözümdür."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
     <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 border-b border-white/5">
@@ -157,6 +199,34 @@
             <p>
                 Arsanızın mimari projesine göre temel betonu, kolonlar, iç-dış sıvalar ve şap imalatları için ihtiyaç duyacağınız toplam çimento torba veya dökme ton miktarını sıfır hata ile kendi başınıza hesaplamak, 2026 yılı güncel serbest piyasa ve distribütör teslim endeksleriyle tam uyumlu maliyet analiz raporlarını edinmek istiyorsanız, platformumuzun dijital maliyet hesaplama ve metraj çıkarma modüllerini dilediğiniz an hemen deneyebilirsiniz. Bütçenizi akılcı planlamak ve sarsılmaz yuvalar inşa etmek için her zaman buradayız!
             </p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">1 torba çimento (50 kg) 2026 fiyatı ne kadardır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Marka, satın alım miktarı ve nakliye mesafesine göre 50 kg'lık torba çimento 2026 yılında ortalama 180 TL ile 240 TL arasındadır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Hazır beton m³ fiyatı çimento zamlarından nasıl etkilenir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Çimento hazır beton bileşiminin ana maddesidir; çimentoya gelen artışlar C25 ve C30 m³ beton fiyatına anında yansır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Bir ev inşaatında ortalama kaç torba çimento veya m³ beton harcanır?</h3>
+                    <p class="text-navy-dark text-base mb-0">100 m² tek katlı müstakil bir ev için temel, kolon ve kat tablası dahil ortalama 60-70 m³ hazır beton harcanmaktadır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Dökme çimento mu torba çimento mu almak avantajlıdır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Şantiye ölçeği büyükse veya hazır beton santralinden alım yapılıyorsa dökme çimento %15 daha ekonomik çözümdür.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4 font-heading">Çimento İhtiyacınızı ve İnşaat Maliyetinizi Şimdi Hesaplayın</h3>

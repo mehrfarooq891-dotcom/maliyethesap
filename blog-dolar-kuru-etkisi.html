@@ -27,8 +27,8 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#8B4513',
-                        'navy-dark': '#3E2723',
+                        navy: '#1e3a5f',
+                        'navy-dark': '#0f1d30',
                         orange: '#E8600A',
                         cream: '#F5E6D3', white: '#FFF8F0',
                         border: '#E2DDD6',
@@ -43,15 +43,57 @@
     </script>
 
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
         .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #4a5568; }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #4a5568; }
         .prose li { margin-bottom: 0.5rem; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Dolar artışı inşaat demiri ve çimentoyu neden etkiler?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İnşaat demiri imalatında kullanılan hurda ve enerji ile çimento üretimindeki kömür ithal kalemler olduğu için kur doğrudan etki yapar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Yerli üretim malzemelerde de kur etkisi görülür mü?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, nakliye akaryakıtı, şantiye elektriği ve makine yedek parçaları dövize endeksli olduğu için yerli malzeme fiyatları da artar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Döviz kuru dalgalanmalarından inşaat bütçesi nasıl korunur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kaba inşaat aşamasında demir ve beton siparişini peşin ödemeli bağlamak veya gruptan toplu satın alım yapmak riski minimize eder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İthal ince işçilik malzemeleri bütçeyi ne kadar artırır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İthal seramik, armatür ve duvar kağıdı gibi lüks kaplama grupları tercih edildiğinde ince iş maliyeti %35-40 oranında katlanabilir."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
@@ -149,6 +191,34 @@
 
             <h2>Sonuç: Stratejik Planlama Şart</h2>
             <p>Özetle, <strong>kur değişiminin fiyatlara etkisi</strong> inşaat sektörünün kaçınılmaz bir gerçeğidir. Ev sahibi olmak isteyenler veya yatırım planlayanlar için güncel dolar kuru tahminlerini ve sektör analizlerini takip etmek hayati önem taşır. MaliyetHesap olarak sunduğumuz araçlar, bu değişken piyasa koşullarında size en doğru verileri sunmak için sürekli güncellenmektedir.</p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Dolar artışı inşaat demiri ve çimentoyu neden etkiler?</h3>
+                    <p class="text-navy-dark text-base mb-0">İnşaat demiri imalatında kullanılan hurda ve enerji ile çimento üretimindeki kömür ithal kalemler olduğu için kur doğrudan etki yapar.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Yerli üretim malzemelerde de kur etkisi görülür mü?</h3>
+                    <p class="text-navy-dark text-base mb-0">Evet, nakliye akaryakıtı, şantiye elektriği ve makine yedek parçaları dövize endeksli olduğu için yerli malzeme fiyatları da artar.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Döviz kuru dalgalanmalarından inşaat bütçesi nasıl korunur?</h3>
+                    <p class="text-navy-dark text-base mb-0">Kaba inşaat aşamasında demir ve beton siparişini peşin ödemeli bağlamak veya gruptan toplu satın alım yapmak riski minimize eder.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">İthal ince işçilik malzemeleri bütçeyi ne kadar artırır?</h3>
+                    <p class="text-navy-dark text-base mb-0">İthal seramik, armatür ve duvar kağıdı gibi lüks kaplama grupları tercih edildiğinde ince iş maliyeti %35-40 oranında katlanabilir.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4">Ücretsiz Hesaplama Yapın</h3>

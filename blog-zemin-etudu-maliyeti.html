@@ -22,24 +22,66 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#8B4513', 'navy-dark': '#3E2723', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
+                    colors: { navy: '#1e3a5f', 'navy-dark': '#0f1d30', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
                     fontFamily: { sans: ['Source Sans Pro', 'sans-serif'], heading: ['Nunito', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #3E2723; font-size: 1.125rem; text-align: justify; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #0f1d30; font-size: 1.125rem; text-align: justify; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #3E2723; }
-        .prose strong { color: #3E2723; font-weight: 700; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #0f1d30; }
+        .prose strong { color: #0f1d30; font-weight: 700; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zemin etüt raporu yaptırmak zorunlu mudur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, belediyeden inşaat ruhsatı alabilmek için geoteknik zemin etüt raporu yasal bir zorunluluktur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zemin etüdü maliyeti 2026 yılında kaç TL'dir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sondaj derinliği ve nokta sayısına bağlı olarak müstakil bir ev için zemin etüdü ortalama 35.000 TL ile 60.000 TL arasındadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zemin etüdü ne kadar sürede tamamlanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Saha sondaj çalışmaları ve laboratuvar numune analizleri dahil raporun hazırlanması yaklaşık 7 ila 10 gün sürer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zemin etüdü sonucunda zemin zayıf çıkarsa ne yapılır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Statik projede radye temel kalınlaştırılır veya zemin ıslahı (fore kazık/jet grout/enjeksiyon) uygulamaları kararlaştırılır."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
     <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 border-b border-white/5">
@@ -163,6 +205,34 @@
             <p>
                 Evinizin yapılacağı ili, ilçeyi, arsa metrekaresini ve dilediğiniz kat sayısını sisteme girerek; bölgenizin deprem zemin katsayılarına uygun güncel zemin etüdü, kaba inşaat, betonarme temel tipi bütçelerini saniyeler içinde sıfır hata ile hesaplamak istiyorsanız platformumuz MaliyetHesap'ın akıllı dijital modüllerini hemen ücretsiz deneyebilirsiniz. Bütçenizi akılcı planlayın, yarınlarınızı sarsılmaz temeller üzerinde yükseltin!
             </p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Zemin etüt raporu yaptırmak zorunlu mudur?</h3>
+                    <p class="text-navy-dark text-base mb-0">Evet, belediyeden inşaat ruhsatı alabilmek için geoteknik zemin etüt raporu yasal bir zorunluluktur.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Zemin etüdü maliyeti 2026 yılında kaç TL'dir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Sondaj derinliği ve nokta sayısına bağlı olarak müstakil bir ev için zemin etüdü ortalama 35.000 TL ile 60.000 TL arasındadır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Zemin etüdü ne kadar sürede tamamlanır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Saha sondaj çalışmaları ve laboratuvar numune analizleri dahil raporun hazırlanması yaklaşık 7 ila 10 gün sürer.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Zemin etüdü sonucunda zemin zayıf çıkarsa ne yapılır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Statik projede radye temel kalınlaştırılır veya zemin ıslahı (fore kazık/jet grout/enjeksiyon) uygulamaları kararlaştırılır.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4 font-heading">İnşaatınızın Tüm Yapım ve Mühendislik Bütçesini Şimdi Detaylıca Hesaplayın</h3>

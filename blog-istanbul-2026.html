@@ -27,8 +27,8 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#8B4513',
-                        'navy-dark': '#3E2723',
+                        navy: '#1e3a5f',
+                        'navy-dark': '#0f1d30',
                         orange: '#E8600A',
                         cream: '#F5E6D3', white: '#FFF8F0',
                         green: '#2E7D52',
@@ -44,15 +44,57 @@
     </script>
 
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #8B4513/80; font-size: 1.125rem; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose li { margin-bottom: 0.5rem; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "İstanbul'da nakliye ve dar sokak faktörü şantiyeyi nasıl etkiler?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dar sokaklar nedeniyle hazır beton mikseri veya tırların yanaşamaması pompa mesaisini ve küçük kamyonet nakliyelerini %15-20 artırır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Çatalca veya Silivri'de müstakil ev m² yapım birim fiyatı nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standart-üstü malzeme ile İstanbul çeperinde müstakil ev yapımı m² birim maliyeti 25.000 TL ila 34.000 TL arasındadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İstanbul İlçe Belediyeleri harç ve altyapı bedelleri yüksek midir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İstanbul'da kanal katılım, altyapı ve harç ödemeleri Türkiye ortalamasının yaklaşık %25-35 üzerindedir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zemin güçlendirme (kazık/enjeksiyon) İstanbul'da zorunlu mudur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zemin etüt raporunda zayıf taşıma kapasitesi çıkan veya heyelan riski bulunan İstanbul bölgelerinde fore kazık zorunludur."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
 
@@ -198,6 +240,34 @@
                 2026'da <strong>İstanbul ev yapım maliyeti</strong>, sadece bir bina inşa etmek değil, aynı zamanda geleceğin teknolojisine ve güvenliğine yatırım yapmak anlamına geliyor. m2 başına ortalama 35.000 - 55.000 TL bandında değişen bu maliyetler, doğru planlama ve teknolojik araçların kullanımıyla optimize edilebilir. Hayalinizdeki evi inşa ederken sürprizlerden kaçınmak için şeffaf maliyet analizlerine her zamankinden daha fazla ihtiyacınız olacak.
             </p>
         </div>
+    
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">İstanbul'da nakliye ve dar sokak faktörü şantiyeyi nasıl etkiler?</h3>
+                    <p class="text-navy-dark text-base mb-0">Dar sokaklar nedeniyle hazır beton mikseri veya tırların yanaşamaması pompa mesaisini ve küçük kamyonet nakliyelerini %15-20 artırır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Çatalca veya Silivri'de müstakil ev m² yapım birim fiyatı nedir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Standart-üstü malzeme ile İstanbul çeperinde müstakil ev yapımı m² birim maliyeti 25.000 TL ila 34.000 TL arasındadır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">İstanbul İlçe Belediyeleri harç ve altyapı bedelleri yüksek midir?</h3>
+                    <p class="text-navy-dark text-base mb-0">İstanbul'da kanal katılım, altyapı ve harç ödemeleri Türkiye ortalamasının yaklaşık %25-35 üzerindedir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Zemin güçlendirme (kazık/enjeksiyon) İstanbul'da zorunlu mudur?</h3>
+                    <p class="text-navy-dark text-base mb-0">Zemin etüt raporunda zayıf taşıma kapasitesi çıkan veya heyelan riski bulunan İstanbul bölgelerinde fore kazık zorunludur.</p>
+                </div>
+                </div>
+            </div>
+
     </article>
 
     <!-- FOOTER (Sync with index.html) -->

@@ -22,24 +22,66 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#8B4513', 'navy-dark': '#3E2723', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
+                    colors: { navy: '#1e3a5f', 'navy-dark': '#0f1d30', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
                     fontFamily: { sans: ['Source Sans Pro', 'sans-serif'], heading: ['Nunito', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #3E2723; font-size: 1.125rem; text-align: justify; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #0f1d30; font-size: 1.125rem; text-align: justify; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #3E2723; }
-        .prose strong { color: #3E2723; font-weight: 700; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #0f1d30; }
+        .prose strong { color: #0f1d30; font-weight: 700; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "İstanbul'da usta yevmiyeleri diğer şehirlere göre yüksek midir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İstanbul'da yüksek yaşam ve konaklama maliyetleri sebebiyle inşaat ustalarının günlük yevmiye beklentisi %20-30 daha yüksektir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Silivri, Şile, Beykoz hattında villa yapım maliyeti kaç TL'den başlar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lüks segment müstakil konut imalatında İstanbul genelinde m² maliyeti 35.000 TL'den başlayarak malzeme kalitesine göre yükselir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İSKİ ve BEDAŞ bağlantı harçları İstanbul'da ne kadardır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Şantiye su ve elektrik bağlantıları ile altyapı katılım bedelleri 2026'da ortalama 40.000 TL ile 70.000 TL arasında bütçelenmelidir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kaba inşaat malzemesi İstanbul'a nereden tedarik edilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Çimento ve demir tedariki ağırlıklı olarak Gebze, Kocaeli ve Trakya bölgesindeki sanayi tesislerinden sağlanır."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
     <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 border-b border-white/5">
@@ -149,6 +191,34 @@
             <p>
                 Kendi arsanızın imar durumuna, evinizin planlanan toplam kapalı alan değerlerine ve malzeme kalitesine göre 2026 yılı güncel serbest piyasa rayiçleriyle tam örtüşen en gerçekçi yapım bütçesini anında hesaplamak ve detaylı PDF raporu oluşturmak istiyorsanız, sitemizin dinamik hesaplama aracını hemen kullanabilirsiniz. İstanbul'da güvenli yuvalar ve sağlam bütçeler kurmak için her zaman yanınızdayız!
             </p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">İstanbul'da usta yevmiyeleri diğer şehirlere göre yüksek midir?</h3>
+                    <p class="text-navy-dark text-base mb-0">İstanbul'da yüksek yaşam ve konaklama maliyetleri sebebiyle inşaat ustalarının günlük yevmiye beklentisi %20-30 daha yüksektir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Silivri, Şile, Beykoz hattında villa yapım maliyeti kaç TL'den başlar?</h3>
+                    <p class="text-navy-dark text-base mb-0">Lüks segment müstakil konut imalatında İstanbul genelinde m² maliyeti 35.000 TL'den başlayarak malzeme kalitesine göre yükselir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">İSKİ ve BEDAŞ bağlantı harçları İstanbul'da ne kadardır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Şantiye su ve elektrik bağlantıları ile altyapı katılım bedelleri 2026'da ortalama 40.000 TL ile 70.000 TL arasında bütçelenmelidir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Kaba inşaat malzemesi İstanbul'a nereden tedarik edilir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Çimento ve demir tedariki ağırlıklı olarak Gebze, Kocaeli ve Trakya bölgesindeki sanayi tesislerinden sağlanır.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4 font-heading">İstanbul Ev Yapım Bütçenizi Şimdi Çıkarın</h3>

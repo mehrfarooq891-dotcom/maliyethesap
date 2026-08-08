@@ -27,8 +27,8 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#8B4513',
-                        'navy-dark': '#3E2723',
+                        navy: '#1e3a5f',
+                        'navy-dark': '#0f1d30',
                         orange: '#E8600A',
                         cream: '#F5E6D3', white: '#FFF8F0',
                         green: '#2E7D52',
@@ -44,17 +44,59 @@
     </script>
 
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #8B4513/80; font-size: 1.125rem; text-align: justify; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; text-align: justify; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #8B4513/80; }
-        .prose strong { color: #3E2723; font-weight: 700; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #1e3a5f/80; }
+        .prose strong { color: #0f1d30; font-weight: 700; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "100 m² ev sıfır temiz ve pis su tesisatı maliyeti ne kadardır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PPRC borular, atık su boruları, kolektör sistemi ve işçilik dahil 100 m² ev su tesisatı 2026'da ortalama 45.000 TL ile 70.000 TL tutar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tesisat borularında PPRC ve sessiz boru seçimi fiyatı değiştirir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atık su giderlerinde sessiz boru kullanımı ses yalıtımı sağlar ve tesisat maliyetini yaklaşık %30 artırır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Eski dairede su tesisatı kaç günde yenilenir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Banyo ve mutfak dahil tüm boruların kırım ve montajı 3 ila 5 iş günü içerisinde tamamlanır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Su tesisatı çekildikten sonra basınç testi yapılmalı mıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Şap ve seramik kaplaması yapılmadan önce borulara mutlaka 10 bar basınç testi uygulanarak kaçak kontrolü yapılmalıdır."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
 
@@ -240,6 +282,34 @@
             <p>
                 Kendi arsa bilgilerinizi, evinizdeki banyo ve su noktası sayılarını ya da tadilat yapmayı düşündüğünüz m2 alanını sisteme girerek; su sayacından duş süzgecine, gömme rezervuarlardan usta hakedişlerine kadar 2026 yılı güncel malzeme ve usta verileriyle yüzde yüz uyumlu en gerçekçi tesisat yapım bütçesini saniyeler içinde anında hesaplamak ve çıktı raporu almak istiyorsanız platformumuzun dinamik hesaplama modülünü hemen kullanabilirsiniz. Cebinizi korumak ve güvenli yapılar inşa etmek için her zaman buradayız!
             </p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">100 m² ev sıfır temiz ve pis su tesisatı maliyeti ne kadardır?</h3>
+                    <p class="text-navy-dark text-base mb-0">PPRC borular, atık su boruları, kolektör sistemi ve işçilik dahil 100 m² ev su tesisatı 2026'da ortalama 45.000 TL ile 70.000 TL tutar.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Tesisat borularında PPRC ve sessiz boru seçimi fiyatı değiştirir mi?</h3>
+                    <p class="text-navy-dark text-base mb-0">Atık su giderlerinde sessiz boru kullanımı ses yalıtımı sağlar ve tesisat maliyetini yaklaşık %30 artırır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Eski dairede su tesisatı kaç günde yenilenir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Banyo ve mutfak dahil tüm boruların kırım ve montajı 3 ila 5 iş günü içerisinde tamamlanır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Su tesisatı çekildikten sonra basınç testi yapılmalı mıdır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Şap ve seramik kaplaması yapılmadan önce borulara mutlaka 10 bar basınç testi uygulanarak kaçak kontrolü yapılmalıdır.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4 font-heading">Sıhhi Tesisat Bütçenizi Şimdi Hesaplayın</h3>

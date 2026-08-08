@@ -27,8 +27,8 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#8B4513',
-                        'navy-dark': '#3E2723',
+                        navy: '#1e3a5f',
+                        'navy-dark': '#0f1d30',
                         orange: '#E8600A',
                         cream: '#F5E6D3', white: '#FFF8F0',
                         green: '#2E7D52',
@@ -44,15 +44,57 @@
     </script>
 
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #8B4513/80; font-size: 1.125rem; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #1e3a5f/80; font-size: 1.125rem; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose li { margin-bottom: 0.5rem; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "100 m² ev inşaatında malzeme ve işçilik oranı nasıldır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toplam yapım bütçesinin yaklaşık %60'ını hazır beton, demir ve kaplama malzemeleri, %40'ını ise usta ve taşeron işçilik hakedişleri oluşturur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mimar çizim ve proje maliyeti 100 m² ev için ne kadardır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mimari, statik, elektrik ve mekanik projelerin tamamı için Mimarlar Odası asgari tarifesine göre ortalama 60.000 TL - 90.000 TL bütçe gerekir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "100 m² ev yaparken maliyetten nasıl tasarruf edilir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Karmaşık girintili çıkıntılı mimari yerine kare/dikdörtgen sade modüler plan seçimi ve kaba malzemeyi yerel tedarikçiden peşin almak %15 tasarruf sağlar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bütçeyi aşmamak için hangi sözleşme türü tercih edilmelidir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Malzeme markaları ve imalat detayları net yazılmış, fiyat artışlarına karşı kilitlenmiş anahtar teslim sabit fiyatlı götürü bedel sözleşmesi önerilir."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
 
@@ -196,6 +238,34 @@
                 2026 yılında 100 m² bir ev inşa etmek, sadece beton ve demire değil, aynı zamanda doğru bir finansal stratejiye yatırım yapmaktır. Ortalama 3.5 - 4.5 Milyon TL bandında değişen bu bütçeyi yönetmek için şeffaf verilerle hareket etmek, hayalinizdeki eve beklenmedik borçlar altına girmeden kavuşmanızı sağlar. Unutmayın, inşaatın en ucuz aşaması her zaman "kağıt üzerinde yapılan doğru planlama" aşamasıdır.
             </p>
         </div>
+    
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">100 m² ev inşaatında malzeme ve işçilik oranı nasıldır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Toplam yapım bütçesinin yaklaşık %60'ını hazır beton, demir ve kaplama malzemeleri, %40'ını ise usta ve taşeron işçilik hakedişleri oluşturur.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Mimar çizim ve proje maliyeti 100 m² ev için ne kadardır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Mimari, statik, elektrik ve mekanik projelerin tamamı için Mimarlar Odası asgari tarifesine göre ortalama 60.000 TL - 90.000 TL bütçe gerekir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">100 m² ev yaparken maliyetten nasıl tasarruf edilir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Karmaşık girintili çıkıntılı mimari yerine kare/dikdörtgen sade modüler plan seçimi ve kaba malzemeyi yerel tedarikçiden peşin almak %15 tasarruf sağlar.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Bütçeyi aşmamak için hangi sözleşme türü tercih edilmelidir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Malzeme markaları ve imalat detayları net yazılmış, fiyat artışlarına karşı kilitlenmiş anahtar teslim sabit fiyatlı götürü bedel sözleşmesi önerilir.</p>
+                </div>
+                </div>
+            </div>
+
     </article>
 
     <!-- FOOTER -->

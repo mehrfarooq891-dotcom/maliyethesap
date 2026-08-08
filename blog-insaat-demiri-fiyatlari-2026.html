@@ -22,24 +22,66 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { navy: '#8B4513', 'navy-dark': '#3E2723', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
+                    colors: { navy: '#1e3a5f', 'navy-dark': '#0f1d30', orange: '#E8600A', cream: '#F5E6D3', white: '#FFF8F0', green: '#2E7D52', border: '#E2DDD6' },
                     fontFamily: { sans: ['Source Sans Pro', 'sans-serif'], heading: ['Nunito', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style type="text/css">
-        body { background-color: #FFF8F0; color: #3E2723; font-family: 'Source Sans Pro', sans-serif; }
+        body { background-color: #FFF8F0; color: #0f1d30; font-family: 'Source Sans Pro', sans-serif; }
         h1, h2, h3, .font-heading { font-family: 'Nunito', sans-serif; font-weight: 800; }
-        .hero-gradient { background: linear-gradient(to bottom, #8B4513, #3E2723); }
-        .prose h2 { font-size: 1.875rem; color: #3E2723; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
-        .prose h3 { font-size: 1.5rem; color: #3E2723; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #3E2723; font-size: 1.125rem; text-align: justify; }
+        .hero-gradient { background: linear-gradient(to bottom, #1e3a5f, #0f1d30); }
+        .prose h2 { font-size: 1.875rem; color: #0f1d30; margin-top: 2.5rem; margin-bottom: 1.25rem; border-left: 4px solid #E8600A; padding-left: 1rem; }
+        .prose h3 { font-size: 1.5rem; color: #0f1d30; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #0f1d30; font-size: 1.125rem; text-align: justify; }
         .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; }
-        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #3E2723; }
-        .prose strong { color: #3E2723; font-weight: 700; }
+        .prose li { margin-bottom: 0.5rem; line-height: 1.7; color: #0f1d30; }
+        .prose strong { color: #0f1d30; font-weight: 700; }
     </style>
+
+    <!-- FAQPage Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "1 ton inşaat demiri (8mm - 32mm) 2026 fiyatı ne kadardır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fabrika teslimi ve nakliye dahil 1 ton nervürlü inşaat demiri 2026 yılında ortalama 26.000 TL ile 31.000 TL arasında işlem görmektedir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "100 m² müstakil bir ev için kaç ton demir gereklidir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Statik projenin donatı yoğunluğuna bağlı olarak 100 m² tek katlı müstakil evde yaklaşık 7 ila 10 ton arası demir kullanılır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İnce demir (8mm-10mm) ile kalın demir (12mm+) fiyatı farklı mıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, ince demirlerin haddeleme ve çekim işçiliği daha uzun sürdüğü için ton fiyatı kalın demire kıyasla biraz daha pahalıdır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Demir alımında firesiz kesim nasıl sağlanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Statik projedeki metraj listesine göre fabrikasyon hazır kesim ve büküm siparişi verilerek şantiye firesi sıfıra indirilir."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased">
     <nav class="bg-navy py-4 px-6 md:px-12 sticky top-0 z-50 border-b border-white/5">
@@ -151,6 +193,34 @@
             <p>
                 Arsanızın mimari statik projesine göre ihtiyaç duyacağınız toplam demir tonajını, kalınlık çaplarına göre dağılımını sıfır hata ile kendi başınıza hesaplamak, 2026 yılı güncel serbest piyasa ve fabrika teslim endeksleriyle tam uyumlu kaba inşaat bütçe analiz raporlarını edinmek istiyorsanız, platformumuzun dijital maliyet hesaplama ve metraj çıkarma modüllerini dilediğiniz an hemen deneyebilirsiniz. Bütçenizi akılcı planlamak ve güvenli yarınlar inşa etmek için her zaman yanınızdayız!
             </p>
+
+            
+
+            <!-- FAQ SECTION -->
+            <div class="mt-12 pt-8 border-t border-border/40">
+                <h2 class="text-2xl font-heading text-navy mb-6">Sıkça Sorulan Sorular (SSS)</h2>
+                <div class="space-y-6">
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">1 ton inşaat demiri (8mm - 32mm) 2026 fiyatı ne kadardır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Fabrika teslimi ve nakliye dahil 1 ton nervürlü inşaat demiri 2026 yılında ortalama 26.000 TL ile 31.000 TL arasında işlem görmektedir.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">100 m² müstakil bir ev için kaç ton demir gereklidir?</h3>
+                    <p class="text-navy-dark text-base mb-0">Statik projenin donatı yoğunluğuna bağlı olarak 100 m² tek katlı müstakil evde yaklaşık 7 ila 10 ton arası demir kullanılır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">İnce demir (8mm-10mm) ile kalın demir (12mm+) fiyatı farklı mıdır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Evet, ince demirlerin haddeleme ve çekim işçiliği daha uzun sürdüğü için ton fiyatı kalın demire kıyasla biraz daha pahalıdır.</p>
+                </div>
+
+                <div class="bg-cream/30 p-6 rounded-2xl border border-border/40">
+                    <h3 class="text-lg font-bold text-navy mb-2">Demir alımında firesiz kesim nasıl sağlanır?</h3>
+                    <p class="text-navy-dark text-base mb-0">Statik projedeki metraj listesine göre fabrikasyon hazır kesim ve büküm siparişi verilerek şantiye firesi sıfıra indirilir.</p>
+                </div>
+                </div>
+            </div>
 
             <div class="bg-navy rounded-[32px] p-8 md:p-12 text-white mt-12">
                 <h3 class="text-white mt-0 mb-4 font-heading">İnşaat Demiri ve Kaba Yapı Bütçenizi Şimdi Hesaplayın</h3>
