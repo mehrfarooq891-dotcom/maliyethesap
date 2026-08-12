@@ -75,12 +75,26 @@
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 text-white/90 text-sm font-semibold tracking-wide">
+            <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-white/90 text-sm font-semibold tracking-wide">
                 <a href="index.html" class="hover:text-orange transition-colors">Ana Sayfa</a>
                 <a href="index.html#nasil" class="hover:text-orange transition-colors">Hizmetler</a>
                 <a href="about.html" class="text-orange">Hakkımızda</a>
                 <a href="blog.html" class="hover:text-orange transition-colors">Blog</a>
                 <a href="contact.html" class="hover:text-orange transition-colors">İletişim</a>
+                
+                <!-- Yasal Dropdown -->
+                <div class="relative group py-2">
+                    <button type="button" class="flex items-center gap-1.5 hover:text-orange transition-colors focus:outline-none cursor-pointer">
+                        <span>Yasal</span>
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 top-full w-48 bg-navy-dark/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                        <a href="#" class="block px-4 py-2 text-sm text-white/90 hover:text-orange hover:bg-white/5 transition-colors">Gizlilik Politikası</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-white/90 hover:text-orange hover:bg-white/5 transition-colors">Kullanım Şartları</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -98,6 +112,8 @@
             <a href="about.html" class="block text-orange py-2">Hakkımızda</a>
             <a href="blog.html" class="block text-white hover:text-orange py-2">Blog</a>
             <a href="contact.html" class="block text-white hover:text-orange py-2">İletişim</a>
+            <a href="#" class="block text-white hover:text-orange py-2">Gizlilik Politikası</a>
+            <a href="#" class="block text-white hover:text-orange py-2">Kullanım Şartları</a>
         </div>
     </nav>
 
