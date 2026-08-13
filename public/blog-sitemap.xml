@@ -132,4 +132,16 @@
     <loc>https://maliyethesap.com/blog-zemin-etudu-maliyeti</loc>
     <lastmod>2026-07-18</lastmod>
   </url>
+  <url>
+    <loc>https://maliyethesap.com/blog-denizli-insaat-maliyeti-2026</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maliyethesap.com/blog-denizli-ev-maliyeti-2026</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
