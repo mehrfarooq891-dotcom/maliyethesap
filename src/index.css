@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #FFF8F0;
+    color: #0f1d30;
+    font-family: 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+  }
+}
