@@ -147,6 +147,7 @@ export default function App() {
             <a href="#hesaplama" className="hover:text-[#E8600A] transition-colors">Maliyet Hesapla</a>
             <a href="#detaylar" className="hover:text-[#E8600A] transition-colors">Kalem Dağılımı</a>
             <a href="#teblig" className="hover:text-[#E8600A] transition-colors">2026 Resmi Tebliğ</a>
+            <a href="/blog.html" className="hover:text-[#E8600A] transition-colors">Blog</a>
             <a href="#faq" className="hover:text-[#E8600A] transition-colors">S.S.S.</a>
             <a href="#uzman" className="hover:text-[#E8600A] transition-colors">Hakkımızda</a>
           </nav>
