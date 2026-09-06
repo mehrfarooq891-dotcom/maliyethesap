@@ -18,6 +18,12 @@ const cleanUrlsPlugin = () => ({
     server.middlewares.use((req: any, res: any, next: any) => {
       if (req.url === '/blog') {
         req.url = '/blog.html';
+      } else if (req.url && req.url.startsWith('/blog/')) {
+        const slug = req.url.replace(/^\/blog\//, '').split('?')[0];
+        const potentialFile = '/blog-' + slug + '.html';
+        if (fs.existsSync('.' + potentialFile)) {
+          req.url = potentialFile;
+        }
       } else if (req.url && req.url.startsWith('/blog-') && !req.url.endsWith('.html')) {
         const potentialFile = req.url.split('?')[0] + '.html';
         if (fs.existsSync('.' + potentialFile)) {
