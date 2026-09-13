@@ -1,6 +1,38 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/blog-muteahhit-kendi-insaat",
+      "destination": "/blog-muteahhit-mi-kendim-mi",
+      "permanent": true
+    },
+    {
+      "source": "/blog/muteahhit-kendi-insaat",
+      "destination": "/blog-muteahhit-mi-kendim-mi",
+      "permanent": true
+    },
+    {
+      "source": "/blog-ankara-ev-yapim-maliyeti-2026",
+      "destination": "/blog-ankara-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ankara-ev-yapim-maliyeti-2026",
+      "destination": "/blog-ankara-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog-izmir-2026",
+      "destination": "/blog-izmir-insaat-maliyeti-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/izmir-2026",
+      "destination": "/blog-izmir-insaat-maliyeti-2026",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/blog",
