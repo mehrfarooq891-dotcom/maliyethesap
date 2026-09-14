@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DASK (Zorunlu Deprem Sigortası) Maliyeti ve İnşaata Etkisi | MaliyetHesap</title>
+  <meta name="description" content="DASK maliyeti ve inşaata etkisi nedir? Yeni binalarda zorunlu deprem sigortası primi hesaplama, iskan bağlantısı ve bütçe analizini inceleyin." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://maliyethesap.com/blog-dask-maliyeti-ve-insaat-etkisi.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="DASK (Zorunlu Deprem Sigortası) Maliyeti ve İnşaata Etkisi" />
+  <meta property="og:description" content="Yeni binalarda DASK primi nasıl hesaplanır? Metrekare, yapı tarzı ve deprem risk grubu katsayılarının iskan ve inşaat bütçesine etkisi." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://maliyethesap.com/blog-dask-maliyeti-ve-insaat-etkisi.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?w=1200&auto=format&fit=crop&q=80" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1e3a5f',
+            darkNavy: '#0f1d30',
+            orange: '#E8600A',
+            cream: '#FFF8F0',
+            borderGray: '#E2DDD6'
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body: ['Source Sans Pro', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD (FAQPage & Article) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "DASK (Zorunlu Deprem Sigortası) Maliyeti ve İnşaata Etkisi",
+      "description": "Yeni binalarda DASK primi nasıl hesaplanır? Metrekare, yapı tarzı ve deprem risk grubu katsayılarının iskan ve inşaat bütçesine etkisi.",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "image": "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?w=1200&auto=format&fit=crop&q=80",
+      "author": {
+        "@type": "Organization",
+        "name": "MaliyetHesap Araştırma Grubu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MaliyetHesap",
+        "url": "https://maliyethesap.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kaba inşaatı devam eden bir binaya DASK yapılabilir mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. DASK yalnızca inşaatı tamamlanmış, dış cephesi, çatısı ve kapı-pencere doğramaları takılarak kapalı bağımsız bölüm vasfı kazanmış yapılar için düzenlenir. Şantiye halindeki binalar için İnşaat All-Risk sigortası yaptırılmalıdır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İskan alındıktan sonra DASK her yıl yenilenmek zorunda mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Kanunen Zorunlu Deprem Sigortası yıllık bir poliçedir. Her yıl süresi dolduğunda yenilenmesi gerekir. Yenilenmeyen konutlarda elektrik, su veya doğalgaz abonelik nakli yapılamaz, tapuda satış veya kiralama işlemleri gerçekleştirilemez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Prefabrik veya çelik konstrüksiyon evlerde DASK primi daha mı düşüktür?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tarifede yapılar 'Betonarme' ve 'Diğer' olarak ikiye ayrılır. Çelik veya hafif çelik yapılar 'Diğer' kategorisine girer. Bu kategoride hasar görebilirlik katsayısı farklı hesaplandığından prim tutarı bulunulan risk bölgesine göre betonarme yapılara kıyasla küçük oranda farklılık gösterebilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "DASK primi arsa payına göre mi hesaplanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. DASK yalnızca binanın yeniden inşası için gereken kaba ve ince imalat maliyetini esas alır. Arsanın piyasa değeri, konumu veya lüks semtte bulunması DASK teminat bedelini değiştirmez; belirleyici olan sadece yapının onaylı brüt metrekaresi ve yapı tarzıdır."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-[#FFF8F0] text-[#0f1d30] font-body">
+
+  <!-- Header -->
+  <header class="bg-[#1e3a5f] text-white py-4 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-2xl font-extrabold font-heading tracking-tight flex items-center gap-2">
+        <svg class="w-7 h-7 text-[#E8600A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <rect width="18" height="18" x="3" y="3" rx="2" stroke-width="2"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h18M9 21V9"/>
+        </svg>
+        <span>Maliyet<span class="text-[#E8600A]">Hesap</span></span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
+        <a href="/" class="hover:text-[#E8600A] transition-colors">Ana Sayfa</a>
+        <a href="/#hesaplama" class="hover:text-[#E8600A] transition-colors">Maliyet Hesapla</a>
+        <a href="/blog.html" class="text-[#E8600A] font-bold">Blog</a>
+        <a href="/#teblig" class="hover:text-[#E8600A] transition-colors">Bakanlık Tebliği</a>
+        <a href="/#faq" class="hover:text-[#E8600A] transition-colors">S.S.S.</a>
+      </nav>
+      <a href="/#hesaplama" class="bg-[#E8600A] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-white hover:text-[#1e3a5f] transition-all shadow-md">
+        Maliyet Hesapla
+      </a>
+    </div>
+  </header>
+
+  <!-- Article Hero -->
+  <section class="bg-gradient-to-b from-[#1e3a5f] to-[#0f1d30] text-white py-14 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-[#E8600A] mb-4">
+        Yasal Süreçler &amp; Sigorta
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold font-heading leading-tight mb-6">
+        DASK (Zorunlu Deprem Sigortası) Maliyeti ve İnşaata Etkisi
+      </h1>
+      <div class="flex flex-wrap items-center gap-4 text-xs md:text-sm text-white/70">
+        <span>Yazar: <strong>MaliyetHesap Hukuk &amp; Bütçe Masası</strong></span>
+        <span>•</span>
+        <span>Yayım: <strong>14 Eylül 2026</strong></span>
+        <span>•</span>
+        <span>Okuma Süresi: <strong>6 Dakika</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image -->
+  <div class="max-w-4xl mx-auto px-6 -mt-8">
+    <div class="rounded-3xl overflow-hidden shadow-lg border border-[#E2DDD6] max-h-96">
+      <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?w=1200&auto=format&fit=crop&q=80" alt="DASK Zorunlu Deprem Sigortası Maliyeti ve İnşaata Etkisi" class="w-full h-full object-cover" referrerpolicy="no-referrer" loading="eager" />
+    </div>
+  </div>
+
+  <!-- Article Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <article class="bg-white rounded-3xl p-8 md:p-12 border border-[#E2DDD6] shadow-sm space-y-8 text-base md:text-lg leading-relaxed text-[#0f1d30]">
+      
+      <!-- GEO Hızlı Özet Kutusu -->
+      <div class="bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-5 md:p-6 text-gray-900 shadow-sm space-y-2">
+        <div class="flex items-center gap-2 font-bold text-base md:text-lg text-[#1e3a5f]">
+          <span class="text-xl">⚡</span>
+          <span>Hızlı Özet: Yeni İnşaatlarda DASK Primi ve Bütçe Yansıması</span>
+        </div>
+        <p class="text-sm md:text-base leading-relaxed text-gray-800">
+          Yeni tamamlanan bir konut veya villada DASK primi; bağımsız bölümün brüt metrekaresi, taşıyıcı yapı tarzı (betonarme veya diğer) ve arsanın bulunduğu deprem risk bölgesine (1 ile 7 arası) göre hesaplanır. 2026 şartlarında 150 m² yeni bir betonarme konutun yıllık DASK primi <strong>1.200 TL ile 5.800 TL</strong> arasında değişmektedir. Milyonlarca liralık toplam inşaat bütçesinin yaklaşık binde birini oluşturan bu poliçe, belediyeden <strong>Yapı Kullanım İzin Belgesi (iskan)</strong> alabilmek ve kalıcı su-elektrik aboneliklerini başlatabilmek için kanunen zorunlu tutulmaktadır.
+        </p>
+      </div>
+
+      <p class="font-medium text-lg md:text-xl text-gray-800 leading-relaxed border-l-4 border-[#E8600A] pl-4 py-1 bg-amber-50/50 rounded-r-xl">
+        Bir arsa satın alıp temel kazısından çatı kaplamasına kadar aylarca süren yorucu bir inşaat maratonunu tamamladığınızda, işin yalnızca şantiyede bitmediğini görürsünüz. Şantiye elektriğini meskene çevirmek ve belediyeden iskan alabilmek için masanıza konan ilk evraklardan biri DASK poliçesidir.
+      </p>
+
+      <p>
+        Ev sahipleri ve inşaat geliştirenler genellikle demir, hazır beton ve işçilik gibi kaba inşaatın devasa maliyet kalemlerine odaklanırken; yasal izin süreçlerinde zorunlu tutulan sigorta harçlarını son ana bırakma eğilimindedir. Oysa DASK, sıradan bir gayrimenkul satış zorunluluğunun çok ötesinde, yapı ruhsatı ve iskan süreçlerinin ayrılmaz bir halkasıdır. Peki, yeni tamamlanan bir yapıda DASK primi nasıl hesaplanır? Binanın taşıyıcı türü, brüt metrekaresi ve coğrafi konumu ödenecek prim tutarını nasıl değiştirir? Bu incelemede, DASK sisteminin teknik mekanizmasını ve toplam inşaat bütçenizdeki yerini pratik verilerle ele alıyoruz.
+      </p>
+
+      <!-- H2 -->
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        DASK Nedir ve Yeni İnşaatlarda Neden Yasal Bir Zorunluluktur?
+      </h2>
+
+      <p>
+        Doğal Afet Sigortaları Kurumu (DASK), 1999 Marmara Depremi sonrasında hayata geçirilen mevzuat ve ardından yürürlüğe giren 6305 sayılı Afet Sigortaları Kanunu ile kurulmuş kamusal bir havuz sistemidir. Sistemin omurgasını oluşturan Zorunlu Deprem Sigortası, depremin ve deprem sonucu meydana gelen yangın, patlama, tsunami ve yer kaymasının doğrudan neden olacağı maddi zararları nakit olarak karşılamayı hedefler.
+      </p>
+
+      <p>
+        Yeni bir inşaat projesinde DASK şu üç kritik aşamada yasal bir bariyer olarak karşınıza çıkar:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2 text-gray-800">
+        <li><strong>Yapı Kullanım İzin Belgesi (İskan) Başvurusu:</strong> İnşaat fiilen bitip belediye fen işleri denetim heyeti şantiyeyi gezdiğinde, bağımsız bölümler için DASK poliçesi düzenlenmeden iskan harçları tamamlansa dahi onay verilmez.</li>
+        <li><strong>Kalıcı Altyapı ve Sayaç Abonelikleri:</strong> Şantiye elektriği ve geçici su hattının kalıcı konut tarifesine dönüştürülmesi için elektrik ve su dağıtım şirketleri güncel DASK poliçe numarasını şart koşar.</li>
+        <li><strong>Kat Mülkiyetine Geçiş ve Tapu Tescili:</strong> Kat irtifakından kat mülkiyetine geçiş aşamasında her bir bağımsız bölümün sigorta kaydı Tapu ve Kadastro Bilgi Sistemi (TAKBİS) üzerinden otomatik denetlenir.</li>
+      </ul>
+
+      <!-- H2 -->
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        DASK Prim Tutarı Nasıl Hesaplanır?
+      </h2>
+
+      <p>
+        DASK primleri serbest piyasa koşullarında sigorta acentelerinin keyfi belirlediği rakamlar değildir. Sigortacılık ve Özel Emeklilik Düzenleme ve Denetleme Kurumu (SEDDK) tarafından her yıl yayımlanan <strong>Zorunlu Deprem Sigortası Tarife ve Talimat Tebliği</strong> doğrultusunda matematiksel bir formülle hesaplanır:
+      </p>
+
+      <div class="bg-gray-100 p-4 rounded-xl border border-gray-300 text-center font-mono text-base md:text-lg text-[#1e3a5f] font-bold">
+        Poliçe Primi = Teminat Bedeli × Tarife Katsayısı
+      </div>
+
+      <p>
+        Buradaki iki temel bileşenin sahada nasıl karşılık bulduğuna yakından bakalım:
+      </p>
+
+      <div class="space-y-4 pl-2">
+        <div class="border-l-2 border-[#1e3a5f] pl-4">
+          <h3 class="text-xl font-bold text-[#1e3a5f]">1. Hesaplanan Teminat Bedeli</h3>
+          <p class="text-gray-700 text-base mt-1">
+            DASK, binanızın arsa değerini değil; yalnızca yıkılması veya hasar görmesi halinde yeniden inşa edilme maliyetini temin eder. Teminat bedeli, bağımsız bölümün brüt metrekaresi ile SEDDK tarafından ilan edilen metrekare birim yapı maliyeti çarpılarak bulunur. Yapı tarzları genel olarak betonarme ve diğer (çelik, yığma, prefabrik) olarak sınıflandırılır. Her yıl inşaat maliyet endekslerine paralel olarak azami teminat tavanı güncellenir.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-[#1e3a5f] pl-4">
+          <h3 class="text-xl font-bold text-[#1e3a5f]">2. Deprem Risk Grupları ve İlçe Katsayıları</h3>
+          <p class="text-gray-700 text-base mt-1">
+            Türkiye, Türkiye Deprem Tehlike Haritası verilerine dayanarak 7 ayrı risk grubuna ayrılmıştır. 1. Grup deprem tehlikesi en düşük olan risksiz sahaları ifade ederken; 7. Grup fay hatlarına en yakın, zemin ivmesi en yüksek bölgeleri kapsar. Risk grubu 1'den 7'ye doğru ilerledikçe binde olarak uygulanan tarife çarpanı katlanarak artar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Yapı Tarzı ve Risk Bölgelerine Göre Örnek DASK Primi Dağılımı
+      </h2>
+
+      <p>
+        Yeni tamamlanmış 150 m² brüt inşaat alanına sahip bağımsız bir konut üzerinden farklı risk kuşaklarındaki prim dağılımını inceleyelim:
+      </p>
+
+      <div class="overflow-x-auto border border-[#E2DDD6] rounded-2xl shadow-sm">
+        <table class="w-full text-left text-sm md:text-base">
+          <thead class="bg-[#1e3a5f] text-white font-heading">
+            <tr>
+              <th class="p-3.5">Deprem Risk Grubu</th>
+              <th class="p-3.5">Örnek Şehir / Bölge</th>
+              <th class="p-3.5">Yapı Tarzı</th>
+              <th class="p-3.5">Metrekare</th>
+              <th class="p-3.5">Yaklaşık DASK Primi (Yıllık)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr class="hover:bg-gray-50">
+              <td class="p-3.5 font-bold text-[#1e3a5f]">1. Risk Grubu</td>
+              <td class="p-3.5 text-gray-700">Karaman / Merkez</td>
+              <td class="p-3.5 text-gray-700">Betonarme</td>
+              <td class="p-3.5 text-gray-700">150 m²</td>
+              <td class="p-3.5 font-semibold text-emerald-700">950 TL – 1.350 TL</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="p-3.5 font-bold text-[#1e3a5f]">3. Risk Grubu</td>
+              <td class="p-3.5 text-gray-700">Ankara / Gölbaşı</td>
+              <td class="p-3.5 text-gray-700">Betonarme</td>
+              <td class="p-3.5 text-gray-700">150 m²</td>
+              <td class="p-3.5 font-semibold text-emerald-700">1.800 TL – 2.400 TL</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="p-3.5 font-bold text-[#1e3a5f]">5. Risk Grubu</td>
+              <td class="p-3.5 text-gray-700">Bursa / Nilüfer</td>
+              <td class="p-3.5 text-gray-700">Betonarme</td>
+              <td class="p-3.5 text-gray-700">150 m²</td>
+              <td class="p-3.5 font-semibold text-amber-700">2.900 TL – 3.700 TL</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="p-3.5 font-bold text-[#1e3a5f]">7. Risk Grubu</td>
+              <td class="p-3.5 text-gray-700">İstanbul / Avcılar</td>
+              <td class="p-3.5 text-gray-700">Betonarme</td>
+              <td class="p-3.5 text-gray-700">150 m²</td>
+              <td class="p-3.5 font-semibold text-red-700">4.200 TL – 5.800 TL</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="p-3.5 font-bold text-[#1e3a5f]">7. Risk Grubu</td>
+              <td class="p-3.5 text-gray-700">Çanakkale / Fay Hattı</td>
+              <td class="p-3.5 text-gray-700">Yığma / Diğer</td>
+              <td class="p-3.5 text-gray-700">150 m²</td>
+              <td class="p-3.5 font-semibold text-red-700">5.100 TL – 6.900 TL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Tablodan görüleceği üzere, zemin ve coğrafya parametresi yıllık ödenecek prim üzerinde doğrudan etkilidir. İnşaat projenizin yükseldiği ilin piyasa dinamiklerini planlarken, örneğin <a href="/blog-istanbul-ev-yapim-maliyeti-2026.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">İstanbul gibi yüksek riskli metropollerde ev yapım maliyeti</a> analizimizde vurguladığımız kentsel zemin ve lojistik faktörleri sigorta planlarınıza da yansıtmanız gerekir.
+      </p>
+
+      <!-- H2 -->
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        İnşaat All-Risk Sigortası ile DASK Arasındaki Hayati Fark
+      </h2>
+
+      <p>
+        Şantiye yöneticilerinin ve arsa sahiplerinin en sık düştüğü kavram yanılgılarından biri, inşaat devam ederken yaptırılan <strong>İnşaat Bütün Riskler Sigortası (All-Risk)</strong> ile DASK'ı birbirine karıştırmaktır:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-lg mb-2">🏗️ İnşaat All-Risk Sigortası</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Şantiyenin başladığı günden geçici kabule kadar olan süreci kapsar. Malzemelerin çalınması, kalıp iskelesinin çökmesi, iş makinelerinin devrilmesi, fırtına, su basması ve inşaat esnasında yaşanabilecek deprem hasarlarını güvenceye alır. Yüklenici veya işveren sorumluluğundadır.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-lg mb-2">🏠 DASK (Zorunlu Deprem Sigortası)</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            İnşaat tamamen bittikten, kapalı mekan haline geldikten sonra başlar. Tamamlanmamış, kaba inşaat halindeki bir şantiyeye DASK poliçesi düzenlenemez; çünkü DASK tapudaki tescilli bağımsız bölümü esas alır. İskan aşamasında devreye girer.
+          </p>
+        </div>
+      </div>
+
+      <!-- H2 -->
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        DASK Maliyetinin Toplam İnşaat Bütçesine Oransal Yansıması
+      </h2>
+
+      <p>
+        Ruhsat dosyasında yer alan mimari, statik, mekanik proje telifleri, zemin etüt bedelleri, belediye harçları ve şantiye altyapı bedelleri düşünüldüğünde; DASK primi toplam bütçenin en küçük kalemlerinden biridir. 
+      </p>
+
+      <p>
+        Örneğin, 200 m² brüt inşaat alanına sahip müstakil bir villanın anahtar teslim inşaat bütçesi ortalama 4.000.000 TL – 6.000.000 TL bandında seyrederken, bu yapının yıllık DASK primi risk bölgesine göre yalnızca <strong>2.500 TL ile 6.500 TL</strong> arasında kalmaktadır. 
+      </p>
+
+      <p>
+        Bu tutar toplam yatırım bütçesinin binde biri bile etmemektedir. Ancak bu küçük ödemenin yapılmaması binaya iskan alınamamasına ve kalıcı aboneliklerin bağlanamamasına sebep olur. Resmi süreçlerde karşınıza çıkacak harç ve vize giderlerinin genelini eksiksiz planlamak için <a href="/blog-insaat-ruhsati-maliyeti-2026.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">inşaat ruhsatı masrafları</a> rehberimizdeki harç dökümlerini inceleyebilirsiniz.
+      </p>
+
+      <p>
+        Evinizin tüm tasarım ve uygulama adımlarını kurgularken, malzeme ve işçilik harcamalarının yanı sıra resmi harçları bütüncül bir projeksiyonla takip etmek adına <a href="/blog-insaat-maliyeti-hesaplama.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">inşaat maliyeti hesaplama rehberi</a> içeriğimizdeki bütçeleme yöntemlerinden faydalanabilirsiniz.
+      </p>
+
+      <!-- FAQ Section -->
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Sıkça Sorulan Sorular
+      </h2>
+
+      <div class="space-y-4">
+        
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Kaba inşaatı devam eden bir binaya DASK yapılabilir mi?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Hayır. DASK yalnızca inşaatı tamamlanmış, dış cephesi, çatısı ve kapı-pencere doğramaları takılarak kapalı bağımsız bölüm vasfı kazanmış yapılar için düzenlenir. Şantiye halindeki binalar için İnşaat All-Risk sigortası yaptırılmalıdır.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> İskan alındıktan sonra DASK her yıl yenilenmek zorunda mı?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Evet. Kanunen Zorunlu Deprem Sigortası yıllık bir poliçedir. Her yıl süresi dolduğunda yenilenmesi gerekir. Yenilenmeyen konutlarda elektrik, su veya doğalgaz abonelik nakli yapılamaz, tapuda satış veya kiralama işlemleri gerçekleştirilemez.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Prefabrik veya çelik konstrüksiyon evlerde DASK primi daha mı düşüktür?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Tarifede yapılar 'Betonarme' ve 'Diğer' olarak ikiye ayrılır. Çelik veya hafif çelik yapılar 'Diğer' kategorisine girer. Bu kategoride hasar görebilirlik katsayısı farklı hesaplandığından prim tutarı bulunulan risk bölgesine göre betonarme yapılara kıyasla küçük oranda farklılık gösterebilir.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> DASK primi arsa payına göre mi hesaplanır?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Hayır. DASK yalnızca binanın yeniden inşası için gereken kaba ve ince imalat maliyetini esas alır. Arsanın piyasa değeri, konumu veya lüks semtte bulunması DASK teminat bedelini değiştirmez; belirleyici olan sadece yapının onaylı brüt metrekaresi ve yapı tarzıdır.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CTA Box -->
+      <div class="bg-gradient-to-r from-[#1e3a5f] to-[#0f1d30] text-white p-8 rounded-3xl text-center space-y-4 shadow-xl">
+        <h3 class="text-2xl font-bold font-heading">
+          İnşaat Projenizin Gerçek Bütçesini Hesaplayın
+        </h3>
+        <p class="text-white/80 max-w-xl mx-auto text-sm md:text-base">
+          Arsanızın taban alanına, kat adedine, iline ve tercih ettiğiniz kaba/anahtar teslim malzeme kalitesine göre güncel maliyet dökümünü hemen öğrenin.
+        </p>
+        <div class="pt-2">
+          <a href="/#hesaplama" class="inline-block bg-[#E8600A] text-white px-8 py-3.5 rounded-full font-bold hover:bg-white hover:text-[#1e3a5f] transition-all shadow-lg">
+            Hemen Maliyetinizi Hesaplayın →
+          </a>
+        </div>
+      </div>
+
+      <!-- Internal Linking Table -->
+      <div class="pt-6 border-t border-[#E2DDD6]">
+        <h3 class="text-lg font-bold font-heading text-[#1e3a5f] mb-3">
+          Internal Linking Summary
+        </h3>
+        <div class="overflow-x-auto border border-[#E2DDD6] rounded-xl shadow-sm">
+          <table class="w-full text-left text-xs md:text-sm">
+            <thead class="bg-[#1e3a5f] text-white font-heading">
+              <tr>
+                <th class="p-3">Anchor Text</th>
+                <th class="p-3">Target Topic/Category</th>
+                <th class="p-3">Placement Context</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+              <tr class="hover:bg-gray-50">
+                <td class="p-3 font-semibold text-[#1e3a5f]">İstanbul gibi yüksek riskli metropollerde ev yapım maliyeti</td>
+                <td class="p-3 text-gray-600">Bölgesel Maliyet (/blog-istanbul-ev-yapim-maliyeti-2026)</td>
+                <td class="p-3 text-gray-600">Risk bölgeleri karşılaştırma tablosu altındaki değerlendirme paragrafında</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="p-3 font-semibold text-[#1e3a5f]">inşaat ruhsatı masrafları</td>
+                <td class="p-3 text-gray-600">Ruhsat &amp; Yasal Giderler (/blog-insaat-ruhsati-maliyeti-2026)</td>
+                <td class="p-3 text-gray-600">DASK'ın toplam bütçeye oransal etkisi ve yasal harçlar bölümünde</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="p-3 font-semibold text-[#1e3a5f]">inşaat maliyeti hesaplama rehberi</td>
+                <td class="p-3 text-gray-600">İnşaat Maliyeti Kılavuzu (/blog-insaat-maliyeti-hesaplama)</td>
+                <td class="p-3 text-gray-600">Bütüncül bütçe yönetimi ve harç planlama bölümünde</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="p-3 font-semibold text-[#1e3a5f]">Hemen Maliyetinizi Hesaplayın</td>
+                <td class="p-3 text-gray-600">Hesaplama Aracı (/)</td>
+                <td class="p-3 text-gray-600">Kapanış çağrısı (CTA) butonu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Son Güncelleme Etiketi -->
+      <div class="flex items-center justify-between pt-6 border-t border-gray-200 text-xs md:text-sm text-gray-500">
+        <span class="flex items-center gap-1.5 font-semibold text-gray-700">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+          Son Güncelleme: 14 Eylül 2026
+        </span>
+        <span>MaliyetHesap Hukuk &amp; Bütçe Masası</span>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1e3a5f] text-white py-12 px-6 border-t border-white/10 mt-12">
+    <div class="max-w-6xl mx-auto text-center space-y-4">
+      <div class="text-2xl font-extrabold font-heading text-white">
+        Maliyet<span class="text-[#E8600A]">Hesap</span>
+      </div>
+      <p class="text-xs text-white/70 max-w-lg mx-auto">
+        Türkiye'nin bağımsız inşaat maliyeti hesaplama platformu. 2026 yılı resmi birim maliyetleri ve güncel piyasa verileriyle hazırlanmıştır.
+      </p>
+      <div class="flex justify-center space-x-6 text-xs text-white/60 pt-2">
+        <a href="/" class="hover:text-white transition-colors">Ana Sayfa</a>
+        <a href="/blog.html" class="hover:text-white transition-colors">Tüm Blog Yazıları</a>
+        <a href="/#hesaplama" class="hover:text-white transition-colors">Hesaplama Aracı</a>
+        <a href="/#teblig" class="hover:text-white transition-colors">Resmi Tebliğ</a>
+      </div>
+      <div class="flex justify-center items-center gap-3 pt-2" aria-label="Sosyal Medya">
+        <a href="https://www.facebook.com/MaliyetHesap/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-11 h-11 rounded-xl bg-[#1a2547] text-white flex items-center justify-center border border-white/10 hover:text-[#f97316] hover:border-[#f97316]/50 hover:bg-[#151e3a] transition-all duration-200 shadow-sm group">
+          <svg class="w-6 h-6 fill-current transition-transform group-hover:scale-110" viewBox="0 0 320 512" aria-hidden="true">
+            <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+          </svg>
+        </a>
+        <a href="https://www.pinterest.com/sarah878morgan/maliyet-hesap-tips/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="w-11 h-11 rounded-xl bg-[#1a2547] text-white flex items-center justify-center border border-white/10 hover:text-[#f97316] hover:border-[#f97316]/50 hover:bg-[#151e3a] transition-all duration-200 shadow-sm group">
+          <svg class="w-6 h-6 fill-current transition-transform group-hover:scale-110" viewBox="0 0 384 512" aria-hidden="true">
+            <path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/maliyet-hesap/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-[#1a2547] text-white flex items-center justify-center border border-white/10 hover:text-[#f97316] hover:border-[#f97316]/50 hover:bg-[#151e3a] transition-all duration-200 shadow-sm group">
+          <svg class="w-6 h-6 fill-current transition-transform group-hover:scale-110" viewBox="0 0 448 512" aria-hidden="true">
+            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+          </svg>
+        </a>
+      </div>
+      <div class="text-xs text-white/50 pt-4">
+        © 2026 MALİYETHESAP.COM — TÜM HAKLARI SAKLIDIR.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
