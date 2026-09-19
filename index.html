@@ -21,8 +21,62 @@
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Inline base styling to prevent unstyled content flash (FOUC) -->
+    <style>
+      html, body {
+        background-color: #FFF8F0;
+        color: #0f1d30;
+        font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #root > main {
+        background: linear-gradient(to bottom, #1e3a5f, #0f1d30);
+        color: #ffffff;
+        padding: 50px 20px 40px;
+        text-align: center;
+      }
+      #root h1 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 auto 1rem;
+        max-width: 800px;
+        line-height: 1.25;
+      }
+      #root p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+        max-width: 680px;
+        margin: 0 auto 1.5rem;
+      }
+      #root nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        max-width: 800px;
+      }
+      #root nav li a {
+        display: inline-block;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 9999px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+    </style>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
