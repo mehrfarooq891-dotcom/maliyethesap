@@ -33,48 +33,16 @@
         margin: 0;
         padding: 0;
       }
-      #root > main {
-        background: linear-gradient(to bottom, #1e3a5f, #0f1d30);
-        color: #ffffff;
-        padding: 50px 20px 40px;
-        text-align: center;
-      }
-      #root h1 {
-        font-family: 'Nunito', sans-serif;
-        font-size: 2rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin: 0 auto 1rem;
-        max-width: 800px;
-        line-height: 1.25;
-      }
-      #root p {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.85);
-        line-height: 1.6;
-        max-width: 680px;
-        margin: 0 auto 1.5rem;
-      }
-      #root nav ul {
-        list-style: none;
+      .seo-fallback {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
         padding: 0;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        max-width: 800px;
-      }
-      #root nav li a {
-        display: inline-block;
-        padding: 6px 12px;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 9999px;
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 0.8rem;
-        font-weight: 600;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
     </style>
 
@@ -100,7 +68,7 @@
   </head>
   <body class="bg-[#FFF8F0] text-[#0f1d30]">
     <div id="root">
-      <main>
+      <main class="seo-fallback">
         <h1>Türkiye İnşaat Maliyeti Hesaplama Platformu</h1>
         <p>
           Metrekare, şehir, yapı türü ve malzeme kalitesine göre şantiye yapım bütçenizi anında, şeffaf ve kuruşu kuruşuna hesaplayın. 2026 yılı güncel Çevre, Şehircilik ve İklim Değişikliği Bakanlığı tebliği ve piyasa verileriyle hazırlanmıştır. 4708 sayılı kanun ve resmi tebliğ bazlı ücretsiz inşaat maliyeti hesaplama aracı ile anlık sonuç alın.
