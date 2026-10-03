@@ -1,0 +1,8 @@
+{
+  "name": "MaliyetHesap",
+  "description": "2026 güncel birim fiyatlarıyla inşaat maliyetinizi ücretsiz hesaplayın. Şehir bazlı, m² bazlı, anlık sonuç. Kayıt veya üyelik gerekmez.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
