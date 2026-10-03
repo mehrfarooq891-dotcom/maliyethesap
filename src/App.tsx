@@ -143,9 +143,10 @@ export default function App() {
             <Calculator className="w-7 h-7 text-[#E8600A]" />
             <span>Maliyet<span className="text-[#E8600A]">Hesap</span></span>
           </a>
-          <nav className="hidden md:flex items-center space-x-7 text-sm font-semibold">
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-semibold">
             <a href="#hesaplama" className="hover:text-[#E8600A] transition-colors">Maliyet Hesapla</a>
             <a href="/tadilat-maliyeti-hesaplama" className="hover:text-[#E8600A] transition-colors">Tadilat Hesapla</a>
+            <a href="/boya-badana-hesaplama" className="hover:text-[#E8600A] transition-colors">Boya Badana</a>
             <a href="#detaylar" className="hover:text-[#E8600A] transition-colors">Kalem Dağılımı</a>
             <a href="#teblig" className="hover:text-[#E8600A] transition-colors">2026 Resmi Tebliğ</a>
             <a href="/blog.html" className="hover:text-[#E8600A] transition-colors">Blog</a>
@@ -714,6 +715,7 @@ export default function App() {
               <ul className="space-y-2 text-xs">
                 <li><a href="#hesaplama" className="hover:text-white transition-colors">İnşaat Maliyeti Hesaplayıcı</a></li>
                 <li><a href="/tadilat-maliyeti-hesaplama" className="hover:text-white transition-colors">Tadilat Maliyeti Hesaplayıcı</a></li>
+                <li><a href="/boya-badana-hesaplama" className="hover:text-white transition-colors">Boya Badana Hesaplayıcı</a></li>
                 <li><a href="#detaylar" className="hover:text-white transition-colors">Kalem Dağılımı Tablosu</a></li>
                 <li><a href="#teblig" className="hover:text-white transition-colors">2026 Bakanlık Tebliği</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">Sıkça Sorulan Sorular</a></li>
