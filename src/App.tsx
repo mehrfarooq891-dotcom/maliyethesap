@@ -18,8 +18,10 @@ import {
   ArrowRight,
   Printer,
   Sparkles,
-  Info
+  Info,
+  FileDown
 } from 'lucide-react';
+import { generateConstructionPdfReport } from './utils/generatePdfReport';
 
 interface CityOption {
   name: string;
@@ -68,6 +70,7 @@ export default function App() {
   const [floors, setFloors] = useState<number>(2);
   const [hasBasement, setHasBasement] = useState<boolean>(false);
   const [scope, setScope] = useState<'all' | 'kaba' | 'ince'>('all');
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState<boolean>(false);
 
   // Calculation logic
   const calculation = useMemo(() => {
@@ -132,6 +135,41 @@ export default function App() {
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownloadPdf = async () => {
+    if (isGeneratingPdf) return;
+    try {
+      setIsGeneratingPdf(true);
+      const selectedType = BUILDING_TYPES.find(b => b.id === buildingType) || BUILDING_TYPES[0];
+      const selectedQuality = QUALITY_TIERS.find(q => q.id === quality) || QUALITY_TIERS[1];
+      const selectedCity = CITIES.find(c => c.name === city) || CITIES[0];
+
+      await generateConstructionPdfReport({
+        city: selectedCity.name,
+        cityFactor: selectedCity.factor,
+        area,
+        buildingTypeName: selectedType.name,
+        buildingTypeDesc: selectedType.desc,
+        qualityTierName: selectedQuality.name,
+        qualityTierDesc: selectedQuality.desc,
+        floors,
+        hasBasement,
+        scope,
+        total: calculation.total,
+        activeTotal: calculation.activeTotal,
+        m2Price: calculation.m2Price,
+        kabaTotal: calculation.kabaTotal,
+        inceTotal: calculation.inceTotal,
+        tesisatTotal: calculation.tesisatTotal,
+        ruhsatDenetimTotal: calculation.ruhsatDenetimTotal,
+        subItems: calculation.subItems,
+      });
+    } catch (err) {
+      console.error('PDF raporu oluşturulurken hata meydana geldi:', err);
+    } finally {
+      setIsGeneratingPdf(false);
+    }
   };
 
   return (
@@ -341,14 +379,28 @@ export default function App() {
             {/* Results Display (Right Column) */}
             <div className="lg:col-span-5 bg-[#0f1d30] text-white rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-xl">
               <div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-6">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-6 gap-2">
                   <span className="text-xs font-bold uppercase tracking-widest text-[#E8600A]">Tahmini 2026 Bütçesi</span>
-                  <button 
-                    onClick={handlePrint}
-                    className="text-xs text-white/70 hover:text-white flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full transition-colors"
-                  >
-                    <Printer className="w-3.5 h-3.5" /> Raporu Yazdır
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button 
+                      type="button"
+                      onClick={handleDownloadPdf}
+                      disabled={isGeneratingPdf}
+                      className="text-xs text-white bg-[#E8600A] hover:bg-[#d05305] flex items-center gap-1.5 px-3 py-1 rounded-full font-bold transition-all shadow-sm disabled:opacity-50"
+                      title="Banka ve Müteahhit Sunumuna Uygun Resmi PDF Raporu İndir"
+                    >
+                      <FileDown className="w-3.5 h-3.5" />
+                      <span>{isGeneratingPdf ? 'Oluşturuluyor...' : 'PDF Rapor İndir'}</span>
+                    </button>
+                    <button 
+                      type="button"
+                      onClick={handlePrint}
+                      className="text-xs text-white/70 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full transition-colors hidden sm:flex"
+                      title="Sayfayı Yazdır"
+                    >
+                      <Printer className="w-3.5 h-3.5" /> Yazdır
+                    </button>
+                  </div>
                 </div>
 
                 <div className="mb-6">
@@ -399,10 +451,20 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-white/10">
-                <p className="text-[11px] text-white/50 leading-relaxed mb-4">
+              <div className="mt-8 pt-4 border-t border-white/10 space-y-2.5">
+                <p className="text-[11px] text-white/50 leading-relaxed mb-3">
                   * Bu hesaplama piyasa malzeme ve işçilik ortalamalarını baz alır. Arsa payı, peyzaj ve derin zemin kazık güçlendirmeleri dahil değildir.
                 </p>
+                <button 
+                  type="button"
+                  onClick={handleDownloadPdf}
+                  disabled={isGeneratingPdf}
+                  className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-3 px-4 rounded-xl text-center flex items-center justify-center gap-2 text-sm transition-all shadow-md group disabled:opacity-50"
+                  title="Resmi banka ve müteahhit sunum formatında PDF raporu indir"
+                >
+                  <FileDown className="w-4 h-4 text-[#E8600A] group-hover:scale-110 transition-transform" />
+                  <span>{isGeneratingPdf ? 'PDF Raporu Hazırlanıyor...' : 'PDF Rapor İndir (Banka & Müteahhit Formatı)'}</span>
+                </button>
                 <a 
                   href="#detaylar" 
                   className="w-full bg-[#E8600A] text-white font-bold py-3 px-4 rounded-xl text-center block text-sm hover:bg-white hover:text-[#0f1d30] transition-all shadow-md"
