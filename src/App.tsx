@@ -187,7 +187,7 @@ export default function App() {
             <a href="/boya-badana-hesaplama" className="hover:text-[#E8600A] transition-colors">Boya Badana</a>
             <a href="/konut-kredisi-hesaplama" className="hover:text-[#E8600A] transition-colors">Konut Kredisi</a>
             <a href="#detaylar" className="hover:text-[#E8600A] transition-colors">Kalem Dağılımı</a>
-            <a href="#teblig" className="hover:text-[#E8600A] transition-colors">2026 Resmi Tebliğ</a>
+            <a href="/2026-yapi-birim-maliyetleri" className="hover:text-[#E8600A] transition-colors">2026 Resmi Tebliğ</a>
             <a href="/blog.html" className="hover:text-[#E8600A] transition-colors">Blog</a>
             <a href="#faq" className="hover:text-[#E8600A] transition-colors">S.S.S.</a>
             <a href="#uzman" className="hover:text-[#E8600A] transition-colors">Hakkımızda</a>
@@ -781,7 +781,7 @@ export default function App() {
                 <li><a href="/boya-badana-hesaplama" className="hover:text-white transition-colors">Boya Badana Hesaplayıcı</a></li>
                 <li><a href="/konut-kredisi-hesaplama" className="hover:text-white transition-colors">Konut Kredisi Hesaplayıcı</a></li>
                 <li><a href="#detaylar" className="hover:text-white transition-colors">Kalem Dağılımı Tablosu</a></li>
-                <li><a href="#teblig" className="hover:text-white transition-colors">2026 Bakanlık Tebliği</a></li>
+                <li><a href="/2026-yapi-birim-maliyetleri" className="hover:text-white transition-colors">2026 Bakanlık Tebliği</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">Sıkça Sorulan Sorular</a></li>
               </ul>
             </div>
