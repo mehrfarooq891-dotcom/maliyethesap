@@ -18,10 +18,8 @@ import {
   ArrowRight,
   Printer,
   Sparkles,
-  Info,
-  FileDown
+  Info
 } from 'lucide-react';
-import { generateConstructionPdfReport } from './utils/generatePdfReport';
 
 interface CityOption {
   name: string;
@@ -70,7 +68,7 @@ export default function App() {
   const [floors, setFloors] = useState<number>(2);
   const [hasBasement, setHasBasement] = useState<boolean>(false);
   const [scope, setScope] = useState<'all' | 'kaba' | 'ince'>('all');
-  const [isGeneratingPdf, setIsGeneratingPdf] = useState<boolean>(false);
+  const [isCalculated, setIsCalculated] = useState<boolean>(false);
 
   // Calculation logic
   const calculation = useMemo(() => {
@@ -133,44 +131,80 @@ export default function App() {
     return new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 }).format(val) + ' TL';
   };
 
+  const todayFormatted = new Date().toLocaleDateString('tr-TR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  });
+
+  const selectedBuildingType = BUILDING_TYPES.find(b => b.id === buildingType) || BUILDING_TYPES[0];
+  const selectedQualityTier = QUALITY_TIERS.find(q => q.id === quality) || QUALITY_TIERS[1];
+  const selectedCityObj = CITIES.find(c => c.name === city) || CITIES[0];
+
+  const handleCalculate = () => {
+    setIsCalculated(true);
+    setTimeout(() => {
+      const el = document.getElementById('pdf-print-report');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }, 50);
+  };
+
   const handlePrint = () => {
     window.print();
   };
 
-  const handleDownloadPdf = async () => {
-    if (isGeneratingPdf) return;
-    try {
-      setIsGeneratingPdf(true);
-      const selectedType = BUILDING_TYPES.find(b => b.id === buildingType) || BUILDING_TYPES[0];
-      const selectedQuality = QUALITY_TIERS.find(q => q.id === quality) || QUALITY_TIERS[1];
-      const selectedCity = CITIES.find(c => c.name === city) || CITIES[0];
-
-      await generateConstructionPdfReport({
-        city: selectedCity.name,
-        cityFactor: selectedCity.factor,
-        area,
-        buildingTypeName: selectedType.name,
-        buildingTypeDesc: selectedType.desc,
-        qualityTierName: selectedQuality.name,
-        qualityTierDesc: selectedQuality.desc,
-        floors,
-        hasBasement,
-        scope,
-        total: calculation.total,
-        activeTotal: calculation.activeTotal,
-        m2Price: calculation.m2Price,
-        kabaTotal: calculation.kabaTotal,
-        inceTotal: calculation.inceTotal,
-        tesisatTotal: calculation.tesisatTotal,
-        ruhsatDenetimTotal: calculation.ruhsatDenetimTotal,
-        subItems: calculation.subItems,
-      });
-    } catch (err) {
-      console.error('PDF raporu oluşturulurken hata meydana geldi:', err);
-    } finally {
-      setIsGeneratingPdf(false);
-    }
-  };
+  const itemizedRows = [
+    {
+      no: '1',
+      name: 'Hafriyat & Temel Kazısı',
+      desc: 'Temel hafriyat kazısı, nakliye, grobeton, temel dolgusu ve tuğla/bims duvar imalatı',
+      amount: calculation.subItems.duvarHafriyat,
+    },
+    {
+      no: '2',
+      name: 'Hazır Beton (C25/C30)',
+      desc: 'Radye temel, perde, kolon, kiriş ve kat tabliye döşemeleri TSE belgeli hazır beton dökümü',
+      amount: calculation.subItems.hazirBeton,
+    },
+    {
+      no: '3',
+      name: 'Nervürlü İnşaat Demiri (B420C)',
+      desc: 'Betonarme taşıyıcı donatı çeliği temini, kesim, büküm ve etriye bağlama montajı',
+      amount: calculation.subItems.insaatDemiri,
+    },
+    {
+      no: '4',
+      name: 'Kalıp, İskele & Şantiye İşçiliği',
+      desc: 'Endüstriyel plywood kalıp sistemi, güvenlikli dış cephe iskelesi ve kaba yapı ustalığı',
+      amount: calculation.subItems.kalipIscilik,
+    },
+    {
+      no: '5',
+      name: 'Çatı Konstrüksiyonu & Yalıtım',
+      desc: 'Ahşap/çelik çatı iskeleti, kiremit/panel kaplama, su ve ısı yalıtım katmanları',
+      amount: calculation.subItems.catiIzolasyon,
+    },
+    {
+      no: '6',
+      name: 'Mekanik, Sıhhi & Elektrik Tesisatı',
+      desc: 'Temiz/atık su borulama, ısıtma altyapısı, yangına dayanıklı kablolama ve elektrik panoları',
+      amount: calculation.tesisatTotal,
+    },
+    {
+      no: '7',
+      name: 'İnce İşler (Sıva, Boya, Doğrama & Zemin)',
+      desc: 'Alçı/sıva, iç-dış cephe boyası, PVC/alüminyum doğrama, seramik, laminat parke ve kapılar',
+      amount: calculation.subItems.sivaBoya + calculation.subItems.kapiPencere + calculation.subItems.seramikZemin,
+    },
+    {
+      no: '8',
+      name: 'Harçlar (Ruhsat, Proje & Yapı Denetim)',
+      desc: 'Mimari-statik projeler, belediye inşaat ruhsat harçları ve 4708 sayılı yapı denetim bedeli',
+      amount: calculation.ruhsatDenetimTotal,
+    },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FFF8F0] text-[#0f1d30]">
@@ -202,7 +236,7 @@ export default function App() {
       </header>
 
       {/* Hero Header */}
-      <section className="bg-gradient-to-b from-[#1e3a5f] to-[#0f1d30] text-white py-16 md:py-20 px-6 text-center">
+      <section id="hero-section" className="no-print bg-gradient-to-b from-[#1e3a5f] to-[#0f1d30] text-white py-16 md:py-20 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-[#E8600A] mb-4">
             <Sparkles className="w-4 h-4" /> 2026 Güncel Piyasa & Bakanlık Verileri
@@ -224,7 +258,7 @@ export default function App() {
       {/* Calculator Section */}
       <main id="hesaplama" className="max-w-6xl mx-auto px-6 -mt-10 mb-20 relative z-20 w-full">
         <div className="bg-white rounded-[32px] shadow-2xl border border-[#E2DDD6] overflow-hidden p-6 md:p-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div id="calculator-grid" className="no-print grid grid-cols-1 lg:grid-cols-12 gap-10">
             
             {/* Input Controls (Left Column) */}
             <div className="lg:col-span-7 space-y-6">
@@ -375,6 +409,19 @@ export default function App() {
                   Bodrum Kat / Ekstra Hafriyat Var (+%6)
                 </label>
               </div>
+
+              {/* Hesapla Button */}
+              <div className="pt-2">
+                <button
+                  type="button"
+                  id="calculate-btn"
+                  onClick={handleCalculate}
+                  className="w-full bg-[#E8600A] hover:bg-[#d05305] text-white font-extrabold font-heading py-4 px-6 rounded-2xl text-base md:text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Calculator className="w-5 h-5" />
+                  <span>Hesapla</span>
+                </button>
+              </div>
             </div>
 
             {/* Results Display (Right Column) */}
@@ -382,31 +429,18 @@ export default function App() {
               <div>
                 <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-6 gap-2">
                   <span className="text-xs font-bold uppercase tracking-widest text-[#E8600A]">Tahmini 2026 Bütçesi</span>
-                  <div className="flex items-center gap-2">
-                    <button 
-                      type="button"
-                      onClick={handleDownloadPdf}
-                      disabled={isGeneratingPdf}
-                      className="text-xs text-white bg-[#E8600A] hover:bg-[#d05305] flex items-center gap-1.5 px-3 py-1 rounded-full font-bold transition-all shadow-sm disabled:opacity-50"
-                      title="Banka ve Müteahhit Sunumuna Uygun Resmi PDF Raporu İndir"
-                    >
-                      <FileDown className="w-3.5 h-3.5" />
-                      <span>{isGeneratingPdf ? 'Oluşturuluyor...' : 'PDF Rapor İndir'}</span>
-                    </button>
-                    <button 
-                      type="button"
-                      onClick={handlePrint}
-                      className="text-xs text-white/70 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full transition-colors hidden sm:flex"
-                      title="Sayfayı Yazdır"
-                    >
-                      <Printer className="w-3.5 h-3.5" /> Yazdır
-                    </button>
-                  </div>
+                  <button 
+                    type="button"
+                    onClick={handleCalculate}
+                    className="text-xs text-white/80 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition-colors cursor-pointer"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-[#E8600A]" /> Rapor Tablosu
+                  </button>
                 </div>
 
                 <div className="mb-6">
                   <div className="text-sm text-white/70 mb-1">
-                    {area} m² {BUILDING_TYPES.find(b => b.id === buildingType)?.name} ({city})
+                    {area} m² {selectedBuildingType.name} ({city})
                   </div>
                   <div className="text-3xl md:text-4xl lg:text-5xl font-black font-heading text-white tracking-tight">
                     {formatCurrency(calculation.activeTotal)}
@@ -456,18 +490,9 @@ export default function App() {
                 <p className="text-[11px] text-white/50 leading-relaxed mb-3">
                   * Bu hesaplama piyasa malzeme ve işçilik ortalamalarını baz alır. Arsa payı, peyzaj ve derin zemin kazık güçlendirmeleri dahil değildir.
                 </p>
-                <button 
-                  type="button"
-                  onClick={handleDownloadPdf}
-                  disabled={isGeneratingPdf}
-                  className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-3 px-4 rounded-xl text-center flex items-center justify-center gap-2 text-sm transition-all shadow-md group disabled:opacity-50"
-                  title="Resmi banka ve müteahhit sunum formatında PDF raporu indir"
-                >
-                  <FileDown className="w-4 h-4 text-[#E8600A] group-hover:scale-110 transition-transform" />
-                  <span>{isGeneratingPdf ? 'PDF Raporu Hazırlanıyor...' : 'PDF Rapor İndir (Banka & Müteahhit Formatı)'}</span>
-                </button>
                 <a 
                   href="#detaylar" 
+                  onClick={() => setIsCalculated(true)}
                   className="w-full bg-[#E8600A] text-white font-bold py-3 px-4 rounded-xl text-center block text-sm hover:bg-white hover:text-[#0f1d30] transition-all shadow-md"
                 >
                   Detaylı Kalem Dağılımını İncele →
@@ -476,6 +501,123 @@ export default function App() {
             </div>
 
           </div>
+
+          {/* Results Table & Printable PDF Report (Shown AFTER clicking "Hesapla") */}
+          {isCalculated && (
+            <div id="pdf-print-report" className="mt-10 pt-8 border-t-2 border-[#E2DDD6]">
+              {/* Report Header with maliyethesap.com & Today's Date */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 mb-6 border-b-2 border-[#1e3a5f]">
+                <div>
+                  <div className="flex items-center gap-2 text-2xl font-extrabold font-heading text-[#1e3a5f]">
+                    <span>maliyethesap.com</span>
+                    <span className="text-xs font-bold uppercase tracking-wider bg-[#FFF8F0] text-[#E8600A] border border-[#E8600A]/30 px-2.5 py-0.5 rounded-full">
+                      2026 Resmi Rapor Formatı
+                    </span>
+                  </div>
+                  <p className="text-xs md:text-sm text-gray-600 mt-1">
+                    İnşaat Maliyeti ve Kalem Kalem Şantiye Bütçesi Hesaplama Raporu — https://maliyethesap.com
+                  </p>
+                </div>
+                <div className="text-left sm:text-right text-xs md:text-sm">
+                  <div className="font-bold text-[#1e3a5f]">Hesaplama Tarihi: {todayFormatted}</div>
+                  <div className="text-gray-500">Banka & Müteahhit Ön Keşif Özeti</div>
+                </div>
+              </div>
+
+              {/* Input Summary Cards (City, m², Building Type, Total Cost) */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 bg-[#FFF8F0] p-4 rounded-2xl border border-[#E2DDD6]">
+                <div className="bg-white p-3.5 rounded-xl border border-[#E2DDD6]">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 block">Şehir (Bölge)</span>
+                  <strong className="text-sm md:text-base font-extrabold text-[#1e3a5f]">
+                    {city} (x{selectedCityObj.factor.toFixed(2)})
+                  </strong>
+                </div>
+                <div className="bg-white p-3.5 rounded-xl border border-[#E2DDD6]">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 block">İnşaat Alanı</span>
+                  <strong className="text-sm md:text-base font-extrabold text-[#1e3a5f]">
+                    {area} m² {hasBasement ? '(+Bodrum)' : ''}
+                  </strong>
+                </div>
+                <div className="bg-white p-3.5 rounded-xl border border-[#E2DDD6]">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500 block">Yapı Tipi & Kalite</span>
+                  <strong className="text-sm md:text-base font-extrabold text-[#1e3a5f]">
+                    {selectedBuildingType.name} ({selectedQualityTier.name})
+                  </strong>
+                </div>
+                <div className="bg-white p-3.5 rounded-xl border border-[#E8600A]">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#E8600A] block">Toplam Maliyet</span>
+                  <strong className="text-sm md:text-base font-extrabold text-[#E8600A]">
+                    {formatCurrency(calculation.activeTotal)}
+                  </strong>
+                </div>
+              </div>
+
+              {/* Full Itemized Cost Breakdown Table */}
+              <div className="overflow-x-auto border border-[#E2DDD6] rounded-2xl shadow-sm">
+                <table id="results-table" className="w-full text-left text-xs md:text-sm">
+                  <thead className="bg-[#1e3a5f] text-white font-heading">
+                    <tr>
+                      <th className="p-3.5">#</th>
+                      <th className="p-3.5">Maliyet Kalemi</th>
+                      <th className="p-3.5">Teknik Kapsam ve Açıklama</th>
+                      <th className="p-3.5 text-center">Pay (%)</th>
+                      <th className="p-3.5 text-right">Birim (TL/m²)</th>
+                      <th className="p-3.5 text-right">Toplam Tutar (TL)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200 bg-white">
+                    {itemizedRows.map(row => {
+                      const ratio = ((row.amount / calculation.total) * 100).toFixed(1);
+                      const unitCost = row.amount / Math.max(1, area);
+                      return (
+                        <tr key={row.no} className="hover:bg-gray-50">
+                          <td className="p-3.5 font-bold text-gray-500">{row.no}</td>
+                          <td className="p-3.5 font-bold text-[#1e3a5f]">{row.name}</td>
+                          <td className="p-3.5 text-gray-600">{row.desc}</td>
+                          <td className="p-3.5 text-center font-semibold text-gray-700">%{ratio}</td>
+                          <td className="p-3.5 text-right text-gray-700">{formatCurrency(unitCost)}</td>
+                          <td className="p-3.5 text-right font-bold text-[#0f1d30]">{formatCurrency(row.amount)}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                  <tfoot className="bg-[#FFF8F0] border-t-2 border-[#E8600A] font-heading">
+                    <tr>
+                      <td colSpan={3} className="p-4 font-extrabold text-[#1e3a5f] text-sm md:text-base">
+                        GENEL TOPLAM İNŞAAT MALİYETİ ({area} m² {selectedBuildingType.name} — {city})
+                      </td>
+                      <td className="p-4 text-center font-extrabold text-[#1e3a5f]">%100</td>
+                      <td className="p-4 text-right font-bold text-[#1e3a5f]">{formatCurrency(calculation.m2Price)}/m²</td>
+                      <td className="p-4 text-right font-extrabold text-[#E8600A] text-base md:text-lg">
+                        {formatCurrency(calculation.activeTotal)}
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              {/* Green "📄 PDF Rapor İndir" Button directly below the results table */}
+              <div className="no-print mt-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <button
+                  type="button"
+                  id="pdf-download-btn"
+                  onClick={handlePrint}
+                  className="w-full sm:w-auto bg-[#16a34a] hover:bg-[#15803d] text-white font-bold py-3.5 px-7 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 text-sm md:text-base cursor-pointer"
+                >
+                  <span>📄 PDF Rapor İndir</span>
+                </button>
+                <span className="text-xs text-gray-500">
+                  * Tarayıcınızın yazdırma penceresinde <strong>"PDF olarak kaydet"</strong> seçeneğiyle raporu indirebilirsiniz.
+                </span>
+              </div>
+
+              {/* Print-only footer note */}
+              <div className="mt-6 pt-3 border-t border-gray-200 text-[11px] text-gray-500 flex items-center justify-between">
+                <span>Kaynak: https://maliyethesap.com — Türkiye İnşaat Maliyeti Hesaplama Platformu</span>
+                <span>Rapor Tarihi: {todayFormatted}</span>
+              </div>
+            </div>
+          )}
         </div>
       </main>
 
