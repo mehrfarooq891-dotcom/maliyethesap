@@ -70,7 +70,7 @@ export async function generateConstructionPdfReport(data: PdfReportData): Promis
     format: 'a4',
   });
 
-  // Load and register LiberationSans fonts for 100% Turkish Unicode character support
+  // Load and register LiberationSans fonts for full Turkish Unicode character support
   let fontName = 'helvetica';
   try {
     if (!cachedRegularFontBase64) {
@@ -98,170 +98,190 @@ export async function generateConstructionPdfReport(data: PdfReportData): Promis
   });
   const reportId = `MH-2026-${Math.floor(1000 + Math.random() * 9000)}`;
 
-  // Header Banner - Navy (#1e3a5f)
+  // 1. Header Banner - Navy (#1e3a5f)
   doc.setFillColor(30, 58, 95);
-  doc.rect(0, 0, 210, 22, 'F');
+  doc.rect(0, 0, 210, 24, 'F');
 
   // Orange Accent Stripe (#E8600A)
   doc.setFillColor(232, 96, 10);
-  doc.rect(0, 22, 210, 1.5, 'F');
+  doc.rect(0, 24, 210, 1.5, 'F');
 
-  // Brand Header
+  // Brand Logo Box + Text
+  doc.setFillColor(232, 96, 10);
+  doc.roundedRect(12, 5.5, 8, 8, 1.5, 1.5, 'F');
+  doc.setFont(fontName, 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(255, 255, 255);
+  doc.text('M', 16, 11, { align: 'center' });
+
   doc.setFont(fontName, 'bold');
   doc.setFontSize(15);
   doc.setTextColor(255, 255, 255);
-  doc.text('MaliyetHesap', 12, 13);
+  doc.text('MaliyetHesap', 22.5, 11.5);
   doc.setTextColor(232, 96, 10);
-  doc.text('.com', 49, 13);
+  doc.text('.com', 59.5, 11.5);
 
   doc.setFont(fontName, 'normal');
-  doc.setFontSize(8.5);
-  doc.setTextColor(215, 225, 240);
-  doc.text('Resmi İnşaat Maliyeti & Şantiye Bütçe Tahmin Raporu', 12, 18.5);
-
-  // Top Right Info
   doc.setFontSize(8);
-  doc.setTextColor(255, 255, 255);
-  doc.text('https://maliyethesap.com', 198, 12, { align: 'right' });
-  doc.text(`Rapor Tarihi: ${dateFormatted}`, 198, 17.5, { align: 'right' });
+  doc.setTextColor(215, 225, 240);
+  doc.text('Türkiye İnşaat Maliyeti ve Şantiye Bütçesi Hesaplama Platformu — Resmi Fizibilite Raporu', 12, 19.5);
 
-  // Report Title & Meta
-  let y = 30;
+  // Top Right Info (Site URL + Date)
   doc.setFont(fontName, 'bold');
-  doc.setFontSize(13);
+  doc.setFontSize(8.5);
+  doc.setTextColor(255, 255, 255);
+  doc.text('https://maliyethesap.com', 198, 11, { align: 'right' });
+  doc.setFont(fontName, 'normal');
+  doc.setFontSize(8);
+  doc.setTextColor(215, 225, 240);
+  doc.text(`Hesaplama Tarihi: ${dateFormatted}`, 198, 16.5, { align: 'right' });
+  doc.text(`Rapor No: ${reportId}`, 198, 21, { align: 'right' });
+
+  // 2. Document Title Section
+  let y = 33;
+  doc.setFont(fontName, 'bold');
+  doc.setFontSize(12.5);
   doc.setTextColor(30, 58, 95);
-  doc.text('İNŞAAT MALİYETİ VE ŞANTİYE BÜTÇESİ FİZİBİLİTE RAPORU', 12, y);
+  doc.text('İNŞAAT MALİYETİ VE KALEM BAZLI BÜTÇE DÖKÜM RAPORU (2026)', 12, y);
 
   doc.setFont(fontName, 'normal');
   doc.setFontSize(7.5);
-  doc.setTextColor(110, 120, 135);
-  doc.text('T.C. Çevre, Şehircilik ve İklim Değişikliği Bakanlığı 2026 Birim Maliyetleri ve Serbest Piyasa Analizi', 12, y + 4.5);
+  doc.setTextColor(100, 110, 125);
+  doc.text(
+    'Banka Konut/İnşaat Kredisi Ekspertizi ve Müteahhit Anahtar Teslim Sözleşme Sunumuna Uygun Teknik Keşif Özeti',
+    12,
+    y + 4.5
+  );
 
-  // Document Info Badge on right
-  doc.setFont(fontName, 'bold');
-  doc.setTextColor(232, 96, 10);
-  doc.text(`RAPOR REF: ${reportId}`, 198, y, { align: 'right' });
-  doc.setFont(fontName, 'normal');
-  doc.setTextColor(120, 120, 120);
-  doc.text('Banka Kredisi ve Müteahhit Ön Sunum Formatı', 198, y + 4.5, { align: 'right' });
-
-  // Input Summary Card
-  y = 39;
+  // 3. Input Summary Box (Proje Giriş Özeti: Şehir, m², Yapı Tipi, Kalite, Toplam Bütçe)
+  y = 41;
   doc.setFillColor(255, 248, 240); // #FFF8F0
   doc.setDrawColor(226, 221, 214); // #E2DDD6
-  doc.roundedRect(12, y, 186, 25, 2, 2, 'FD');
+  doc.roundedRect(12, y, 186, 27, 2, 2, 'FD');
 
-  const colW = 186 / 4;
+  doc.setFont(fontName, 'bold');
+  doc.setFontSize(7.5);
+  doc.setTextColor(232, 96, 10);
+  doc.text('PROJE GİRİŞ PARAMETRELERİ VE MALİYET ÖZETİ', 16, y + 5.5);
+
+  doc.setDrawColor(226, 221, 214);
+  doc.line(16, y + 7.5, 194, y + 7.5);
+
+  const colW = 180 / 4;
   doc.setFont(fontName, 'bold');
   doc.setFontSize(7);
   doc.setTextColor(30, 58, 95);
-  doc.text('PROJE İLİ / KATSAYI', 15, y + 5.5);
-  doc.text('YAPI TÜRÜ', 15 + colW, y + 5.5);
-  doc.text('İNŞAAT ALANI', 15 + colW * 2, y + 5.5);
-  doc.text('TAHMİNİ TOPLAM BÜTÇE', 15 + colW * 3, y + 5.5);
-
-  doc.setFont(fontName, 'normal');
-  doc.setFontSize(8.5);
-  doc.setTextColor(50, 50, 50);
-  doc.text(`${data.city} (x${data.cityFactor.toFixed(2)})`, 15, y + 11.5);
-  doc.text(`${data.buildingTypeName} (${data.floors} Kat)`, 15 + colW, y + 11.5);
-  doc.text(`${data.area} m²`, 15 + colW * 2, y + 11.5);
+  doc.text('ŞEHİR (BÖLGESEL KATSAYI)', 16, y + 12.5);
+  doc.text('İNŞAAT ALANI (BRÜT m²)', 16 + colW, y + 12.5);
+  doc.text('YAPI TİPİ VE KALİTE SINIFI', 16 + colW * 2, y + 12.5);
+  doc.text('TOPLAM TAHMİNİ MALİYET', 16 + colW * 3, y + 12.5);
 
   doc.setFont(fontName, 'bold');
-  doc.setFontSize(10);
+  doc.setFontSize(9);
+  doc.setTextColor(25, 25, 25);
+  doc.text(`${data.city} (x${data.cityFactor.toFixed(2)})`, 16, y + 17.5);
+  doc.text(`${data.area} m²`, 16 + colW, y + 17.5);
+  doc.text(`${data.buildingTypeName}`, 16 + colW * 2, y + 17.5);
+
+  doc.setFont(fontName, 'bold');
+  doc.setFontSize(10.5);
   doc.setTextColor(232, 96, 10);
-  doc.text(formatTL(data.activeTotal), 15 + colW * 3, y + 11.5);
+  doc.text(formatTL(data.activeTotal), 16 + colW * 3, y + 17.5);
+
+  const scopeLabel =
+    data.scope === 'all'
+      ? 'Anahtar Teslim (Tümü)'
+      : data.scope === 'kaba'
+      ? 'Sadece Kaba Yapı'
+      : 'İnce İşler & Tesisat';
 
   doc.setFont(fontName, 'normal');
   doc.setFontSize(7);
-  doc.setTextColor(100, 100, 100);
-  doc.text(`Kalite Seviyesi: ${data.qualityTierName}`, 15, y + 17.5);
-  doc.text(`Bodrum Katı: ${data.hasBasement ? 'Mevcut (+%6)' : 'Bulunmuyor'}`, 15 + colW, y + 17.5);
-  doc.text(`Hesap Kapsamı: ${data.scope === 'all' ? 'Anahtar Teslim' : data.scope === 'kaba' ? 'Kaba İnşaat' : 'İnce İşler'}`, 15 + colW * 2, y + 17.5);
-  doc.text(`Birim Fiyat: ${formatTL(data.m2Price)} / m²`, 15 + colW * 3, y + 17.5);
+  doc.setTextColor(95, 95, 95);
+  doc.text(`Bodrum Kat / Hafriyat: ${data.hasBasement ? 'Var (+%6)' : 'Yok'}`, 16, y + 23);
+  doc.text(`Hesaplama Kapsamı: ${scopeLabel}`, 16 + colW, y + 23);
+  doc.text(`Kalite: ${data.qualityTierName}`, 16 + colW * 2, y + 23);
+  doc.text(`Ortalama m² Birim: ${formatTL(data.m2Price)}/m²`, 16 + colW * 3, y + 23);
 
-  // Itemized Cost Breakdown Table
-  // User Prompt requirement:
-  // "itemized cost breakdown table (kalem kalem: hafriyat, beton, demir, işçilik, çatı, tesisat, ince işler, harçlar)"
+  // 4. Itemized Cost Breakdown Table (8 Core Items: Hafriyat, Beton, Demir, İşçilik, Çatı, Tesisat, İnce İşler, Harçlar)
   const total = data.total;
+  const areaVal = Math.max(1, data.area);
+
   const items = [
     {
       no: '1',
-      name: 'Hafriyat, Temel Kazısı & Duvar',
-      desc: 'Temel hafriyatı, kazı nakliyesi, grobeton, çevre dolgusu, tuğla/bims iç-dış duvar örümü',
+      name: 'Hafriyat & Temel Kazısı',
+      desc: 'Temel hafriyat kazısı, nakliye, grobeton, temel dolgusu ve bims/tuğla duvar imalatı',
       amount: data.subItems.duvarHafriyat,
     },
     {
       no: '2',
-      name: 'C25/C30 Hazır Beton İmalatı',
-      desc: 'Radye temel, kolon, perde, kiriş ve kat tabliye döşemeleri hazır beton dökümü',
+      name: 'Beton (C25/C30 Hazır Beton)',
+      desc: 'Radye temel, perde, kolon, kiriş ve kat tabliye döşemeleri TSE belgeli hazır beton dökümü',
       amount: data.subItems.hazirBeton,
     },
     {
       no: '3',
-      name: 'Nervürlü İnşaat Demiri (B420C)',
-      desc: 'Taşıyıcı donatı çeliği temini, etriye, pilye ve radye temel hasır bağlama işçiliği',
+      name: 'Demir (Nervürlü İnşaat Demiri)',
+      desc: 'B420C nervürlü betonarme donatı çeliği temini, kesim, büküm ve etriye montajı',
       amount: data.subItems.insaatDemiri,
     },
     {
       no: '4',
-      name: 'Kalıp, İskele & Kaba İşçilik',
-      desc: 'Endüstriyel kalıp sistemi, dış cephe iş güvenlikli iskele kurulumu ve kalıpçı ustalığı',
+      name: 'İşçilik (Kalıp, İskele & Ustalık)',
+      desc: 'Endüstriyel plywood kalıp sistemi, güvenlikli dış cephe iskelesi ve şantiye kaba işçiliği',
       amount: data.subItems.kalipIscilik,
     },
     {
       no: '5',
-      name: 'Çatı Konstrüksiyonu & Yalıtım',
-      desc: 'Çelik/ahşap çatı iskeleti, kiremit/sandviç panel örtü, taşyünü su ve ısı izolasyonu',
+      name: 'Çatı & Su/Isı Yalıtımı',
+      desc: 'Ahşap/çelik çatı konstrüksiyonu, kiremit/panel kaplama, membran ve ısı yalıtım katmanları',
       amount: data.subItems.catiIzolasyon,
     },
     {
       no: '6',
-      name: 'Sıhhi & Isıtma Mekanik Tesisatı',
-      desc: 'Temiz ve pis su borulama, radyatör/yerden ısıtma hatları, kolektör ve vitrifiye altyapısı',
-      amount: data.subItems.mekanikSihhi,
+      name: 'Tesisat (Mekanik, Sıhhi & Elektrik)',
+      desc: `PPRC temiz/atık su, ısıtma altyapısı (${formatTL(data.subItems.mekanikSihhi)}) ve elektrik panoları (${formatTL(data.subItems.elektrikTesisat)})`,
+      amount: data.tesisatTotal,
     },
     {
       no: '7',
-      name: 'Elektrik & Aydınlatma Tesisatı',
-      desc: 'Halogen-free yangına dayanıklı kablo, sigorta panoları, aydınlatma ve topraklama hattı',
-      amount: data.subItems.elektrikTesisat,
-    },
-    {
-      no: '8',
-      name: 'İnce İşler (Sıva, Boya, Doğrama & Seramik)',
-      desc: 'İç/dış kaba-ince sıva, silikonlu boya, ıslak zemin seramiği, laminat parke, kapı ve pencere',
+      name: 'İnce İşler (Sıva, Boya, Doğrama, Zemin)',
+      desc: 'Alçı/sıva, iç-dış cephe boyası, PVC/alüminyum doğrama, seramik, parke ve iç kapılar',
       amount: data.subItems.sivaBoya + data.subItems.kapiPencere + data.subItems.seramikZemin,
     },
     {
-      no: '9',
-      name: 'Belediye Ruhsatı, Proje & Yapı Denetim Harçları',
-      desc: 'Mimari, statik, mekanik proje müellifliği, belediye ruhsat harçları ve yapı denetim payı',
+      no: '8',
+      name: 'Harçlar (Ruhsat, Proje & Yapı Denetim)',
+      desc: 'Mimari-statik projeler, belediye inşaat ruhsat harçları ve 4708 sayılı yapı denetim bedeli',
       amount: data.ruhsatDenetimTotal,
     },
   ];
 
   const tableBody = items.map(item => {
     const ratio = ((item.amount / total) * 100).toFixed(1);
+    const perM2 = item.amount / areaVal;
     return [
       item.no,
       item.name,
       item.desc,
       `%${ratio}`,
+      formatTL(perM2),
       formatTL(item.amount),
     ];
   });
 
   autoTable(doc, {
-    startY: 68,
+    startY: 73,
     margin: { left: 12, right: 12 },
     styles: {
       font: fontName,
-      fontSize: 7.2,
-      cellPadding: 1.8,
+      fontSize: 7.4,
+      cellPadding: 2.2,
       lineColor: [226, 221, 214],
-      lineWidth: 0.1,
-      textColor: [40, 40, 40],
+      lineWidth: 0.15,
+      textColor: [35, 35, 35],
+      valign: 'middle',
     },
     headStyles: {
       font: fontName,
@@ -269,90 +289,166 @@ export async function generateConstructionPdfReport(data: PdfReportData): Promis
       fillColor: [30, 58, 95],
       textColor: [255, 255, 255],
       halign: 'left',
+      fontSize: 7.5,
+    },
+    alternateRowStyles: {
+      fillColor: [252, 250, 247],
     },
     columnStyles: {
-      0: { cellWidth: 7, halign: 'center' },
-      1: { cellWidth: 50, fontStyle: 'bold', textColor: [30, 58, 95] },
-      2: { cellWidth: 80 },
-      3: { cellWidth: 16, halign: 'center' },
-      4: { cellWidth: 33, halign: 'right', fontStyle: 'bold' },
+      0: { cellWidth: 7, halign: 'center', fontStyle: 'bold' },
+      1: { cellWidth: 44, fontStyle: 'bold', textColor: [30, 58, 95] },
+      2: { cellWidth: 73 },
+      3: { cellWidth: 14, halign: 'center' },
+      4: { cellWidth: 21, halign: 'right' },
+      5: { cellWidth: 27, halign: 'right', fontStyle: 'bold', textColor: [15, 29, 48] },
     },
-    head: [['#', 'İmalat & Gider Kalemi', 'Kapsam ve Teknik Açıklama', 'Pay (%)', 'Yaklaşık Tutar (TL)']],
+    head: [['#', 'Maliyet Kalemi', 'Teknik Kapsam ve İmalat Açıklaması', 'Oran', 'Birim (m²)', 'Toplam Tutar']],
     body: tableBody,
     foot: [
-      ['', 'TOPLAM TAHMİNİ ŞANTİYE MALİYETİ (KDV HARİÇ)', 'Komple Anahtar Teslim Yapım Gideri', '%100', formatTL(data.activeTotal)],
+      [
+        '',
+        'GENEL TOPLAM MALİYET',
+        `Toplam ${data.area} m² ${data.buildingTypeName} (${data.city}) — KDV Hariç Tahmini Bütçe`,
+        '%100',
+        formatTL(data.m2Price),
+        formatTL(data.activeTotal),
+      ],
     ],
     footStyles: {
       font: fontName,
       fontStyle: 'bold',
       fillColor: [255, 248, 240],
       textColor: [232, 96, 10],
-      fontSize: 8,
+      fontSize: 8.2,
       lineColor: [232, 96, 10],
       lineWidth: 0.3,
     },
   });
 
-  // Position following the table
-  const finalY = (doc as any).lastAutoTable?.finalY || 190;
+  const finalY = (doc as any).lastAutoTable?.finalY || 180;
 
-  // Bank & Contractor Notes Box
-  const notesY = finalY + 3.5;
+  // 5. Stage Summary Strip (4 Main Construction Phases)
+  const stageY = finalY + 5;
+  const boxW = (186 - 6) / 4;
+  const stages = [
+    { title: '1. KABA İNŞAAT (%42)', val: formatTL(data.kabaTotal), sub: 'Hafriyat, Beton, Demir, Kalıp' },
+    { title: '2. İNCE İŞLER (%38)', val: formatTL(data.inceTotal), sub: 'Çatı, Yalıtım, Doğrama, Zemin' },
+    { title: '3. TESİSAT (%12)', val: formatTL(data.tesisatTotal), sub: 'Mekanik, Sıhhi & Elektrik' },
+    { title: '4. RESMİ HARÇLAR (%8)', val: formatTL(data.ruhsatDenetimTotal), sub: 'Ruhsat, Proje & Yapı Denetim' },
+  ];
+
+  stages.forEach((st, idx) => {
+    const bx = 12 + idx * (boxW + 2);
+    doc.setFillColor(255, 255, 255);
+    doc.setDrawColor(226, 221, 214);
+    doc.roundedRect(bx, stageY, boxW, 17, 1.5, 1.5, 'FD');
+
+    doc.setFont(fontName, 'bold');
+    doc.setFontSize(6.5);
+    doc.setTextColor(30, 58, 95);
+    doc.text(st.title, bx + 2.5, stageY + 4.8);
+
+    doc.setFont(fontName, 'bold');
+    doc.setFontSize(8.5);
+    doc.setTextColor(232, 96, 10);
+    doc.text(st.val, bx + 2.5, stageY + 10.5);
+
+    doc.setFont(fontName, 'normal');
+    doc.setFontSize(6);
+    doc.setTextColor(110, 110, 110);
+    doc.text(st.sub, bx + 2.5, stageY + 14.8);
+  });
+
+  // 6. Bank & Contractor Presentation Notes
+  const notesY = stageY + 21;
   doc.setFillColor(248, 249, 251);
   doc.setDrawColor(226, 221, 214);
-  doc.roundedRect(12, notesY, 186, 28, 1.5, 1.5, 'FD');
+  doc.roundedRect(12, notesY, 186, 27, 1.5, 1.5, 'FD');
 
   doc.setFont(fontName, 'bold');
   doc.setFontSize(7.2);
   doc.setTextColor(30, 58, 95);
-  doc.text('BANKA KREDİSİ VE MÜTEAHHİT SÖZLEŞMESİ DEĞERLENDİRME NOTLARI', 15, notesY + 5);
+  doc.text('BANKA KREDİSİ VE MÜTEAHHİT SÖZLEŞMESİ İÇİN TEKNİK NOTLAR', 15, notesY + 5);
 
   doc.setFont(fontName, 'normal');
-  doc.setFontSize(6.5);
-  doc.setTextColor(80, 80, 80);
-  const note1 = '1. Mevzuat Standardı: Veriler 4708 sayılı Yapı Denetimi Kanunu ve 2018 Türkiye Bina Deprem Yönetmeliği standartlarına uygundur.';
-  const note2 = '2. Banka Uygunluğu: Konut/inşaat yapım kredisi ekspertiz ön değerlendirmesinde ve hakediş nakit akış tablolarında referans alınabilir.';
-  const note3 = '3. Hariç Kalemler: Arsa bedeli, tapu harçları, derin fore kazık zemin iyileştirmesi, trafo ve peyzaj harcamaları dahil değildir.';
-  const note4 = '4. Piyasa Değişkenliği: Demir, hazır beton ve enerji dalgalanmalarına karşı şantiye sürecinde %5 ila %10 rezerv bütçe önerilir.';
+  doc.setFontSize(6.6);
+  doc.setTextColor(75, 75, 75);
+  doc.text(
+    '• Resmi Standart: Bu rapor 2026 yılı Çevre, Şehircilik ve İklim Değişikliği Bakanlığı birim maliyetleri ve piyasa rayiçleriyle üretilmiştir.',
+    15,
+    notesY + 10
+  );
+  doc.text(
+    '• Banka & Ekspertiz Sunumu: Konut/inşaat tamamlama kredisi başvurularında ve müteahhit hakediş ödeme planlarında ön keşif belgesi olarak sunulabilir.',
+    15,
+    notesY + 14.5
+  );
+  doc.text(
+    '• Kapsam Dışı Kalemler: Arsa alım bedeli, tapu harçları, derin zemin fore kazık imalatı, bahçe peyzajı ve KDV tutarları hesaplamaya dahil değildir.',
+    15,
+    notesY + 19
+  );
+  doc.text(
+    '• Bütçe Toleransı: Şantiye süresince demir, hazır beton ve işçilik fiyat değişimlerine karşı toplam bütçede %5 - %10 ihtiyat payı ayrılması önerilir.',
+    15,
+    notesY + 23.5
+  );
 
-  doc.text(note1, 15, notesY + 10);
-  doc.text(note2, 15, notesY + 14.5);
-  doc.text(note3, 15, notesY + 19);
-  doc.text(note4, 15, notesY + 23.5);
-
-  // Approval & Signature Blocks
-  const sigY = notesY + 31.5;
-  doc.setDrawColor(215, 215, 215);
-  doc.rect(12, sigY, 90, 24);
-  doc.rect(108, sigY, 90, 24);
+  // 7. Official Approval & Signature Blocks
+  const sigY = notesY + 31;
+  doc.setDrawColor(210, 210, 210);
+  doc.roundedRect(12, sigY, 90, 23, 1.5, 1.5, 'S');
+  doc.roundedRect(108, sigY, 90, 23, 1.5, 1.5, 'S');
 
   doc.setFont(fontName, 'bold');
   doc.setFontSize(6.8);
   doc.setTextColor(30, 58, 95);
-  doc.text('HESAPLAYAN / YATIRIMCI BEYANI', 16, sigY + 4.5);
-  doc.text('MÜTEAHHİT / ŞANTİYE ŞEFİ KAŞE - İMZA', 112, sigY + 4.5);
+  doc.text('YATIRIMCI / ARSA SAHİBİ ONAYI', 16, sigY + 5);
+  doc.text('MÜTEAHHİT / ŞANTİYE ŞEFİ KAŞE & İMZA', 112, sigY + 5);
 
   doc.setFont(fontName, 'normal');
-  doc.setFontSize(6.2);
-  doc.setTextColor(130, 130, 130);
-  doc.text('Ad Soyad: ____________________________________', 16, sigY + 12.5);
-  doc.text('İmza / Tarih: _________________________________', 16, sigY + 18.5);
+  doc.setFontSize(6.3);
+  doc.setTextColor(120, 120, 120);
+  doc.text('Ad Soyad: ______________________________________', 16, sigY + 12);
+  doc.text(`Tarih / İmza: ${dateFormatted}  _______________________`, 16, sigY + 18);
 
-  doc.text('Firma / Yetkili: _______________________________', 112, sigY + 12.5);
-  doc.text('Oda Sicil No / Kaşe: ___________________________', 112, sigY + 18.5);
+  doc.text('Firma / Yetkili: _________________________________', 112, sigY + 12);
+  doc.text('Kaşe / İmza: ___________________________________', 112, sigY + 18);
 
-  // Footer Banner
+  // 8. Branded Footer Banner
   doc.setFillColor(30, 58, 95);
-  doc.rect(0, 287, 210, 10, 'F');
+  doc.rect(0, 286, 210, 11, 'F');
+
+  doc.setFont(fontName, 'bold');
+  doc.setFontSize(7.2);
+  doc.setTextColor(255, 255, 255);
+  doc.text('MaliyetHesap.com', 12, 292.5);
 
   doc.setFont(fontName, 'normal');
   doc.setFontSize(6.8);
-  doc.setTextColor(255, 255, 255);
-  doc.text('MaliyetHesap.com — Türkiye\'nin Bağımsız İnşaat Maliyeti Hesaplama Platformu | https://maliyethesap.com', 12, 293);
-  doc.text('Sayfa 1 / 1', 198, 293, { align: 'right' });
+  doc.setTextColor(215, 225, 240);
+  doc.text(
+    ' — Türkiye\'nin Bağımsız İnşaat Maliyeti Hesaplama Platformu | Resmi Rapor Kaynağı: https://maliyethesap.com',
+    35,
+    292.5
+  );
+  doc.text(`Tarih: ${dateFormatted} | Sayfa 1 / 1`, 198, 292.5, { align: 'right' });
 
-  // Trigger browser download
-  const cleanCity = data.city.replace(/[^a-zA-Z0-9çğıöşüÇĞİÖŞÜ]/g, '');
-  const fileName = `MaliyetHesap_Insaat_Maliyet_Raporu_${cleanCity}_${data.area}m2_${today.toISOString().slice(0, 10)}.pdf`;
+  // Trigger client-side download
+  const cleanCity = data.city
+    .replace(/İ/g, 'I')
+    .replace(/ı/g, 'i')
+    .replace(/Ş/g, 'S')
+    .replace(/ş/g, 's')
+    .replace(/Ğ/g, 'G')
+    .replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'U')
+    .replace(/ü/g, 'u')
+    .replace(/Ö/g, 'O')
+    .replace(/ö/g, 'o')
+    .replace(/Ç/g, 'C')
+    .replace(/ç/g, 'c')
+    .replace(/[^a-zA-Z0-9]/g, '');
+  const fileName = `MaliyetHesap_Rapor_${cleanCity}_${data.area}m2_${today.toISOString().slice(0, 10)}.pdf`;
   doc.save(fileName);
 }
