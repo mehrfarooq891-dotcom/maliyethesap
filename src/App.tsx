@@ -871,7 +871,7 @@ export default function App() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-white/70 pb-12 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm text-white/70 pb-12 border-b border-white/10">
             <div className="md:col-span-2">
               <div className="text-2xl font-extrabold font-heading text-white mb-4">
                 Maliyet<span className="text-[#E8600A]">Hesap</span>
@@ -925,6 +925,18 @@ export default function App() {
                 <li><a href="#detaylar" className="hover:text-white transition-colors">Kalem Dağılımı Tablosu</a></li>
                 <li><a href="/2026-yapi-birim-maliyetleri" className="hover:text-white transition-colors">2026 Bakanlık Tebliği</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">Sıkça Sorulan Sorular</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="font-bold text-white mb-3 uppercase text-xs tracking-wider">Popüler Rehberler</div>
+              <ul className="space-y-2 text-xs">
+                <li><a href="/tapu-harci-hesaplama" className="hover:text-white transition-colors">Tapu Harcı Hesaplama 2026</a></li>
+                <li><a href="/blog-2020-2026-insaat-maliyet-trendleri" className="hover:text-white transition-colors">2020-2026 Maliyet Trendleri</a></li>
+                <li><a href="/blog-100m2-ev-maliyeti-2026" className="hover:text-white transition-colors">100 m² Ev Maliyeti 2026</a></li>
+                <li><a href="/blog-istanbul-ev-yapim-maliyeti-2026" className="hover:text-white transition-colors">İstanbul Ev Yapım Maliyeti</a></li>
+                <li><a href="/blog-ankara-2026" className="hover:text-white transition-colors">Ankara Ev Yapım Maliyeti</a></li>
+                <li><a href="/blog-insaat-demiri-fiyatlari-2026" className="hover:text-white transition-colors">İnşaat Demiri Fiyatları</a></li>
+                <li><a href="/blog-cimento-fiyatlari-2026" className="hover:text-white transition-colors">Çimento Fiyatları 2026</a></li>
               </ul>
             </div>
             <div>
