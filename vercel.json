@@ -31,6 +31,11 @@
       "source": "/blog/izmir-2026",
       "destination": "/blog-izmir-insaat-maliyeti-2026",
       "permanent": true
+    },
+    {
+      "source": "/blog/2020-2026-insaat-maliyet-trendleri",
+      "destination": "/blog-2020-2026-insaat-maliyet-trendleri",
+      "permanent": true
     }
   ],
   "rewrites": [

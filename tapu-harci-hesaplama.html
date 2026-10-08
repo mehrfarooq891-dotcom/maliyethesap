@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tapu Harcı Hesaplama 2026 | Alıcı ve Satıcı Tapu Masrafı Hesaplayıcı</title>
+  <meta name="description" content="2026 tapu harcı hesaplama: gayrimenkul satışında alıcı ve satıcı payını, döner sermaye bedelini anında hesaplayın." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://maliyethesap.com/tapu-harci-hesaplama" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tapu Harcı Hesaplama 2026 | Alıcı ve Satıcı Tapu Masrafı Hesaplayıcı" />
+  <meta property="og:description" content="2026 tapu harcı hesaplama: gayrimenkul satışında alıcı ve satıcı payını, döner sermaye bedelini anında hesaplayın." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maliyethesap.com/tapu-harci-hesaplama" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1e3a5f',
+            darkNavy: '#0f1d30',
+            orange: '#E8600A',
+            cream: '#FFF8F0',
+            borderGray: '#E2DDD6'
+          },
+          fontFamily: {
+            heading: ['Nunito', 'sans-serif'],
+            body: ['Source Sans Pro', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "MaliyetHesap",
+      "url": "https://maliyethesap.com/",
+      "inLanguage": "tr"
+    },
+    {
+      "@type": "Organization",
+      "name": "MaliyetHesap",
+      "url": "https://maliyethesap.com/"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "MaliyetHesap Tapu Harcı Hesaplayıcı",
+      "url": "https://maliyethesap.com/tapu-harci-hesaplama",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "tr",
+      "description": "2026 yılı güncel tapu harcı oranlarına göre gayrimenkul satışında alıcı ve satıcı payını, toplam harcı ve döner sermaye bedelini hesaplayan ücretsiz araç.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "2026 yılında tapu harcı oranı nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "492 sayılı Harçlar Kanunu'na göre gayrimenkul satışlarında tapu harcı, satış bedelinin binde 20'si (%2) alıcıdan ve binde 20'si (%2) satıcıdan olmak üzere toplam %4 oranında tahsil edilir. Bu oran 2026 yılı için de geçerli standart orandır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tapu harcını alıcı mı öder, satıcı mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kanunen tapu harcı alıcı ve satıcı arasında yarı yarıya paylaşılır: her iki taraf da satış bedelinin %2'sini öder. Ancak uygulamada taraflar aralarında anlaşarak bu paylaşımı farklı şekilde üstlenebilir; tapu müdürlüğü toplam %4'lük harcın tahsil edildiğini görür."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tapu harcı hangi bedel üzerinden hesaplanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tapu harcı, tapuda beyan edilen gerçek satış bedeli üzerinden hesaplanır. Beyan edilen bedel, gayrimenkulün emlak vergisi değerinden (rayiç bedel) düşük olamaz; düşük beyan edilirse harç emlak vergisi değeri üzerinden tamamlanır ve cezai işlem uygulanabilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Döner sermaye bedeli nedir ve 2026'da ne kadar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Döner sermaye bedeli, Tapu ve Kadastro Genel Müdürlüğü'nün tapu işlemi başına aldığı sabit hizmet bedelidir ve her yıl yeniden belirlenir. 2026 yılı için yaklaşık 1.500 TL civarındadır; kesin tutar için işlem öncesi ilgili tapu müdürlüğünden teyit alınmalıdır. Uygulamada genellikle alıcı tarafından ödenir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tapu harcından muaf olan işlemler var mıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Veraset yoluyla intikal (miras), 6306 sayılı kanun kapsamındaki bazı kentsel dönüşüm işlemleri, afet bölgesi uygulamaları ve kanunda sayılan diğer istisnai hallerde tapu harcı alınmaz veya indirimli uygulanır. Muafiyet durumunuz için tapu müdürlüğüne danışmanız önerilir."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="bg-[#FFF8F0] text-[#0f1d30] font-body">
+
+  <!-- Header -->
+  <header class="bg-[#1e3a5f] text-white py-4 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-2xl font-extrabold font-heading tracking-tight flex items-center gap-2">
+        <svg class="w-7 h-7 text-[#E8600A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <rect width="18" height="18" x="3" y="3" rx="2" stroke-width="2"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h18M9 21V9"/>
+        </svg>
+        <span>Maliyet<span class="text-[#E8600A]">Hesap</span></span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+        <a href="/" class="hover:text-[#E8600A] transition-colors">Ana Sayfa</a>
+        <a href="/#hesaplama" class="hover:text-[#E8600A] transition-colors">İnşaat Maliyeti</a>
+        <a href="/tadilat-maliyeti-hesaplama" class="hover:text-[#E8600A] transition-colors">Tadilat</a>
+        <a href="/boya-badana-hesaplama" class="hover:text-[#E8600A] transition-colors">Boya Badana</a>
+        <a href="/konut-kredisi-hesaplama" class="hover:text-[#E8600A] transition-colors">Konut Kredisi</a>
+        <a href="/#teblig" class="hover:text-[#E8600A] transition-colors">2026 Resmi Tebliğ</a>
+        <a href="/blog.html" class="hover:text-[#E8600A] transition-colors">Blog</a>
+        <a href="/about" class="hover:text-[#E8600A] transition-colors">Hakkımızda</a>
+      </nav>
+      <a href="#hesaplayici" class="bg-[#E8600A] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-white hover:text-[#1e3a5f] transition-all shadow-md">
+        Hemen Hesapla
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-[#1e3a5f] to-[#0f1d30] text-white py-14 px-6 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-[#E8600A]">
+        🏠 2026 Güncel Tapu Harç Oranları &amp; Masraf Simülasyonu
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold font-heading tracking-tight leading-tight">
+        Tapu Harcı Hesaplama 2026
+      </h1>
+      <p class="text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        Gayrimenkul satışında alıcı ve satıcının ödeyeceği tapu harcını, toplam masrafı ve döner sermaye bedelini satış bedeline göre anında hesaplayın.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-white/70 pt-2">
+        <span>✓ Alıcı %2 + Satıcı %2 Oranı</span>
+        <span>•</span>
+        <span>✓ %100 Ücretsiz &amp; Anlık Sonuç</span>
+        <span>•</span>
+        <span>✓ Döner Sermaye Dahil Toplam Masraf</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="max-w-6xl mx-auto px-6 py-4 text-xs text-gray-500">
+    <a href="/" class="hover:text-[#E8600A]">Ana Sayfa</a>
+    <span class="mx-2">/</span>
+    <span class="text-gray-800 font-semibold">Tapu Harcı Hesaplama 2026</span>
+  </div>
+
+  <!-- Calculator Tool Main Section -->
+  <main id="hesaplayici" class="max-w-6xl mx-auto px-6 py-6 pb-16">
+    <div class="bg-white rounded-3xl border border-[#E2DDD6] shadow-xl overflow-hidden">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+
+        <!-- Controls Column (Left, 7 Cols) -->
+        <div class="lg:col-span-7 p-6 md:p-10 space-y-8">
+
+          <div>
+            <h2 class="text-xl md:text-2xl font-extrabold font-heading text-[#1e3a5f] flex items-center gap-2">
+              <span class="w-8 h-8 rounded-lg bg-[#E8600A]/10 text-[#E8600A] flex items-center justify-center text-sm font-black">1</span>
+              Satış Bedelini Girin
+            </h2>
+            <p class="text-xs md:text-sm text-gray-500 mt-1">
+              Tapuda beyan edilecek gerçek satış bedelini yazın. Beyan, emlak vergisi değerinden düşük olamaz.
+            </p>
+          </div>
+
+          <!-- Input 1: Sale Price (TL) -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <label for="salePriceInput" class="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-700">
+                Gayrimenkul Satış Bedeli (TL)
+              </label>
+              <span id="salePriceFormatted" class="text-sm md:text-base font-black text-[#1e3a5f]">
+                3.000.000 TL
+              </span>
+            </div>
+
+            <div class="relative">
+              <input
+                type="number"
+                id="salePriceInput"
+                min="100000"
+                max="100000000"
+                step="50000"
+                value="3000000"
+                class="w-full p-4 pr-14 text-base md:text-lg font-bold text-[#1e3a5f] bg-gray-50 border border-[#E2DDD6] rounded-2xl focus:bg-white focus:outline-none focus:border-[#E8600A] transition-all"
+              />
+              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-sm">TL</span>
+            </div>
+
+            <!-- Slider -->
+            <input
+              type="range"
+              id="salePriceRange"
+              min="500000"
+              max="20000000"
+              step="100000"
+              value="3000000"
+              class="w-full accent-[#E8600A] cursor-pointer"
+            />
+
+            <!-- Presets -->
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button type="button" class="price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors" data-amount="1000000">1.000.000 TL</button>
+              <button type="button" class="price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors" data-amount="2500000">2.500.000 TL</button>
+              <button type="button" class="price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border-2 border-[#E8600A] bg-[#FFF8F0] text-[#1e3a5f] transition-colors" data-amount="3000000">3.000.000 TL</button>
+              <button type="button" class="price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors" data-amount="5000000">5.000.000 TL</button>
+              <button type="button" class="price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors" data-amount="7500000">7.500.000 TL</button>
+              <button type="button" class="price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors" data-amount="10000000">10.000.000 TL</button>
+            </div>
+          </div>
+
+          <!-- Input 2: Side Selection -->
+          <div class="space-y-3 border-t border-gray-100 pt-6">
+            <div>
+              <span class="text-xs md:text-sm font-bold uppercase tracking-wider text-gray-700">
+                Hesaplama Tarafı
+              </span>
+              <div class="text-[11px] text-gray-500 mt-0.5">
+                Kimin ödeyeceği tutarı görmek istediğinizi seçin.
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" id="sideBuyerBtn" class="side-btn text-sm font-bold px-4 py-3.5 rounded-2xl border-2 border-[#E8600A] bg-[#FFF8F0] text-[#1e3a5f] transition-colors">
+                🏠 Alıcıyım
+                <span class="block text-[11px] font-semibold text-gray-500 mt-0.5">Satış bedelinin %2'si</span>
+              </button>
+              <button type="button" id="sideSellerBtn" class="side-btn text-sm font-bold px-4 py-3.5 rounded-2xl border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors">
+                🔑 Satıcıyım
+                <span class="block text-[11px] font-semibold text-gray-500 mt-0.5">Satış bedelinin %2'si</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Info banner -->
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-start gap-3 text-xs md:text-sm text-blue-900 leading-relaxed">
+            <span class="text-blue-500 font-bold text-lg leading-none">ℹ️</span>
+            <div>
+              <strong>2026 Standart Oranlar:</strong> 492 sayılı Harçlar Kanunu uyarınca tapu harcı, satış bedelinin <strong>binde 20'si (%2) alıcıdan</strong> ve <strong>binde 20'si (%2) satıcıdan</strong> alınır. Döner sermaye bedeli her yıl yeniden belirlenir ve işlem başına sabit tahsil edilir.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Output Column (Right, 5 Cols - Dark Navy) -->
+        <div class="lg:col-span-5 bg-[#0f1d30] text-white p-6 md:p-10 flex flex-col justify-between">
+
+          <div class="space-y-6">
+
+            <div class="border-b border-white/10 pb-4">
+              <div class="text-[#E8600A] text-xs font-bold uppercase tracking-widest">
+                2026 Tapu Masraf Özeti
+              </div>
+              <div class="text-xs text-white/60 mt-0.5">
+                <span id="summaryHeaderPrice">3.000.000 TL</span> • <span id="summaryHeaderSide">Alıcı Payı</span>
+              </div>
+            </div>
+
+            <!-- Big Selected Side Display -->
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center space-y-1">
+              <div class="text-xs uppercase tracking-wider text-white/70 font-semibold">
+                <span id="bigDisplayLabel">Alıcının Ödeyeceği Tapu Harcı</span>
+              </div>
+              <div id="bigDisplayValue" class="text-3xl md:text-4xl lg:text-5xl font-black font-heading text-white tracking-tight">
+                60.000 TL
+              </div>
+              <div class="text-[11px] text-[#E8600A] font-medium pt-1">
+                Satış bedelinin %2'si (binde 20)
+              </div>
+            </div>
+
+            <!-- Breakdown Grid -->
+            <div class="grid grid-cols-2 gap-3.5 pt-2">
+
+              <div class="bg-white/5 border border-white/10 p-4 rounded-xl space-y-1">
+                <div class="text-[11px] text-white/60 font-medium">Alıcı Payı (%2)</div>
+                <div id="buyerShareDisplay" class="text-base md:text-lg font-black text-white font-heading">
+                  60.000 TL
+                </div>
+                <div class="text-[10px] text-white/40">Binde 20</div>
+              </div>
+
+              <div class="bg-white/5 border border-white/10 p-4 rounded-xl space-y-1">
+                <div class="text-[11px] text-white/60 font-medium">Satıcı Payı (%2)</div>
+                <div id="sellerShareDisplay" class="text-base md:text-lg font-black text-white font-heading">
+                  60.000 TL
+                </div>
+                <div class="text-[10px] text-white/40">Binde 20</div>
+              </div>
+
+              <div class="bg-white/5 border border-white/10 p-4 rounded-xl space-y-1">
+                <div class="text-[11px] text-white/60 font-medium">Toplam Tapu Harcı (%4)</div>
+                <div id="totalFeeDisplay" class="text-base md:text-lg font-black text-[#E8600A] font-heading">
+                  120.000 TL
+                </div>
+                <div class="text-[10px] text-white/40">Alıcı + Satıcı</div>
+              </div>
+
+              <div class="bg-white/5 border border-white/10 p-4 rounded-xl space-y-1">
+                <div class="text-[11px] text-white/60 font-medium">Döner Sermaye (Tahmini)</div>
+                <div id="donerDisplay" class="text-base md:text-lg font-bold text-white">
+                  1.500 TL
+                </div>
+                <div class="text-[10px] text-white/40">İşlem başına sabit</div>
+              </div>
+
+            </div>
+
+            <!-- Split Visual Bar -->
+            <div class="space-y-2 border-t border-white/10 pt-4">
+              <div class="flex justify-between text-xs text-white/80">
+                <span>Alıcı: <strong id="barBuyerPercent" class="text-white">%50</strong></span>
+                <span>Satıcı: <strong id="barSellerPercent" class="text-[#E8600A]">%50</strong></span>
+              </div>
+              <div class="w-full bg-white/10 h-3 rounded-full overflow-hidden flex">
+                <div class="bg-emerald-500 h-full transition-all duration-300" style="width: 50%;"></div>
+                <div class="bg-[#E8600A] h-full transition-all duration-300" style="width: 50%;"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-white/40 pt-1">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Alıcı Payı</span>
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#E8600A] inline-block"></span> Satıcı Payı</span>
+              </div>
+            </div>
+
+            <!-- Total out-of-pocket note -->
+            <div class="bg-white/5 border border-white/10 p-4 rounded-xl space-y-2 text-xs">
+              <div class="font-bold text-white text-xs flex justify-between">
+                <span id="outOfPocketLabel">Alıcının Toplam Masrafı</span>
+                <span id="outOfPocketDisplay" class="text-[#E8600A]">61.500 TL</span>
+              </div>
+              <div class="text-[11px] text-white/60 border-t border-white/10 pt-2 leading-relaxed">
+                Harç payı + tahmini döner sermaye bedeli. Döner sermaye uygulamada genellikle alıcı tarafından ödenir; kesin tutar tapu müdürlüğünden teyit edilmelidir.
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 space-y-3">
+            <a
+              href="#tapu-rehberi"
+              class="w-full bg-[#E8600A] text-white font-bold py-3 px-4 rounded-xl text-center block text-sm hover:bg-white hover:text-[#0f1d30] transition-all shadow-md"
+            >
+              Tapu Harcı Rehberini Oku ↓
+            </a>
+            <button
+              type="button"
+              onclick="window.print()"
+              class="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-2.5 px-4 rounded-xl text-center block text-xs border border-white/10 transition-colors"
+            >
+              🖨️ Hesap Özetini Yazdır
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Educational & Contextual Article Section -->
+    <article id="tapu-rehberi" class="mt-16 bg-white p-6 md:p-10 rounded-3xl border border-[#E2DDD6] space-y-8 leading-relaxed">
+
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] mb-3">
+          Tapu Harcı Nedir ve Nasıl Hesaplanır?
+        </h2>
+        <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+          Tapu harcı, gayrimenkulün el değiştirmesi sırasında tapu müdürlüğünde tahsil edilen resmi bir vergidir. 492 sayılı Harçlar Kanunu'na göre konut, arsa, iş yeri veya tarla satışlarında <strong>satış bedelinin binde 20'si (%2) alıcıdan, binde 20'si (%2) satıcıdan</strong> alınır. Yani tarafların toplamda ödediği harç, satış bedelinin <strong>%4'üne</strong> denk gelir. Bu oran, tapu müdürlüğünün ayrıca tahsil ettiği döner sermaye hizmet bedelinden ayrıdır.
+        </p>
+      </div>
+
+      <!-- Contextual Internal Link -->
+      <div class="bg-[#FFF8F0] border-l-4 border-[#E8600A] p-5 rounded-r-2xl text-gray-800 text-sm md:text-base">
+        <h3 class="font-bold text-[#1e3a5f] text-base mb-1">💡 Ev Almadan Önce Toplam Bütçenizi Çıkarın</h3>
+        <p>
+          Tapu masrafı, ev alım bütçesinin yalnızca bir kalemidir. Kredi kullanmayı planlıyorsanız
+          <a href="https://maliyethesap.com/konut-kredisi-hesaplama" class="text-[#E8600A] font-bold hover:underline">konut kredisi hesaplama</a>
+          aracımızla aylık taksitlerinizi, kendi arsanıza ev yaptıracaksanız
+          <a href="https://maliyethesap.com/" class="text-[#E8600A] font-bold hover:underline">inşaat maliyeti hesaplama</a>
+          motorumuzla şantiye bütçenizi önceden planlayabilirsiniz.
+        </p>
+      </div>
+
+      <!-- 2026 Rates Table -->
+      <div class="space-y-4 pt-4">
+        <h3 class="text-xl font-bold text-[#1e3a5f]">
+          2026 Tapu Harcı Oranları Tablosu
+        </h3>
+        <p class="text-xs md:text-sm text-gray-600">
+          Aşağıdaki tablo, en sık karşılaşılan tapu işlemlerinde uygulanan standart harç oranlarını özetler.
+        </p>
+        <div class="overflow-x-auto border border-[#E2DDD6] rounded-2xl">
+          <table class="w-full text-xs md:text-sm text-left">
+            <thead class="bg-[#1e3a5f] text-white uppercase text-[11px] tracking-wider">
+              <tr>
+                <th class="p-3.5">Tapu İşlemi</th>
+                <th class="p-3.5 text-right">Alıcı Oranı</th>
+                <th class="p-3.5 text-right">Satıcı Oranı</th>
+                <th class="p-3.5 text-right">Toplam</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-3.5 font-bold text-[#1e3a5f]">Gayrimenkul Satışı (Konut, Arsa, İş Yeri)</td>
+                <td class="p-3.5 text-right font-semibold">%2 (binde 20)</td>
+                <td class="p-3.5 text-right font-semibold">%2 (binde 20)</td>
+                <td class="p-3.5 text-right font-bold text-[#E8600A]">%4</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-3.5 font-bold text-[#1e3a5f]">Kat Karşılığı İnşaat Sözleşmesi (Arsa Payı Devri)</td>
+                <td class="p-3.5 text-right font-semibold">%2 (binde 20)</td>
+                <td class="p-3.5 text-right font-semibold">%2 (binde 20)</td>
+                <td class="p-3.5 text-right font-bold text-[#E8600A]">%4</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-3.5 font-bold text-[#1e3a5f]">Veraset Yoluyla İntikal (Miras)</td>
+                <td class="p-3.5 text-right font-semibold text-emerald-600" colspan="2">Harçtan muaf (istisna)</td>
+                <td class="p-3.5 text-right font-bold text-emerald-600">%0*</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-3.5 font-bold text-[#1e3a5f]">6306 Sayılı Kanun (Kentsel Dönüşüm) Kapsamı</td>
+                <td class="p-3.5 text-right font-semibold text-emerald-600" colspan="2">Kanunda sayılan istisna ve indirimler</td>
+                <td class="p-3.5 text-right font-bold text-emerald-600">Değişken*</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-gray-500 italic">
+          * Muafiyet ve istisnalar işlemin niteliğine göre değişir; güncel durum için tapu müdürlüğünden teyit alınmalıdır. Döner sermaye bedeli harçtan ayrı olarak tahsil edilir.
+        </p>
+      </div>
+
+      <!-- Buyer vs Seller -->
+      <div class="space-y-4 pt-4 border-t border-gray-100">
+        <h3 class="text-xl font-bold text-[#1e3a5f]">
+          Alıcı ve Satıcının Sorumlulukları
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm text-gray-700">
+          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 space-y-2">
+            <strong class="text-[#1e3a5f] block text-sm font-bold">🏠 Alıcının Ödedikleri</strong>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Satış bedelinin <strong>%2'si</strong> oranında tapu harcı</li>
+              <li>Döner sermaye bedeli (uygulamada genellikle alıcı öder)</li>
+              <li>Emlakçı komisyonu (varsa, ayrıca)</li>
+              <li>Zorunlu DASK poliçesi (tapu devri öncesi)</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 space-y-2">
+            <strong class="text-[#1e3a5f] block text-sm font-bold">🔑 Satıcının Ödedikleri</strong>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Satış bedelinin <strong>%2'si</strong> oranında tapu harcı</li>
+              <li>Değer artış kazancı vergisi (5 yıl içinde satışta, şartları varsa)</li>
+              <li>Emlakçı komisyonu (varsa, ayrıca)</li>
+              <li>Belediye borcu yoktur yazısı gibi belgelerin temini</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-xs md:text-sm text-gray-600 bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <strong>Önemli not:</strong> Kanuni paylaşım yarı yarıya olsa da, alıcı ve satıcı aralarında anlaşarak harcın tamamını tek tarafa yükleyebilir. Tapu müdürlüğü açısından önemli olan, toplam %4'lük harcın tahsil edilmiş olmasıdır.
+        </p>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="space-y-4 pt-6 border-t border-gray-100">
+        <h2 class="text-2xl font-extrabold font-heading text-[#1e3a5f] mb-4">
+          Tapu Harcı Hakkında Sıkça Sorulan Sorular (S.S.S.)
+        </h2>
+
+        <div class="space-y-3">
+
+          <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+            <h3 class="font-bold text-[#1e3a5f] text-sm md:text-base mb-1.5">
+              ❓ 1. 2026 yılında tapu harcı oranı nedir?
+            </h3>
+            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+              492 sayılı Harçlar Kanunu'na göre gayrimenkul satışlarında tapu harcı, satış bedelinin binde 20'si (%2) alıcıdan ve binde 20'si (%2) satıcıdan olmak üzere toplam %4 oranında tahsil edilir. Bu oran 2026 yılı için de geçerli standart orandır.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+            <h3 class="font-bold text-[#1e3a5f] text-sm md:text-base mb-1.5">
+              ❓ 2. Tapu harcını alıcı mı öder, satıcı mı?
+            </h3>
+            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+              Kanunen tapu harcı alıcı ve satıcı arasında yarı yarıya paylaşılır: her iki taraf da satış bedelinin %2'sini öder. Ancak uygulamada taraflar aralarında anlaşarak bu paylaşımı farklı şekilde üstlenebilir; tapu müdürlüğü toplam %4'lük harcın tahsil edildiğini görür.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+            <h3 class="font-bold text-[#1e3a5f] text-sm md:text-base mb-1.5">
+              ❓ 3. Tapu harcı hangi bedel üzerinden hesaplanır?
+            </h3>
+            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+              Tapu harcı, tapuda beyan edilen gerçek satış bedeli üzerinden hesaplanır. Beyan edilen bedel, gayrimenkulün emlak vergisi değerinden (rayiç bedel) düşük olamaz; düşük beyan edilirse harç emlak vergisi değeri üzerinden tamamlanır ve cezai işlem uygulanabilir.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+            <h3 class="font-bold text-[#1e3a5f] text-sm md:text-base mb-1.5">
+              ❓ 4. Döner sermaye bedeli nedir ve 2026'da ne kadar?
+            </h3>
+            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+              Döner sermaye bedeli, Tapu ve Kadastro Genel Müdürlüğü'nün tapu işlemi başına aldığı sabit hizmet bedelidir ve her yıl yeniden belirlenir. 2026 yılı için yaklaşık 1.500 TL civarındadır; kesin tutar için işlem öncesi ilgili tapu müdürlüğünden teyit alınmalıdır. Uygulamada genellikle alıcı tarafından ödenir.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+            <h3 class="font-bold text-[#1e3a5f] text-sm md:text-base mb-1.5">
+              ❓ 5. Tapu harcından muaf olan işlemler var mıdır?
+            </h3>
+            <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
+              Evet. Veraset yoluyla intikal (miras), 6306 sayılı kanun kapsamındaki bazı kentsel dönüşüm işlemleri, afet bölgesi uygulamaları ve kanunda sayılan diğer istisnai hallerde tapu harcı alınmaz veya indirimli uygulanır. Muafiyet durumunuz için tapu müdürlüğüne danışmanız önerilir.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Disclaimer -->
+      <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-xs md:text-sm text-gray-600 leading-relaxed">
+        <strong class="text-[#1e3a5f]">Yasal Uyarı:</strong> Bu sayfadaki hesaplama, 2026 yılı standart tapu harcı oranlarına (%2 + %2) dayanır ve bilgilendirme amaçlıdır; resmi beyan yerine geçmez. Muafiyetler, istisnalar ve güncel döner sermaye bedelleri işlemin niteliğine ve yıla göre değişebilir. Kesin tutar için tapu müdürlüğünden bilgi alınız.
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1e3a5f] text-white py-12 px-6 border-t border-white/10 mt-12">
+    <div class="max-w-6xl mx-auto text-center space-y-4">
+      <div class="text-2xl font-extrabold font-heading text-white">
+        Maliyet<span class="text-[#E8600A]">Hesap</span>
+      </div>
+      <p class="text-xs text-white/70 max-w-lg mx-auto">
+        Türkiye'nin bağımsız inşaat, tadilat ve konut kredisi hesaplama platformu. 2026 yılı güncel banka faizleri ve resmi birim maliyetleriyle hazırlanmıştır.
+      </p>
+      <div class="flex justify-center space-x-6 text-xs text-white/60 pt-2 flex-wrap gap-y-2">
+        <a href="/" class="hover:text-white transition-colors">Ana Sayfa</a>
+        <a href="/#hesaplama" class="hover:text-white transition-colors">İnşaat Maliyeti</a>
+        <a href="/tadilat-maliyeti-hesaplama" class="hover:text-white transition-colors">Tadilat Hesapla</a>
+        <a href="/boya-badana-hesaplama" class="hover:text-white transition-colors">Boya Badana</a>
+        <a href="/konut-kredisi-hesaplama" class="hover:text-white transition-colors">Konut Kredisi</a>
+        <a href="/blog.html" class="hover:text-white transition-colors">Blog Rehberleri</a>
+        <a href="/about" class="hover:text-white transition-colors">Hakkımızda</a>
+        <a href="/contact" class="hover:text-white transition-colors">İletişim</a>
+      </div>
+      <div class="flex justify-center items-center gap-3 pt-2" aria-label="Sosyal Medya">
+        <a href="https://www.facebook.com/MaliyetHesap/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-[#1a2547] text-white flex items-center justify-center border border-white/10 hover:text-[#f97316] hover:border-[#f97316]/50 hover:bg-[#151e3a] transition-all shadow-sm">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 320 512" aria-hidden="true"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" /></svg>
+        </a>
+        <a href="https://www.pinterest.com/sarah878morgan/maliyet-hesap-tips/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="w-11 h-11 rounded-xl bg-[#1a2547] text-white flex items-center justify-center border border-white/10 hover:text-[#f97316] hover:border-[#f97316]/50 hover:bg-[#151e3a] transition-all shadow-sm">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 384 512" aria-hidden="true"><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z" /></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/maliyet-hesap/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-[#1a2547] text-white flex items-center justify-center border border-white/10 hover:text-[#f97316] hover:border-[#f97316]/50 hover:bg-[#151e3a] transition-all shadow-sm">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" /></svg>
+        </a>
+      </div>
+      <div class="text-xs text-white/50 pt-4">
+        © 2026 MALİYETHESAP.COM — TÜM HAKLARI SAKLIDIR.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Calculator Script -->
+  <script>
+    (function() {
+      var BUYER_RATE = 0.02;
+      var SELLER_RATE = 0.02;
+      var DONER_SERMAYE = 1500;
+
+      var priceInput = document.getElementById("salePriceInput");
+      var priceRange = document.getElementById("salePriceRange");
+      var priceFormatted = document.getElementById("salePriceFormatted");
+
+      var buyerBtn = document.getElementById("sideBuyerBtn");
+      var sellerBtn = document.getElementById("sideSellerBtn");
+
+      var bigDisplayLabel = document.getElementById("bigDisplayLabel");
+      var bigDisplayValue = document.getElementById("bigDisplayValue");
+      var buyerShareDisplay = document.getElementById("buyerShareDisplay");
+      var sellerShareDisplay = document.getElementById("sellerShareDisplay");
+      var totalFeeDisplay = document.getElementById("totalFeeDisplay");
+      var donerDisplay = document.getElementById("donerDisplay");
+      var outOfPocketLabel = document.getElementById("outOfPocketLabel");
+      var outOfPocketDisplay = document.getElementById("outOfPocketDisplay");
+
+      var summaryHeaderPrice = document.getElementById("summaryHeaderPrice");
+      var summaryHeaderSide = document.getElementById("summaryHeaderSide");
+
+      var pricePresets = document.querySelectorAll(".price-preset");
+
+      var currentSide = "buyer";
+
+      function formatMoney(amount) {
+        return new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 }).format(Math.round(amount)) + " TL";
+      }
+
+      function setSide(side) {
+        currentSide = side;
+        var activeCls = ["border-2", "border-[#E8600A]", "bg-[#FFF8F0]", "text-[#1e3a5f]"];
+        var idleCls = ["border", "border-[#E2DDD6]", "bg-white", "text-gray-700"];
+        [buyerBtn, sellerBtn].forEach(function(btn) {
+          btn.classList.remove.apply(btn.classList, activeCls.concat(idleCls));
+        });
+        var activeBtn = side === "buyer" ? buyerBtn : sellerBtn;
+        var idleBtn = side === "buyer" ? sellerBtn : buyerBtn;
+        activeBtn.classList.add.apply(activeBtn.classList, activeCls);
+        idleBtn.classList.add.apply(idleBtn.classList, idleCls);
+        calculate();
+      }
+
+      function calculate() {
+        var price = parseFloat(priceInput.value) || 0;
+        if (price <= 0) price = 100000;
+        priceRange.value = Math.min(Math.max(price, 500000), 20000000);
+
+        var buyerShare = price * BUYER_RATE;
+        var sellerShare = price * SELLER_RATE;
+        var totalFee = buyerShare + sellerShare;
+
+        priceFormatted.textContent = formatMoney(price);
+        summaryHeaderPrice.textContent = formatMoney(price);
+
+        buyerShareDisplay.textContent = formatMoney(buyerShare);
+        sellerShareDisplay.textContent = formatMoney(sellerShare);
+        totalFeeDisplay.textContent = formatMoney(totalFee);
+        donerDisplay.textContent = formatMoney(DONER_SERMAYE);
+
+        if (currentSide === "buyer") {
+          bigDisplayLabel.textContent = "Alıcının Ödeyeceği Tapu Harcı";
+          bigDisplayValue.textContent = formatMoney(buyerShare);
+          summaryHeaderSide.textContent = "Alıcı Payı";
+          outOfPocketLabel.textContent = "Alıcının Toplam Masrafı";
+          outOfPocketDisplay.textContent = formatMoney(buyerShare + DONER_SERMAYE);
+        } else {
+          bigDisplayLabel.textContent = "Satıcının Ödeyeceği Tapu Harcı";
+          bigDisplayValue.textContent = formatMoney(sellerShare);
+          summaryHeaderSide.textContent = "Satıcı Payı";
+          outOfPocketLabel.textContent = "Satıcının Toplam Masrafı";
+          outOfPocketDisplay.textContent = formatMoney(sellerShare);
+        }
+      }
+
+      priceInput.addEventListener("input", calculate);
+      priceRange.addEventListener("input", function() {
+        priceInput.value = this.value;
+        calculate();
+      });
+
+      pricePresets.forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          pricePresets.forEach(function(b) {
+            b.className = "price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#E2DDD6] hover:border-[#E8600A] bg-white text-gray-700 transition-colors";
+          });
+          this.className = "price-preset text-xs font-semibold px-3 py-1.5 rounded-lg border-2 border-[#E8600A] bg-[#FFF8F0] text-[#1e3a5f] transition-colors";
+          priceInput.value = this.getAttribute("data-amount");
+          calculate();
+        });
+      });
+
+      buyerBtn.addEventListener("click", function() { setSide("buyer"); });
+      sellerBtn.addEventListener("click", function() { setSide("seller"); });
+
+      // Initial execution
+      setSide("buyer");
+    })();
+  </script>
+
+</body>
+</html>
