@@ -785,24 +785,24 @@ export default function App() {
         </div>
       </section>
 
-      {/* Author & E-E-A-T Section */}
+      {/* Methodology Section */}
       <section id="uzman" className="max-w-4xl mx-auto px-6 py-16 w-full">
         <div className="bg-white p-6 md:p-8 rounded-3xl border border-[#E2DDD6] flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-sm">
           <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-[#1e3a5f] text-white flex items-center justify-center font-black text-2xl border-2 border-[#E8600A] shadow-md flex-shrink-0">
-            MY
+            MH
           </div>
           <div className="text-center sm:text-left flex-1">
             <div className="inline-block bg-[#E8600A]/10 text-[#E8600A] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
-              İçerik & Metodoloji Danışmanı
+              Veri & Metodoloji
             </div>
             <h3 className="text-xl font-bold font-heading text-[#1e3a5f]">
-              Murat Yılmaz <span className="text-sm font-normal text-gray-500 block sm:inline sm:ml-2">— Kıdemli İnşaat Mühendisi (15+ Yıl Şantiye Tecrübesi)</span>
+              MaliyetHesap
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed mt-2 mb-4">
               MaliyetHesap algoritmaları; Türkiye genelindeki hazır beton, nervürlü inşaat demiri, işçilik yevmiyeleri ve Bakanlık tebliğleri doğrultusunda periyodik olarak doğrulanmaktadır.
             </p>
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-bold text-gray-600">
-              <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#2E7D52]"></span>Doğrulanmış Mühendislik Algoritması</span>
+              <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#2E7D52]"></span>Resmi Tebliğ & Piyasa Verisi</span>
               <span>•</span>
               <span className="text-[#1e3a5f]">Güncellenme: Eylül 2026</span>
             </div>
