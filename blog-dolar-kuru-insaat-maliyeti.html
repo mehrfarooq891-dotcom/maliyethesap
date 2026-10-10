@@ -53,10 +53,10 @@
       "dateModified": "2026-07-18",
       "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&fm=webp&fit=crop&q=80",
       "author": {
-          "@type": "Organization",
-          "name": "MaliyetHesap",
-          "url": "https://maliyethesap.com"
-        },
+        "@type": "Organization",
+        "name": "MaliyetHesap",
+        "url": "https://maliyethesap.com"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "MaliyetHesap",
@@ -80,6 +80,38 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "TÜİK tarafından her ayın 10'unda yayımlanan 'İnşaat Maliyet Endeksi (İME)' ve malzeme/işçilik alt endeksleridir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Döviz kurundaki %10'luk artış 100 m² evin maliyetini kaç TL artırır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kurdaki her %10'luk yükseliş inşaat maliyet endeksine ortalama %6-7 oranında yansıdığından, 2.200.000 TL bütçeli 100 m² bir evin toplam maliyeti 1-2 ay içinde yaklaşık 130.000 - 155.000 TL artar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dolar kuruna en duyarlı 3 inşaat malzemesi hangisidir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Londra Metal Borsası'na endeksli alüminyum/bakır (%80 ithal girdi), dolar bazlı hurda ile üretilen nervürlü inşaat demiri (%70 ithal girdi) ve ithal komponentli mekanik/iklimlendirme cihazları (%65 ithal girdi) kura en hızlı tepki veren kalemlerdir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Beton santrali ve demir tüccarıyla sabit fiyatlı bağlantı nasıl yapılır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Projede hesaplanan toplam demir tonajı ve beton metreküpü üzerinden ruhsat aşamasında peşin veya vadeli çek ödemesi yapılarak ton/m³ birim fiyatı sözleşmeyle sabitlenir; malzeme şantiye ilerledikçe parti parti çekilir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Enflasyonist ortamda inşaata başlamak mı yoksa beklemek mi daha mantıklıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Finansmanı (nakit veya onaylı kredi) hazır olan projelerde beklemek yerine malzemeyi bağlayarak hemen başlamak avantajlıdır; ancak bütçenin yarısından fazlası eksikse kur ve işçilik artışları nedeniyle yarım kalan inşaat daha yüksek maliyet çıkarır."
           }
         }
       ]
@@ -142,6 +174,9 @@
   <!-- Article Content -->
   <main class="max-w-4xl mx-auto px-6 py-12">
     <article class="bg-white rounded-3xl p-8 md:p-12 border border-[#E2DDD6] shadow-sm space-y-8 text-base md:text-lg leading-relaxed text-[#0f1d30]">
+      <p class="bg-[#FFF8F0] p-5 rounded-2xl border border-[#E2DDD6] text-gray-800 leading-relaxed">
+        <strong>Doğrudan cevap:</strong> Türkiye'de döviz kurundaki her %10'luk artış, TÜİK inşaat maliyet endeksine 1-2 ay içinde %6 ila %7 yükseliş olarak yansır; ithal hurdaya bağlı inşaat demiri (%70 döviz duyarlı) ve alüminyum doğrama (%80 döviz duyarlı) kur değişimlerini 1-7 gün içinde doğrudan fiyatlarına aktarır.
+      </p>
       
       <p class="font-medium text-lg text-gray-700 leading-relaxed border-l-4 border-[#E8600A] pl-4 py-1">
         İnşaat demiri, enerji, alüminyum ve ithal mekanik ekipmanların döviz kuru dalgalanmalarına karşı duyarlılığı ve sözleşme stratejileri.
@@ -169,6 +204,65 @@
         İnşaata başlarken demir ve beton ihtiyacını toptan bağlamak, avans karşılığı vadeli sabit fiyat sözleşmesi yapmak döviz dalgalanmalarından korunmanın en etkili yoludur.
       </p>
 
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Döviz Kuru Hangi İnşaat Malzemesini Ne Kadar Etkiler? (Kalem Kalem Analiz)
+      </h2>
+      <p>Bir konut inşaatında kullanılan malzemelerin tamamı yerli fabrikalarda üretiliyor gibi görünse de, üretimde kullanılan hammadde ve enerji girdileri uluslararası emtia borsalarına (LME ve küresel hurda endeksleri) bağlıdır. Kaba ve ince inşaat kalemlerinin döviz kuruna duyarlılık yapısı şöyledir:</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li><strong>Nervürlü İnşaat Demiri (%70 İthalat / Dolar Etkisi):</strong> Türkiye'deki ark ocaklı haddehaneler hurda demiri dolar bazında ithal eder. Kurdaki değişim aynı gün veya 1-3 gün içinde ton fiyatlarına yansır. Güncel ton rakamları için <a href="/blog-insaat-demiri-fiyatlari-2026.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">2026 inşaat demiri fiyatları</a> tablomuzu inceleyebilirsiniz.</li>
+          <li><strong>Hazır Beton ve Çimento (%50 Enerji / Döviz Etkisi):</strong> Klinker fırınlarında kullanılan ithal kömür, petrokök ve elektrik enerjisi dövize duyarlıdır. Güncel metreküp fiyatları için <a href="/blog-cimento-fiyatlari-2026.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">çimento ve hazır beton fiyatları</a> rehberimize bakabilirsiniz.</li>
+          <li><strong>Alüminyum, Bakır Kablo ve Cam (%80 Döviz Etkisi):</strong> Alüminyum biyet ve elektrolitik bakır Londra Metal Borsası (LME) dolar fiyatı üzerinden anlık güncellenir.</li>
+          <li><strong>Mekanik Tesisat ve İklimlendirme (%65 Döviz Etkisi):</strong> Kombi eşanjörleri, sirkülasyon pompaları, ısı pompaları ve VRF üniteleri Euro ve Dolar kuruna endekslidir.</li>
+        </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        2026 Kur Senaryoları: %10 ve %20 Kur Artışının 100 m² Eve Maliyet Etkisi
+      </h2>
+      <p>Döviz kurundaki %10'luk artışın toplam inşaat maliyetini ortalama %6 – %7 oranında artırdığı piyasa kuralından hareketle, 2026 yılında 2.200.000 TL baz bütçeli 100 m² müstakil bir evin kur senaryolarına göre maliyet değişimi aşağıdaki tabloda modellenmiştir:</p>
+        
+      <div class="overflow-x-auto border border-[#E2DDD6] rounded-2xl shadow-sm my-6">
+        <table class="w-full text-left text-sm md:text-base">
+          <thead class="bg-[#1e3a5f] text-white font-heading text-xs md:text-sm">
+            <tr><th class="p-3.5 md:p-4">İnşaat Bütçe Kalemi</th><th class="p-3.5 md:p-4">Baz Bütçe Payı</th><th class="p-3.5 md:p-4">%10 Kur Artışında Maliyet Farkı</th><th class="p-3.5 md:p-4">%20 Kur Artışında Maliyet Farkı</th><th class="p-3.5 md:p-4">Korunma (Hedge) Yöntemi</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Demir & Çelik Karkas</td><td class="p-3.5 text-gray-700 font-medium">%18 - %22</td><td class="p-3.5 text-gray-700 font-medium">+%8 ila +%9 Artış</td><td class="p-3.5 text-gray-700 font-medium">+%16 ila +%18 Artış</td><td class="p-3.5 text-gray-700 font-medium">İnşaat başında tonajlı peşin bağlantı</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Hazır Beton & Duvar</td><td class="p-3.5 text-gray-700 font-medium">%20 - %22</td><td class="p-3.5 text-gray-700 font-medium">+%5 ila +%6 Artış</td><td class="p-3.5 text-gray-700 font-medium">+%10 ila +%12 Artış</td><td class="p-3.5 text-gray-700 font-medium">Beton santraliyle sabit m³ sözleşmesi</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Doğrama, Elektrik & Mekanik</td><td class="p-3.5 text-gray-700 font-medium">%20 - %25</td><td class="p-3.5 text-gray-700 font-medium">+%7 ila +%8 Artış</td><td class="p-3.5 text-gray-700 font-medium">+%14 ila +%16 Artış</td><td class="p-3.5 text-gray-700 font-medium">Erken sipariş ve depo teslim alım</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Şantiye İşçilik & Yevmiyeler</td><td class="p-3.5 text-gray-700 font-medium">%30 - %35</td><td class="p-3.5 text-gray-700 font-medium">İlk 3 ay sabit, 6 ayda +%5</td><td class="p-3.5 text-gray-700 font-medium">6 ay sonunda enflasyon geçişi</td><td class="p-3.5 text-gray-700 font-medium">Götürü TL sözleşme ve net takvim</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">TOPLAM İNŞAAT MALİYETİ</td><td class="p-3.5 text-gray-700 font-medium">%100</td><td class="p-3.5 text-gray-700 font-medium">Ortalama +%6 - %7 Ek Yük</td><td class="p-3.5 text-gray-700 font-medium">Ortalama +%12 - %14 Ek Yük</td><td class="p-3.5 text-gray-700 font-medium">%10-15 Tampon Bütçe + Malzeme Bağlama</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        İşçilik Ücretleri ve Usta Yevmiyeleri Döviz Kurundan Nasıl Etkilenir?
+      </h2>
+      <p>Malzeme fiyatları döviz kuruna 1 gün ile 1 hafta arasında tepki verirken, kalıpçı, demirci, sıvacı ve seramik ustası yevmiyeleri kura doğrudan değil, 3 ila 6 ay gecikmeli olarak enflasyon ve asgari ücret güncellemeleri üzerinden tepki verir.</p>
+        <p>Bu gecikme süresi, inşaata başlayan arsa sahipleri için önemli bir planlama fırsatı sunar: döviz kurunun hareketlendiği dönemlerde malzeme alımlarını hızla sabitleyip işçilik sözleşmelerini TL bazlı götürü usulde imzalamak, toplam bütçe sapmasını yarı yarıya azaltır.</p>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        İnşaat Yaparken Kur ve Enflasyon Riskinden Korunmanın 5 Kanıtlanmış Yolu
+      </h2>
+      <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+          <li><strong>Demir ve betonu ruhsat çıkar çıkmaz bağlayın:</strong> Şantiyede yeriniz olmasa bile demir tüccarı veya beton santraliyle avans ödemeli "sabit fiyatlı ton/m³ bağlantısı" yaparak malzemeyi döküm gününde peyderpey çekin.</li>
+          <li><strong>İthal oranı yüksek ürünleri önceden satın alın:</strong> Kombi, ısı pompası, elektrik anahtar/kablo grubu, ankastre ve vitrifiye ürünleri kapalı bir depoda saklanabilir; bunları ince iş aşamasını beklemeden almak kur şokundan korur.</li>
+          <li><strong>Sözleşmelerde TÜİK İME (İnşaat Maliyet Endeksi) formülü kullanın:</strong> Uzun süreli işlerde keyfi zam taleplerini önlemek için fiyat farkı maddesini resmi TÜİK endeksine bağlayın.</li>
+          <li><strong>İnşaat süresini uzatmayın:</strong> Türkiye'de en pahalı inşaat, yarım kalan veya yavaş ilerleyen inşaattır. 6 ayda bitecek bir villayı 18 aya yaymak kur ve işçilik zamlarına üç kez yakalanmak demektir.</li>
+          <li><strong>Bütçede mutlaka %10-15 döviz/fiyat farkı tamponu tutun:</strong> Tüm nakdinizi kaba inşaata bağlamayın; ince iş aşamasındaki kur dalgalanmaları için likit rezerv ayırın.</li>
+        </ol>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Müteahhit Sözleşmelerinde Fiyat Farkı ve Kur Şerhi Nasıl Yazılmalı?
+      </h2>
+      <p>Anahtar teslim müteahhitlik sözleşmelerinde en sık yaşanan hukuki uyuşmazlık, inşaat sürerken kurun yükselmesi üzerine müteahhidin "fiyatlar arttı, bu rakama bitiremem" diyerek şantiyeyi durdurmasıdır. Türk Borçlar Kanunu'nun 480. maddesine göre götürü bedel sözleşmelerde yüklenici eseri kararlaştırılan bedelle bitirmekle yükümlüdür; ancak aşırı ifa güçlüğü davaları süreci yıllarca kilitleyebilir.</p>
+        <p>Bunu önlemek için <a href="/blog-insaat-hakedisi-nedir.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">inşaat hakediş ve ödeme planı</a> hazırlanırken; ana malzeme ödemelerinin doğrudan mal sahibi tarafından tedarikçiye yapılması veya sözleşmeye belirli bir kur/endeks eşiğinin (%15 üstü gibi) aşılması halinde uygulanacak şeffaf bir fark formülü eklenmesi her iki tarafı da korur.</p>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Yerli Malzeme Alternatifleri ile Döviz Bağımlılığını Azaltmak Mümkün mü?
+      </h2>
+      <p>Kaba inşaatta demir ve çimentonun alternatifi olmasa da, toplam bütçenin %52-58'ini oluşturan ince işlerde ithal ürünler yerine 1. sınıf yerli üreticileri tercih etmek döviz bağımlılığını ciddi biçimde düşürür. İthal porselen seramik, ithal batarya ve ithal duvar kağıdı yerine Türkiye'nin kendi madenlerinden üretilen yerli granit seramik, yerli vitrifiye ve yerli doğrama profillerini seçmek kalite kaybı olmadan ince iş bütçesinde %25-35 tasarruf sağlar. Güncel proje bütçenizi <a href="/#hesaplama" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">inşaat maliyeti hesaplama aracı</a> ile test edebilirsiniz.</p>
 
       <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
         2026 Yılı Güncel Fiyat ve Maliyet Tablosu
@@ -218,7 +312,49 @@
           </p>
         </div>
 
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Döviz kurundaki %10'luk artış 100 m² evin maliyetini kaç TL artırır?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Kurdaki her %10'luk yükseliş inşaat maliyet endeksine ortalama %6-7 oranında yansıdığından, 2.200.000 TL bütçeli 100 m² bir evin toplam maliyeti 1-2 ay içinde yaklaşık 130.000 - 155.000 TL artar.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Dolar kuruna en duyarlı 3 inşaat malzemesi hangisidir?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Londra Metal Borsası'na endeksli alüminyum/bakır (%80 ithal girdi), dolar bazlı hurda ile üretilen nervürlü inşaat demiri (%70 ithal girdi) ve ithal komponentli mekanik/iklimlendirme cihazları (%65 ithal girdi) kura en hızlı tepki veren kalemlerdir.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Beton santrali ve demir tüccarıyla sabit fiyatlı bağlantı nasıl yapılır?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Projede hesaplanan toplam demir tonajı ve beton metreküpü üzerinden ruhsat aşamasında peşin veya vadeli çek ödemesi yapılarak ton/m³ birim fiyatı sözleşmeyle sabitlenir; malzeme şantiye ilerledikçe parti parti çekilir.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Enflasyonist ortamda inşaata başlamak mı yoksa beklemek mi daha mantıklıdır?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Finansmanı (nakit veya onaylı kredi) hazır olan projelerde beklemek yerine malzemeyi bağlayarak hemen başlamak avantajlıdır; ancak bütçenin yarısından fazlası eksikse kur ve işçilik artışları nedeniyle yarım kalan inşaat daha yüksek maliyet çıkarır.
+          </p>
+        </div>
       </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Sonuç: Kur Dalgalanmalarına Karşı Akılcı Şantiye Finansmanı
+      </h2>
+      <p>İnşaat maliyetlerinin döviz kuruna olan %60-70'lik dolaylı bağımlılığı, şantiye yönetimini bir mühendislik işi olduğu kadar bir finansman yönetimi haline getirmiştir. İnşaata başlamadan önce demir ve beton bağlantısını sabitlemek, ithal mekanik ekipmanları erken tedarik etmek ve bütçede %10-15 güvenlik marjı bırakmak projenizi kur şoklarına karşı koruyacaktır.</p>
+
 
       <!-- Contextual Calculator Link Box -->
       <div class="bg-[#FFF8F0] border-l-4 border-[#E8600A] p-5 rounded-r-2xl my-6 text-sm md:text-base text-gray-700 shadow-xs">

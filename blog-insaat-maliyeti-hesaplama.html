@@ -53,10 +53,10 @@
       "dateModified": "2026-08-24",
       "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&fm=webp&fit=crop&q=80",
       "author": {
-          "@type": "Organization",
-          "name": "MaliyetHesap",
-          "url": "https://maliyethesap.com"
-        },
+        "@type": "Organization",
+        "name": "MaliyetHesap",
+        "url": "https://maliyethesap.com"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "MaliyetHesap",
@@ -96,6 +96,38 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Konut projelerinde kaba inşaat (hafriyat, kalıp, demir, beton, tuğla duvar ve çatı iskeleti) toplam anahtar teslim bütçenin yaklaşık %40 ila %45'ini oluşturur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brüt inşaat alanı ile net inşaat alanı arasındaki fark bütçeyi nasıl etkiler?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İnşaat maliyeti daima dıştan dışa ölçülen brüt inşaat alanı (duvar kalınlıkları, balkonlar, teraslar ve merdiven kovası dahil) üzerinden hesaplanır; 100 m² net evin brüt alanı yaklaşık 120 m² olduğu için bütçe brüt m² ile çarpılmalıdır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "100 m² bir evin inşaatında işçilik toplam bütçenin yüzde kaçını oluşturur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026 yılı şantiye verilerine göre anahtar teslim bir konut inşaatında toplam bütçenin ortalama %62 - %68'ini malzeme giderleri, %32 - %38'ini ise kalıp, demir, sıva, tesisat ve ince montaj usta işçilikleri oluşturmaktadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İki katlı (dubleks) ev yapmak aynı metrekaredeki tek katlı evden daha mı ucuzdur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet. Örneğin 150 m² tek katlı bir evde 150 m² temel ve 150 m² çatı yapılırken, 75+75 m² iki katlı dubleks evde temel ve çatı alanı yarı yarıya (75 m²'ye) düştüğü için dubleks yapı metrekare bazında %8 - %12 daha ekonomik çıkar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bodrum kat yapmak inşaat maliyetini ne kadar artırır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toprak altında kalan bodrum katlar; derin hafriyat, çevre betonarme perde duvarları, çift kat membran bohçalama su yalıtımı ve drenaj gerektirdiği için normal bir kata kıyasla kaba inşaat bazında %25 - %35 daha maliyetlidir."
           }
         }
       ]
@@ -158,6 +190,9 @@
   <!-- Article Content -->
   <main class="max-w-4xl mx-auto px-6 py-12">
     <article class="bg-white rounded-3xl p-8 md:p-12 border border-[#E2DDD6] shadow-sm space-y-8 text-base md:text-lg leading-relaxed text-[#0f1d30]">
+      <p class="bg-[#FFF8F0] p-5 rounded-2xl border border-[#E2DDD6] text-gray-800 leading-relaxed">
+        <strong>Doğrudan cevap:</strong> 2026 yılında inşaat maliyeti hesaplama iki yöntemle yapılır: hızlı ön bütçe için toplam brüt inşaat alanı (m²) × güncel m² birim fiyatı (19.000 – 29.000 TL/m²) formülü kullanılır; kesin şantiye bütçesi içinse kaba yapı (%38-%44), ince iş (%25-%30), tesisat (%10-%15), ruhsat (%5-%8) ve %10 tampon payı kalem kalem toplanır.
+      </p>
       
       <!-- GEO Hızlı Özet Kutusu -->
       <div class="bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-5 md:p-6 text-gray-900 shadow-sm space-y-2">
@@ -196,6 +231,73 @@
         Hafriyatta kaya çıkması, zemin suyu, hava muhalefeti veya malzeme fiyat zamları gibi öngörülemeyen durumlar için toplam bütçenin en az %10'u kadar bir acil durum fonu ayrılmalıdır. Parselinizde sondaj masraflarını öngörmek adına <a href="/blog-zemin-etudu-maliyeti.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">zemin etüdü fiyatları</a> sayfamıza göz atabilirsiniz.
       </p>
 
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Yöntem 1: Metrekare (m²) Birim Fiyat Yöntemi ile Hızlı Maliyet Hesaplama
+      </h2>
+      <p>Henüz mimari projesi çizilmemiş veya arsa alım aşamasında olan yatırımcılar için en pratik yöntem <strong>Toplam Brüt İnşaat Alanı × m² Birim Maliyet</strong> formülüdür. Burada dikkat edilmesi gereken kritik nokta, hesabın "net süpürülebilir alan" üzerinden değil; duvar kalınlıkları, balkonlar, teraslar ve merdiven boşlukları dahil <strong>brüt inşaat alanı</strong> üzerinden yapılmasıdır:</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li><strong>2026 Ekonomik Konut m² Birim Fiyatı:</strong> 18.500 – 21.500 TL/m² (Standart PVC, laminat parke, kombi-radyatör).</li>
+          <li><strong>2026 Standart Konut / Müstakil Ev m² Birim Fiyatı:</strong> 22.000 – 27.500 TL/m² (Yerden ısıtma, taşyünü mantolama, 1. sınıf yerli seramik/akrilik mutfak).</li>
+          <li><strong>2026 Lüks Villa m² Birim Fiyatı:</strong> 32.000 – 45.000 TL/m² (Alüminyum Hebe-Schiebe, ısı pompası, akıllı ev, özel cephe). Segment farklarının detaylarını <a href="/blog-luks-ekonomik-insaat-farki.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">ekonomik, standart ve lüks inşaat farkları</a> rehberimizde inceleyebilirsiniz.</li>
+        </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Yöntem 2: Kalem Kalem (Metraj ve Keşif) Yöntemi ile Kesin Bütçe Tablosu
+      </h2>
+      <p>Projeler onaylandıktan sonra müteahhitle sözleşme imzalamak veya malzeme siparişi vermek için m² ortalaması yetmez; <strong>Kalem Kalem Metraj (Keşif) Yöntemi</strong> kullanılır. 2026 yılında 100 m² standart bir müstakil evin (ortalama 2.400.000 TL toplam bütçe) kalem kalem metraj ve maliyet dağılım tablosu şöyledir:</p>
+        
+      <div class="overflow-x-auto border border-[#E2DDD6] rounded-2xl shadow-sm my-6">
+        <table class="w-full text-left text-sm md:text-base">
+          <thead class="bg-[#1e3a5f] text-white font-heading text-xs md:text-sm">
+            <tr><th class="p-3.5 md:p-4">İmalat Kalemi</th><th class="p-3.5 md:p-4">Tipik Metraj (100 m² Ev)</th><th class="p-3.5 md:p-4">Bütçe Payı (%)</th><th class="p-3.5 md:p-4">2026 Tahmini Tutar (TL)</th><th class="p-3.5 md:p-4">Hesaplama Birimi</th></tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            <tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Proje, Zemin Etüdü & Ruhsat Harçları</td><td class="p-3.5 text-gray-700 font-medium">1 Takım Dosya + Sondaj</td><td class="p-3.5 text-gray-700 font-medium">%6 - %8</td><td class="p-3.5 text-gray-700 font-medium">150.000 - 210.000 TL</td><td class="p-3.5 text-gray-700 font-medium">Paket / m² Harç</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Hafriyat, Grobeton & Temel İzolasyonu</td><td class="p-3.5 text-gray-700 font-medium">150-200 m³ Kazı + Membran</td><td class="p-3.5 text-gray-700 font-medium">%5 - %7</td><td class="p-3.5 text-gray-700 font-medium">130.000 - 180.000 TL</td><td class="p-3.5 text-gray-700 font-medium">m³ Kazı + m² Yalıtım</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Hazır Beton (C30/37 Pompalı)</td><td class="p-3.5 text-gray-700 font-medium">80 - 95 m³ Beton</td><td class="p-3.5 text-gray-700 font-medium">%13 - %15</td><td class="p-3.5 text-gray-700 font-medium">300.000 - 380.000 TL</td><td class="p-3.5 text-gray-700 font-medium">m³ Birim Fiyat</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Nervürlü İnşaat Demiri + İşçilik</td><td class="p-3.5 text-gray-700 font-medium">3.8 - 4.5 Ton Demir + Kalıp</td><td class="p-3.5 text-gray-700 font-medium">%18 - %22</td><td class="p-3.5 text-gray-700 font-medium">420.000 - 540.000 TL</td><td class="p-3.5 text-gray-700 font-medium">Ton Demir + m² Kalıp</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Duvar Örümü ve Çatı Sistemi</td><td class="p-3.5 text-gray-700 font-medium">180 m² Duvar + 135 m² Çatı</td><td class="p-3.5 text-gray-700 font-medium">%9 - %11</td><td class="p-3.5 text-gray-700 font-medium">220.000 - 280.000 TL</td><td class="p-3.5 text-gray-700 font-medium">m² Uygulama</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Dış Cephe Mantolama, Sıva & Şap</td><td class="p-3.5 text-gray-700 font-medium">200 m² Cephe + 280 m² İç Sıva</td><td class="p-3.5 text-gray-700 font-medium">%10 - %12</td><td class="p-3.5 text-gray-700 font-medium">240.000 - 310.000 TL</td><td class="p-3.5 text-gray-700 font-medium">m² Paket</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Elektrik, Su & Yerden Isıtma Tesisatı</td><td class="p-3.5 text-gray-700 font-medium">Komple Altyapı + Kombi</td><td class="p-3.5 text-gray-700 font-medium">%11 - %14</td><td class="p-3.5 text-gray-700 font-medium">270.000 - 360.000 TL</td><td class="p-3.5 text-gray-700 font-medium">Daire / Nokta Başı</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">Doğrama, Seramik, Parke, Mutfak, Kapı</td><td class="p-3.5 text-gray-700 font-medium">İnce Montaj Kalemleri</td><td class="p-3.5 text-gray-700 font-medium">%18 - %22</td><td class="p-3.5 text-gray-700 font-medium">450.000 - 580.000 TL</td><td class="p-3.5 text-gray-700 font-medium">m² / mtül / Adet</td></tr>
+<tr class="hover:bg-gray-50 border-b border-gray-100"><td class="p-3.5 font-bold text-[#1e3a5f]">%10 Beklenmedik Gider Tamponu</td><td class="p-3.5 text-gray-700 font-medium">Fiyat Farkı & Revizyon</td><td class="p-3.5 text-gray-700 font-medium">%10</td><td class="p-3.5 text-gray-700 font-medium">220.000 - 280.000 TL</td><td class="p-3.5 text-gray-700 font-medium">Güvenlik Rezervi</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Kaba İnşaat Metrajı Pratik Olarak Nasıl Çıkarılır? (Demir, Beton, Duvar Katsayıları)
+      </h2>
+      <p>Statik projeniz henüz elinize ulaşmadan kaba inşaat malzeme miktarını %90 doğrulukla tahmin etmek için mühendislerin kullandığı pratik metrekare katsayıları şunlardır:</p>
+        <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+          <li><strong>Hazır Beton Miktarı:</strong> Toplam brüt inşaat alanının <strong>0.80 ile 0.90 katı</strong> kadar metreküp beton gider (Örneğin 100 m² evde radye temel dahil 80 – 90 m³ beton).</li>
+          <li><strong>İnşaat Demiri Miktarı:</strong> Deprem bölgesine ve kat sayısına göre m² başına <strong>38 kg ile 45 kg</strong> nervürlü demir gider (100 m² evde 3.8 – 4.5 ton demir). Detaylar için <a href="/blog-insaat-demiri-fiyatlari-2026.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">2026 inşaat demiri fiyatları ve m² sarfiyatı</a> tablomuza bakabilirsiniz.</li>
+          <li><strong>Kalıp Yüzey Alanı:</strong> Toplam inşaat alanının <strong>2.2 ile 2.6 katı</strong> kadar kalıp işçiliği metrekaresi oluşur (100 m² evde yaklaşık 240 m² kalıp).</li>
+          <li><strong>Duvar Blok Alanı (Gazbeton/Tuğla):</strong> Toplam taban alanının yaklaşık <strong>1.6 ile 1.8 katı</strong> kadar net duvar örme alanı çıkar.</li>
+        </ol>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Resmi Birim Maliyet (Bakanlık Tebliği) ile Piyasa Maliyeti Arasındaki Fark Nedir?
+      </h2>
+      <p>Bütçe araştırması yaparken Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'nın her yıl Resmî Gazete'de yayımladığı <a href="/blog-2026-resmi-yapi-birim-maliyetleri.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">2026 resmi yapı yaklaşık birim maliyetleri</a> (örneğin III. Sınıf A Grubu konutlar için 19.800 TL/m², III. Sınıf B Grubu için 21.050 TL/m²) ile karşılaşabilirsiniz.</p>
+        <p>Unutulmamalıdır ki resmi tebliğ rakamları belediye ruhsat harcı, yapı denetim ücreti ve SGK asgari işçilik primini hesaplamak için kullanılan vergi matrahıdır ve bu rakamlara KDV, arsa, bahçe duvarı, peyzaj, altyapı kazıları ve lüks iç mekan tercihleri dahil değildir. Gerçek şantiye bütçesi her zaman piyasa metrajlarıyla hesaplanmalıdır.</p>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        İnşaat Bütçesi Yaparken En Sık Düşülen 5 Hesap Hatası
+      </h2>
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li><strong>Net alan üzerinden hesap yapmak:</strong> 100 m² net kullanım alanı olan bir evin balkonlar, duvarlar ve saçaklarla brüt inşaat alanı 120-125 m²'dir; müteahhitler brüt alan üzerinden fiyat verir.</li>
+          <li><strong>Bahçe duvarı ve çevre düzenlemesini unutmak:</strong> 500 m² bir arsanın etrafına 90 metre betonarme bahçe duvarı, demir kapı ve otopark taşı yaptırmak tek başına 250.000 – 400.000 TL tutar.</li>
+          <li><strong>KDV ve nakliyeyi birim fiyata dahil sanmak:</strong> Hazır beton ve demir tekliflerinin çoğunda %20 KDV ve pompa/nakliye hariç tutulur.</li>
+          <li><strong>SGK ve iskan kapanış masraflarını atlamak:</strong> <a href="/blog-insaat-gizli-maliyetler.html" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">İnşaat gizli maliyetleri</a> bütçeye baştan eklenmelidir.</li>
+          <li><strong>Tek bir ustadan fiyat alıp sözleşme yapmak:</strong> Her kalem için en az 3 yazılı teklif alınmalıdır.</li>
+        </ul>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Online Hesaplama Aracı ile 30 Saniyede PDF Maliyet Raporu Nasıl Alınır?
+      </h2>
+      <p>Excel tablolarıyla uğraşmadan şehrinizdeki güncel malzeme ve işçilik çarpanlarıyla bütçe çıkarmak için ana sayfamızdaki <a href="/#hesaplama" class="text-[#E8600A] font-bold underline hover:text-[#1e3a5f]">inşaat maliyeti hesaplama aracı</a> modülüne ilinizi, inşaat metrekaresini ve yapı kalitesini girmeniz yeterlidir. Hesapla butonuna bastığınızda hafriyattan çatıya, tesisattan resmi harçlara kadar tüm kalemlerin dökümünü görebilir ve <strong>"PDF Rapor İndir"</strong> butonuyla çıktısını alarak müteahhit görüşmelerinde referans cetvel olarak kullanabilirsiniz.</p>
 
       <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
         2026 Yılı Güncel Fiyat ve Maliyet Tablosu
@@ -264,7 +366,49 @@
           </p>
         </div>
 
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Brüt inşaat alanı ile net inşaat alanı arasındaki fark bütçeyi nasıl etkiler?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            İnşaat maliyeti daima dıştan dışa ölçülen brüt inşaat alanı (duvar kalınlıkları, balkonlar, teraslar ve merdiven kovası dahil) üzerinden hesaplanır; 100 m² net evin brüt alanı yaklaşık 120 m² olduğu için bütçe brüt m² ile çarpılmalıdır.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> 100 m² bir evin inşaatında işçilik toplam bütçenin yüzde kaçını oluşturur?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            2026 yılı şantiye verilerine göre anahtar teslim bir konut inşaatında toplam bütçenin ortalama %62 - %68'ini malzeme giderleri, %32 - %38'ini ise kalıp, demir, sıva, tesisat ve ince montaj usta işçilikleri oluşturmaktadır.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> İki katlı (dubleks) ev yapmak aynı metrekaredeki tek katlı evden daha mı ucuzdur?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Evet. Örneğin 150 m² tek katlı bir evde 150 m² temel ve 150 m² çatı yapılırken, 75+75 m² iki katlı dubleks evde temel ve çatı alanı yarı yarıya (75 m²'ye) düştüğü için dubleks yapı metrekare bazında %8 - %12 daha ekonomik çıkar.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <h3 class="font-bold text-[#1e3a5f] text-base md:text-lg mb-2 flex items-center gap-2">
+            <span class="text-[#E8600A]">❓</span> Bodrum kat yapmak inşaat maliyetini ne kadar artırır?
+          </h3>
+          <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+            Toprak altında kalan bodrum katlar; derin hafriyat, çevre betonarme perde duvarları, çift kat membran bohçalama su yalıtımı ve drenaj gerektirdiği için normal bir kata kıyasla kaba inşaat bazında %25 - %35 daha maliyetlidir.
+          </p>
+        </div>
       </div>
+
+      <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#1e3a5f] pt-4 border-t border-[#E2DDD6]">
+        Sonuç: Doğru Metraj ve %10 Güvenlik Marjı ile Hatasız Bütçe
+      </h2>
+      <p>2026 yılında başarılı bir inşaat bütçesi çıkarmanın sırrı; ilk fizibiliteyi brüt metrekare birim fiyatıyla (19.000 – 29.000 TL/m²) yaptıktan sonra, ruhsat projeleriyle birlikte kalem kalem metraj tablosuna geçmek ve toplam rakamın üzerine mutlaka %10 beklenmedik gider tamponu eklemektir.</p>
+
 
       <!-- Contextual Calculator Link Box -->
       <div class="bg-[#FFF8F0] border-l-4 border-[#E8600A] p-5 rounded-r-2xl my-6 text-sm md:text-base text-gray-700 shadow-xs">
