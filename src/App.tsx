@@ -942,8 +942,8 @@ export default function App() {
             <div>
               <div className="font-bold text-white mb-3 uppercase text-xs tracking-wider">İletişim & Destek</div>
               <p className="text-xs leading-relaxed mb-2">Sorularınız veya iş birliği için:</p>
-              <a href="mailto:info@maliyethesap.com" className="text-xs text-[#E8600A] font-bold hover:underline">
-                info@maliyethesap.com
+              <a href="mailto:contact@maliyethesap.com" className="text-xs text-[#E8600A] font-bold hover:underline">
+                contact@maliyethesap.com
               </a>
             </div>
           </div>
