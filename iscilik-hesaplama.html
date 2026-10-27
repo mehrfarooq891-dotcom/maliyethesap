@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İşçilik Hesaplama 2026 | MaliyetHesap</title>
+  <meta name="description" content="İşçilik tutarını hesaplayın: iş türü, alan ve güncel işçilik birim fiyatıyla toplam işçilik bedeli." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://maliyethesap.com/iscilik-hesaplama" />
+  <meta property="og:title" content="İşçilik Hesaplama 2026 | MaliyetHesap" />
+  <meta property="og:description" content="İşçilik tutarını hesaplayın: iş türü, alan ve güncel işçilik birim fiyatıyla toplam işçilik bedeli." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maliyethesap.com/iscilik-hesaplama" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { navy: '#1e3a5f', darkNavy: '#0f1d30', orange: '#E8600A', cream: '#FFF8F0', borderGray: '#E2DDD6' }, fontFamily: { heading: ['Nunito', 'sans-serif'], body: ['Source Sans Pro', 'sans-serif'] } } } };</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "MaliyetHesap",
+      "url": "https://maliyethesap.com/",
+      "inLanguage": "tr"
+    },
+    {
+      "@type": "Organization",
+      "name": "MaliyetHesap",
+      "url": "https://maliyethesap.com/"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "MaliyetHesap İşçilik Hesaplama 2026",
+      "url": "https://maliyethesap.com/iscilik-hesaplama",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "tr",
+      "description": "İşçilik tutarını hesaplayın: iş türü, alan ve güncel işçilik birim fiyatıyla toplam işçilik bedeli.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "İşçilik fiyatı neden sabit değil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usta, şehir ve iş zorluğu fiyatı değiştirir. Güncel teklif almak en doğrusudur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Malzeme dahil mi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır, yalnızca işçilik hesaplanır. Malzeme için ilgili metraj sayfalarını kullanın."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Birden fazla iş nasıl hesaplanır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Her iş türünü ayrı hesaplayıp toplamanız gerekir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Teklif alırken ne sorulmalı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fiyata neyin dahil olduğunu (malzeme, nakliye, temizlik), iş süresini ve garanti koşulunu sorun."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bu hesap kesin fiyat mıdır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır, girdiğiniz birim fiyatla hesaplanan ön tutardır."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body class="bg-[#FFF8F0] text-[#0f1d30] font-body">
+  <header class="bg-[#1e3a5f] text-white py-4 px-6 md:px-12 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-2xl font-extrabold font-heading tracking-tight">Maliyet<span class="text-[#E8600A]">Hesap</span></a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+        <a href="/" class="hover:text-[#E8600A]">Ana Sayfa</a>
+        <a href="/tadilat-maliyeti-hesaplama" class="hover:text-[#E8600A]">Tadilat</a>
+        <a href="/boya-badana-hesaplama" class="hover:text-[#E8600A]">Boya Badana</a>
+        <a href="/konut-kredisi-hesaplama" class="hover:text-[#E8600A]">Konut Kredisi</a>
+        <a href="/blog.html" class="hover:text-[#E8600A]">Blog</a>
+        <a href="/about" class="hover:text-[#E8600A]">Hakkımızda</a>
+      </nav>
+      <a href="#hesaplayici" class="bg-[#E8600A] text-white px-5 py-2.5 rounded-full text-sm font-bold">Hemen Hesapla</a>
+    </div>
+  </header>
+  <section class="bg-gradient-to-b from-[#1e3a5f] to-[#0f1d30] text-white py-14 px-6 text-center">
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-[#E8600A]">İnce İşler • Metraj</div>
+      <h1 class="text-3xl md:text-5xl font-extrabold font-heading leading-tight">İşçilik Hesaplama 2026</h1>
+      <p class="text-white/80 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">Usta işçiliği ne tutar? Alanı ve güncel birim fiyatı girin.</p>
+    </div>
+  </section>
+  
+  <section id="hesaplayici" class="max-w-4xl mx-auto px-6 py-10">
+    <div class="bg-white rounded-2xl shadow-lg border border-[#E2DDD6] p-6 md:p-8">
+      <h2 class="text-2xl font-extrabold font-heading text-[#1e3a5f] mb-6">Hesaplayıcı</h2>
+      <div class="grid md:grid-cols-2 gap-5"><div><label class="block font-bold mb-1" for="is">İş türü</label><select id="is" class="w-full p-3 rounded-lg border border-[#E2DDD6] bg-white"><option value="seramik" selected>Seramik döşeme</option><option value="parke">Parke döşeme</option><option value="siva">Sıva</option><option value="boya">Boya badana</option><option value="duvar">Duvar örümü</option></select></div>
+<div><label class="block font-bold mb-1" for="alan">Alan (m²)</label>
+<input type="number" id="alan" min="1" max="5000" step="1" value="50" class="w-full p-3 rounded-lg border border-[#E2DDD6] bg-white">
+<input type="range" id="alanRange" min="1" max="500" step="1" value="50" class="w-full accent-[#E8600A] cursor-pointer mt-1">
+</div>
+<div><label class="block font-bold mb-1" for="fiyat">İşçilik birim fiyatı (TL/m²)</label>
+<input type="number" id="fiyat" min="0" max="10000" step="50" value="0" class="w-full p-3 rounded-lg border border-[#E2DDD6] bg-white">
+<input type="range" id="fiyatRange" min="0" max="5000" step="50" value="0" class="w-full accent-[#E8600A] cursor-pointer mt-1">
+<p class=text-sm text-gray-600 mt-1>İşçilik fiyatları ustaya, şehre ve iş zorluğuna göre çok değişir; doğrulanmış bir fiyat varsayılmıyor, güncel teklifi girin.</p></div></div>
+      <div id="results" class="mt-8 bg-[#FFF8F0] rounded-xl border border-[#E2DDD6] p-5"></div>
+      <div class="flex flex-wrap gap-3 mt-5">
+        <button onclick="shareLink()" class="bg-[#1e3a5f] text-white px-5 py-2.5 rounded-full text-sm font-bold">🔗 Sonucu Bağlantıyla Paylaş</button>
+        <button onclick="shareWhatsApp()" class="bg-[#25D366] text-white px-5 py-2.5 rounded-full text-sm font-bold">💬 WhatsApp ile Paylaş</button>
+        
+      </div>
+      <p class="text-sm text-gray-600 mt-4">Sonuçlar bilgilendirme amaçlıdır, kesin teklif veya resmî taahhüt değildir. Zemin etüdü ve TBDY koşulları bütçeyi değiştirebilir; zemin sınıfı bu hesaba dahil değildir.</p>
+      <p class="text-sm text-gray-500 mt-1">Son güncelleme: 27 Ekim 2026</p>
+    </div>
+  </section>
+  <script>
+  function fmt(n){ return new Intl.NumberFormat('tr-TR', {maximumFractionDigits: 0}).format(Math.round(n)) + ' TL'; }
+  function val(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+  function out(rows, extra){ document.getElementById('results').innerHTML = '<h3 class="text-xl font-extrabold text-[#1e3a5f] mb-3">Sonuç</h3>' + rows.map(function(r){ return '<div class="flex justify-between gap-4 py-2 border-b border-[#E2DDD6] last:border-0"><span class="text-gray-700">'+r[0]+'</span><strong class="text-[#1e3a5f] text-right">'+r[1]+'</strong></div>'; }).join('') + (extra || ''); }
+  function shareLink(){ var q = new URLSearchParams(); q.set("is", document.getElementById("is").value); q.set("alan", document.getElementById("alan").value); q.set("fiyat", document.getElementById("fiyat").value); var u = window.location.origin + window.location.pathname + '?' + q.toString(); navigator.clipboard.writeText(u).then(function(){ alert('Bağlantı kopyalandı: ' + u); }); }
+  function shareWhatsApp(){ var t = document.getElementById('results').innerText.replace(/\s+/g, ' ').slice(0, 800); window.open('https://wa.me/?text=' + encodeURIComponent('MaliyetHesap sonucu: ' + t + ' ' + window.location.href), '_blank'); }
+  function calculate(){ 
+  var rows = [['İş türü', document.getElementById('is').options[document.getElementById('is').selectedIndex].text], ['Alan', alan.value + ' m²']];
+  if (fiyat.value > 0) rows.push(['Toplam işçilik tutarı', fmt(alan.value * fiyat.value)]);
+  else rows.push(['Toplam işçilik tutarı', 'Birim fiyat girilmedi — güncel teklifi girin']);
+  out(rows, '<p class="text-sm text-gray-600 mt-3">Malzeme bu hesaba dahil değildir. Birden fazla iş türü için her türü ayrı hesaplayın.</p>');
+  }
+  document.getElementById("is").addEventListener("change", calculate);
+var a=document.getElementById("alan"), b=document.getElementById("alanRange");
+a.addEventListener("input", function(){ b.value=this.value; calculate(); });
+b.addEventListener("input", function(){ a.value=this.value; calculate(); });
+var a=document.getElementById("fiyat"), b=document.getElementById("fiyatRange");
+a.addEventListener("input", function(){ b.value=this.value; calculate(); });
+b.addEventListener("input", function(){ a.value=this.value; calculate(); });
+  calculate();
+  </script>
+  <section class="max-w-4xl mx-auto px-6 py-6">
+    <div class="bg-white rounded-2xl border border-[#E2DDD6] p-6 md:p-8 space-y-4 leading-relaxed text-gray-800"><h2 class="text-2xl font-bold text-[#1e3a5f]">İşçilik fiyatı neden varsayılan değil?</h2>
+<p>İşçilik fiyatları şehir, usta deneyimi, iş zorluğu ve metraj büyüklüğüne göre ciddi şekilde değişir. Tek bir fiyat varsaymak yanıltıcı olacağı için bu sayfada fiyat alanı boş bırakılır; aldığınız güncel teklifi girerek toplamı bulursunuz.</p></div>
+  </section>
+  <section class="max-w-4xl mx-auto px-6 py-6">
+    <h2 class="text-2xl font-extrabold font-heading text-[#1e3a5f] mb-5">Sıkça Sorulan Sorular</h2>
+    <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#1e3a5f] mb-2">❓ İşçilik fiyatı neden sabit değil?</h3><p class="text-gray-700 leading-relaxed">Usta, şehir ve iş zorluğu fiyatı değiştirir. Güncel teklif almak en doğrusudur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#1e3a5f] mb-2">❓ Malzeme dahil mi?</h3><p class="text-gray-700 leading-relaxed">Hayır, yalnızca işçilik hesaplanır. Malzeme için ilgili metraj sayfalarını kullanın.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#1e3a5f] mb-2">❓ Birden fazla iş nasıl hesaplanır?</h3><p class="text-gray-700 leading-relaxed">Her iş türünü ayrı hesaplayıp toplamanız gerekir.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#1e3a5f] mb-2">❓ Teklif alırken ne sorulmalı?</h3><p class="text-gray-700 leading-relaxed">Fiyata neyin dahil olduğunu (malzeme, nakliye, temizlik), iş süresini ve garanti koşulunu sorun.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#1e3a5f] mb-2">❓ Bu hesap kesin fiyat mıdır?</h3><p class="text-gray-700 leading-relaxed">Hayır, girdiğiniz birim fiyatla hesaplanan ön tutardır.</p></div></div>
+  </section>
+  <section class="max-w-6xl mx-auto px-6 py-6">
+    <h2 class="text-2xl font-extrabold font-heading text-[#1e3a5f] mb-5">Diğer Hesaplayıcılar</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"><a href="/yarisi-bizden-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Yarısı Bizden Net Maliyet Hesaplama</a><a href="/toplam-butce-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Toplam Bütçe Hesaplama (Arsa + Ruhsat + İnşaat)</a><a href="/detayli-butce-raporu" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Detaylı Bütçe Raporu (Ücretsiz, Yazdırılabilir)</a><a href="/teklif-karsilastirma" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Teklif Karşılaştırma (Teklifim Pahalı mı?)</a><a href="/demir-metraji-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Demir Metrajı Hesaplama</a><a href="/beton-metraji-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Beton Metrajı Hesaplama</a><a href="/seramik-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Seramik Hesaplama</a><a href="/parke-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Parke Hesaplama</a><a href="/sap-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Şap Hesaplama</a><a href="/taks-kaks-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">TAKS / KAKS Hesaplama (Arsama Ne Sığar?)</a><a href="/kat-karsiligi-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Kat Karşılığı Hesaplama</a><a href="/iscilik-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">İşçilik Hesaplama</a><a href="/malzeme-fiyat-panosu" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Malzeme Fiyat Panosu (27 Ekim 2026 Anlık Görünüm)</a><a href="/metodoloji" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Metodoloji ve Fiyat Kaynakları</a><a href="/ornek-butceler" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Örnek Bütçeler (4 Çalışılmış Örnek)</a><a href="/sehirler" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Şehir Rehberleri (12 Şehir)</a><a href="/ne-zaman-baslamali" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Ne Zaman Başlamalıyım? (Maliyet Artışı Rehberi)</a><a href="/tadilat-maliyeti-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Tadilat Maliyeti Hesaplama</a><a href="/boya-badana-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Boya Badana Hesaplama</a><a href="/konut-kredisi-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Konut Kredisi Hesaplama</a><a href="/2026-yapi-birim-maliyetleri" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">2026 Resmi Yapı Birim Maliyetleri</a><a href="/tapu-harci-hesaplama" class="block px-4 py-2 rounded-lg bg-white border border-[#E2DDD6] hover:border-[#E8600A] text-sm font-semibold text-[#1e3a5f]">Tapu Harcı Hesaplama</a></div>
+  </section>
+  <footer class="bg-[#1e3a5f] text-white py-12 px-6 border-t border-white/10 mt-12">
+    <div class="max-w-6xl mx-auto text-center space-y-4">
+      <div class="text-2xl font-extrabold font-heading">Maliyet<span class="text-[#E8600A]">Hesap</span></div>
+      <p class="text-xs text-white/70 max-w-lg mx-auto">Türkiye'nin bağımsız inşaat, tadilat ve konut kredisi hesaplama platformu. Sonuçlar bilgilendirme amaçlıdır.</p>
+      <div class="flex justify-center space-x-6 text-xs text-white/60 pt-2 flex-wrap gap-y-2">
+        <a href="/" class="hover:text-white">Ana Sayfa</a><a href="/blog.html" class="hover:text-white">Blog Rehberleri</a>
+        <a href="/about" class="hover:text-white">Hakkımızda</a><a href="/contact" class="hover:text-white">İletişim</a>
+        <a href="mailto:iletisim@maliyethesap.com" class="hover:text-white">iletisim@maliyethesap.com</a>
+      </div>
+      <p class="text-xs text-white/50">© 2026 MaliyetHesap</p>
+    </div>
+  </footer>
+</body>
+</html>
