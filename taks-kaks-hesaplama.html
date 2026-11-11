@@ -180,6 +180,45 @@ b.addEventListener("input", function(){ a.value=this.value; calculate(); });
     <div class="bg-white rounded-2xl border border-[#E2DDD6] p-6 md:p-8 space-y-4 leading-relaxed text-gray-800"><h2 class="text-2xl font-bold text-[#0C3A2D]">TAKS ve KAKS nedir?</h2>
 <p><strong>TAKS</strong>, binanın zemine oturacağı taban alanının arsa alanına oranıdır. <strong>KAKS (emsal)</strong>, tüm katların toplam inşaat alanının arsa alanına oranıdır. Örneğin 500 m² arsa, TAKS 0,30 ve KAKS 1,50 ise taban 150 m², toplam inşaat alanı 750 m² olur. Bu sayfa, bu iki orandan daire sayısını ve yaklaşık maliyeti çıkarır; ancak imar planındaki çekme mesafeleri, kat adedi sınırı ve ortak alan payları sonucu değiştirir.</p></div>
   </section>
+  <!-- Week 2 P1-3: İlgili Rehberler -->
+  <section class="max-w-4xl mx-auto px-6 py-6">
+    <div class="border-t border-[#E2DDD6] pt-10">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl md:text-3xl font-extrabold font-heading text-[#0C3A2D] flex items-center gap-2 m-0">
+          <span class="text-[#A8871B]">📚</span> İlgili Rehberler
+        </h2>
+        <a href="/blog.html" class="text-xs md:text-sm font-bold text-[#A8871B] hover:text-[#0C3A2D] transition-colors">
+          Tüm Rehberleri Gör →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <a href="/blog-insaat-ruhsati-maliyeti-2026" class="block bg-white p-5 rounded-2xl border border-[#E2DDD6] hover:border-[#C9A227] shadow-xs hover:shadow-md transition-all group">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-[#A8871B] bg-[#F6F5EE] px-2.5 py-1 rounded-full mb-3 inline-block">Rehber</span>
+          <h3 class="font-bold text-[#0C3A2D] group-hover:text-[#A8871B] transition-colors text-base leading-snug mb-2">İnşaat Ruhsatı ve Proje Harçları 2026</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 leading-relaxed">Mimari, statik, mekanik ve elektrik proje çizim bedelleri, belediye harçları ve sığınak fonu ödemeleri.</p>
+          <span class="inline-flex items-center gap-1 text-xs font-bold text-[#A8871B] mt-3 group-hover:translate-x-1 transition-transform">
+            Rehberi Oku →
+          </span>
+        </a>
+        <a href="/blog-zemin-etudu-maliyeti" class="block bg-white p-5 rounded-2xl border border-[#E2DDD6] hover:border-[#C9A227] shadow-xs hover:shadow-md transition-all group">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-[#A8871B] bg-[#F6F5EE] px-2.5 py-1 rounded-full mb-3 inline-block">Rehber</span>
+          <h3 class="font-bold text-[#0C3A2D] group-hover:text-[#A8871B] transition-colors text-base leading-snug mb-2">Zemin Etüdü ve Sondaj Maliyeti 2026</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 leading-relaxed">Sismik kırılma, sondaj metre fiyatları ve jeolojik zemin etüt raporunun inşaat temeline etkisi.</p>
+          <span class="inline-flex items-center gap-1 text-xs font-bold text-[#A8871B] mt-3 group-hover:translate-x-1 transition-transform">
+            Rehberi Oku →
+          </span>
+        </a>
+        <a href="/blog-100m2-ev-maliyeti-2026" class="block bg-white p-5 rounded-2xl border border-[#E2DDD6] hover:border-[#C9A227] shadow-xs hover:shadow-md transition-all group">
+          <span class="text-[10px] uppercase font-bold tracking-wider text-[#A8871B] bg-[#F6F5EE] px-2.5 py-1 rounded-full mb-3 inline-block">Rehber</span>
+          <h3 class="font-bold text-[#0C3A2D] group-hover:text-[#A8871B] transition-colors text-base leading-snug mb-2">100 m2 Ev Maliyeti 2026</h3>
+          <p class="text-xs text-gray-600 line-clamp-2 leading-relaxed">2026&#x27;da 100 m² ev yapma maliyeti ne kadar? Kaba inşaat, ince işler, ruhsat harçları ve anahtar teslim güncel bütçe rehberi.</p>
+          <span class="inline-flex items-center gap-1 text-xs font-bold text-[#A8871B] mt-3 group-hover:translate-x-1 transition-transform">
+            Rehberi Oku →
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
   <section class="max-w-4xl mx-auto px-6 py-6">
     <h2 class="text-2xl font-extrabold font-heading text-[#0C3A2D] mb-5">Sıkça Sorulan Sorular</h2>
     <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ TAKS ve KAKS&#x27;i nereden öğrenirim?</h3><p class="text-gray-700 leading-relaxed">Belediyenin imar planı ve imar durumu belgesinden. Bu sayfadaki varsayılanlar yalnızca örnektir, kendi arsanızın değerlerini girin.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Daire sayısı neden tam sayı değil?</h3><p class="text-gray-700 leading-relaxed">Toplam alan daire büyüklüğüne bölündüğünde kalan alan ortak alanlara gider; bu yüzden sayı aşağı yuvarlanır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Proje değeri satış fiyatı mıdır?</h3><p class="text-gray-700 leading-relaxed">Hayır. Gösterge niteliğinde, yapım maliyeti orta noktasıyla hesaplanan bir tutardır; satış fiyatı piyasa koşullarına bağlıdır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Ortak alanlar hesaba dahil mi?</h3><p class="text-gray-700 leading-relaxed">KAKS toplam alanı ortak alanları da kapsayabilir; net satılabilir alan daha düşük olabilir.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Bu hesap ruhsat yerine geçer mi?</h3><p class="text-gray-700 leading-relaxed">Hayır. Ruhsat ve imar uygulaması için belediye ve proje müellifleri yetkilidir.</p></div></div>

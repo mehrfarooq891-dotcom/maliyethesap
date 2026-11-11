@@ -653,22 +653,21 @@ export default function App() {
             Bu sayfadaki hesaplayıcı, bu üç değeri birlikte kullanır.
           </p>
           <p>
-            Örnek: İzmir'de 100 m² orta kalite bir ev yaptırmak istiyorsunuz. Sitemizdeki Örnek Bütçeler sayfasına göre
-            anahtar teslim orta nokta 28.500 TL/m²'dir. Hesap: 100 × 28.500 = 2.850.000 TL.
-            Aralık olarak 2.200.000–3.500.000 TL arasında bir bütçe planlanmalıdır.
+            Örnek: İzmir'de 100 m² orta kalite bir ev yaptırmak istiyorsunuz. Sitede yayınlanan anahtar teslim aralığına (20.000–25.000 TL/m²) göre orta nokta 22.500 TL/m²'dir. Hesap: 100 × 22.500 = 2.250.000 TL.
+            Aralık olarak 2.000.000–2.500.000 TL arasında bir bütçe planlanmalıdır.
             İstanbul'da aynı ev için şehir katsayısı 1,15 uygulanır; bu nedenle İstanbul'daki tutar daha yüksek çıkar.
           </p>
           <p>
             Sonucu etkileyen başlıca faktörler: şehir (İstanbul katsayısı 1,15), kalite (ekonomik, orta, lüks),
-            yapı türü (kaba inşaat 9.500–13.500 TL/m², anahtar teslim 22.000–35.000 TL/m²) ve yapı sınıfıdır (1A'dan 5D'ye).
+            yapı türü (kaba inşaat 8.500–10.500 TL/m², anahtar teslim 20.000–25.000 TL/m²) ve yapı sınıfıdır (1A'dan 5D'ye).
             Kaba inşaat yalnızca taşıyıcı sistem ve dış kabuğu kapsar; anahtar teslim ise ince işler ve tesisatı da içerir.
           </p>
           <p>
             Kaba inşaat ile anahtar teslim arasındaki farkı bilmek de bütçe planlamasında önemlidir.
-            Kaba inşaat, taşıyıcı sistemi ve dış kabuğu kapsar; sitemizdeki aralık 9.500–13.500 TL/m²'dir.
-            Anahtar teslim ise ince işleri ve tesisatı da içerir; aralık 22.000–35.000 TL/m²'dir.
-            100 m² bir evde kaba inşaat orta noktası 11.500 TL/m² ile 1.150.000 TL,
-            anahtar teslim orta noktası 28.500 TL/m² ile 2.850.000 TL olur.
+            Kaba inşaat, taşıyıcı sistemi ve dış kabuğu kapsar; sitemizdeki aralık 8.500–10.500 TL/m²'dir.
+            Anahtar teslim ise ince işleri ve tesisatı da içerir; aralık 20.000–25.000 TL/m²'dir.
+            100 m² bir evde kaba inşaat orta noktası 9.500 TL/m² ile 950.000 TL,
+            anahtar teslim orta noktası 22.500 TL/m² ile 2.250.000 TL olur.
             Hangi kapsamda hesap yaptığınızı bilmeden fiyat karşılaştırmak yanıltıcı olur.
           </p>
           <p>
@@ -737,6 +736,47 @@ export default function App() {
               <h3 className="font-heading font-extrabold text-xl mb-2">Dökümü inceleyin</h3>
               <p className="text-white/70 text-sm leading-relaxed">Kaba, tesisat ve ince iş kalemlerini ayrı ayrı görün.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Week 2 P0-4: İnşaat maliyeti nasıl hesaplanır? — gap-fill, 11 Kas 2026 */}
+      <section id="nasil-hesaplanir" className="max-w-6xl mx-auto px-6 py-16 w-full">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-[#A8871B] font-bold text-xs uppercase tracking-widest mb-2">Hesaplama Yöntemi</div>
+          <h2 className="text-2xl md:text-4xl font-extrabold font-heading text-[#0C3A2D] mb-6">
+            İnşaat maliyeti nasıl hesaplanır?
+          </h2>
+          <div className="space-y-4 text-gray-700 text-sm md:text-base leading-relaxed">
+            <p>
+              İnşaat maliyeti, en basit haliyle şu formülle bulunur: toplam maliyet = inşaat alanı (m²) × birim maliyet (TL/m²). Birim maliyet, yapının sınıfına ve grubuna göre Çevre, Şehircilik ve İklim Değişikliği Bakanlığının yayımladığı resmî yaklaşık birim maliyet tebliğinden alınır; çıkan tutara kaba inşaat, ince işler, tesisat, ruhsat ve yapı denetim kalemleri eklenerek toplam bütçe ortaya çıkar.
+            </p>
+            <div className="bg-[#F6F5EE] border border-[#E2DDD6] border-l-4 border-l-[#C9A227] rounded-r-2xl p-5">
+              <p className="font-bold text-[#0C3A2D] mb-1">Örnek (resmî matrah)</p>
+              <p>
+                120 m² × 21.050 TL/m² (III. Sınıf B, standart konut) = 2.526.000 TL. Bu tutar, ruhsat harcı, proje bedeli ve yapı denetim hesabında esas alınan resmî matrahtır; piyasa fiyatı değildir.
+              </p>
+            </div>
+            <p>
+              Resmî birim maliyet ile piyasa fiyatı aynı şey değildir: sayfadaki tebliğ tablosunun notunda da belirtildiği gibi, serbest piyasa anahtar teslim maliyetleri genelde resmî rakamların %25–45 üzerinde seyreder ve arsa bedeli bu hesaplara dahil değildir.
+            </p>
+            <p>
+              Aynı metrekarede iki projenin farklı tutması normaldir; çünkü sonucu şu faktörler değiştirir:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><strong className="text-[#0C3A2D]">Şehir:</strong> işçilik ve lojistik maliyetleri ilden ile değişir.</li>
+              <li><strong className="text-[#0C3A2D]">Yapı türü ve kat sayısı:</strong> müstakil villa, apartman, köy evi, prefabrik ve çelik yapıların birim maliyetleri farklıdır.</li>
+              <li><strong className="text-[#0C3A2D]">Kalite sınıfı:</strong> ekonomik, standart ve lüks malzeme tercihi toplamı doğrudan etkiler.</li>
+              <li><strong className="text-[#0C3A2D]">Zemin ve deprem bölgesi:</strong> zemin sınıfı, temel ve taşıyıcı sistem maliyetini değiştirir.</li>
+              <li><strong className="text-[#0C3A2D]">Proje ve ruhsat giderleri:</strong> mimari proje, zemin etüdü, ruhsat harçları ve yapı denetim bedeli toplam bütçenin ayrı bir kalemidir.</li>
+              <li><strong className="text-[#0C3A2D]">Malzeme fiyatları:</strong> demir, beton ve çimento fiyatları piyasada değişkendir. 27 Ekim 2026 tarihli SerMimar fiyat panosunda demir 32.500 TL/ton, C25 beton 3.100 TL/m³, 50 kg çimento 185 TL/adet ve tuğla 8,00 TL/adet olarak yayınlanmıştır.</li>
+            </ul>
+            <p>
+              Sitede yayınlanan aralıklara göre kaba inşaat 8.500–10.500 TL/m², anahtar teslim yapım ise 20.000–25.000 TL/m² bandındadır. (2026 resmi tebliğ — III. sınıf konut.) Bu aralıklar bir ön fikir verir; kendi projenizin tutarını <a href="#hesaplama" className="text-[#A8871B] font-bold underline hover:text-[#0C3A2D]">yukarıdaki hesaplayıcıyla</a> çıkarabilir, dayandığı resmî rakamları <a href="#teblig" className="text-[#A8871B] font-bold underline hover:text-[#0C3A2D]">aşağıdaki tebliğ tablosunda</a> görebilirsiniz.
+            </p>
+            <p className="text-xs text-gray-500 border-t border-[#E2DDD6] pt-4">
+              Kaynak: Resmî Gazete, 3 Şubat 2026, sayı 33157 — 2026 Yılı Yapı Yaklaşık Birim Maliyetleri Tebliği. Malzeme fiyatları: 27 Ekim 2026 tarihli SerMimar fiyat panosu görünümü.
+            </p>
           </div>
         </div>
       </section>
