@@ -2,12 +2,12 @@
 
 @layer base {
   body {
-    background-color: #FFF8F0;
-    color: #0f1d30;
-    font-family: 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+    background-color: #F6F5EE;
+    color: #1E2B23;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    font-family: 'Archivo', system-ui, -apple-system, sans-serif;
     font-weight: 800;
   }
 }
@@ -20,7 +20,7 @@
 
   body {
     background: #ffffff !important;
-    color: #0f1d30 !important;
+    color: #1E2B23 !important;
     margin: 0 !important;
     padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
