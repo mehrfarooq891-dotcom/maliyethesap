@@ -220,7 +220,7 @@ export default function App() {
             <a href="/boya-badana-hesaplama" className="hover:text-[#A8871B] transition-colors">Boya Badana</a>
             <a href="/konut-kredisi-hesaplama" className="hover:text-[#A8871B] transition-colors">Konut Kredisi</a>
             <a href="#detaylar" className="hover:text-[#A8871B] transition-colors">Kalem Dağılımı</a>
-            <a href="/2026-yapi-birim-maliyetleri" className="hover:text-[#A8871B] transition-colors">2026 Resmi Tebliğ</a>
+            <a href="/2026-yapi-birim-maliyetleri" className="hover:text-[#A8871B] transition-colors">2026 Resmî Tebliğ</a>
             <a href="/blog.html" className="hover:text-[#A8871B] transition-colors">Blog</a>
             <a href="#faq" className="hover:text-[#A8871B] transition-colors">S.S.S.</a>
             <a href="#uzman" className="hover:text-[#A8871B] transition-colors">Hakkımızda</a>
@@ -517,7 +517,7 @@ export default function App() {
                   <div className="flex items-center gap-2 text-2xl font-extrabold font-heading text-[#0C3A2D]">
                     <span>maliyethesap.com</span>
                     <span className="text-xs font-bold uppercase tracking-wider bg-[#F6F5EE] text-[#A8871B] border border-[#C9A227]/30 px-2.5 py-0.5 rounded-full">
-                      2026 Resmi Rapor Formatı
+                      2026 Resmî Rapor Formatı
                     </span>
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 mt-1">
@@ -842,9 +842,9 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
             <div>
-              <div className="text-[#A8871B] font-bold text-xs uppercase tracking-widest mb-1">Resmi Veri & Mevzuat</div>
+              <div className="text-[#A8871B] font-bold text-xs uppercase tracking-widest mb-1">Resmî Veri & Mevzuat</div>
               <h2 className="text-2xl md:text-3xl font-extrabold font-heading text-[#0C3A2D]">
-                2026 Yılı Resmi Yapı Yaklaşık Birim Maliyetleri
+                2026 Yılı Resmî Yapı Yaklaşık Birim Maliyetleri
               </h2>
               <p className="text-gray-600 text-sm mt-1">
                 Çevre, Şehircilik ve İklim Değişikliği Bakanlığı (Resmî Gazete Sayı: 33157, 3 Şubat 2026 Tebliği)
@@ -873,7 +873,7 @@ export default function App() {
                 <tr>
                   <th className="p-3.5">Yapı Sınıfı & Grubu</th>
                   <th className="p-3.5">Kapsam ve Örnek Yapı Türleri</th>
-                  <th className="p-3.5 text-right">2026 Resmi Birim Fiyat (TL/m²)</th>
+                  <th className="p-3.5 text-right">2026 Resmî Birim Fiyat (TL/m²)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
@@ -907,7 +907,7 @@ export default function App() {
               MaliyetHesap algoritmaları; Türkiye genelindeki hazır beton, nervürlü inşaat demiri, işçilik yevmiyeleri ve Bakanlık tebliğleri doğrultusunda periyodik olarak doğrulanmaktadır.
             </p>
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-bold text-gray-600">
-              <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#C9A227]"></span>Resmi Tebliğ & Piyasa Verisi</span>
+              <span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#C9A227]"></span>Resmî Tebliğ & Piyasa Verisi</span>
               <span>•</span>
               <span className="text-[#0C3A2D]">Güncellenme: Eylül 2026</span>
             </div>
@@ -936,7 +936,7 @@ export default function App() {
                 a: 'Genel bir kural olarak betonarme karkas, temel, hazır beton, demir donatı ve duvar örme işlerinden oluşan kaba inşaat; toplam anahtar teslim maliyetin yaklaşık %40-%45\'ini oluşturur.'
               },
               {
-                q: 'Resmi Bakanlık birim maliyetleri ile piyasa fiyatı neden farklıdır?',
+                q: 'Resmî Bakanlık birim maliyetleri ile piyasa fiyatı neden farklıdır?',
                 a: 'Çevre ve Şehircilik Bakanlığı tebliği; harç, mimari proje ve yapı denetim hizmet bedellerinin asgari tutarını belirler. Serbest piyasada müteahhit kârı, şantiye lojistiği, mimari özel detaylar ve marka malzeme tercihleri piyasa fiyatını yükseltmektedir.'
               },
               {
