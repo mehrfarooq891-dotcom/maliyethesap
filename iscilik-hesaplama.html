@@ -169,6 +169,57 @@ b.addEventListener("input", function(){ a.value=this.value; calculate(); });
 <p>İşçilik fiyatları şehir, usta deneyimi, iş zorluğu ve metraj büyüklüğüne göre ciddi şekilde değişir. Tek bir fiyat varsaymak yanıltıcı olacağı için bu sayfada fiyat alanı boş bırakılır; aldığınız güncel teklifi girerek toplamı bulursunuz.</p></div>
   </section>
   <section class="max-w-4xl mx-auto px-6 py-6">
+    <div class="bg-white rounded-2xl border border-[#E2DDD6] p-6 md:p-8 space-y-5 leading-relaxed text-gray-800">
+      <h2 class="text-2xl font-bold text-[#0C3A2D]">İşçilik Maliyeti Rehberi: Hesaplama, Örnek ve Dikkat Edilecekler</h2>
+      <p>Bu sayfadaki işçilik hesaplama aracı, bir inşaat veya tadilat işinin yalnızca işçilik tutarını bulur. Malzeme bedeli hesaba dahil değildir. Araç; seramik döşeme, parke, sıva, boya ve duvar örme gibi iş türleri için ayrı ayrı çalışır. Her iş türü için alan (m²) ve birim işçilik fiyatı (TL/m²) girilir, araç toplam işçilik tutarını hesaplar.</p>
+      <p>Formül basittir: Toplam İşçilik Tutarı = Alan (m²) × Birim İşçilik Fiyatı (TL/m²). Örneğin 60 m² bir salonda seramik döşenecekse ve ustanın birim fiyatı belliyse, 60 ile bu fiyat çarpılır. Birden fazla iş türü varsa her biri ayrı hesaplanır ve sonuçlar toplanır. Bu sayfada birim fiyat için varsayılan bir değer yoktur; çünkü işçilik fiyatı şehir, usta deneyimi, işin zorluğu ve işin büyüklüğüne göre ciddi şekilde değişir. Tek bir fiyat varsaymak yanıltıcı olur. Bu nedenle hesaba başlamadan önce ustanızdan yazılı teklif almanız gerekir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Adım adım örnek: boya işi</h3>
+      <p>Sitemizdeki boya maliyeti örneğini adım adım inceleyelim. Örnekte 240 m² alan için usta işçiliği 24.000 TL olarak hesaplanmıştır. Bu, boya işi için 100 TL/m² birim fiyata karşılık gelir. Hesap şöyle yapılır:</p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><strong>Alan ölçülür:</strong> boyanacak toplam alan 240 m² olarak alınır.</li>
+        <li><strong>Birim fiyat öğrenilir:</strong> ustanın boya işi için verdiği teklif 100 TL/m²'dir.</li>
+        <li><strong>Çarpma yapılır:</strong> 240 × 100 = 24.000 TL.</li>
+        <li><strong>Sonuç kontrol edilir:</strong> 24.000 TL yalnızca işçilik tutarıdır; boya, astar ve diğer malzemeler bu tutara dahil değildir.</li>
+      </ol>
+      <p>Bu örnekteki 100 TL/m² oranı yalnızca boya işi içindir. Seramik, parke, sıva veya duvar işlerinde birim fiyat farklıdır; her iş türü için ayrı teklif alınmalıdır. Boya örneğindeki oranı başka bir iş türüne uygulamak yanlış sonuç verir.</p>
+      <table class="w-full text-xs md:text-sm text-left">
+        <thead class="bg-[#0C3A2D] text-white uppercase text-[11px] tracking-wider"><tr><th class="p-3.5">Boya yapılacak alan</th><th class="p-3.5">Birim fiyat</th><th class="p-3.5">İşçilik tutarı</th></tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          <tr><td class="p-3.5">50 m²</td><td class="p-3.5">100 TL/m²</td><td class="p-3.5">5.000 TL</td></tr>
+          <tr><td class="p-3.5">80 m²</td><td class="p-3.5">100 TL/m²</td><td class="p-3.5">8.000 TL</td></tr>
+          <tr><td class="p-3.5">120 m²</td><td class="p-3.5">100 TL/m²</td><td class="p-3.5">12.000 TL</td></tr>
+          <tr><td class="p-3.5">240 m²</td><td class="p-3.5">100 TL/m²</td><td class="p-3.5 font-bold text-[#A8871B]">24.000 TL</td></tr>
+        </tbody>
+      </table>
+      <p class="text-sm text-[#5F7166]">Tablo, boya işi örneğindeki 100 TL/m² oranıyla hesaplanmıştır; başka iş türleri için geçerli değildir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Sonucu etkileyen faktörler</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>İşin türü:</strong> seramik, parke, sıva, boya ve duvar işlerinin birim fiyatları birbirinden farklıdır.</li>
+        <li><strong>Alanın durumu:</strong> eski sıva veya kaplamanın sökülmesi, zeminin düzeltilmesi gibi ek işler fiyatı artırır.</li>
+        <li><strong>Şehir ve bölge:</strong> büyük şehirlerde işçilik fiyatları genelde daha yüksektir. Bu sitedeki ana hesaplayıcıda İstanbul için 1,15 şehir katsayısı kullanılır; işçilik tekliflerinde de şehir farkı görülür.</li>
+        <li><strong>Ustanın deneyimi ve iş yoğunluğu:</strong> deneyimli ekipler ve yoğun dönemler daha yüksek teklif verebilir.</li>
+        <li><strong>Malzeme dahil mi:</strong> teklifin yalnızca işçilik mi yoksa malzeme dahil mi olduğu toplamı değiştirir. Bu araç yalnızca işçilik hesaplar.</li>
+        <li><strong>İşin süresi ve aciliyeti:</strong> kısa sürede bitirilmesi istenen işlerde fiyat artabilir.</li>
+      </ul>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">İşçilik payı toplam bütçede ne kadar tutar?</h3>
+      <p>Sitemizdeki Örnek Bütçeler sayfasında 100 m² bir ev için maliyet dağılımı verilir: proje, zemin, denetim ve ruhsat %7; kaba inşaat %37,5; tesisat %16,5; ince işler %39. İşçilik bu kalemlerin her birinin içinde yer alır; ayrı bir yüzde olarak verilmez. Bu yüzden işçilik tutarını her kalem için ayrı hesaplayıp toplamak gerekir. Aynı sayfada 100 m² bir evin anahtar teslim maliyetinin orta noktası 2.850.000 TL olarak verilir; işçilik bu toplamın bir parçasıdır. Malzeme fiyatlarına odaklanıp işçilik payını bütçeye eklememek, en sık yapılan bütçe hatalarından biridir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">İşçilik teklifi nasıl karşılaştırılır?</h3>
+      <p>Birden fazla ustadan teklif aldıysanız, teklifleri yalnızca toplam tutara bakarak karşılaştırmayın. Önce her teklifin aynı işi kapsadığından emin olun: biri malzemeyi dahil etmiş, diğeri etmemiş olabilir. Teklifin yazılı olması gerekir; sözlü fiyat, sonradan değişebilir. Teklifte şunlar açıkça yazmalıdır: işin kapsamı (hangi alanlar, hangi iş türleri), birim fiyat ve toplam tutar, fiyata dahil olanlar (malzeme, nakliye, temizlik, atık taşıma), işin başlama ve bitiş tarihi, ödeme planı (peşin, ara ödeme, iş bitiminde) ve garanti koşulu. Aynı kapsamdaki teklifler arasında fiyat farkı varsa, en ucuz teklif her zaman en iyi teklif değildir; ustanın daha önce yaptığı işleri görmek ve referans istemek, fiyat kadar önemlidir. Teklifleri karşılaştırırken bu sayfadaki araçla her teklifi ayrı ayrı hesaplayın; böylece hangi ustanın hangi iş için ne istediğini net görürsünüz.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Sık yapılan hatalar</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Brüt alanla net alanı karıştırmak:</strong> boyanacak veya döşenecek gerçek alanı ölçmeden hesap yapmak.</li>
+        <li><strong>Tek teklifle karar vermek:</strong> en az iki-üç ustadan yazılı teklif almadan anlaşmak.</li>
+        <li><strong>Fiyata neyin dahil olduğunu sormamak:</strong> malzeme, nakliye, temizlik ve atık taşıma bedelinin teklife dahil olup olmadığını öğrenmemek.</li>
+        <li><strong>Sözleşme yapmamak:</strong> işin kapsamı, süresi ve ödeme planı yazıya dökülmeden başlamak.</li>
+        <li><strong>İş türlerini karıştırmak:</strong> boya için geçerli birim fiyatı seramik veya parke işine uygulamak.</li>
+        <li><strong>Toplam bütçede işçiliği unutmak:</strong> malzeme fiyatlarına odaklanıp işçilik payını bütçeye eklememek.</li>
+      </ul>
+      <p>Bu rehberi kullanırken önce iş türünü seçin, alanı ölçün, ustadan yazılı teklif alın ve teklifteki birim fiyatı araca girin. Çıkan tutarı malzeme bedeliyle karıştırmayın; malzeme için ilgili metraj sayfalarını kullanın.</p>
+      <p>İşçilik tutarını toplam bütçeyle birlikte görmek için <a href="/blog-100m2-ev-maliyeti-2026" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">100 m² ev maliyeti rehberini</a> ve <a href="/blog-insaat-maliyeti-hesaplama" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">inşaat maliyeti hesaplama rehberini</a> okuyabilirsiniz. Tadilat planlıyorsanız <a href="/blog-mutfak-tadilat-maliyeti-2026" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">mutfak tadilat maliyeti yazısına</a> da bakın.</p>
+      <p class="text-sm text-[#5F7166]">Kaynak: Bu sayfadaki hesaplama yöntemi ve boya örneği MaliyetHesap'ın kendi yayınladığı verilere dayanır. Boya örneği boya maliyeti sayfasından, maliyet dağılımı ve 2.850.000 TL orta nokta Örnek Bütçeler sayfasındandır. Fiyatlar 2026 piyasa koşullarına göre değişir; kesin tutar için ustanızdan yazılı teklif alın. Son güncelleme: 11 Kasım 2026.</p>
+    </div>
+  </section>
+  <section class="max-w-4xl mx-auto px-6 py-6">
     <h2 class="text-2xl font-extrabold font-heading text-[#0C3A2D] mb-5">Sıkça Sorulan Sorular</h2>
     <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ İşçilik fiyatı neden sabit değil?</h3><p class="text-gray-700 leading-relaxed">Usta, şehir ve iş zorluğu fiyatı değiştirir. Güncel teklif almak en doğrusudur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Malzeme dahil mi?</h3><p class="text-gray-700 leading-relaxed">Hayır, yalnızca işçilik hesaplanır. Malzeme için ilgili metraj sayfalarını kullanın.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Birden fazla iş nasıl hesaplanır?</h3><p class="text-gray-700 leading-relaxed">Her iş türünü ayrı hesaplayıp toplamanız gerekir.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Teklif alırken ne sorulmalı?</h3><p class="text-gray-700 leading-relaxed">Fiyata neyin dahil olduğunu (malzeme, nakliye, temizlik), iş süresini ve garanti koşulunu sorun.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Bu hesap kesin fiyat mıdır?</h3><p class="text-gray-700 leading-relaxed">Hayır, girdiğiniz birim fiyatla hesaplanan ön tutardır.</p></div></div>
   </section>

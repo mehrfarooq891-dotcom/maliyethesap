@@ -640,6 +640,51 @@ export default function App() {
         </div>
       </section>
 
+      {/* Guide: how the main calculator works — formula + worked example */}
+      <section className="max-w-6xl mx-auto px-6 pb-16 w-full">
+        <div className="bg-white rounded-2xl border border-[#E2DDD6] p-6 md:p-8 space-y-4 leading-relaxed text-gray-800">
+          <div className="text-[#A8871B] font-bold text-xs uppercase tracking-widest">Nasıl Hesaplanır?</div>
+          <h2 className="text-2xl md:text-3xl font-extrabold font-heading text-[#0C3A2D]">
+            İnşaat Maliyeti Nasıl Hesaplanır?
+          </h2>
+          <p>
+            İnşaat maliyeti üç çarpanın sonucudur: Toplam Maliyet = Alan (m²) × Birim Maliyet (TL/m²) × Şehir Katsayısı.
+            Birim maliyet, yapının sınıfına ve kalitesine göre değişir; şehir katsayısı ise bulunduğunuz ile göre fiyatı düzeltir.
+            Bu sayfadaki hesaplayıcı, bu üç değeri birlikte kullanır.
+          </p>
+          <p>
+            Örnek: İzmir'de 100 m² orta kalite bir ev yaptırmak istiyorsunuz. Sitemizdeki Örnek Bütçeler sayfasına göre
+            anahtar teslim orta nokta 28.500 TL/m²'dir. Hesap: 100 × 28.500 = 2.850.000 TL.
+            Aralık olarak 2.200.000–3.500.000 TL arasında bir bütçe planlanmalıdır.
+            İstanbul'da aynı ev için şehir katsayısı 1,15 uygulanır; bu nedenle İstanbul'daki tutar daha yüksek çıkar.
+          </p>
+          <p>
+            Sonucu etkileyen başlıca faktörler: şehir (İstanbul katsayısı 1,15), kalite (ekonomik, orta, lüks),
+            yapı türü (kaba inşaat 9.500–13.500 TL/m², anahtar teslim 22.000–35.000 TL/m²) ve yapı sınıfıdır (1A'dan 5D'ye).
+            Kaba inşaat yalnızca taşıyıcı sistem ve dış kabuğu kapsar; anahtar teslim ise ince işler ve tesisatı da içerir.
+          </p>
+          <p>
+            Kaba inşaat ile anahtar teslim arasındaki farkı bilmek de bütçe planlamasında önemlidir.
+            Kaba inşaat, taşıyıcı sistemi ve dış kabuğu kapsar; sitemizdeki aralık 9.500–13.500 TL/m²'dir.
+            Anahtar teslim ise ince işleri ve tesisatı da içerir; aralık 22.000–35.000 TL/m²'dir.
+            100 m² bir evde kaba inşaat orta noktası 11.500 TL/m² ile 1.150.000 TL,
+            anahtar teslim orta noktası 28.500 TL/m² ile 2.850.000 TL olur.
+            Hangi kapsamda hesap yaptığınızı bilmeden fiyat karşılaştırmak yanıltıcı olur.
+          </p>
+          <p>
+            Birim maliyetler, Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'nın Resmî Gazete'de yayımlanan
+            2026 yılı yapı yaklaşık birim maliyet tebliğine (3 Şubat 2026, sayı 33157) ve TÜİK İnşaat Maliyet Endeksi'ne dayanır.
+            Ayrıntılı bütçe örnekleri için{" "}
+            <a href="/ornek-butceler" className="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">Örnek Bütçeler sayfasına</a>,{" "}
+            resmî tablo için{" "}
+            <a href="/2026-yapi-birim-maliyetleri" className="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">2026 birim maliyetler sayfasına</a>{" "}
+            ve adım adım hesaplama için{" "}
+            <a href="/blog-insaat-maliyeti-hesaplama" className="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">inşaat maliyeti hesaplama rehberine</a>{" "}
+            bakın.
+          </p>
+          <p className="text-sm text-[#5F7166]">Son güncelleme: 11 Kasım 2026.</p>
+        </div>
+      </section>
       {/* Tools list — numbered rows, no cards */}
       <section id="araclar" className="max-w-6xl mx-auto px-6 py-16 w-full">
         <div className="mb-10">

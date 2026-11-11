@@ -190,6 +190,51 @@ b.addEventListener("input", function(){ a.value=this.value; calculate(); });
 <p>Sayı kadar sözleşme koşulları da önemlidir: teslim süresi, malzeme kalitesi, gecikme cezası, tapu devri zamanlaması ve ortak alanlar. Daire sayısı hesabı bu koşulları göstermez; bu sayfa yalnızca sayısal karşılaştırma sunar, sözleşme yerine geçmez.</p></div>
   </section>
   <section class="max-w-4xl mx-auto px-6 py-6">
+    <div class="bg-white rounded-2xl border border-[#E2DDD6] p-6 md:p-8 space-y-5 leading-relaxed text-gray-800">
+      <h2 class="text-2xl font-bold text-[#0C3A2D]">Kat Karşılığı Rehberi: Daire Paylaşımı Nasıl Hesaplanır?</h2>
+      <p>Kat karşılığı inşaat, arsa sahibinin arsasını müteahhide vermesi ve karşılığında inşa edilen binadan daire almasıdır. Bu sayfadaki araç, toplam inşaat alanını ve daire büyüklüğünü girerek kaç daire çıkacağını ve bu dairelerin arsa sahibi ile müteahhit arasında nasıl paylaşılacağını hesaplar. Araç yalnızca sayısal bir karşılaştırma sunar; sözleşme yerine geçmez.</p>
+      <p>Hesap iki adımda yapılır. Birinci adımda daire sayısı bulunur: toplam inşaat alanı, daire büyüklüğüne bölünür. İkinci adımda paylaşım bulunur: daire sayısı, arsa sahibi ve müteahhit yüzdeleriyle çarpılır. Bu sayfadaki varsayılan müteahhit payı %50'dir; ancak bu yalnızca bir örnektir, tek bir doğru oran yoktur. Kendi pazarlığınızdaki oranı girmeniz gerekir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Adım adım örnek: 1.000 m² alan, 100 m² daire, %50 pay</h3>
+      <table class="w-full text-xs md:text-sm text-left">
+        <thead class="bg-[#0C3A2D] text-white uppercase text-[11px] tracking-wider"><tr><th class="p-3.5">Kalem</th><th class="p-3.5">Değer</th></tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          <tr><td class="p-3.5">Toplam inşaat alanı</td><td class="p-3.5">1.000 m²</td></tr>
+          <tr><td class="p-3.5">Daire büyüklüğü</td><td class="p-3.5">100 m²</td></tr>
+          <tr><td class="p-3.5">Daire sayısı (1.000 ÷ 100)</td><td class="p-3.5">10 daire</td></tr>
+          <tr><td class="p-3.5">Arsa sahibi payı (%50)</td><td class="p-3.5 font-bold text-[#A8871B]">5 daire</td></tr>
+          <tr><td class="p-3.5">Müteahhit payı (%50)</td><td class="p-3.5 font-bold text-[#A8871B]">5 daire</td></tr>
+        </tbody>
+      </table>
+      <p>Aynı örneği maliyet açısından görmek için sitemizdeki aralıkları kullanalım: 100 m² bir dairenin kaba inşaat maliyeti orta noktası 11.500 TL/m² ile 1.150.000 TL, anahtar teslim maliyeti orta noktası 28.500 TL/m² ile 2.850.000 TL olur. Bu tutarlar İNŞAAT maliyetidir; dairenin satış fiyatı değildir. Satış fiyatı, bölge ve piyasa koşullarına göre ayrıca belirlenir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Arsa sahibi payının TL değeri nasıl karşılaştırılır?</h3>
+      <p>Kat karşılığı anlaşmasının arsa sahibi için iyi olup olmadığını anlamanın bir yolu, payın TL değerini arsanın nakit satış değeriyle karşılaştırmaktır. Yukarıdaki örnekte arsa sahibinin 5 dairesi vardır. Anahtar teslim orta noktayla hesaplarsak bu 5 dairenin inşaat maliyeti 5 × 2.850.000 = 14.250.000 TL, kaba inşaat orta noktayla 5 × 1.150.000 = 5.750.000 TL olur. Bu tutarlar inşaat maliyetidir, piyasa değeri değildir; dairelerin satış değeri bölgeden bölgeye değişir. Dairelerin satış değeri, inşaat maliyetinden farklıdır; konum, kat, cephe ve piyasa koşulları fiyatı belirler. Bu nedenle 14.250.000 TL tutarı, arsa sahibinin eline geçecek para değildir; dairelerin inşaat maliyetidir. Gerçek değeri öğrenmek için bölgedeki benzer dairelerin satış fiyatlarına bakmak gerekir. Karşılaştırma yaparken yalnızca sayıya bakmak yetmez: teslim süresi, kira kaybı ve risk farkları da hesaba katılmalıdır. Bu hesap, yalnızca sayısal bir göstergedir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Sonucu etkileyen faktörler</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>İmar durumu:</strong> emsal ve kat adedi, toplam inşaat alanını belirler. İmar durumu öğrenilmeden yapılan hesap gerçeği yansıtmaz.</li>
+        <li><strong>Arsa konumu:</strong> merkezi ve değerli arsalarda arsa sahibinin payı genelde daha yüksek olur.</li>
+        <li><strong>Daire büyüklüğü:</strong> küçük daireler daha çok sayıda daire çıkarır; ancak her dairenin maliyeti de değişir.</li>
+        <li><strong>Müteahhit payı oranı:</strong> oran pazarlık konusudur; bölgeye ve arsaya göre değişir.</li>
+        <li><strong>Ortak alanlar:</strong> merdiven, asansör ve otopark gibi ortak alanlar daire sayısını etkiler; hesap brüt alandan yapılır.</li>
+      </ul>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Kat karşılığı sözleşmesinde nelere bakılır?</h3>
+      <p>Daire sayısı kadar sözleşme koşulları da önemlidir. Teslim süresi, işin ne zaman biteceğini gösterir; gecikme cezası, sürenin aşılması durumunda ne olacağını belirler. Malzeme kalitesi, dairelerin hangi standartta teslim edileceğini gösterir; sözleşmede marka ve model düzeyinde yazılması gerekir. Tapu devri zamanlaması, dairelerin tapusunun ne zaman arsa sahibine geçeceğini belirler. Ortak alanlar, otopark ve sığınak gibi alanların nasıl paylaşılacağını gösterir. Bu sayfadaki daire sayısı hesabı bu koşulları göstermez; yalnızca sayısal karşılaştırma sunar. Kat karşılığı sözleşmesi için hukuki destek alın.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Kat karşılığı mı nakit satış mı?</h3>
+      <p>Arsa sahiplerinin en sık sorduğu soru budur: arsayı nakit satmak mı yoksa kat karşılığı vermek mi daha iyidir? Tek bir doğru cevap yoktur; karar, arsa sahibinin durumuna bağlıdır. Nakit satış, parayı hemen verir ve inşaat riskini ortadan kaldırır; ancak arsa değer kazanmaya devam ederse bu kazançtan yararlanılamaz. Kat karşılığı ise inşaat bittikten sonra daire verir; dairelerin değeri arsanın bugünkü değerinden yüksek olabilir, ancak inşaat süresi boyunca beklenir ve gecikme, kalite ve piyasa riski alınır. Karar verirken şunlara bakılır: arsanın bugünkü nakit değeri, kat karşılığında alınacak dairelerin tahmini değeri, inşaat süresi boyunca kira kaybı olup olmadığı ve müteahhidin güvenilirliği. Bu sayfadaki hesap, kat karşılığı tarafının sayısal boyutunu gösterir; nakit satış tarafını ayrıca araştırmak gerekir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Sık yapılan hatalar</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Müteahhit payını sabit sanmak:</strong> %50 varsayılanı gerçek oran sanmak.</li>
+        <li><strong>İmar durumunu öğrenmeden hesap yapmak:</strong> emsal ve kat adedini bilmeden daire sayısı çıkarmak.</li>
+        <li><strong>Ortak alanları düşmemek:</strong> brüt alanın tamamını daire alanı sanmak.</li>
+        <li><strong>Satış fiyatını inşaat maliyetiyle karıştırmak:</strong> 2.850.000 TL inşaat maliyetini daire satış fiyatı sanmak.</li>
+        <li><strong>Sözleşmesiz anlaşmak:</strong> teslim süresi, malzeme kalitesi, gecikme cezası ve tapu devri zamanlaması yazıya dökülmeden başlamak.</li>
+        <li><strong>Vergi ve harçları unutmak:</strong> tapu, vergi ve harçlar bu hesapta yoktur; ayrıca hesaplanmalıdır.</li>
+      </ul>
+      <p>Bu sayfadaki aracı kullanırken önce imar durumundan toplam inşaat alanını öğrenin, daire büyüklüğünü ve paylaşım oranını girin. Çıkan daire sayısını arsa değeriyle birlikte değerlendirin; yalnızca daire sayısına bakarak karar vermeyin. Daire sayısını hesaplarken ortak alanları da düşünün; brüt alanın tamamı daire alanı değildir. Anlaşma öncesinde teslim süresi, malzeme kalitesi, gecikme cezası ve tapu devri gibi sözleşme koşullarını bir avukatla gözden geçirin; çünkü bu hesap yalnızca sayısal bir karşılaştırmadır.</p>
+      <p>Kentsel dönüşümde kat karşılığı için <a href="/blog-kentsel-donusum-maliyeti-2026" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">kentsel dönüşüm maliyeti yazısına</a>, toplam bütçe için <a href="/blog-100m2-ev-maliyeti-2026" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">100 m² ev maliyeti rehberine</a> ve müteahhit mi kendi imkânlarla mı sorusu için <a href="/blog-muteahhit-mi-kendim-mi" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">müteahhit mi kendim mi yazısına</a> bakın.</p>
+      <p class="text-sm text-[#5F7166]">Kaynak: Maliyet aralıkları (kaba 9.500–13.500 TL/m², anahtar teslim 22.000–35.000 TL/m²) MaliyetHesap'ın kendi yayınladığı değerlerdir. %50 varsayılanı yalnızca örnektir. Son güncelleme: 11 Kasım 2026.</p>
+    </div>
+  </section>
+  <section class="max-w-4xl mx-auto px-6 py-6">
     <h2 class="text-2xl font-extrabold font-heading text-[#0C3A2D] mb-5">Sıkça Sorulan Sorular</h2>
     <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Müteahhit payı kaç olmalı?</h3><p class="text-gray-700 leading-relaxed">Bölgeye ve arsaya göre değişir; tek bir doğru oran yoktur. Varsayılan %50 yalnızca örnektir, kendi pazarlığınızdaki oranı girin.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Nakit satışla karşılaştırma nasıl yapılır?</h3><p class="text-gray-700 leading-relaxed">Arsa sahibinin payının TL değerini, arsanın nakit satış değeriyle karşılaştırın. Fark, yalnızca sayısal bir göstergedir; risk ve süre farkları da hesaba katılmalıdır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Teslim süresi hesaba dahil mi?</h3><p class="text-gray-700 leading-relaxed">Hayır. İnşaat süresi, gecikme riski ve kira kaybı bu hesapta yoktur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Vergi ve harçlar dahil mi?</h3><p class="text-gray-700 leading-relaxed">Hayır. Tapu, vergi ve harçlar ayrıca hesaplanmalıdır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Bu hesap sözleşme yerine geçer mi?</h3><p class="text-gray-700 leading-relaxed">Hayır. Kat karşılığı sözleşmesi için hukuki destek alın.</p></div></div>
   </section>

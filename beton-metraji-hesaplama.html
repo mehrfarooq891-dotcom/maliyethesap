@@ -168,6 +168,50 @@ b.addEventListener("input", function(){ a.value=this.value; calculate(); });
 <p>Yayınlanan metraj rehberlerinde 100 m² için 35–40 m³ beton aralığı verilir. Bu sayfada orta nokta (37,5 m³) kullanılır ve aralık da gösterilir, böylece tek bir sayıya körü körüne güvenmezsiniz.</p></div>
   </section>
   <section class="max-w-4xl mx-auto px-6 py-6">
+    <div class="bg-white rounded-2xl border border-[#E2DDD6] p-6 md:p-8 space-y-5 leading-relaxed text-gray-800">
+      <h2 class="text-2xl font-bold text-[#0C3A2D]">Beton Metrajı Rehberi: Hacim ve Maliyet Hesabı</h2>
+      <p>Bu sayfadaki beton metrajı hesaplama aracı, bir yapıda kullanılacak hazır betonun yaklaşık hacmini (m³) ve maliyetini bulur. Araç, inşaat alanı (m²) üzerinden tahmin yapar. Sonuç ön tahmindir; kesin hacim statik proje, döşeme ve temel planlarından hesaplanır.</p>
+      <p>Hesap iki adımda yapılır. Birinci adımda beton hacmi bulunur: alan 0,375 ile çarpılır. Bu katsayı, yayınlanan metraj rehberlerinde 100 m² için verilen 35–40 m³ aralığının orta noktasıdır; aralık da sonuçta gösterilir. İkinci adımda maliyet bulunur: hacim, birim fiyatla çarpılır. Bu sayfadaki varsayılan birim fiyat, C25 beton için 3.100 TL/m³'tür.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Adım adım örnek: 100 m² ve 150 m²</h3>
+      <p>Aşağıdaki tablo, C25 beton için 3.100 TL/m³ fiyatıyla iki örnek hesabı gösterir. Fiyat, 27 Ekim 2026 tarihli SerMimar fiyat panosu anlık görünümüdür.</p>
+      <table class="w-full text-xs md:text-sm text-left">
+        <thead class="bg-[#0C3A2D] text-white uppercase text-[11px] tracking-wider"><tr><th class="p-3.5">Alan</th><th class="p-3.5">Hacim (orta)</th><th class="p-3.5">Hacim aralığı</th><th class="p-3.5">Maliyet (orta)</th><th class="p-3.5">Maliyet aralığı</th></tr></thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          <tr><td class="p-3.5">100 m²</td><td class="p-3.5">37,5 m³</td><td class="p-3.5">35–40 m³</td><td class="p-3.5 font-bold text-[#A8871B]">116.250 TL</td><td class="p-3.5">108.500–124.000 TL</td></tr>
+          <tr><td class="p-3.5">150 m²</td><td class="p-3.5">56,25 m³</td><td class="p-3.5">52,5–60 m³</td><td class="p-3.5 font-bold text-[#A8871B]">174.375 TL</td><td class="p-3.5">162.750–186.000 TL</td></tr>
+        </tbody>
+      </table>
+      <p>Tablodaki aralık, 35–40 m³ varsayım aralığından gelir. Gerçek hacim, döşeme kalınlığına ve temel tipine göre bu aralığın dışında da olabilir; kesin değer statik projeden alınır.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Beton hacmi neden aralıkla verilir?</h3>
+      <p>Beton hacmi, yapının her katmanında farklıdır: temel, döşeme, kolon ve kirişlerin her biri ayrı hacim ister. Döşeme kalınlığı, açıklıklar ve temel tipi projeden projeye değiştiği için tek bir katsayıyla kesin hacim bulunamaz. Bu sayfada 100 m² için 35–40 m³ aralığı verilir ve orta nokta 37,5 m³ olarak alınır. Aralık, bütçe planlarken alt ve üst sınırı görmenizi sağlar. Örneğin 100 m² bir evde beton maliyeti 108.500 TL ile 124.000 TL arasında değişebilir; bütçeyi üst sınıra göre planlamak, sürprizleri önler. Kesin hacim için statik projeye bakılır; bu sayfa yalnızca ön tahmin içindir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Sonucu etkileyen faktörler</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Döşeme kalınlığı ve yapı tipi:</strong> kalın döşemeler ve radye temel daha fazla beton ister.</li>
+        <li><strong>Temel tipi:</strong> radye, sürekli veya tekil temel seçenekleri beton hacmini değiştirir.</li>
+        <li><strong>Kat sayısı:</strong> her katın döşemesi ayrı beton gerektirir.</li>
+        <li><strong>Beton sınıfı:</strong> C25 dışındaki sınıfların birim fiyatı farklıdır. Bu sayfadaki fiyat C25 içindir; başka bir sınıf kullanıyorsanız birim fiyat alanına kendi sınıfınızın fiyatını girin.</li>
+        <li><strong>Pompa ve nakliye:</strong> pompa bedeli ve nakliye bu hesaba dahil değildir; teklife göre değişir.</li>
+      </ul>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Hazır beton siparişi verirken nelere dikkat edilir?</h3>
+      <p>Sipariş verirken önce beton sınıfını doğru söyleyin: projenizde C25 yazıyorsa C25, başka bir sınıf yazıyorsa o sınıf sipariş edilmelidir. Sınıfı karıştırmak, hem maliyet hem de dayanım açısından sorun çıkarır. İkinci olarak miktarı aralıkla isteyin: hesaplanan hacmin biraz üzerinde sipariş vermek, döküm sırasında eksik kalmayı önler; ancak fazla sipariş de israf olur. Döküm günü, saati ve pompa ihtiyacı önceden netleştirilmelidir; pompa bedeli bu hesaba dahil değildir ve teklife göre değişir. Son olarak fiyatı sipariş günü teyit edin: 3.100 TL/m³ fiyatı 27 Ekim 2026 tarihli pano görünümüdür, güncel fiyat farklı olabilir.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">C25 ne demektir?</h3>
+      <p>C25, betonun basınç dayanım sınıfıdır. Sınıf adı, betonun 28 günlük karakteristik silindir basınç dayanımını gösterir; C25 için bu değer 25 MPa'dır. Konut inşaatlarında en sık kullanılan sınıflardan biridir. Projede hangi sınıf yazıyorsa o sınıf sipariş edilmelidir; sınıfı kendi başınıza değiştirmeyin. Daha yüksek sınıf, daha yüksek dayanım demektir ama birim fiyatı da farklıdır. Dayanım sınıfı, betonun kalitesini gösterir; ancak tek başına yeterli değildir. Betonun işlenebilirliği, su geçirimsizliği ve dayanıklılığı da projede belirtilir. Bu sayfadaki 3.100 TL/m³ fiyatı C25 içindir; projenizde C30 veya başka bir sınıf yazıyorsa, birim fiyat alanına o sınıfın güncel fiyatını girmeniz gerekir. Sınıf bilgisi statik projede ve beton sipariş formunda yazar; emin değilseniz proje mühendisinize sorun.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Beton dökümü günü nelere dikkat edilir?</h3>
+      <p>Döküm günü kalıpların sağlam ve sızdırmaz olduğunu kontrol edin; kalıp açığı beton kaybına yol açar. Donatıların projeye uygun yerleştirildiğini ve kalıba temas etmediğini gözden geçirin. Döküm sırasında betonun kalıbın her yerine ulaştığından emin olun; vibratör kullanımı, betonun boşluksuz yerleşmesine yardımcı olur. Dökümden sonra betonun kürlenmesi gerekir; yani yüzeyin kurumaması için belli bir süre nemli tutulması gerekir. Kür yapılmayan beton, dayanım kaybeder ve çatlar. Döküm günü hava durumu da önemlidir; aşırı sıcak veya yağmur, döküm planını etkiler. Bu konularda şantiye şefinin ve proje mühendisinin yönlendirmesi esastır.</p>
+      <h3 class="text-lg font-bold text-[#0C3A2D]">Sık yapılan hatalar</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>m² ile m³'ü karıştırmak:</strong> alan (m²) ile hacim (m³) farklı büyüklüklerdir; 100 m² alan yaklaşık 37,5 m³ beton ister.</li>
+        <li><strong>Temel betonunu unutmak:</strong> yalnızca döşemeleri hesaplayıp temeli hesaba katmamak.</li>
+        <li><strong>Aralığı görmezden gelmek:</strong> tek bir sayıya güvenmek yerine 35–40 m³ aralığını bütçede dikkate almamak.</li>
+        <li><strong>Sınıf fiyatını karıştırmak:</strong> C25 fiyatıyla başka bir sınıf sipariş etmek.</li>
+        <li><strong>Pompayı hesaba katmamak:</strong> pompa bedelini bütçeye eklememek.</li>
+      </ul>
+      <p>Aracı kullanırken alanı girin; araç 35–40 m³ aralığını ve orta nokta tutarı gösterir. Beton sınıfınız C25 değilse birim fiyat alanına kendi sınıfınızın fiyatını yazın. Çıkan hacmi statik projeyle karşılaştırın ve siparişi projeye göre verin; pompa bedelini bütçeye ayrıca eklemeyi unutmayın. Sipariş vermeden önce hacmi statik projeyle karşılaştırmak, eksik veya fazla sipariş riskini azaltır; çünkü bu sayfadaki sonuç bir tahmindir.</p>
+      <p>Çimento fiyatları için <a href="/blog-cimento-fiyatlari-2026" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">çimento fiyatları yazısına</a>, toplam bütçe için <a href="/blog-100m2-ev-maliyeti-2026" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">100 m² ev maliyeti rehberine</a> ve <a href="/blog-2026-resmi-yapi-birim-maliyetleri" class="font-bold text-[#0C3A2D] underline decoration-[#C9A227] underline-offset-2 hover:text-[#A8871B]">2026 resmî birim maliyetler tablosuna</a> bakın.</p>
+      <p class="text-sm text-[#5F7166]">Kaynak: C25 beton fiyatı (3.100 TL/m³) 27 Ekim 2026 tarihli SerMimar fiyat panosundandır. 35–40 m³ aralığı bu sayfanın kendi yayınladığı referans değerdir. Son güncelleme: 11 Kasım 2026.</p>
+    </div>
+  </section>
+  <section class="max-w-4xl mx-auto px-6 py-6">
     <h2 class="text-2xl font-extrabold font-heading text-[#0C3A2D] mb-5">Sıkça Sorulan Sorular</h2>
     <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ 100 m² ev kaç m³ beton ister?</h3><p class="text-gray-700 leading-relaxed">Yayınlanan referans aralığına göre yaklaşık 35–40 m³. Bu sayfada orta nokta 37,5 m³ olarak alınır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ C25 beton fiyatı ne kadar?</h3><p class="text-gray-700 leading-relaxed">Varsayılan 3.100 TL/m³, 27 Ekim 2026 tarihli SerMimar fiyat panosu anlık görünümüdür. Güncel fiyatı sipariş öncesi teyit edin.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Pompa bedeli dahil mi?</h3><p class="text-gray-700 leading-relaxed">Hayır. Pompa, nakliye ve ilave hizmet bedelleri teklife göre değişir, bu hesaba dahil değildir.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Beton sınıfı fark eder mi?</h3><p class="text-gray-700 leading-relaxed">Evet. C25 dışındaki sınıfların birim fiyatı farklıdır; birim fiyat alanına kendi sınıfınızın fiyatını girin.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Kesin hacim nasıl bulunur?</h3><p class="text-gray-700 leading-relaxed">Statik proje, döşeme ve temel planlarından hesaplanır. Bu sayfa ön tahmin içindir.</p></div></div>
   </section>
