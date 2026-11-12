@@ -468,4 +468,35 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
+  <url> girişleri — mevcut giriş biçimiyle birebir aynı (loc / lastmod / changefreq monthly / priority 0.8). -->
+    <url>
+      <loc>https://maliyethesap.com/blog-radye-temel-maliyeti-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-hafriyat-maliyeti-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-istinat-duvari-maliyeti-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-duvar-orme-maliyeti-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-kalip-maliyeti-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
 </urlset>
