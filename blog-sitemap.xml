@@ -537,4 +537,41 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
+  <url> girişi, blog-sitemap.xml'e eklenir. -->
+  <url>
+      <loc>https://maliyethesap.com/blog-kentsel-donusum-2-3-cogunluk-haklar-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-deprem-bolgesinde-yeniden-insa-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-ev-yapmak-mi-satin-almak-mi-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-2026da-ev-yapmak-mantikli-mi</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-proje-cizim-ucretleri-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-insaatta-kdv-vergi-rehberi-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
 </urlset>
