@@ -43,6 +43,16 @@
       "permanent": true
     },
     {
+      "source": "/blog-cati-yapim-maliyeti-2026",
+      "destination": "/blog-cati-maliyeti-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cati-yapim-maliyeti-2026",
+      "destination": "/blog-cati-maliyeti-2026",
+      "permanent": true
+    },
+    {
       "source": "/blog/ankara-2026",
       "destination": "/blog-ankara-insaat-maliyeti-2026",
       "permanent": true
