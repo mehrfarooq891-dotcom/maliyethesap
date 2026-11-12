@@ -404,4 +404,36 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
+  <url> girişi. Mevcut giriş formatıyla aynı (lastmod 2026-11-12, monthly, 0.8). -->
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+      <loc>https://maliyethesap.com/blog-usta-yevmiyeleri-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-tuik-insaat-maliyet-endeksi-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-iskan-belgesi-nasil-alinir-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-imar-durumu-nasil-sorgulanir-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <url>
+      <loc>https://maliyethesap.com/blog-kat-irtifaki-kat-mulkiyeti-2026</loc>
+      <lastmod>2026-11-12</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
 </urlset>
