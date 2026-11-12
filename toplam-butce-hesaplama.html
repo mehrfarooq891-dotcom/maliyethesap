@@ -81,7 +81,7 @@
           "name": "Birim fiyat neden aralık olarak verilir?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Malzeme kalitesi, şehir, zemin ve proje karmaşıklığı fiyatı değiştirir. Bu yüzden standart anahtar teslim için 22.000–35.000 TL/m² aralığı yayınlanır; bu sayfada orta nokta varsayılan alınır."
+            "text": "Malzeme kalitesi, şehir, zemin ve proje karmaşıklığı fiyatı değiştirir. Bu yüzden standart anahtar teslim için 22.000–35.000 TL/m² (piyasa aralığı) aralığı yayınlanır; bu sayfada orta nokta varsayılan alınır."
           }
         },
         {
@@ -131,7 +131,7 @@
 <div><label class="block font-bold mb-1" for="birim">Anahtar teslim birim fiyat (TL/m²)</label>
 <input type="number" id="birim" min="5000" max="100000" step="500" value="28500" class="w-full p-3 rounded-lg border border-[#E2DDD6] bg-white">
 <input type="range" id="birimRange" min="5000" max="60000" step="500" value="28500" class="w-full accent-[#C9A227] cursor-pointer mt-1">
-<p class=text-sm text-gray-600 mt-1>MaliyetHesap yayınlanan aralığı: 22.000–35.000 TL/m² (standart). Varsayılan, aralığın ortasıdır.</p></div>
+<p class=text-sm text-gray-600 mt-1>MaliyetHesap yayınlanan aralığı: 22.000–35.000 TL/m² (piyasa aralığı) (standart). Varsayılan, aralığın ortasıdır.</p></div>
 <div><label class="block font-bold mb-1" for="arsa">Arsa bedeli (TL, yoksa 0)</label>
 <input type="number" id="arsa" min="0" max="100000000" step="50000" value="0" class="w-full p-3 rounded-lg border border-[#E2DDD6] bg-white">
 <input type="range" id="arsaRange" min="0" max="20000000" step="50000" value="0" class="w-full accent-[#C9A227] cursor-pointer mt-1">
@@ -161,7 +161,7 @@
   var dusuk = alan.value * 22000, yuksek = alan.value * 35000;
   var toplam = arsa.value + insaat + onmal.value;
   var toplamD = arsa.value + dusuk + onmal.value, toplamY = arsa.value + yuksek + onmal.value;
-  out([['İnşaat maliyeti (seçilen birim fiyatla)', fmt(insaat)], ['İnşaat maliyeti aralığı (22.000–35.000 TL/m²)', fmt(dusuk) + ' – ' + fmt(yuksek)],
+  out([['İnşaat maliyeti (seçilen birim fiyatla)', fmt(insaat)], ['İnşaat maliyeti aralığı (22.000–35.000 TL/m², piyasa aralığı)', fmt(dusuk) + ' – ' + fmt(yuksek)],
   ['Ön maliyetler (ruhsat + proje + denetim + zemin)', fmt(onmal.value)], ['Arsa bedeli', fmt(arsa.value)],
   ['TOPLAM BÜTÇE', fmt(toplam)], ['Toplam bütçe aralığı', fmt(toplamD) + ' – ' + fmt(toplamY)]],
   '<h4 class="font-bold text-[#0C3A2D] mt-5 mb-2">Aşama Dağılımı (yayınlanan % aralıklarının orta noktalarıyla)</h4>' +
@@ -229,7 +229,7 @@ b.addEventListener("input", function(){ a.value=this.value; calculate(); });
   </section>
   <section class="max-w-4xl mx-auto px-6 py-6">
     <h2 class="text-2xl font-extrabold font-heading text-[#0C3A2D] mb-5">Sıkça Sorulan Sorular</h2>
-    <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Toplam bütçeye arsa dahil mi?</h3><p class="text-gray-700 leading-relaxed">Bu hesaplayıcıda arsa bedelini ayrı girersiniz; toplam bütçe arsa + ön maliyetler + inşaat olarak hesaplanır. MaliyetHesap&#x27;ın ana hesaplayıcısında arsa hariç tutulur, burada ise bilinçli olarak eklenir.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Ön maliyetler nelerdir?</h3><p class="text-gray-700 leading-relaxed">Belediye ruhsat harçları, mimar, statik ve mekanik proje ücretleri, zemin etüdü ve yapı denetim ücretleridir. Yayınlanan aşama dağılımında bu kalemler toplamın %6–8&#x27;ini oluşturur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Hakediş nedir, neden önemlidir?</h3><p class="text-gray-700 leading-relaxed">Hakediş, yapılan iş karşılığında aşama aşama yapılan ödemedir. Tek seferde peşin ödeme, işin yarım kalması riskini artırır; ödemeleri iş bitimine bağlamak ev sahibini korur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Birim fiyat neden aralık olarak verilir?</h3><p class="text-gray-700 leading-relaxed">Malzeme kalitesi, şehir, zemin ve proje karmaşıklığı fiyatı değiştirir. Bu yüzden standart anahtar teslim için 22.000–35.000 TL/m² aralığı yayınlanır; bu sayfada orta nokta varsayılan alınır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Bu hesap kesin maliyet midir?</h3><p class="text-gray-700 leading-relaxed">Hayır, ön bütçedir. Kesin maliyet için keşif, proje ve müteahhit teklifleri gerekir. Sonuçlar bilgilendirme amaçlıdır.</p></div></div>
+    <div class="space-y-4"><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Toplam bütçeye arsa dahil mi?</h3><p class="text-gray-700 leading-relaxed">Bu hesaplayıcıda arsa bedelini ayrı girersiniz; toplam bütçe arsa + ön maliyetler + inşaat olarak hesaplanır. MaliyetHesap&#x27;ın ana hesaplayıcısında arsa hariç tutulur, burada ise bilinçli olarak eklenir.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Ön maliyetler nelerdir?</h3><p class="text-gray-700 leading-relaxed">Belediye ruhsat harçları, mimar, statik ve mekanik proje ücretleri, zemin etüdü ve yapı denetim ücretleridir. Yayınlanan aşama dağılımında bu kalemler toplamın %6–8&#x27;ini oluşturur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Hakediş nedir, neden önemlidir?</h3><p class="text-gray-700 leading-relaxed">Hakediş, yapılan iş karşılığında aşama aşama yapılan ödemedir. Tek seferde peşin ödeme, işin yarım kalması riskini artırır; ödemeleri iş bitimine bağlamak ev sahibini korur.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Birim fiyat neden aralık olarak verilir?</h3><p class="text-gray-700 leading-relaxed">Malzeme kalitesi, şehir, zemin ve proje karmaşıklığı fiyatı değiştirir. Bu yüzden standart anahtar teslim için 22.000–35.000 TL/m² (piyasa aralığı) aralığı yayınlanır; bu sayfada orta nokta varsayılan alınır.</p></div><div class="bg-white rounded-xl border border-[#E2DDD6] p-5"><h3 class="font-bold text-[#0C3A2D] mb-2">❓ Bu hesap kesin maliyet midir?</h3><p class="text-gray-700 leading-relaxed">Hayır, ön bütçedir. Kesin maliyet için keşif, proje ve müteahhit teklifleri gerekir. Sonuçlar bilgilendirme amaçlıdır.</p></div></div>
   </section>
   <section class="max-w-6xl mx-auto px-6 py-6">
     <h2 class="text-2xl font-extrabold font-heading text-[#0C3A2D] mb-5">Diğer Hesaplayıcılar</h2>
